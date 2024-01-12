@@ -1362,6 +1362,10 @@ class eZFlownInstaller extends eZSiteInstaller
         {
             switch ($db->databaseName())
             {
+                case 'sqlite':
+                    $sqlFile = 'sqlite.sql';
+                    $path = $extensionPackage->path() . '/ezextension/' . $extensionName . '/sql/sqlite';
+                    break;
                 case 'mysql':
                     $sqlFile = 'mysql.sql';
                     $path = $extensionPackage->path() . '/ezextension/' . $extensionName . '/sql/mysql';
