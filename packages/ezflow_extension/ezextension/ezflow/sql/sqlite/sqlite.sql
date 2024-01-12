@@ -2,14 +2,14 @@ CREATE TABLE ezm_block (
     id CHAR(32) NOT NULL,
     zone_id CHAR(32) NOT NULL,
     name VARCHAR(255) NULL,
-    node_id INTEGER UNSIGNED NOT NULL,
+    node_id INTEGER NOT NULL,
     overflow_id CHAR(32) NULL,
-    last_update INTEGER UNSIGNED NULL DEFAULT 0,
+    last_update INTEGER NULL DEFAULT 0,
     block_type VARCHAR(255) NULL,
     fetch_params LONGTEXT NULL,
-    rotation_type INTEGER UNSIGNED NULL,
-    rotation_interval INTEGER UNSIGNED NULL,
-    is_removed INTEGER(2) UNSIGNED NULL DEFAULT 0,
+    rotation_type INTEGER NULL,
+    rotation_interval INTEGER NULL,
+    is_removed INTEGER(2) NULL DEFAULT 0,
     PRIMARY KEY(id)
 );
 
@@ -18,13 +18,13 @@ CREATE INDEX ezm_block__node_id ON ezm_block(node_id);
 
 CREATE TABLE ezm_pool (
     block_id CHAR(32) NOT NULL,
-    object_id INTEGER UNSIGNED NOT NULL,
-    node_id INTEGER UNSIGNED NOT NULL,
-    priority INTEGER UNSIGNED NULL DEFAULT 0,
+    object_id INTEGER NOT NULL,
+    node_id INTEGER NOT NULL,
+    priority INTEGER NULL DEFAULT 0,
     ts_publication INTEGER NULL DEFAULT 0,
-    ts_visible INTEGER UNSIGNED NULL DEFAULT 0,
-    ts_hidden INTEGER UNSIGNED NULL DEFAULT 0,
-    rotation_until INTEGER UNSIGNED NULL DEFAULT 0,
+    ts_visible INTEGER NULL DEFAULT 0,
+    ts_hidden INTEGER NULL DEFAULT 0,
+    rotation_until INTEGER NULL DEFAULT 0,
     moved_to CHAR(32) NULL,
     PRIMARY KEY(block_id, object_id)
 );
