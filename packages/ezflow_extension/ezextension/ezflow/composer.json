@@ -6,7 +6,7 @@
     "authors": [
         {
             "name": "eZ Publish dev-team & eZ Community",
-            "homepage": "https://github.com/ezsystems/ezflow-extension"
+            "homepage": "https://github.com/se7enxweb/ezflow-ezpackage"
         }
     ],
     "minimum-stability": "dev",
