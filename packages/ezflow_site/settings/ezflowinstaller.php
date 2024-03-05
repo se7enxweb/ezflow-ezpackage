@@ -2,7 +2,7 @@
 //
 // ## BEGIN COPYRIGHT, LICENSE AND WARRANTY NOTICE ##
 // SOFTWARE NAME: eZ Flow
-// SOFTWARE RELEASE: 1.1.0
+// SOFTWARE RELEASE: 2.1.0
 // COPYRIGHT NOTICE: Copyright (C) 1999-2014 eZ Systems AS
 // SOFTWARE LICENSE: GNU General Public License v2.0
 // NOTICE: >
@@ -23,14 +23,15 @@
 //
 // ## END COPYRIGHT, LICENSE AND WARRANTY NOTICE ##
 //
+
 class eZFlownInstaller extends eZSiteInstaller
 {
-    const MAJOR_VERSION = 2.0;
+    const MAJOR_VERSION = 2.1;
     const MINOR_VERSION = 0;
 
-    function eZFlownInstaller( $parameters = false )
+    function __construct( $parameters = false )
     {
-        eZSiteInstaller::eZSiteInstaller( $parameters );
+        parent::__construct( $parameters );
     }
 
     function &instance( $params )
@@ -81,11 +82,24 @@ class eZFlownInstaller extends eZSiteInstaller
         $this->addSetting( 'design_list', eZSiteInstaller::getParam( $parameters, 'design_list', array() ) );
         $this->addSetting( 'main_site_design', strtolower( $this->solutionName() ) );
         $this->addSetting( 'extension_list', array( 
+            'ezwt', 
             'ezstarrating', 
             'ezgmaplocation', 
+            'ezautosave', 
+            'ezodf', 
+            'ezie', 
+            'ezprestapiprovider', 
             strtolower( $this->solutionName() ), 
-            'ezwt', 
-            'ezwebin' 
+            'ezpaypal', 
+            'owsimpleoperator',
+            'swark', 
+            'bcgooglesitemaps', 
+            'bcwebsitestatistics', 
+            'bccie', 
+            'xrowextract', 
+            'bcwebshop', 
+            'ezwebin', 
+            'ezmultiupload' 
         ) );
         $this->addSetting( 'version', $this->solutionVersion() );
         $this->addSetting( 'locales', eZSiteInstaller::getParam( $parameters, 'all_language_codes', array() ) );
@@ -94,13 +108,14 @@ class eZFlownInstaller extends eZSiteInstaller
         // usual admin siteaccess like 'ezwebin_site_admin'
         $this->addSetting( 'admin_siteaccess', eZSiteInstaller::getParam( $parameters, 'admin_siteaccess', '' ) );
         // extra siteaccess based on languages info, like 'eng', 'rus', ...
-        $this->addSetting( 'language_based_siteaccess_list', $this->languageNameListFromLocaleList( $this->setting( 'locales' ) ) );
+
+        //$this->addSetting( 'language_based_siteaccess_list', $this->languageNameListFromLocaleList( $this->setting( 'locales' ) ) );
         $this->addSetting( 'user_siteaccess_list', array_merge( array( 
-            $this->setting( 'user_siteaccess' ) 
-        ), $this->setting( 'language_based_siteaccess_list' ) ) );
+            $this->setting( 'user_siteaccess' )
+        ), array() ) );
+        //), $this->setting( 'language_based_siteaccess_list' ) ) );
         $this->addSetting( 'all_siteaccess_list', array_merge( $this->setting( 'user_siteaccess_list' ), array( 
-            $this->setting( 'admin_siteaccess' ), 
-            'iphone' 
+            $this->setting( 'admin_siteaccess' ) 
         ) ) );
         $this->addSetting( 'access_type', eZSiteInstaller::getParam( $parameters, 'site_type/access_type', '' ) );
         $this->addSetting( 'access_type_value', eZSiteInstaller::getParam( $parameters, 'site_type/access_type_value', '' ) );
@@ -114,7 +129,7 @@ class eZFlownInstaller extends eZSiteInstaller
                 'access_type' => $this->setting( 'access_type' ), 
                 'access_type_value' => $this->setting( 'admin_access_type_value' ), 
                 'host' => $this->setting( 'host' ), 
-                'host_prepend_siteaccess' => false
+                'host_prepend_siteaccess' => false 
             ) ), 
             'user' => $this->createSiteaccessUrls( array( 
                 'siteaccess_list' => array( 
@@ -123,8 +138,9 @@ class eZFlownInstaller extends eZSiteInstaller
                 'access_type' => $this->setting( 'access_type' ), 
                 'access_type_value' => $this->setting( 'access_type_value' ), 
                 'host' => $this->setting( 'host' ), 
-                'host_prepend_siteaccess' => false
-            ) ), 
+                'host_prepend_siteaccess' => false 
+            ) ),
+/*
             'translation' => $this->createSiteaccessUrls( array( 
                 'siteaccess_list' => $this->setting( 'language_based_siteaccess_list' ), 
                 'access_type' => $this->setting( 'access_type' ), 
@@ -135,6 +151,7 @@ class eZFlownInstaller extends eZSiteInstaller
                     $this->setting( 'access_type_value' ) 
                 ) 
             ) ),
+*/
             'mobile' => $this->createSiteaccessUrls( array(
                 'siteaccess_list' => array(
                     'iphone'
@@ -150,7 +167,8 @@ class eZFlownInstaller extends eZSiteInstaller
         );
         $this->addSetting( 'siteaccess_urls', $siteaccessUrls );
         $this->addSetting( 'primary_language', eZSiteInstaller::getParam( $parameters, 'all_language_codes/0', '' ) );
-        $this->addSetting( 'var_dir', eZSiteInstaller::getParam( $parameters, 'var_dir', 'var/' . $this->setting( 'user_siteaccess' ) ) );
+        //$this->addSetting( 'var_dir', eZSiteInstaller::getParam( $parameters, 'var_dir', 'var/' . $this->setting( 'user_siteaccess' ) ) );
+        $this->addSetting( 'var_dir', eZSiteInstaller::getParam( $parameters, 'var_dir', 'var/site' ) );
     }
 
     function initSteps()
@@ -254,6 +272,44 @@ class eZFlownInstaller extends eZSiteInstaller
                     'role_name' => 'Anonymous', 
                     'policies' => array( 
                         array( 
+                            'module' => 'shop', 
+                            'function' => 'buy', 
+                            'limitation' => array( 
+                            ) 
+                        ), 
+                        array( 
+                            'module' => 'content', 
+                            'function' => 'create', 
+                            'limitation' => array(
+                               'Class' => array( 
+                                    array( 
+                                        '_function' => 'classIDbyIdentifier', 
+                                        '_params' => array( 
+                                            'identifier' => 'comment' 
+                                        )
+                                    )
+                                ), 
+                               'Section' => array( 
+                                    '_function' => 'sectionIDbyName', 
+                                    '_params' => array( 
+                                        'section_name' => 'Standard' 
+                                    ) 
+                               ), 
+                               'Language' => array( 
+                                          'eng-US' 
+                               ) 
+                            ) 
+                        ), 
+                        array( 
+                            'module' => 'ezjscore', 
+                            'function' => 'call', 
+                            'limitation' => array( 
+                                'FunctionList' => array( 
+                                    'ezstarrating_rate', 'ezstarrating_user_has_rated' 
+                                    ) 
+                                ) 
+                        ), 
+                        array( 
                             'module' => 'content', 
                             'function' => 'read', 
                             'limitation' => array( 
@@ -292,6 +348,12 @@ class eZFlownInstaller extends eZSiteInstaller
                                         '_function' => 'classIDbyIdentifier', 
                                         '_params' => array( 
                                             'identifier' => 'quicktime' 
+                                        ) 
+                                    ), 
+                                    array( 
+                                        '_function' => 'classIDbyIdentifier', 
+                                        '_params' => array( 
+                                            'identifier' => 'video' 
                                         ) 
                                     ) 
                                 ), 
@@ -1329,7 +1391,8 @@ class eZFlownInstaller extends eZSiteInstaller
         // hack for images/binaryfiles
         // need to set siteaccess to have correct placement(VarDir) for files in SetupWizard
         $ini = eZINI::instance();
-        $ini->setVariable( 'FileSettings', 'VarDir', $this->setting( 'var_dir' ) );
+        // $this->setting( 'var_dir' )
+        $ini->setVariable( 'FileSettings', 'VarDir', 'var/site' );
         $contentINI = eZINI::instance( 'content.ini' );
         $datatypeRepositories = $contentINI->variable( 'DataTypeSettings', 'ExtensionDirectories' );
         $datatypeRepositories[] = 'ezflow';
@@ -1499,7 +1562,7 @@ class eZFlownInstaller extends eZSiteInstaller
                 "DataText" => "Site settings" 
             ), 
             "footer_text" => array( 
-                "DataText" => "Copyright &#169; " . date( 'Y' ) . " <a href=\"http://ez.no\" title=\"eZ Systems\">eZ Systems AS</a> (except where otherwise noted). All rights reserved." 
+                "DataText" => "Copyright &#169; " . date( 'Y' ) . " <a href=\"https://se7enx.com\" title=\"7x\">7x</a> (except where otherwise noted). All rights reserved." 
             ), 
             "hide_powered_by" => array( 
                 "DataInt" => 0 
@@ -1672,7 +1735,7 @@ class eZFlownInstaller extends eZSiteInstaller
             ) 
         );
         include_once ('lib/ezutils/classes/ezsys.php');
-        // Make sure anonymous can only login to use side
+        // Make sure anonymous can only login to user side
         $roles[] = array( 
             'name' => 'Anonymous', 
             'policies' => array( 
@@ -1754,6 +1817,8 @@ class eZFlownInstaller extends eZSiteInstaller
     function postInstallUserSiteaccessINIUpdate( $params = false )
     {
         $siteINI = eZINI::instance( "site.ini.append.php", "settings/siteaccess/" . $this->setting( 'user_siteaccess' ), null, false, null, true );
+        $siteINI->setVariable( "SiteSettings", "SiteDescription", "This is an eZ Publish website about online shopping!" );
+        $siteINI->setVariable( "FileSettings", "VarDir", "var/site" );
         $siteINI->setVariable( "DesignSettings", "SiteDesign", $this->setting( 'main_site_design' ) );
         $siteINI->setVariable( "DesignSettings", "AdditionalSiteDesignList", array( 
             'ezwebin', 
@@ -1792,6 +1857,9 @@ class eZFlownInstaller extends eZSiteInstaller
                 'TreeMenu' => array( 
                     'ShowClasses' => array( 
                         'folder', 
+                        'article', 
+                        'link', 
+                        'product',
                         'user_group', 
                         'documentation_page', 
                         'event_calender', 
@@ -2247,7 +2315,8 @@ class eZFlownInstaller extends eZSiteInstaller
         );
         $settings['SiteSettings'] = array( 
             'SiteList' => $this->setting( 'all_siteaccess_list' ), 
-            'DefaultAccess' => $this->languageNameFromLocale( $this->setting( 'primary_language' ) ), 
+            // 'DefaultAccess' => $this->languageNameFromLocale( $this->setting( 'primary_language' ) ),
+            'DefaultAccess' => $this->setting( 'user_siteaccess' ), 
             'RootNodeDepth' => 1 
         );
         $settings['ExtensionSettings'] = array( 
@@ -2773,11 +2842,13 @@ class eZFlownInstaller extends eZSiteInstaller
                     'JavaScriptList' => array( 
                         'insertmedia.js'
                     ) 
-                ), 
+                )
+/* , 
                 'StylesheetSettings' => array( 
                     'CSSFileList' => array(
                     ) 
-                ) 
+                )
+*/
             ) 
         );
         return $settings;
