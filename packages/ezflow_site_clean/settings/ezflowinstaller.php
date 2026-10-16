@@ -88,7 +88,7 @@ class eZFlownInstaller extends eZSiteInstaller
             'ezautosave', 
             'ezodf', 
             'ezie', 
-            'ezprestapiprovider', 
+            'ezprestapi', 
             strtolower( $this->solutionName() ), 
             'ezpaypal', 
             'owsimpleoperator',
