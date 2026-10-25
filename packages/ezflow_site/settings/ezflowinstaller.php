@@ -1622,7 +1622,7 @@ class eZFlownInstaller extends eZSiteInstaller
                                 'SiteLanguageList' => $languageList 
                             ), 
                             'SiteSettings' => array( 
-                                'SiteURL' => $siteaccessTypes['translation'][$this->languageNameFromLocale( $locale )]['url'] 
+                                'SiteURL' => $siteaccessTypes['translation'][$this->languageNameFromLocale( $locale )]['url'] ?? '' 
                             ) 
                         ) 
                     ) 
@@ -2340,7 +2340,7 @@ class eZFlownInstaller extends eZSiteInstaller
         $siteaccessTypes = $this->setting( 'siteaccess_urls' );
         // set 'language settings'
         $translationSA = array();
-        foreach ($siteaccessTypes['translation'] as $name => $urlInfo)
+        foreach ( $siteaccessTypes['translation'] ?? array() as $name => $urlInfo )
         {
             $translationSA[$name] = ucfirst( $name );
         }
