@@ -2142,7 +2142,7 @@ div.map-container
 
 /* PUSH-TO-BLOCK */
 
-div#page-datatype-container .yuimenu ul li
+div.ezflow-menu ul li
 {
     background-image: none;
 }

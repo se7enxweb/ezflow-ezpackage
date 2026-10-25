@@ -1,108 +1,223 @@
+/**
+ * Timeline preview (Exponential, jQuery): a three month calendar to pick the
+ * day and a slider to pick the time; every change fetches the blocks of the
+ * node as they will look at that moment from the ezflow/preview view.
+ *
+ * The template sets eZFlowTimeline.slider.* and eZFlowTimeline.calendar.*
+ * and then calls eZFlowTimeline.init(). Requires jQuery and ezflowcalendar.js.
+ */
+var eZFlowTimeline = window.eZFlowTimeline || { calendar: {}, slider: {}, common: {} };
+
+(function( $, timeline ) {
+
 // Calendar Start
-YAHOO.namespace( "timeline.calendar" );
 
 // Custom fuction for displaying the calendar
-YAHOO.timeline.calendar.cShow = function()
+timeline.calendar.cShow = function()
 {
-    var Dom = YAHOO.util.Dom;
+    document.getElementById( "show_calendar" ).style.backgroundImage = timeline.calendar.arrowImageUP;
+    document.getElementById( "slider-container" ).style.marginTop = "17.3em";
 
-    Dom.get( "show_calendar" ).style.backgroundImage = YAHOO.timeline.calendar.arrowImageUP;
-    Dom.get( "slider-container" ).style.marginTop = "17.3em";
-
-    YAHOO.timeline.calendar.cal1.show();
-    YAHOO.timeline.calendar.isVisible = true;
-}
+    timeline.calendar.cal1.show();
+    timeline.calendar.isVisible = true;
+};
 
 // Custom function for closing the calendar
-YAHOO.timeline.calendar.cClose = function()
+timeline.calendar.cClose = function()
 {
-    var Dom = YAHOO.util.Dom;
-    
-    Dom.get( "show_calendar" ).style.backgroundImage = YAHOO.timeline.calendar.arrowImageDown;
-    Dom.get( "slider-container" ).style.marginTop = "15px";
-    
-    YAHOO.timeline.calendar.cal1.hide();
-    YAHOO.timeline.calendar.isVisible = false;
-}
+    document.getElementById( "show_calendar" ).style.backgroundImage = timeline.calendar.arrowImageDown;
+    document.getElementById( "slider-container" ).style.marginTop = "15px";
+
+    timeline.calendar.cal1.hide();
+    timeline.calendar.isVisible = false;
+};
 
 // Toogle calendar visibility
-YAHOO.timeline.calendar.toogleCalendar = function( event )
+timeline.calendar.toogleCalendar = function()
 {
-    if ( YAHOO.timeline.calendar.isVisible == false )
+    if ( timeline.calendar.isVisible == false )
     {
-        YAHOO.timeline.calendar.cShow();
+        timeline.calendar.cShow();
     }
     else
     {
-        YAHOO.timeline.calendar.cClose();
+        timeline.calendar.cClose();
     }
-}
+};
 
-YAHOO.timeline.calendar.onSelectDate = function( type, args, obj ) 
+timeline.calendar.onSelectDate = function( year, month, day )
 {
-	var weekdays = this.cfg.getProperty( "WEEKDAYS_LONG" );
-    var months = this.cfg.getProperty( "MONTHS_LONG" );
-    var monthsShort = this.cfg.getProperty( "MONTHS_SHORT" );
-    
-	var selected = args[0][0];
-    var year = parseInt( selected[0] );
-    var month = parseInt( selected[1] );
-    var day = parseInt( selected[2] );
-    
+    var weekdays = this.WEEKDAYS_LONG;
+    var months = this.MONTHS_LONG;
+
     var date = new Date();
     date.setFullYear( year, month - 1, day );
-    date.setHours( parseInt( YAHOO.timeline.slider.timeStartHours ) );
-    date.setMinutes( parseInt( YAHOO.timeline.slider.timeStartMinutes ) );
+    date.setHours( parseInt( timeline.slider.timeStartHours, 10 ) );
+    date.setMinutes( parseInt( timeline.slider.timeStartMinutes, 10 ) );
     date.setSeconds( 0 );
-    
-    var longDateString = weekdays[date.getDay()]; // Name of Day         
+
+    var longDateString = weekdays[date.getDay()]; // Name of Day
 
     // Pad the day of month number with a 0 if needed...
     if ( day < 10 )
-        longDateString = longDateString + "  0" + day.toString();  
+        longDateString = longDateString + "  0" + day.toString();
     else
         longDateString = longDateString + "  " + day.toString();
 
     longDateString = longDateString + "  " + months[month - 1];   // Month
     longDateString = longDateString + "  " + year.toString();     // Year
-    
-	YAHOO.util.Dom.get( "show_calendar" ).innerHTML = longDateString;
-	
-    // Update our internal timestamp
-    YAHOO.timeline.slider.timestampStart = Date.parse( date ) / 1000; // convert into seconds from milliseconds
-    
+
+    document.getElementById( "show_calendar" ).innerHTML = longDateString;
+
+    // Update our internal timestamp, in seconds
+    timeline.slider.timestampStart = Math.floor( date.getTime() / 1000 );
+
     // Ok, we're done, close the calendar.
-    YAHOO.timeline.calendar.cClose();
-    
+    timeline.calendar.cClose();
+
     // Trigger update of blocks
-    YAHOO.timeline.common.updateBlocks();
+    timeline.common.updateBlocks();
 };
 
-YAHOO.timeline.calendar.init = function() 
+timeline.calendar.init = function()
 {
-    YAHOO.timeline.calendar.cal1 = new YAHOO.widget.CalendarGroup( "cal1", "cal1Container", {pages:3, title:false, close:false} );
+    timeline.calendar.cal1 = new eZFlowCalendar( "cal1", document.getElementById( "cal1Container" ),
+                                                 { pages: 3, onSelect: timeline.calendar.onSelectDate } );
 
-    var calendar = YAHOO.util.Dom.get( "show_calendar" );
-    YAHOO.timeline.calendar.cClose();
-	
-    YAHOO.timeline.calendar.cal1.selectEvent.subscribe( YAHOO.timeline.calendar.onSelectDate, YAHOO.timeline.calendar.cal1, true );
-	YAHOO.timeline.calendar.cal1.render();
+    var calendar = document.getElementById( "show_calendar" );
+    timeline.calendar.cClose();
 
-	YAHOO.util.Event.addListener( calendar, "click", YAHOO.timeline.calendar.toogleCalendar );
-}
+    timeline.calendar.cal1.render();
 
-YAHOO.util.Event.onDOMReady( YAHOO.timeline.calendar.init );
-// End Calendar 
+    $( calendar ).on( "click", timeline.calendar.toogleCalendar );
+};
+// End Calendar
 
 
 
 // Slider start
-YAHOO.namespace( "timeline.slider" );
+
+/**
+ * Horizontal slider: the thumb moves inside the background between minimum
+ * and maximum pixels, snapping to every tickSize pixels. The background takes
+ * clicks, drags and the arrow, Home and End keys. Listeners: change( value )
+ * while the value changes, slideEnd() when a move is over.
+ */
+function HorizontalSlider( bg, thumb, minimum, maximum, tickSize )
+{
+    var self = this;
+
+    this.bg = document.getElementById( bg );
+    this.thumb = document.getElementById( thumb );
+    this.minimum = minimum;
+    this.maximum = minimum + Math.floor( ( maximum - minimum ) / tickSize ) * tickSize;
+    this.tickSize = tickSize;
+    this.keyIncrement = 20;
+    this.value = 0;
+    this.listeners = { change: [], slideEnd: [] };
+
+    if ( !this.bg.hasAttribute( 'tabindex' ) )
+    {
+        this.bg.setAttribute( 'tabindex', '-1' );
+    }
+
+    $( this.bg ).on( 'pointerdown', function( e ) {
+        if ( e.pointerType === 'mouse' && e.button !== 0 )
+        {
+            return;
+        }
+        e.preventDefault();
+        self.bg.focus();
+
+        var thumbLeft = $( self.thumb ).offset().left,
+            grab = $.contains( self.thumb, e.target ) || e.target === self.thumb ?
+                   e.pageX - thumbLeft : self.thumb.offsetWidth / 2;
+
+        var moveTo = function( pageX ) {
+            var origin = $( self.bg ).offset().left;
+            self.setValue( pageX - grab - origin, false );
+        };
+
+        moveTo( e.pageX );
+
+        $( document )
+            .on( 'pointermove.ezflowslider', function( ev ) {
+                moveTo( ev.pageX );
+            } )
+            .on( 'pointerup.ezflowslider pointercancel.ezflowslider', function() {
+                $( document ).off( '.ezflowslider' );
+                self.fire( 'slideEnd' );
+            } );
+    } );
+
+    $( this.bg ).on( 'keydown', function( e ) {
+        var newValue = null;
+
+        switch ( e.which )
+        {
+            case 37: // left
+            case 38: // up
+                newValue = self.value - self.keyIncrement;
+                break;
+            case 39: // right
+            case 40: // down
+                newValue = self.value + self.keyIncrement;
+                break;
+            case 36: // home
+                newValue = self.minimum;
+                break;
+            case 35: // end
+                newValue = self.maximum;
+                break;
+        }
+        if ( newValue !== null )
+        {
+            e.preventDefault();
+            self.setValue( newValue, false );
+            self.fire( 'slideEnd' );
+        }
+    } );
+}
+
+HorizontalSlider.prototype.setValue = function( value, silent )
+{
+    var snapped = this.minimum + Math.round( ( value - this.minimum ) / this.tickSize ) * this.tickSize;
+
+    snapped = Math.max( this.minimum, Math.min( this.maximum, snapped ) );
+    this.thumb.style.left = snapped + 'px';
+
+    if ( snapped !== this.value )
+    {
+        this.value = snapped;
+        if ( !silent )
+        {
+            this.fire( 'change', snapped );
+        }
+    }
+};
+
+HorizontalSlider.prototype.getValue = function()
+{
+    return this.value;
+};
+
+HorizontalSlider.prototype.subscribe = function( type, fn )
+{
+    this.listeners[type].push( fn );
+};
+
+HorizontalSlider.prototype.fire = function( type, arg )
+{
+    for ( var i = 0; i < this.listeners[type].length; i++ )
+    {
+        this.listeners[type][i].call( this, arg );
+    }
+};
 
 // Slider event: while sliding
-YAHOO.timeline.slider.onSliderChange = function( offsetFromStart )
-{ 
-    var timestamp = YAHOO.timeline.slider.getTimestamp();
+timeline.slider.onSliderChange = function( offsetFromStart )
+{
+    var timestamp = timeline.slider.getTimestamp();
 
     var date = new Date();
     date.setTime( timestamp * 1000 ); // setTime() takes milliseconds, not seconds.
@@ -116,88 +231,76 @@ YAHOO.timeline.slider.onSliderChange = function( offsetFromStart )
     if ( minutes < 10 )
         minutes = "0" + minutes;
 
-    var label = YAHOO.util.Dom.get( "scrubbing-time" );
-    label.style.left = offsetFromStart + YAHOO.timeline.slider.slideLabelInitalSpacing + "px";
+    var label = document.getElementById( "scrubbing-time" );
+    label.style.left = offsetFromStart + timeline.slider.slideLabelInitalSpacing + "px";
 
     // Update our scrubbing time label.
     label.innerHTML = hours + ":" + minutes;
-}
+};
 
 // Slider event: Finishing sliding
-YAHOO.timeline.slider.onSliderEnd = function() 
-{ 
-    YAHOO.timeline.common.updateBlocks();    
-}
+timeline.slider.onSliderEnd = function()
+{
+    timeline.common.updateBlocks();
+};
 
-YAHOO.timeline.slider.init = function() 
-{ 
-    var Event = YAHOO.util.Event, 
-        Dom   = YAHOO.util.Dom, 
-        lang  = YAHOO.lang;
-    
-    YAHOO.timeline.slider.bg = "slider-bg";
-    YAHOO.timeline.slider.thumb = "slider-thumb";
- 
-    // The slider can move 0 pixels up 
-    var topConstraint = 0; 
- 
+timeline.slider.init = function()
+{
+    timeline.slider.bg = "slider-bg";
+    timeline.slider.thumb = "slider-thumb";
+
+    // The slider can move 0 pixels up
+    var topConstraint = 0;
+
     // #slider-end width + 20.
-    var bottomConstraint = 882; 
- 
-    // Custom scale factor for converting the pixel offset into a real value 
-    YAHOO.timeline.slider.scaleFactor = 1; 
- 
-    // The amount the slider moves when the value is changed with the arrow keys
-    var keyIncrement = 20; 
-    
+    var bottomConstraint = 882;
+
+    // Custom scale factor for converting the pixel offset into a real value
+    timeline.slider.scaleFactor = 1;
+
     var tickSize = 20;
-    YAHOO.timeline.slider.slider1 = YAHOO.widget.Slider.getHorizSlider( YAHOO.timeline.slider.bg, YAHOO.timeline.slider.thumb, 
-                                                                        topConstraint, bottomConstraint, tickSize ); 
-    YAHOO.timeline.slider.slider1.animate = false;
+    timeline.slider.slider1 = new HorizontalSlider( timeline.slider.bg, timeline.slider.thumb,
+                                                    topConstraint, bottomConstraint, tickSize );
 
     // set inital position
-    YAHOO.timeline.slider.slider1.setValue( YAHOO.timeline.slider.initalSliderPosition, true, true, true ); 
+    timeline.slider.slider1.setValue( timeline.slider.initalSliderPosition, true );
 
-    YAHOO.timeline.slider.slider1.subscribe( "change", YAHOO.timeline.slider.onSliderChange ); 
-    YAHOO.timeline.slider.slider1.subscribe( "slideEnd", YAHOO.timeline.slider.onSliderEnd ); 
-    
-    YAHOO.timeline.slider.loadingBarHidden = true;
-}
+    timeline.slider.slider1.subscribe( "change", timeline.slider.onSliderChange );
+    timeline.slider.slider1.subscribe( "slideEnd", timeline.slider.onSliderEnd );
+
+    timeline.slider.loadingBarHidden = true;
+};
 
 // Slider utility method: Generate timestamp from the pixel positon of the thumb.
-YAHOO.timeline.slider.getTimestamp = function()
+timeline.slider.getTimestamp = function()
 {
-    var offsetFromStart = YAHOO.timeline.slider.slider1.getValue();
-    
-    var value = YAHOO.timeline.slider.slider1.getValue();
-    var middeStartPx = YAHOO.timeline.slider.middeStartPx;
-    var rightStartPx = YAHOO.timeline.slider.rightStartPx;
-    
-    var timestamp = YAHOO.timeline.slider.timestampFromPixels( offsetFromStart, 
-                                    YAHOO.timeline.slider.middeStartPx, YAHOO.timeline.slider.rightStartPx );
-    timestamp = YAHOO.timeline.slider.timestampStart + timestamp;
-    
+    var offsetFromStart = timeline.slider.slider1.getValue();
+
+    var timestamp = timeline.slider.timestampFromPixels( offsetFromStart,
+                                    timeline.slider.middeStartPx, timeline.slider.rightStartPx );
+    timestamp = timeline.slider.timestampStart + timestamp;
+
     return timestamp;
-}
+};
 
 // Show/Hide slider progress bar
-YAHOO.timeline.slider.toogleProgressBar = function()
+timeline.slider.toogleProgressBar = function()
 {
-    loadingNode = YAHOO.util.Dom.get( "timeline-loader" );
-    if ( YAHOO.timeline.slider.loadingBarHidden )
+    var loadingNode = document.getElementById( "timeline-loader" );
+    if ( timeline.slider.loadingBarHidden )
     {
         loadingNode.style.display = "block";
-        YAHOO.timeline.slider.loadingBarHidden = false;
+        timeline.slider.loadingBarHidden = false;
     }
     else
     {
         loadingNode.style.display = "none";
-        YAHOO.timeline.slider.loadingBarHidden = true;
+        timeline.slider.loadingBarHidden = true;
     }
-}
+};
 
 // Slider utility method: generate a timestamp from the pixel offset where the slider thumb is located.
-YAHOO.timeline.slider.timestampFromPixels = function( currentPx, middleStartPx, rightStartPx )
+timeline.slider.timestampFromPixels = function( currentPx, middleStartPx, rightStartPx )
 {
     // The slider is devided into 3 different parts
     // Left part: Low precision where 1 tick = 60 min = 20px.
@@ -206,27 +309,27 @@ YAHOO.timeline.slider.timestampFromPixels = function( currentPx, middleStartPx, 
 
     // This function works by generating a timestamp for each part of the slider
     // and adding them together at the end.
-    
+
     // middelStartPx and rightStartPx indicated where the middle and right
     // parts starts in pixels. The left part starts at 0px.
-    
+
     var leftPart = 0;
     var middlePart = 0;
     var rightPart = 0;
-    
+
     // Are we in the right part of the slider?
     if ( currentPx > rightStartPx )
     {
         rightPart = currentPx - rightStartPx;
-    
+
         // One tick (1px is 60 minutes or 3600 seconds)
         rightPart = rightPart * ( 3600 / 20 );
     }
 
-    // Are we in the range of middle part of the slider?    
+    // Are we in the range of middle part of the slider?
     if ( currentPx > middleStartPx )
     {
-        // If rightPart is set we need to calcuate timestamp for the whole middel 
+        // If rightPart is set we need to calcuate timestamp for the whole middel
         // part, but only middle part, nothing else.
         if ( rightPart > 0 )
             middlePart = rightStartPx - middleStartPx;
@@ -234,134 +337,169 @@ YAHOO.timeline.slider.timestampFromPixels = function( currentPx, middleStartPx, 
             // currentPx is somewhere inside the middle part of the slider. Calculate
             // middle part from where currentPx is.
             middlePart = currentPx - middleStartPx;
-        
-        // One tick (1px is 15 minutes or 900 seconds)    
-        middlePart = middlePart * ( 900 / 20 );        
+
+        // One tick (1px is 15 minutes or 900 seconds)
+        middlePart = middlePart * ( 900 / 20 );
     }
-        
-    // Are we in the lower range of the slider?    
+
+    // Are we in the lower range of the slider?
     if ( currentPx > 0 )
     {
         leftPart = currentPx;
-        
+
         // If the middlePart is set we should calcuate with all pixels
-        // inside the left part of the slider.   
+        // inside the left part of the slider.
         if ( middlePart > 0 )
             leftPart = middleStartPx;
 
-        // One tick (1px is 60 minutes or 3600 seconds)    
+        // One tick (1px is 60 minutes or 3600 seconds)
         leftPart = leftPart * ( 3600 / 20 );
     }
-    
-    return leftPart + middlePart + rightPart;
-}
 
-YAHOO.util.Event.onDOMReady( YAHOO.timeline.slider.init );
+    return leftPart + middlePart + rightPart;
+};
 // End Slider
 
 
 // Common namespace, for things shared between the slider and the timeline.
-YAHOO.namespace("timeline.common");
 
-YAHOO.timeline.common.updateBlocks = function()
+// Decode the escaped xhtml of a block: strip tags, then resolve the entities
+var unescapeHTML = function( text )
 {
-    //YAHOO.timeline.slider.slider1.lock();
-    var timestamp = YAHOO.timeline.slider.getTimestamp();
-    
-    // Update the title attribute on the background.  This helps assistive 
+    var div = document.createElement( 'div' );
+    div.innerHTML = text.replace( /<\/?[^>]+>/gi, '' );
+    return div.textContent;
+};
+
+var scriptFragment = '<script[^>]*>([\\S\\s]*?)<\/script>';
+
+var extractScripts = function( text )
+{
+    var matchOne = new RegExp( scriptFragment, 'im' );
+
+    return $.map( text.match( new RegExp( scriptFragment, 'img' ) ) || [], function( scriptTag ) {
+        return ( scriptTag.match( matchOne ) || [ '', '' ] )[1];
+    } );
+};
+
+timeline.common.updateBlocks = function()
+{
+    var timestamp = timeline.slider.getTimestamp();
+
+    // Update the title attribute on the background.  This helps assistive
     // technology to communicate the state change
     var date = new Date();
     date.setTime( timestamp * 1000 ); // setTime() takes milliseconds, not seconds.
-    YAHOO.util.Dom.get( YAHOO.timeline.slider ).title = date;
+    var bg = document.getElementById( timeline.slider.bg );
+    if ( bg )
+        bg.title = date;
 
-    var fetchURL = YAHOO.timeline.slider.fetchURL;
-    var nodeid = YAHOO.timeline.slider.nodeid;
-    
+    var fetchURL = timeline.slider.fetchURL;
+    var nodeid = timeline.slider.nodeid;
+
     var sourceURL = fetchURL + "/" + timestamp + "/" + nodeid;
-    
-    var transaction = YAHOO.util.Connect.asyncRequest( 'GET', sourceURL, YAHOO.timeline.common.updateBlocksCallback, null );
-    YAHOO.timeline.slider.toogleProgressBar();
-}
+
+    $.ajax( { type: 'GET', url: sourceURL, dataType: 'text' } )
+        .done( timeline.common.updateBlocksCallback.success )
+        .fail( timeline.common.updateBlocksCallback.failure );
+    timeline.slider.toogleProgressBar();
+};
 
 // Update block callback method: callback for after we've fetched our blocks.
-YAHOO.timeline.common.updateBlocksCallback = 
-{ 
-    success: function( o ) 
+timeline.common.updateBlocksCallback =
+{
+    success: function( responseText )
     {
-        if ( o.responseText != "" )
+        try
         {
-            var blocks = o.responseText.evalJSON();
-            
-            blocks.each( function( item )
+            if ( responseText != "" )
             {
-                // IE seems to mess up the count of our blocks array, so make sure
-                // all items are valid objects.
-                if ( item == undefined )
-                    return;
+                var blocks = JSON.parse( responseText );
 
-                var blockID = "address-" + item.objectid;
-                var xhtml = item.xhtml.unescapeHTML();
-
-                // Take care of double quotes ""
-                xhtml = xhtml.gsub( '&quot;', '"' );
-                // Take care of single quotes ''
-                xhtml = xhtml.gsub( '&#039;', "'" );
-
-                var myScripts = xhtml.extractScripts();
-
-                var node = YAHOO.util.Dom.get( blockID );
-                YAHOO.util.Dom.get( blockID ).innerHTML = xhtml;
-                // execute any scripts that might have been in the returned xhtml
-                var myReturnedValues = myScripts.map( function( script ) 
+                $.each( blocks, function( index, item )
                 {
-                    // Remove any html comments that might exists in the js. It seems to upset firefox.
-                    script = script.gsub( "<!--", "" );
-                    script = script.gsub( "//-->", "" );
-                    script = script.gsub( "-->", "" );
+                    // make sure all items are valid objects.
+                    if ( item == undefined )
+                        return;
 
-                    return eval( script );
-                });
+                    var blockID = "address-" + item.objectid;
+                    var xhtml = unescapeHTML( item.xhtml );
 
-                // If return xhtml contains <div id="address-..."> we need to remove it, if not 
-                // we end up with double sets of <div id="address-..."> since we put the returned
-                // xhtml into the innerHTML of the existing <div id="address-..."> tag.
+                    // Take care of double quotes ""
+                    xhtml = xhtml.split( '&quot;' ).join( '"' );
+                    // Take care of single quotes ''
+                    xhtml = xhtml.split( '&#039;' ).join( "'" );
 
-                if ( node.childNodes[0].id == blockID )
-                {
-                    var params = "";
-                    var objectNode = YAHOO.util.Dom.get( "object-" + item.objectid );
+                    var myScripts = extractScripts( xhtml );
 
-                    // IE does not include <param /> tags in innerHTML 
-                    // or outerHTML for object tags.
-                    if ( objectNode && (/MSIE [67]/.test( navigator.appVersion ) ) )
+                    var node = document.getElementById( blockID );
+                    node.innerHTML = xhtml;
+                    // execute any scripts that might have been in the returned xhtml
+                    $.each( myScripts, function( i, script )
                     {
-                        // Build a HTML string of all params inside the object tag.
-                        var paramTags = objectNode.getElementsByTagName( "param" );
-                        for ( var i = 0; i < paramTags.length; i++ ) 
-                        { 
-                            params += paramTags[i].outerHTML;
-                        }
-                        
-                        var tag = objectNode.outerHTML.split( ">" )[0] + ">";
-                        var objectTagHTML = tag + params + objectNode.innerHTML;
-                                                
+                        // Remove any html comments that might exists in the js.
+                        script = script.split( "<!--" ).join( "" );
+                        script = script.split( "//-->" ).join( "" );
+                        script = script.split( "-->" ).join( "" );
+
+                        $.globalEval( script );
+                    });
+
+                    // If return xhtml contains <div id="address-..."> we need to remove it, if not
+                    // we end up with double sets of <div id="address-..."> since we put the returned
+                    // xhtml into the innerHTML of the existing <div id="address-..."> tag.
+
+                    if ( node.childNodes[0] && node.childNodes[0].id == blockID )
+                    {
                         node.innerHTML = node.firstChild.innerHTML;
-                        // Re-fetch the objectNode
-                        var objectNode = YAHOO.util.Dom.get( "object-" + item.objectid );                    
-                        objectNode.outerHTML = objectTagHTML;
                     }
-                    else
-                    {
-                        node.innerHTML = node.firstChild.innerHTML;                        
-                    }
-                }
-            });
+                });
+            }
         }
-        YAHOO.timeline.slider.toogleProgressBar();
+        finally
+        {
+            timeline.slider.toogleProgressBar();
+        }
     },
-    failure: function( o )
+    failure: function()
     {
-        YAHOO.timeline.slider.toogleProgressBar();
+        timeline.slider.toogleProgressBar();
         alert( "Timeline was unable to retrieve data from the server, please try again later..." );
     }
 };
+
+timeline.init = function()
+{
+    timeline.calendar.init();
+    timeline.slider.init();
+};
+
+})( jQuery, eZFlowTimeline );
+
+/*
+ * Templates without inline code: extra/timeline.tpl carries the settings above in data-ezflow-timeline (JSON: slider
+ * and calendar, merged into eZFlowTimeline.slider / .calendar) and the timeline starts from them when the page is
+ * ready, the way the inline script did. Set up once, however often this file is printed.
+ */
+( function( $, timeline )
+{
+    if ( timeline.dataSetup ) return;
+    timeline.dataSetup = true;
+
+    $( function()
+    {
+        var box = $( '[data-ezflow-timeline]' ).first(), cfg;
+        if ( !box.length ) return;
+        try
+        {
+            cfg = JSON.parse( box.attr( 'data-ezflow-timeline' ) );
+        }
+        catch ( e )
+        {
+            return;
+        }
+        $.extend( timeline.slider, cfg.slider || {} );
+        $.extend( timeline.calendar, cfg.calendar || {} );
+        timeline.init();
+    } );
+} )( jQuery, eZFlowTimeline );

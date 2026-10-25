@@ -1,0 +1,469 @@
+/*
+ * eZ Flow widgets for Exponential: calendar, tab view, dialog, push buttons
+ * and menu buttons used by the page datatype editor, the push to block page
+ * and the timeline preview. Drawn with CSS and inline SVG only.
+ */
+
+/* CALENDAR */
+
+.ezflow-calcontainer
+{
+    position: relative;
+    float: left;
+    background-color: #f2f2f2;
+    border: 1px solid #808080;
+    padding: 10px;
+}
+
+.ezflow-calcontainer.multi
+{
+    padding: 0 5px 0 5px;
+}
+
+.ezflow-calcontainer .groupcal
+{
+    float: left;
+    background-color: transparent;
+    border: 0;
+    padding: 10px 5px 10px 5px;
+    margin: 0;
+}
+
+.ezflow-calcontainer .calclear
+{
+    clear: both;
+    font-size: 0;
+    line-height: 0;
+    height: 0;
+}
+
+.ezflow-calendar
+{
+    position: relative;
+    border-spacing: 0;
+    border-collapse: collapse;
+    font: 100% sans-serif;
+    text-align: center;
+    margin: 0;
+}
+
+.ezflow-calendar .calhead
+{
+    background: transparent;
+    border: none;
+    vertical-align: middle;
+    padding: 0;
+}
+
+.ezflow-calendar .calheader
+{
+    position: relative;
+    width: 100%;
+    background: transparent;
+    font-weight: bold;
+    padding: 0 0 .6em 0;
+    text-align: center;
+}
+
+.ezflow-calendar .calnavleft,
+.ezflow-calendar .calnavright
+{
+    position: absolute;
+    z-index: 1;
+    text-indent: -10000em;
+    overflow: hidden;
+    width: 25px;
+    height: 15px;
+    top: 0;
+    bottom: 0;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.ezflow-calendar .calnavleft
+{
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='25' height='15'%3E%3Crect x='.5' y='.5' width='24' height='14' rx='1' fill='%23fff' stroke='%23c1c1c1'/%3E%3Cpath d='M13 3.5 9.5 7.5 13 11.5' fill='none' stroke='%236d6d6d' stroke-width='1.6'/%3E%3C/svg%3E") no-repeat 0 0;
+    left: -10px;
+    margin-left: .4em;
+}
+
+.ezflow-calendar .calnavright
+{
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='25' height='15'%3E%3Crect x='.5' y='.5' width='24' height='14' rx='1' fill='%23fff' stroke='%23c1c1c1'/%3E%3Cpath d='M11 3.5 14.5 7.5 11 11.5' fill='none' stroke='%236d6d6d' stroke-width='1.6'/%3E%3C/svg%3E") no-repeat 0 0;
+    right: -10px;
+    margin-right: .4em;
+}
+
+.ezflow-calendar .calweekdayrow
+{
+    height: 2em;
+}
+
+.ezflow-calendar .calweekdayrow th
+{
+    padding: 0;
+    border: none;
+}
+
+.ezflow-calendar .calweekdaycell
+{
+    color: #000;
+    font-weight: bold;
+    text-align: center;
+    width: 2.5em;
+}
+
+.ezflow-calendar td.calcell
+{
+    border: 1px solid #ccc;
+    background: #fff;
+    padding: 1px;
+    height: 1.6em;
+    line-height: 1.6em;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.ezflow-calendar td.calcell a
+{
+    color: #06c;
+    display: block;
+    height: 100%;
+    text-decoration: none;
+}
+
+.ezflow-calendar td.calcell.today
+{
+    background-color: #000;
+}
+
+.ezflow-calendar td.calcell.today a
+{
+    background-color: #fff;
+}
+
+.ezflow-calendar td.calcell.oom
+{
+    background-color: #ccc;
+    color: #a6a6a6;
+    cursor: default;
+}
+
+.ezflow-calendar td.calcell.selected
+{
+    background-color: #fff;
+    color: #000;
+}
+
+.ezflow-calendar td.calcell.selected a
+{
+    background-color: #b3d4ff;
+    color: #000;
+}
+
+.ezflow-calendar td.calcell.selectable:hover
+{
+    background-color: #426fd9;
+    color: #fff;
+    cursor: pointer;
+}
+
+.ezflow-calendar td.calcell.selectable:hover a
+{
+    background-color: #426fd9;
+    color: #fff;
+}
+
+/* TAB VIEW
+ * Base look of the zone tabs in the page datatype editor. The design's
+ * ezpage/ezpage.css refines it under .ezpage-tabs-skin. */
+
+.ezpage-tabs
+{
+    position: relative;
+}
+
+.ezpage-tabs .ezpage-tabs-nav,
+.ezpage-tabs .ezpage-tabs-nav li
+{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.ezpage-tabs .ezpage-tabs-nav
+{
+    width: auto;
+    border: solid #2647a0;
+    border-width: 0 0 5px;
+}
+
+.ezpage-tabs .ezpage-tabs-nav li
+{
+    display: inline-block;
+    vertical-align: bottom;
+    cursor: pointer;
+    margin: 0 .16em 0 0;
+    padding: 1px 0 0;
+    background-image: none;
+}
+
+.ezpage-tabs .ezpage-tabs-nav .selected
+{
+    margin: 0 .16em -1px 0;
+}
+
+.ezpage-tabs .ezpage-tabs-nav a
+{
+    display: block;
+    outline: 0;
+    position: relative;
+    background: #d8d8d8 linear-gradient( #f2f2f2, #d8d8d8 );
+    border: solid #a3a3a3;
+    border-width: 0 1px;
+    color: #000;
+    text-decoration: none;
+}
+
+.ezpage-tabs .ezpage-tabs-nav a em
+{
+    display: block;
+    font-style: normal;
+    border: solid #a3a3a3;
+    border-width: 1px 0 0;
+    cursor: pointer;
+    padding: .25em .75em;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: -1px;
+    position: relative;
+}
+
+.ezpage-tabs .ezpage-tabs-nav a:hover,
+.ezpage-tabs .ezpage-tabs-nav a:focus
+{
+    background: #bfdaff linear-gradient( #e9f3ff, #bfdaff );
+    outline: 0;
+}
+
+.ezpage-tabs .ezpage-tabs-nav .selected a,
+.ezpage-tabs .ezpage-tabs-nav .selected a:focus,
+.ezpage-tabs .ezpage-tabs-nav .selected a:hover
+{
+    background: #2647a0 linear-gradient( #5a7ac8, #2647a0 );
+    color: #fff;
+}
+
+.ezpage-tabs .ezpage-tabs-nav .selected a em
+{
+    padding: .35em .75em;
+}
+
+.ezpage-tabs .ezpage-tabs-nav .selected a,
+.ezpage-tabs .ezpage-tabs-nav .selected a em
+{
+    border-color: #243356;
+}
+
+.ezpage-tabs .ezpage-tabs-content
+{
+    background: #edf5ff;
+    border: 1px solid #808080;
+    border-top-color: #243356;
+    padding: .25em .5em;
+}
+
+.ezpage-tabs .ezpage-tabs-content:after
+{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.ezpage-tabs .ezpage-tabs-content .ezpage-tabs-hidden
+{
+    display: none;
+}
+
+/* DIALOG */
+
+.ezflow-dialog
+{
+    position: fixed;
+    z-index: 2;
+    left: 50%;
+    top: 50%;
+    transform: translate( -50%, -50% );
+    max-width: 100vw;
+    max-height: 100vh;
+    overflow: auto;
+    margin: 0;
+    padding: 0;
+    color: #000;
+    text-align: left;
+    background-color: transparent;
+    border: 0;
+    box-shadow: -3px 2px 0 0 rgba( 0, 0, 0, .12 ), 3px 3px 0 0 rgba( 0, 0, 0, .12 );
+}
+
+.ezflow-dialog .ezflow-panel
+{
+    position: relative;
+    border: 1px solid #808080;
+}
+
+.ezflow-dialog .hd
+{
+    padding: 0 10px;
+    color: #000;
+    font-size: 93%;
+    line-height: 2;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 40px;
+    background: linear-gradient( #fefefe, #e5e5e5 );
+    border-bottom: 1px solid #ccc;
+}
+
+.ezflow-dialog .bd,
+.ezflow-dialog .ft
+{
+    background-color: #f2f2f2;
+}
+
+.ezflow-dialog .bd
+{
+    padding: 10px;
+}
+
+.ezflow-dialog .ft
+{
+    padding: 0 10px 10px 10px;
+}
+
+.ezflow-dialog .ft .button-group
+{
+    display: block;
+    text-align: right;
+}
+
+.ezflow-dialog .container-close
+{
+    position: absolute;
+    top: 5px;
+    right: 6px;
+    width: 25px;
+    height: 15px;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+    text-indent: -10000em;
+    overflow: hidden;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='25' height='15'%3E%3Crect x='.5' y='.5' width='24' height='14' rx='1' fill='%23fff' stroke='%23c1c1c1'/%3E%3Cpath d='M9.5 4 15.5 11M15.5 4 9.5 11' fill='none' stroke='%236d6d6d' stroke-width='1.6'/%3E%3C/svg%3E") no-repeat 0 0;
+}
+
+/* PUSH BUTTONS AND MENU BUTTONS */
+
+.ezflow-button
+{
+    display: inline-block;
+    vertical-align: text-bottom;
+    margin: auto .25em;
+    min-height: 2em;
+    padding: 0 10px;
+    font: inherit;
+    font-size: 93%;
+    line-height: 2;
+    color: #000;
+    background: linear-gradient( #ffffff, #d8d8d8 );
+    border: 1px solid #808080;
+    border-radius: 0;
+    cursor: pointer;
+}
+
+.ezflow-button:hover,
+.ezflow-button:focus
+{
+    border-color: #7d98b8;
+    background: linear-gradient( #e9f3ff, #bfdaff );
+    outline: 0;
+}
+
+.ezflow-button:active
+{
+    background: linear-gradient( #bfdaff, #e9f3ff );
+}
+
+.ezflow-button.default
+{
+    font-weight: bold;
+    color: #fff;
+    border-color: #304369;
+    background: linear-gradient( #5a7ac8, #2647a0 );
+}
+
+.ezflow-button.ezflow-menu-button
+{
+    padding-right: 20px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='7' height='4'%3E%3Cpath d='M0 0h7L3.5 4z' fill='%23000'/%3E%3C/svg%3E") no-repeat right 8px center, linear-gradient( #ffffff, #d8d8d8 );
+}
+
+.ezflow-button.ezflow-menu-button:hover,
+.ezflow-button.ezflow-menu-button:focus
+{
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='7' height='4'%3E%3Cpath d='M0 0h7L3.5 4z' fill='%23000'/%3E%3C/svg%3E") no-repeat right 8px center, linear-gradient( #e9f3ff, #bfdaff );
+}
+
+.ezflow-menu
+{
+    position: absolute;
+    z-index: 3;
+    visibility: hidden;
+    min-width: 10em;
+    background-color: #fff;
+    border: 1px solid #808080;
+    padding: 1px;
+    box-shadow: 3px 3px 0 0 rgba( 0, 0, 0, .12 );
+}
+
+.ezflow-menu.visible
+{
+    visibility: visible;
+}
+
+.ezflow-menu ul
+{
+    margin: 0;
+    padding: 3px 0;
+    list-style: none;
+}
+
+.ezflow-menu ul li
+{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background-image: none;
+}
+
+.ezflow-menu ul li a
+{
+    display: block;
+    padding: 0 20px 0 10px;
+    line-height: 1.8;
+    font-size: 93%;
+    color: #000;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: default;
+}
+
+.ezflow-menu ul li a:hover,
+.ezflow-menu ul li a:focus
+{
+    background-color: #b3d4ff;
+    outline: 0;
+}

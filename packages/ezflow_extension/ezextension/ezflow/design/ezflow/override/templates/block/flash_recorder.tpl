@@ -27,39 +27,19 @@
     </div>
     
     <div class="content-media" id="flash-{$block.zone_id}-{$block.id}">
-        <script type="text/javascript">
-            var flash_id="flash-{$block.zone_id}-{$block.id}";
-        
-            var flashString = '<object type="application/x-shockwave-flash" data="{$flash}?{$flash_var}" width="{$width}" height="{$height}"> ';
-            flashString += '<param name="movie" value="{$flash}" /> ';
-            flashString += '<param name="scale" value="exactfit" /> ';
-            flashString += '<param name="wmode" value="opaque" />' ;
-            flashString += '<param name="allowScriptAccess" value="sameDomain" />';
-            flashString += '<param name="allowFullScreen" value="true" />';
-            flashString += '<param name="bgcolor" value="#ffffff" />' ;
-            flashString += '<param name="quality" value="high" />' ;
-            flashString += '<param name="flashvars" value="{$flash_var}" />';
-            flashString += '<param name="menu" value="false" />';
-            flashString += '<p>No <a href="http://www.macromedia.com/go/getflashplayer">Flash player</a> avaliable!</p>';
-            flashString += '</object>' ;
-            
-            insertMedia2( flash_id, flashString );
-        </script>
-
-        <noscript>
+        {* The player, printed directly (it was written by an inline script before; no inline code). *}
         <object type="application/x-shockwave-flash" data="{$flash}?{$flash_var}" width="{$width}" height="{$height}">          
-            <param name="movie" value="{$flash}?{$flash_var}" />
+            <param name="movie" value="{$flash}" />
             <param name="scale" value="exactfit" />
             <param name="wmode" value="opaque" />
             <param name="allowScriptAccess" value="sameDomain" />
             <param name="bgcolor" value="#ffffff" />
-            <param name="allowFullScreen" value="false" />
+            <param name="allowFullScreen" value="true" />
             <param name="quality" value="high" />
             <param name="flashvars" value="{$flash_var}" />
             <param name="menu" value="false" />
             <p>No <a href="http://www.macromedia.com/go/getflashplayer">Flash player</a> avaliable!</p>
         </object>
-        </noscript>
     </div>
     
     <div class="block">

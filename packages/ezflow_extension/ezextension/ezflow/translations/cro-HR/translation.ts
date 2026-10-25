@@ -5,19 +5,19 @@
     <name>design/admin/content/edit</name>
     <message>
         <source>Quick search</source>
-        <translation>Brza pretraga</translation>
+        <translation>Brzo pretraživanje</translation>
     </message>
     <message>
         <source>Search phrase</source>
-        <translation>Pojam za pretragu</translation>
+        <translation>Izraz za pretraživanje</translation>
     </message>
     <message>
         <source>Search</source>
-        <translation>Traži</translation>
+        <translation>Pretraži</translation>
     </message>
     <message>
         <source>Section to search</source>
-        <translation>Sekcija koja se pretražuje</translation>
+        <translation>Odjeljak za pretraživanje</translation>
     </message>
     <message>
         <source>Date range</source>
@@ -25,23 +25,23 @@
     </message>
     <message>
         <source>Past day</source>
-        <translation>Zadnjih 24 sata</translation>
+        <translation>Posljednji dan</translation>
     </message>
     <message>
         <source>Past week</source>
-        <translation>Zadnjih 7 dana</translation>
+        <translation>Posljednji tjedan</translation>
     </message>
     <message>
         <source>Past month</source>
-        <translation>Zadnjih 30 dana</translation>
+        <translation>Posljednji mjesec</translation>
     </message>
     <message>
         <source>Past 3 months</source>
-        <translation>Zadnja 3 mjeseca</translation>
+        <translation>Posljednja 3 mjeseca</translation>
     </message>
     <message>
         <source>Past year</source>
-        <translation>Zadnjih 12 mjeseci</translation>
+        <translation>Posljednja godina</translation>
     </message>
     <message>
         <source>Select block</source>
@@ -57,31 +57,31 @@
     </message>
     <message>
         <source>Edit &lt;%object_name&gt; [%class_name]</source>
-        <translation>Uredi &lt;%object_name&gt; [%class_name]</translation>
+        <translation>Uređivanje &lt;%object_name&gt; [%class_name]</translation>
     </message>
     <message>
         <source>Translating content from %from_lang to %to_lang</source>
-        <translation>Prevođenje sadržaja iz %from_lang u %to_lang</translation>
+        <translation>Prevođenje sadržaja s jezika %from_lang na jezik %to_lang</translation>
     </message>
     <message>
         <source>Back to edit</source>
-        <translation>Povratak na uređivanje</translation>
+        <translation>Natrag na uređivanje</translation>
     </message>
     <message>
         <source>Send for publishing</source>
-        <translation>Objavi</translation>
+        <translation>Pošalji na objavljivanje</translation>
     </message>
     <message>
         <source>Publish the contents of the draft that is being edited. The draft will become the published version of the object.</source>
-        <translation>Objavi sadržaj skice koja se trenutno uređuje. Skica će poslati objavljena verzija objekta.</translation>
+        <translation>Objavite sadržaj skice koju uređujete. Skica će postati objavljena verzija objekta.</translation>
     </message>
     <message>
         <source>Store draft</source>
-        <translation>Pohrani skicu</translation>
+        <translation>Spremi skicu</translation>
     </message>
     <message>
         <source>Store the contents of the draft that is being edited and continue editing. Use this button to periodically save your work while editing.</source>
-        <translation>Pohrani sadržaj skice koja se trenutno uređuje i nastavi s uređivanjem. Koristite ovaj gumb da bi periodički spremili izmjene za vrijeme uređivanja.</translation>
+        <translation>Spremite sadržaj skice koju uređujete i nastavite s uređivanjem. Ovim gumbom povremeno spremajte svoj rad tijekom uređivanja.</translation>
     </message>
     <message>
         <source>Discard draft</source>
@@ -93,14 +93,14 @@
     </message>
     <message>
         <source>Discard the draft that is being edited. This will also remove the translations that belong to the draft (if any).</source>
-        <translation>Odbaci skicu koja se trenutno uređuje. Ovo će ujedno ukloniti i sve eventualne prijevode koji pripadaju skici.</translation>
+        <translation>Odbacite skicu koju uređujete. Time će se ukloniti i prijevodi koji pripadaju skici (ako postoje).</translation>
     </message>
 </context>
 <context>
     <name>design/admin/contextsubmenu</name>
     <message>
         <source>Add to block in frontpage</source>
-        <translation>Dodaj u blok u naslovnicu</translation>
+        <translation>Dodaj u blok na naslovnici</translation>
     </message>
 </context>
 <context>
@@ -121,7 +121,7 @@
     <name>design/admin/page/push</name>
     <message>
         <source>Choose placement for &quot;%node_name&quot;</source>
-        <translation>Odaberi lokaciju za r &quot;%node_name&quot;</translation>
+        <translation>Odaberi lokaciju za &quot;%node_name&quot;</translation>
     </message>
     <message>
         <source>Select frontpage</source>
@@ -145,18 +145,18 @@
     </message>
     <message>
         <source>Store</source>
-        <translation>Pohrani</translation>
+        <translation>Spremi</translation>
     </message>
 </context>
 <context>
     <name>design/ezflow/block/online_users</name>
     <message>
         <source>There are currently %logged_in_count active users on the system.</source>
-        <translation>Trenutno stranice koristi %logged_in_count prijavljenih korisnika.</translation>
+        <translation>Trenutačno je u sustavu aktivno korisnika: %logged_in_count.</translation>
     </message>
     <message>
         <source>There are %anonymous_count anonymous users accessing the site.</source>
-        <translation>Trenutno stranice pregledava %anonymous_count anonimnih korisnika.</translation>
+        <translation>Broj anonimnih korisnika koji pristupaju web-mjestu: %anonymous_count.</translation>
     </message>
 </context>
 <context>
@@ -167,22 +167,22 @@
     </message>
     <message>
         <source>No search results found for:</source>
-        <translation>Nije pronađen nijedan rezultat za:</translation>
+        <translation>Nisu pronađeni rezultati pretraživanja za:</translation>
     </message>
 </context>
 <context>
     <name>design/ezflow/edit/frontpage</name>
     <message>
         <source>Search phrase</source>
-        <translation>Pojam za pretragu</translation>
+        <translation>Izraz za pretraživanje</translation>
     </message>
     <message>
         <source>Search</source>
-        <translation>Traži</translation>
+        <translation>Pretraži</translation>
     </message>
     <message>
         <source>Section to search</source>
-        <translation>Sekcija koja se pretražuje</translation>
+        <translation>Odjeljak za pretraživanje</translation>
     </message>
     <message>
         <source>Date range</source>
@@ -190,23 +190,23 @@
     </message>
     <message>
         <source>Past day</source>
-        <translation>Zadnjih 24 sata</translation>
+        <translation>Posljednji dan</translation>
     </message>
     <message>
         <source>Past week</source>
-        <translation>Zadnjih 7 dana</translation>
+        <translation>Posljednji tjedan</translation>
     </message>
     <message>
         <source>Past month</source>
-        <translation>Zadnjih 30 dana</translation>
+        <translation>Posljednji mjesec</translation>
     </message>
     <message>
         <source>Past 3 months</source>
-        <translation>Zadnja 3 mjeseca</translation>
+        <translation>Posljednja 3 mjeseca</translation>
     </message>
     <message>
         <source>Past year</source>
-        <translation>Zadnjih 12 mjeseci</translation>
+        <translation>Posljednja godina</translation>
     </message>
     <message>
         <source>Results</source>
@@ -222,19 +222,19 @@
     </message>
     <message>
         <source>Translating content from %from_lang to %to_lang</source>
-        <translation>Prevođenje sadržaja iz %from_lang u %to_lang</translation>
+        <translation>Prevođenje sadržaja s jezika %from_lang na jezik %to_lang</translation>
     </message>
     <message>
         <source>Content in %language</source>
-        <translation>Sadržaj u %language</translation>
+        <translation>Sadržaj na jeziku %language</translation>
     </message>
     <message>
         <source>Send for publishing</source>
-        <translation>Objavi</translation>
+        <translation>Pošalji na objavljivanje</translation>
     </message>
     <message>
         <source>Store draft</source>
-        <translation>Pohrani skicu</translation>
+        <translation>Spremi skicu</translation>
     </message>
     <message>
         <source>Discard draft</source>
@@ -242,14 +242,14 @@
     </message>
     <message>
         <source>Edit &lt;%object_name&gt; (%class_name)</source>
-        <translation>Uredi &lt;%object_name&gt; (%class_name)</translation>
+        <translation>Uređivanje &lt;%object_name&gt; (%class_name)</translation>
     </message>
 </context>
 <context>
     <name>design/ezflow/embed/poll</name>
     <message>
         <source>Vote</source>
-        <translation>Glasuj</translation>
+        <translation>Glasaj</translation>
     </message>
 </context>
 <context>
@@ -263,11 +263,11 @@
     <name>design/ezflow/parts/website_toolbar</name>
     <message>
         <source>Timeline</source>
-        <translation>Vremenska linija</translation>
+        <translation>Vremenska crta</translation>
     </message>
     <message>
         <source>Add to block in frontpage</source>
-        <translation>Dodaj u blok u naslovnicu</translation>
+        <translation>Dodaj u blok na naslovnici</translation>
     </message>
 </context>
 <context>
@@ -278,11 +278,11 @@
     </message>
     <message>
         <source>Please log in to vote on this poll.</source>
-        <translation>Molimo prijavite se da bi mogli sudjelovati u ovoj anketi.</translation>
+        <translation>Prijavite se da biste mogli glasati u ovoj anketi.</translation>
     </message>
     <message>
         <source>You have already voted for this poll.</source>
-        <translation>Već ste sudjelovali u ovoj anketi.</translation>
+        <translation>Već ste glasali u ovoj anketi.</translation>
     </message>
     <message>
         <source>Votes</source>
@@ -290,11 +290,11 @@
     </message>
     <message>
         <source>%count total votes</source>
-        <translation>Ukupno %count glasova</translation>
+        <translation>Ukupno glasova: %count</translation>
     </message>
     <message>
         <source>Back to poll</source>
-        <translation>Povratak na anketu</translation>
+        <translation>Natrag na anketu</translation>
     </message>
     <message>
         <source>Poll %pollname</source>
@@ -305,18 +305,18 @@
     <name>design/iphone/embed/poll</name>
     <message>
         <source>Vote</source>
-        <translation>Glasuj</translation>
+        <translation>Glasaj</translation>
     </message>
 </context>
 <context>
     <name>design/iphone/full/image</name>
     <message>
         <source>Previous</source>
-        <translation>Prethodni</translation>
+        <translation>Prethodna</translation>
     </message>
     <message>
         <source>Next</source>
-        <translation>Sljedeći</translation>
+        <translation>Sljedeća</translation>
     </message>
     <message>
         <source>Next image</source>
@@ -327,15 +327,15 @@
     <name>design/iphone/page_footer</name>
     <message>
         <source>Visit:</source>
-        <translation>Posjeti:</translation>
+        <translation>Posjetite:</translation>
     </message>
     <message>
         <source>mobile site</source>
-        <translation>mobilne stranice</translation>
+        <translation>mobilno web-mjesto</translation>
     </message>
     <message>
         <source>full site</source>
-        <translation>desktop stranice</translation>
+        <translation>potpuno web-mjesto</translation>
     </message>
 </context>
 <context>
@@ -365,7 +365,7 @@
     </message>
     <message>
         <source>Set overflow</source>
-        <translation>Namjesti preljev</translation>
+        <translation>Postavi preljev</translation>
     </message>
     <message>
         <source>Choose source</source>
@@ -389,15 +389,15 @@
     </message>
     <message>
         <source>left</source>
-        <translation>preostalo</translation>
+        <translation>left</translation>
     </message>
     <message>
         <source>Queue: no items.</source>
-        <translation>Red: nema stavki.</translation>
+        <translation>Red čekanja: nema stavki.</translation>
     </message>
     <message>
         <source>Online: no items.</source>
-        <translation>Objavljeno: nema stavki.</translation>
+        <translation>Trenutačno prikazano: nema stavki.</translation>
     </message>
     <message>
         <source>Rotation:</source>
@@ -425,7 +425,7 @@
     </message>
     <message>
         <source>Moved to:</source>
-        <translation>Prebačeno u:</translation>
+        <translation>Premješteno u:</translation>
     </message>
     <message>
         <source>Not visible</source>
@@ -433,7 +433,7 @@
     </message>
     <message>
         <source>History: no items.</source>
-        <translation>Prethodni sadržaj: nema stavki.</translation>
+        <translation>Povijest: nema stavki.</translation>
     </message>
     <message>
         <source>Remove selected</source>
@@ -441,15 +441,15 @@
     </message>
     <message>
         <source>Queue:</source>
-        <translation>Red:</translation>
+        <translation>Red čekanja:</translation>
     </message>
     <message>
         <source>Online:</source>
-        <translation>Objavljeno:</translation>
+        <translation>Trenutačno prikazano:</translation>
     </message>
     <message>
         <source>History:</source>
-        <translation>Prethodni sadržaj:</translation>
+        <translation>Povijest:</translation>
     </message>
     <message>
         <source>Add item</source>
@@ -465,11 +465,11 @@
     </message>
     <message>
         <source>Current source:</source>
-        <translation>Trenutni izvor:</translation>
+        <translation>Trenutačni izvor:</translation>
     </message>
     <message>
         <source>Publishing schedule for: </source>
-        <translation>Raspored objave za: </translation>
+        <translation>Raspored objavljivanja za: </translation>
     </message>
 </context>
 <context>
@@ -483,7 +483,7 @@
     <name>design/standard/class/datatype</name>
     <message>
         <source>Default layout:</source>
-        <translation>Predodređeni raspored:</translation>
+        <translation>Zadani raspored:</translation>
     </message>
     <message>
         <source>None</source>
@@ -494,7 +494,7 @@
     <name>design/standard/datatype/ezpage</name>
     <message>
         <source>The total number of zones in the new layout is less than the number of zones in the previous layout. Therefore, you must map the previous zones to new zones. Unmapped zones will be removed!</source>
-        <translation>Ukupan broj zona u novom rasporedu je manji od broja zona u prethodnom rasporedu. Zbog toga morate mapirati prethodne zone u nove. Zone koje niste mapirali će biti uklonjene!</translation>
+        <translation>Ukupan broj zona u novom rasporedu manji je od broja zona u prethodnom rasporedu. Stoga prethodne zone morate pridružiti novim zonama. Zone koje nisu pridružene bit će uklonjene!</translation>
     </message>
     <message>
         <source>Set layout</source>
@@ -510,7 +510,23 @@
     </message>
     <message>
         <source>Collapse All</source>
-        <translation>Skupi sve</translation>
+        <translation>Sažmi sve</translation>
+    </message>
+    <message>
+        <source>Block name:</source>
+        <translation>Naziv bloka:</translation>
+    </message>
+    <message>
+        <source>Block type:</source>
+        <translation>Vrsta bloka:</translation>
+    </message>
+    <message>
+        <source>Expand</source>
+        <translation>Proširi</translation>
+    </message>
+    <message>
+        <source>Collapse</source>
+        <translation>Sažmi</translation>
     </message>
 </context>
 <context>
@@ -537,7 +553,7 @@
     </message>
     <message>
         <source>Placement list</source>
-        <translation>Razmještaj</translation>
+        <translation>Popis lokacija</translation>
     </message>
     <message>
         <source>Remove</source>
@@ -545,21 +561,25 @@
     </message>
     <message>
         <source>Store</source>
-        <translation>Pohrani</translation>
+        <translation>Spremi</translation>
     </message>
 </context>
 <context>
     <name>ezflow/push</name>
     <message>
         <source>Push to block</source>
-        <translation>Gurni u blok</translation>
+        <translation>Pošalji u blok</translation>
+    </message>
+    <message>
+        <source>Add to block in frontpage</source>
+        <translation>Dodaj u blok na naslovnoj stranici</translation>
     </message>
 </context>
 <context>
     <name>kernel/workflow/event</name>
     <message>
         <source>eZ Page swap workflow event</source>
-        <translation>Događaj radnog toka za zamjenu eZ Page blokova</translation>
+        <translation>Događaj tijeka rada za zamjenu eZ Page</translation>
     </message>
 </context>
 </TS>

@@ -1,58 +1,171 @@
-eZPushToBlock = function() {
-    
-    var oPlacementStoreButton,
-        oPlacementRemoveButton,
-        oPlacementButton,
-        oFrontpageButton,
+/**
+ * Push to block page (Exponential, jQuery): choose a frontpage, then one of
+ * its zones, then one of the zone's blocks from menu buttons filled through
+ * the ezflow/get view, and collect the placements in #placement-list.
+ * Requires jQuery and scheduledialog.js.
+ */
+
+/**
+ * Menu button: an <input type="button"> that opens a menu built from the
+ * options of a <select> (which is hidden and kept in step with the choice).
+ */
+var eZFlowMenuButton = (function( $ ) {
+
+    function MenuButton( buttonId, selectId )
+    {
+        var self = this;
+
+        this.button = document.getElementById( buttonId );
+        this.select = document.getElementById( selectId );
+        this.label = this.button.value;
+        this.items = [];
+        this.selected = null;
+        this.listeners = [];
+
+        $( this.button ).addClass( 'ezflow-button ezflow-menu-button' ).attr( { 'aria-haspopup': 'true', 'aria-expanded': 'false' } );
+        $( this.select ).hide();
+
+        this.menu = $( '<div class="ezflow-menu" role="menu"><div class="bd"><ul></ul></div></div>' )
+            .attr( 'id', selectId + '-menu' )
+            .appendTo( document.body )[0];
+
+        $( this.select ).children( 'option' ).each( function() {
+            self.items.push( { text: $( this ).text(), value: this.value } );
+        } );
+        this.renderItems();
+
+        $( this.button ).on( 'click', function( e ) {
+            e.preventDefault();
+            if ( $( self.menu ).hasClass( 'visible' ) ) {
+                self.hideMenu();
+            } else {
+                self.showMenu();
+            }
+        } );
+
+        $( this.menu ).on( 'click', 'a', function( e ) {
+            e.preventDefault();
+            var item = self.items[ parseInt( this.getAttribute( 'data-index' ), 10 ) ];
+            self.hideMenu();
+            self.selected = item;
+            self.select.value = item.value;
+            for ( var i = 0; i < self.listeners.length; i++ ) {
+                self.listeners[i].call( self, item );
+            }
+        } ).on( 'keydown', function( e ) {
+            if ( e.which === 27 ) {
+                self.hideMenu();
+                self.button.focus();
+            }
+        } );
+
+        $( document ).on( 'mousedown', function( e ) {
+            if ( e.target !== self.button && !$.contains( self.menu, e.target ) ) {
+                self.hideMenu();
+            }
+        } );
+    }
+
+    MenuButton.prototype.renderItems = function()
+    {
+        var ul = $( this.menu ).find( 'ul' ).empty(), i;
+
+        for ( i = 0; i < this.items.length; i++ ) {
+            $( '<li class="ezflow-menuitem" role="presentation"></li>' )
+                .append( $( '<a href="#" class="ezflow-menuitem-text" role="menuitem"></a>' )
+                    .attr( 'data-index', i )
+                    .text( this.items[i].text ) )
+                .appendTo( ul );
+        }
+    };
+
+    MenuButton.prototype.showMenu = function()
+    {
+        var o = $( this.button ).offset();
+
+        $( this.menu ).css( { left: o.left + 'px', top: ( o.top + $( this.button ).outerHeight() ) + 'px' } ).addClass( 'visible' );
+        $( this.button ).attr( 'aria-expanded', 'true' );
+    };
+
+    MenuButton.prototype.hideMenu = function()
+    {
+        $( this.menu ).removeClass( 'visible' );
+        $( this.button ).attr( 'aria-expanded', 'false' );
+    };
+
+    MenuButton.prototype.onSelect = function( fn )
+    {
+        this.listeners.push( fn );
+    };
+
+    MenuButton.prototype.clear = function()
+    {
+        this.items = [];
+        this.selected = null;
+        $( this.select ).empty();
+        this.renderItems();
+    };
+
+    MenuButton.prototype.addItem = function( text, value )
+    {
+        this.items.push( { text: text, value: value } );
+        $( '<option></option>' ).val( value ).text( text ).appendTo( this.select );
+    };
+
+    MenuButton.prototype.setLabel = function( text )
+    {
+        this.button.value = text;
+    };
+
+    MenuButton.prototype.resetLabel = function()
+    {
+        this.button.value = this.label;
+    };
+
+    return MenuButton;
+})( jQuery );
+
+var eZPushToBlock = function( $ ) {
+
+    var oFrontpageButton,
         oZoneButton,
         oBlockButton;
 
     var ret = {};
 
     var clearMenuContent = function(b) {
-        var oMenu = b.getMenu();
-        oMenu.clearContent();
-        oMenu.render( b );
-    }
+        b.clear();
+    };
 
     var handleRequest = function(p, b) {
-        var handleSuccess = function(o) {
-            if(o.responseText !== undefined) {
-                var aResponse = YAHOO.lang.JSON.parse( o.responseText );
-                var oMenu  = b.getMenu();
+        var handleSuccess = function(responseText) {
+            if(responseText !== undefined) {
+                var aResponse = JSON.parse( responseText );
                 clearMenuContent( b );
 
                 for(var i = 0; i < aResponse.length; i++) {
                     var oResItem = aResponse[i];
-                    oMenu.addItem( {text: oResItem.name, value: oResItem.id} );
+                    b.addItem( oResItem.name, oResItem.id );
                 }
 
-                oMenu.render( b );
+                b.renderItems();
             }
-        }
-
-        var callback =
-        {
-          success: handleSuccess
         };
 
         var _tokenNode = document.getElementById('ezxform_token_js');
- 	    if ( _tokenNode ) {
+        if ( _tokenNode ) {
             if ( p ) {
                 p = p + '&';
             }
             p = p + 'ezxform_token=' + _tokenNode.getAttribute('title');
         }
 
-        var request = YAHOO.util.Connect.asyncRequest('POST', ret.cfg.requesturl, callback, p);
-    }
+        $.ajax( { type: 'POST', url: ret.cfg.requesturl, data: p, dataType: 'text', success: handleSuccess } );
+    };
 
-    var handleFButtonClick = function (p_sType, p_aArgs) {
-        var oEvent = p_aArgs[0],
-            oMenuItem = p_aArgs[1];
-
-        oZoneButton.set( "label", "Select zone" );
-        oBlockButton.set( "label", "Select block" );
+    var handleFButtonClick = function (oMenuItem) {
+        oZoneButton.resetLabel();
+        oBlockButton.resetLabel();
         clearMenuContent( oBlockButton );
 
         if (oMenuItem) {
@@ -60,45 +173,41 @@ eZPushToBlock = function() {
 
             handleRequest( sPostData, oZoneButton );
 
-            oFrontpageButton.set( "label", oMenuItem.cfg.getProperty("text") );
+            oFrontpageButton.setLabel( oMenuItem.text );
         }
-    }
+    };
 
-    var handleZButtonClick = function (p_sType, p_aArgs) {
-        var oEvent = p_aArgs[0],
-            oMenuItem = p_aArgs[1];
-
+    var handleZButtonClick = function (oMenuItem) {
         if (oMenuItem) {
-            oZoneButton.set( "label", oMenuItem.cfg.getProperty("text") );
-            var nodeID = oFrontpageButton.get("selectedMenuItem").value;
+            oZoneButton.setLabel( oMenuItem.text );
+            var nodeID = oFrontpageButton.selected.value;
             var sPostData = "content=zone&frontpage_node_id=" + nodeID + "&zone=" + oMenuItem.value + "&node_id=" + ret.cfg.nodeid;
 
             handleRequest( sPostData, oBlockButton );
-
-            oZoneButton.set( "label", oMenuItem.cfg.getProperty("text") );
         }
-    }
+    };
 
-    var handleBButtonClick = function (p_sType, p_aArgs) {
-        var oEvent = p_aArgs[0],
-            oMenuItem = p_aArgs[1];
-
+    var handleBButtonClick = function (oMenuItem) {
         if (oMenuItem) {
-            oBlockButton.set( "label", oMenuItem.cfg.getProperty("text") );
+            oBlockButton.setLabel( oMenuItem.text );
         }
-    }
+    };
 
-    var handlePButtonClick = function(e) {
-        var oPlacementList = YAHOO.util.Dom.get("placement-list");
-        var tBody = YAHOO.util.Dom.getFirstChild(oPlacementList);
+    var handlePButtonClick = function() {
+        if ( !oFrontpageButton.selected || !oZoneButton.selected || !oBlockButton.selected ) {
+            return;
+        }
 
-        var sFrontpageText = oFrontpageButton.get("selectedMenuItem").cfg.getProperty("text");
-        var sZoneText = oZoneButton.get("selectedMenuItem").cfg.getProperty("text");
-        var sBlockText = oBlockButton.get("selectedMenuItem").cfg.getProperty("text");
+        var oPlacementList = document.getElementById("placement-list");
+        var tBody = $( oPlacementList ).children( 'tbody' )[0] || oPlacementList.firstElementChild;
 
-        var sID = "id-" + oFrontpageButton.get("selectedMenuItem").value + "-" + oZoneButton.get("selectedMenuItem").value + "-" + oBlockButton.get("selectedMenuItem").value;
+        var sFrontpageText = oFrontpageButton.selected.text;
+        var sZoneText = oZoneButton.selected.text;
+        var sBlockText = oBlockButton.selected.text;
 
-        var oCurrTr = YAHOO.util.Dom.get( sID );
+        var sID = "id-" + oFrontpageButton.selected.value + "-" + oZoneButton.selected.value + "-" + oBlockButton.selected.value;
+
+        var oCurrTr = document.getElementById( sID );
 
         if (oCurrTr === null) {
             var oTr = document.createElement("tr");
@@ -126,7 +235,7 @@ eZPushToBlock = function() {
             var oTSInput = document.createElement("input");
             oTSInput.type = "hidden";
             oTSInput.value = Math.round( new Date().getTime() / 1000 );
-            oTSInput.name = "PlacementTSArray[" + oFrontpageButton.get("selectedMenuItem").value + "][" + oZoneButton.get("selectedMenuItem").value + "][" + oBlockButton.get("selectedMenuItem").value + "]";
+            oTSInput.name = "PlacementTSArray[" + oFrontpageButton.selected.value + "][" + oZoneButton.selected.value + "][" + oBlockButton.selected.value + "]";
 
             oTdPlacement.appendChild(oSpan);
             oTdPlacement.appendChild(oTSInput);
@@ -137,55 +246,63 @@ eZPushToBlock = function() {
 
             tBody.appendChild( oTr );
 
-            YAHOO.ez.sheduleDialog.init();
-        }        
-    }
-
-    var handlePRButtonClick = function(e) {
-        var oPlacementList = YAHOO.util.Dom.get("placement-list");
-        var tBody = YAHOO.util.Dom.getFirstChild(oPlacementList);
-
-        var aInput = YAHOO.util.Dom.getElementsBy( function(e) {
-            if ( e.type === "checkbox" && e.checked ) {
-                return true;
-            }
-        }, "input", oPlacementList );
-
-        for( var i = 0; i < aInput.length; i++ ) {
-            var oInput = aInput[i];
-
-            var oTr = YAHOO.util.Dom.getAncestorByTagName(oInput, "tr");
-            tBody.removeChild( oTr );
+            eZFlow.ScheduleDialog.init();
         }
-    }
+    };
+
+    var handlePRButtonClick = function() {
+        var oPlacementList = document.getElementById("placement-list");
+
+        $( oPlacementList ).find( 'input[type="checkbox"]' ).filter( ':checked' ).each( function() {
+            $( this ).closest( 'tr' ).remove();
+        } );
+    };
 
     ret.cfg = {};
-    
+
     ret.init = function() {
-        oPlacementStoreButton = new YAHOO.widget.Button("placement-store-button");
+        $( '#placement-store-button' ).addClass( 'ezflow-button' );
 
-        oPlacementRemoveButton = new YAHOO.widget.Button("placement-remove-button");
-        oPlacementRemoveButton.on("click", handlePRButtonClick);
-        
-        oPlacementButton = new YAHOO.widget.Button("placement-button");
-        oPlacementButton.on("click", handlePButtonClick);
+        $( '#placement-remove-button' ).addClass( 'ezflow-button' ).on( 'click', handlePRButtonClick );
 
-        oFrontpageButton = new YAHOO.widget.Button("select-frontpage-button", { 
-                                                type: "menu", 
-                                                menu: "select-frontpage-list" });
-        oFrontpageButton.getMenu().subscribe("click", handleFButtonClick);
+        $( '#placement-button' ).addClass( 'ezflow-button' ).on( 'click', handlePButtonClick );
 
-        oZoneButton = new YAHOO.widget.Button("select-zone-button", { 
-                                                type: "menu", 
-                                                menu: "select-zone-list" });
-        oZoneButton.getMenu().subscribe("click", handleZButtonClick);
-        
-        oBlockButton = new YAHOO.widget.Button("select-block-button", { 
-                                                type: "menu", 
-                                                menu: "select-block-list" });
-        oBlockButton.getMenu().subscribe("click", handleBButtonClick);
-    }
-    
+        oFrontpageButton = new eZFlowMenuButton( "select-frontpage-button", "select-frontpage-list" );
+        oFrontpageButton.onSelect( handleFButtonClick );
+
+        oZoneButton = new eZFlowMenuButton( "select-zone-button", "select-zone-list" );
+        oZoneButton.onSelect( handleZButtonClick );
+
+        oBlockButton = new eZFlowMenuButton( "select-block-button", "select-block-list" );
+        oBlockButton.onSelect( handleBButtonClick );
+    };
+
     return ret;
-    
-}();
+
+}( jQuery );
+
+/*
+ * Templates without inline code: the push form (page/push.tpl) carries its settings in data-ezflow-push (JSON:
+ * requesturl, nodename, imagepath, nodeid) and the placement tools start from them when the page is ready, the way
+ * the inline "eZPushToBlock.cfg = { ... }; eZPushToBlock.init();" did. Set up once, however often this file is printed.
+ */
+( function( $ )
+{
+    if ( eZPushToBlock.dataSetup ) return;
+    eZPushToBlock.dataSetup = true;
+
+    $( function()
+    {
+        var form = $( '[data-ezflow-push]' ).first();
+        if ( !form.length ) return;
+        try
+        {
+            eZPushToBlock.cfg = JSON.parse( form.attr( 'data-ezflow-push' ) );
+        }
+        catch ( e )
+        {
+            return;
+        }
+        eZPushToBlock.init();
+    } );
+} )( jQuery );

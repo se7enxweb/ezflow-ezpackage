@@ -381,7 +381,7 @@
     </message>
     <message>
         <source>m</source>
-        <translation>m</translation>
+        <translation>min</translation>
     </message>
     <message>
         <source>s</source>
@@ -445,7 +445,7 @@
     </message>
     <message>
         <source>Online:</source>
-        <translation>Online:</translation>
+        <translation>On-line:</translation>
     </message>
     <message>
         <source>History:</source>
@@ -469,7 +469,7 @@
     </message>
     <message>
         <source>Publishing schedule for: </source>
-        <translation>Programação de publicação para:</translation>
+        <translation>Programação de publicação para: </translation>
     </message>
 </context>
 <context>
@@ -501,24 +501,8 @@
         <translation>Definir Layout</translation>
     </message>
     <message>
-        <source>Block name:</source>
-        <translation type="obsolete">Nome do bloco:</translation>
-    </message>
-    <message>
-        <source>Block type:</source>
-        <translation type="obsolete">Tipo de bloco:</translation>
-    </message>
-    <message>
         <source>Add block</source>
         <translation>Adicionar bloco</translation>
-    </message>
-    <message>
-        <source>Expand</source>
-        <translation type="obsolete">Expandir</translation>
-    </message>
-    <message>
-        <source>Collapse</source>
-        <translation type="obsolete">Recolher</translation>
     </message>
     <message>
         <source>Expand All</source>
@@ -527,6 +511,22 @@
     <message>
         <source>Collapse All</source>
         <translation>Contrair tudo</translation>
+    </message>
+    <message>
+        <source>Block name:</source>
+        <translation>Nome do bloco:</translation>
+    </message>
+    <message>
+        <source>Block type:</source>
+        <translation>Tipo de bloco:</translation>
+    </message>
+    <message>
+        <source>Expand</source>
+        <translation>Expandir</translation>
+    </message>
+    <message>
+        <source>Collapse</source>
+        <translation>Recolher</translation>
     </message>
 </context>
 <context>
@@ -567,12 +567,12 @@
 <context>
     <name>ezflow/push</name>
     <message>
-        <source>Add to block in frontpage</source>
-        <translation type="obsolete">Colocar em um bloco</translation>
-    </message>
-    <message>
         <source>Push to block</source>
         <translation>Empurrar para o bloco</translation>
+    </message>
+    <message>
+        <source>Add to block in frontpage</source>
+        <translation>Adicionar a um bloco da página inicial</translation>
     </message>
 </context>
 <context>

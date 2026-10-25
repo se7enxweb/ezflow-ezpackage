@@ -42,7 +42,7 @@
                 </div>
             {/if}
             <div id="nav-menu">
-                <p id="nav-menu-handler">{'Navigation'|i18n('design/iphone/pagelayout')}</p>
+                <p id="nav-menu-handler" data-ezflow-nav-toggle="nav-menu-items">{'Navigation'|i18n('design/iphone/pagelayout')}</p>
                 <div id="nav-menu-items" style="display: none">
                     {def $root_node = fetch( 'content', 'node', hash( 'node_id', $module_result.content_info.node_id ) )
                          $menu_items = fetch( 'content', 'list', hash( 'parent_node_id', $root_node.node_id,
@@ -59,32 +59,8 @@
                     
                     {undef $root_node $menu_items}
                 </div>
-                {ezscript_require( 'ezjsc::yui3' )}
-                <script type="text/javascript">
-                {literal}
-                    YUI(YUI3_config).use('node','dom','event','anim', function(Y)  {
-                        Y.one('#nav-menu-handler').on('click', function(e) {
-                            var node = Y.one('#nav-menu-items');
-                            node.setStyle( 'display', 'block' );
-                                                                                        
-                            var anim = new Y.Anim({ node: node,
-                                                    from: { height: 0 },
-                                                    to: { height: function(node) {
-                                                                    return node.get('scrollHeight');
-                                                        } },
-                                                    easing: Y.Easing.easeOut 
-                                                 });
-                            anim.on( 'start', function(e) {
-                                this.get('node').setStyle( 'height', '0px' );
-                            } );
-                            anim.on( 'end', function(e) {
-                                this.get('node').addClass( 'nav-menu-expanded' );
-                            });
-                            anim.run();
-                        });
-                    } );
-                {/literal}
-                </script>
+                {* The menu button slides the menu open (javascript/ezflow_blocks.js; no inline code). *}
+                {ezscript( array( 'ezflow_blocks.js' ) )}
             </div>
 
             {$module_result.content}

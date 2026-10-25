@@ -117,22 +117,12 @@
     {else}
         <form name="embed_form" id="embed_form" action="#">
             <label>Embed code:</label>
-            <input size="45" name="embed_url" type="text" readonly="readonly" value="{$embed_code|wash}" onclick="javascript:document.embed_form.embed_url.focus() ;document.embed_form.embed_url.select();" />
+            <input size="45" name="embed_url" type="text" readonly="readonly" value="{$embed_code|wash}" data-ezflow-select-on-click="1" />
+            {ezscript_require( array( 'ezflow_blocks.js' ) )}
         </form>
     {/if}
 {else}
-    <script type="text/javascript">
-        insertMedia( '<object type="application/x-shockwave-flash" data="{$flash_player}" width="{$width}" height="{$height}"> ');
-        insertMedia( '<param name="movie" value="{$flash_player}" /> ');
-        insertMedia( '<param name="scale" value="exactfit" /> ');
-        insertMedia( '<param name="allowScriptAccess" value="sameDomain" />');
-        insertMedia( '<param name="allowFullScreen" value="true" />');
-        insertMedia( '<param name="flashvars" value="{$flash_var_value}" />');
-        insertMedia( '<p>No <a href="http://www.macromedia.com/go/getflashplayer">Flash player</a> avaliable!</p>');
-        insertMedia( '</object>' );
-    </script>
-
-    <noscript>
+    {* The player, printed directly (it was written by an inline script before; no inline code). *}
     <object type="application/x-shockwave-flash" data="{$flash_player}" width="{$width}" height="{$height}">          
         <param name="movie" value="{$flash_player}" />
         <param name="scale" value="exactfit" />
@@ -141,5 +131,4 @@
         <param name="flashvars" value="{$flash_var_value}" />
         <p>No <a href="http://www.macromedia.com/go/getflashplayer">Flash player</a> avaliable!</p>
     </object>
-    </noscript>
 {/if}

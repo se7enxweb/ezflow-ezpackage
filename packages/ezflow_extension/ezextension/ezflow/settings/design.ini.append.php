@@ -8,4 +8,6 @@ DesignExtensions[]=ezflow
 
 [StylesheetSettings]
 CSSFileList[]=ezflow.css
+# The admin templates' own styles (no inline CSS in the templates)
+BackendCSSFileList[]=ezflow_admin.css
 */ ?>

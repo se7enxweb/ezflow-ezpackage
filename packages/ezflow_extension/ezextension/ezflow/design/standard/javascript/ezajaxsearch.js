@@ -1,21 +1,30 @@
+/**
+ * AJAX search used by the frontpage edit views and the search block
+ * (Exponential, jQuery + ezjsc::jqueryio).
+ *
+ *   eZAJAXSearch.cfg = { searchstring: '#id', searchbutton: '#id', searchresults: '#id',
+ *                        resulttemplate: '...', noresulttemplate: '...', dateformattype: 'shortdatetime',
+ *                        customSearchAttributes: [ '#id', ... ], backendUri: 'ezjsc::search' };
+ *   eZAJAXSearch.init();
+ */
 var eZAJAXSearch = function()
 {
     var ret = {};
 
-    var yCallback = function(Y, result)
+    var jCallback = function($)
     {
-        var successCallBack = function(id, o)
+        var successCallBack = function(data)
         {
-            if (o.responseJSON !== undefined)
+            if (data !== undefined && data !== null)
             {
-                var response = o.responseJSON;
+                var response = data;
 
-                if (response.content.SearchResult !== undefined)
+                if (response.content && response.content.SearchResult !== undefined)
                 {
                     var itemCount = response.content.SearchResult.length;
 
-                    var resultsTarget = Y.one(ret.cfg.searchresults);
-                    resultsTarget.set('innerHTML', '');
+                    var resultsTarget = $(ret.cfg.searchresults);
+                    resultsTarget.html('');
                     resultsTarget.addClass('loading');
 
                     if( itemCount == 0 )
@@ -23,8 +32,7 @@ var eZAJAXSearch = function()
                         var template = ret.cfg.noresulttemplate;
                         template = template.replace(/\{+search_string+\}/, response.content.SearchString);
 
-                        var itemContainer = Y.Node.create(template);
-                        resultsTarget.appendChild(itemContainer);
+                        resultsTarget.append($.parseHTML(template));
                     }
 
                     for(var i = 0; i < itemCount; i++)
@@ -48,46 +56,46 @@ var eZAJAXSearch = function()
                         template = template.replace(/\{+object_id+\}/, item.id);
                         template = template.replace(/\{+node_id+\}/, item.node_id);
 
-                        var itemContainer = Y.Node.create(template);
-
-                        resultsTarget.appendChild(itemContainer);
+                        resultsTarget.append($.parseHTML(template));
                     }
 
                     resultsTarget.removeClass('loading');
                 }
             }
-        }
+        };
 
         var getValueForSelector = function(sel)
         {
-            var value, node = Y.one(sel);
+            var value, node = $(sel).first();
 
-            if ( node )
+            if ( node.length )
             {
-                if ( node.get('nodeName').toLowerCase() === 'input'
-                     && ( node.get('type') === 'radio' || node.get('type') === 'checkbox') )
+                var nodeName = node[0].nodeName.toLowerCase();
+                if ( nodeName === 'input'
+                     && ( node[0].type === 'radio' || node[0].type === 'checkbox') )
                 {
-                    value = (Y.one(sel + ':checked') != null) ? Y.one(sel + ':checked').get('value') : null;
+                    var checked = $(sel).filter(':checked').first();
+                    value = checked.length ? checked.val() : null;
                 }
-                else if (node.get('nodeName').toLowerCase() == 'select'
-                                && node.hasAttribute('multiple'))
+                else if (nodeName == 'select'
+                                && node[0].hasAttribute('multiple'))
                 {
                     value = [];
-                    node.get('options').each(function( option )
+                    $.each( node[0].options, function( i, option )
                     {
-                        if ( option.get('selected') )
-                            value.push( option.get('value') );
+                        if ( option.selected )
+                            value.push( option.value );
                     });
                     value = value.join(',');
                 }
                 else
                 {
-                    value = node.get('value');
+                    value = node.val();
                 }
             }
 
             return value;
-        }
+        };
 
         var performSearch = function()
         {
@@ -127,7 +135,8 @@ var eZAJAXSearch = function()
             {
                 for ( var i = 0, l = ret.cfg.customSearchAttributes.length; i < l; i++ )
                 {
-                    data += '&' + Y.one( ret.cfg.customSearchAttributes[i] ).get('name') + '=' + Y.one( ret.cfg.customSearchAttributes[i] ).get('value'); 
+                    var attribute = $( ret.cfg.customSearchAttributes[i] ).first();
+                    data += '&' + attribute.attr('name') + '=' + attribute.val();
                 }
             }
 
@@ -135,15 +144,15 @@ var eZAJAXSearch = function()
 
             if(searchString !== '')
             {
-                Y.io.ez(backendUri, {on: {success: successCallBack}, method: 'POST', data: data });
+                $.ez(backendUri, data, successCallBack);
             }
-        }
+        };
 
         var handleClick = function(e)
         {
             performSearch();
             e.preventDefault();
-        }
+        };
 
         var handleKeyPress = function(e)
         {
@@ -151,20 +160,69 @@ var eZAJAXSearch = function()
             if (key === 13)
             {
                 performSearch();
-                e.halt();
+                e.preventDefault();
+                e.stopPropagation();
                 return false;
             }
-        }
+        };
 
-        Y.one(ret.cfg.searchbutton).on('click', handleClick);
-        Y.one(ret.cfg.searchstring).on('keypress', handleKeyPress);
-    }
+        $(ret.cfg.searchbutton).first().on('click', handleClick);
+        $(ret.cfg.searchstring).first().on('keypress', handleKeyPress);
+    };
     ret.cfg = {};
 
     ret.init = function()
     {
-        var ins = YUI(YUI3_config).use('node', 'event', 'io-ez', yCallback);
-    }
-    
+        jQuery(jCallback);
+    };
+
     return ret;
 }();
+
+/*
+ * Templates without inline code: an element with data-ezflow-ajaxsearch carries the settings above as data
+ * attributes (data-search-string, data-search-button, data-search-results, data-date-format, data-result-template,
+ * data-noresult-template, data-backend-uri; data-custom-search-attributes as a JSON list of selectors) and the search starts from them when the page is ready, the way the
+ * inline "eZAJAXSearch.cfg = { ... }; eZAJAXSearch.init();" did. Set up once, however often this file is printed.
+ */
+( function()
+{
+    if ( eZAJAXSearch.dataSetup ) return;
+    eZAJAXSearch.dataSetup = true;
+
+    var keys = { 'searchstring': 'data-search-string', 'searchbutton': 'data-search-button',
+                 'searchresults': 'data-search-results', 'dateformattype': 'data-date-format',
+                 'resulttemplate': 'data-result-template', 'noresulttemplate': 'data-noresult-template',
+                 'backendUri': 'data-backend-uri' };
+
+    var start = function()
+    {
+        var boxes = document.querySelectorAll( '[data-ezflow-ajaxsearch]' );
+        for ( var i = 0; i < boxes.length; i++ )
+        {
+            var box = boxes[i];
+            if ( box.getAttribute( 'data-ezflow-ajaxsearch-ready' ) ) continue;
+            box.setAttribute( 'data-ezflow-ajaxsearch-ready', '1' );
+            var cfg = {};
+            for ( var key in keys )
+            {
+                if ( box.hasAttribute( keys[key] ) ) cfg[key] = box.getAttribute( keys[key] );
+            }
+            if ( box.hasAttribute( 'data-custom-search-attributes' ) )
+            {
+                try
+                {
+                    cfg.customSearchAttributes = JSON.parse( box.getAttribute( 'data-custom-search-attributes' ) );
+                }
+                catch ( e ) {}
+            }
+            eZAJAXSearch.cfg = cfg;
+            eZAJAXSearch.init();
+        }
+    };
+
+    if ( document.readyState === 'loading' )
+        document.addEventListener( 'DOMContentLoaded', start );
+    else
+        start();
+} )();

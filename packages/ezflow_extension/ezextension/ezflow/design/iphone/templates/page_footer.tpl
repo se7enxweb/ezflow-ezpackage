@@ -10,7 +10,7 @@
         {$pagedesign.data_map.footer_text.content} 
     {/if}
     {if $pagedesign.data_map.hide_powered_by.data_int|not}
-    Powered by <a href="http://ez.no" title="eZ Publish Content Management System">eZ Publish&#8482;</a> Content Management System.
+    Powered by <a href="https://exponential.earth" title="Exponential Content Management System">Exponential</a> Content Management System.
     {/if}
     <div class="page-view-type">
         {'Visit:'|i18n('design/iphone/page_footer')} <span class="mobile-site">{'mobile site'|i18n('design/iphone/page_footer')}</span> | <a href="{'/'|ezroot('no')}" class="full-site">{'full site'|i18n('design/iphone/page_footer')}</a>

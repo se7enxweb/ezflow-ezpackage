@@ -3,6 +3,7 @@
 // ## BEGIN COPYRIGHT, LICENSE AND WARRANTY NOTICE ##
 // SOFTWARE NAME: eZ Flow
 // SOFTWARE RELEASE: 1.1-0
+// COPYRIGHT NOTICE: Copyright (C) 1998 - 2026 7x & Exponential Foundation
 // COPYRIGHT NOTICE: Copyright (C) 1999-2014 eZ Systems AS
 // SOFTWARE LICENSE: GNU General Public License v2.0
 // NOTICE: >
@@ -66,7 +67,7 @@ $locale = eZLocale::instance();
 $languageCode = $locale->httpLocaleCode();
 
 $nodeResult['content_info']['persistent_variable']['extra_template_list'] = array( 'timeline.tpl' );
-$nodeResult['content_info']['persistent_variable']['pagestyle_css_classes'] = array( 'yui-skin-sam', 'yui-skin-ezflow' );
+$nodeResult['content_info']['persistent_variable']['pagestyle_css_classes'] = array( 'ezflow-skin' );
 
 $site = array( 'title' => $ini->variable( 'SiteSettings', 'SiteName' ),
                'design' => $ini->variable( 'DesignSettings', 'SiteDesign' ),

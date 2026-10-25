@@ -1,73 +1,174 @@
-YAHOO.namespace("ez");
+/**
+ * Block tools of the page datatype editor (Exponential, jQuery):
+ *
+ * - eZFlow.BlockDD: drag and drop ordering of the items in a block's queue
+ *   and online tables, stored through the ezflow/request view.
+ * - eZFlow.BlockCollapse: expand / collapse of the blocks, remembered in
+ *   localStorage (or in the eZPageBlockState cookie as a fallback).
+ * - BlockDDInit(): drag and drop ordering of the blocks of the active zone and
+ *   the move up / move down buttons, stored through ezflow::updateblockorder.
+ */
 
-YAHOO.ez.BlockDD = function() {
+var eZFlow = window.eZFlow || {};
+window.eZFlow = eZFlow;
 
-    var cfg = {};
-    var Dom = YAHOO.util.Dom;
-    var Event = YAHOO.util.Event;
-    var DDM = YAHOO.util.DragDropMgr;
+(function( $ ) {
 
-    YAHOO.ez.DDList = function(id, sGroup, config) {
-        YAHOO.ez.DDList.superclass.constructor.call(this, id, sGroup, config);
+    if ( $.easing.ezflowEaseOut === undefined ) {
+        // quadratic ease out
+        $.easing.ezflowEaseOut = function( p ) {
+            return 1 - ( 1 - p ) * ( 1 - p );
+        };
+    }
 
-        var el = this.getDragEl();
-        Dom.setStyle(el, "opacity", 0.67);
+    /**
+     * Proxy drag: drags a copy (the proxy) of an element with the pointer while
+     * the element stays in the document, and reports which of the candidate
+     * elements the pointer is over, together with the vertical direction.
+     *
+     * options: invalid (selector of children that never start a drag),
+     *          stopPropagation (true: a drag started here never reaches the
+     *          parents' drags), constrain (element the proxy stays inside), candidates (function
+     *          returning the drop elements), start( proxy ), over( target, goingUp ),
+     *          end( proxy ).
+     */
+    eZFlow.proxyDrag = function( el, options ) {
+        var $el = $( el ), ns = '.ezflowdrag';
 
-        this.goingUp = false;
-        this.lastY = 0;
+        $el.off( 'pointerdown' + ns ).on( 'pointerdown' + ns, function( e ) {
+            if ( e.pointerType === 'mouse' && e.button !== 0 ) {
+                return;
+            }
+            if ( options.invalid && $( e.target ).closest( options.invalid, el ).length ) {
+                return;
+            }
+            if ( !$( e.target ).is( 'input, select, textarea, option, button' ) ) {
+                e.preventDefault();
+            }
+            if ( options.stopPropagation ) {
+                // an item row being dragged does not drag its block as well
+                e.stopPropagation();
+            }
+
+            var startX = e.pageX, startY = e.pageY,
+                pageX = startX, pageY = startY,
+                lastY = startY, goingUp = false,
+                dragging = false, proxy = null, offsetX = 0, offsetY = 0,
+                timer = null;
+
+            var moveProxy = function() {
+                var left = pageX - offsetX, top = pageY - offsetY;
+
+                if ( options.constrain ) {
+                    var $c = $( options.constrain ), co = $c.offset();
+                    if ( co ) {
+                        left = Math.max( co.left, Math.min( left, co.left + $c.outerWidth() - proxy.offsetWidth ) );
+                        top = Math.max( co.top, Math.min( top, co.top + $c.outerHeight() - proxy.offsetHeight ) );
+                    }
+                }
+                proxy.style.left = left + 'px';
+                proxy.style.top = top + 'px';
+            };
+
+            var startDrag = function() {
+                if ( dragging ) {
+                    return;
+                }
+                dragging = true;
+                clearTimeout( timer );
+
+                var o = $el.offset();
+                offsetX = startX - o.left;
+                offsetY = startY - o.top;
+
+                proxy = document.createElement( 'div' );
+                proxy.className = 'ezflow-drag-proxy';
+                $( proxy ).css( {
+                    position: 'absolute',
+                    zIndex: 999,
+                    boxSizing: 'border-box',
+                    overflow: 'hidden',
+                    cursor: 'move',
+                    pointerEvents: 'none',
+                    left: o.left + 'px',
+                    top: o.top + 'px',
+                    width: el.offsetWidth + 'px',
+                    height: el.offsetHeight + 'px'
+                } );
+                document.body.appendChild( proxy );
+                options.start( proxy );
+                moveProxy();
+            };
+
+            var onMove = function( ev ) {
+                pageX = ev.pageX;
+                pageY = ev.pageY;
+
+                if ( !dragging ) {
+                    if ( Math.abs( pageX - startX ) > 3 || Math.abs( pageY - startY ) > 3 ) {
+                        startDrag();
+                    } else {
+                        return;
+                    }
+                }
+
+                moveProxy();
+
+                if ( pageY < lastY ) {
+                    goingUp = true;
+                } else if ( pageY > lastY ) {
+                    goingUp = false;
+                }
+                lastY = pageY;
+
+                var candidates = options.candidates();
+                for ( var i = 0; i < candidates.length; i++ ) {
+                    var target = candidates[i];
+                    if ( target === el ) {
+                        continue;
+                    }
+                    var r = target.getBoundingClientRect(),
+                        x = pageX - window.pageXOffset,
+                        y = pageY - window.pageYOffset;
+                    if ( x >= r.left && x <= r.right && y >= r.top && y <= r.bottom ) {
+                        options.over( target, goingUp );
+                        break;
+                    }
+                }
+            };
+
+            var onUp = function() {
+                clearTimeout( timer );
+                $( document ).off( ns );
+                if ( dragging ) {
+                    options.end( proxy );
+                }
+            };
+
+            // a press held for a second starts the drag without moving
+            timer = setTimeout( function() {
+                startDrag();
+            }, 1000 );
+
+            $( document )
+                .on( 'pointermove' + ns, onMove )
+                .on( 'pointerup' + ns + ' pointercancel' + ns, onUp );
+        } );
     };
 
-    YAHOO.extend(YAHOO.ez.DDList, YAHOO.util.DDProxy, {
+    eZFlow.BlockDD = function() {
 
-        startDrag: function(x, y) {
-            var dragEl = this.getDragEl();
-            var clickEl = this.getEl();
-            Dom.setStyle(clickEl, "visibility", "hidden");
+        var cfg = {};
 
-            dragEl.innerHTML = clickEl.innerHTML;
-
-            Dom.setStyle(dragEl, "color", Dom.getStyle(clickEl, "color"));
-            Dom.setStyle(dragEl, "backgroundColor", Dom.getStyle(clickEl, "backgroundColor"));
-            Dom.setStyle(dragEl, "border", "2px solid gray");
-        },
-
-        endDrag: function(e) {
-            var srcEl = this.getEl();
-            var proxy = this.getDragEl();
-
-            Dom.setStyle(proxy, "visibility", "");
-            var a = new YAHOO.util.Motion( 
-                proxy, { 
-                    points: { 
-                        to: Dom.getXY(srcEl)
-                    }
-                }, 
-                0.2, 
-                YAHOO.util.Easing.easeOut);
-            var proxyid = proxy.id;
-            var thisid = this.id;
-
-            a.onComplete.subscribe(function() {
-                Dom.setStyle(proxyid, "visibility", "hidden");
-                Dom.setStyle(thisid, "visibility", "");
-                //clear the time left of items in rotation queue
-                var tableBody = srcEl.parentNode;
-                var timeLeft = Dom.getElementsByClassName("rotation-time-left", "span", tableBody);
-                for (i=0;i<timeLeft.length;i++){
-                    timeLeft[i].innerHTML="";
-                }
-            });
-            a.animate();
-
-            var tableBody = srcEl.parentNode;
+        var storeItemOrder = function( tableBody ) {
             var postData = "",
                 _tokenNode = document.getElementById('ezxform_token_js');
             if ( _tokenNode ) {
                 postData = 'ezxform_token=' + _tokenNode.getAttribute('title') + '&';
             }
-            var items = Dom.getElementsByClassName("handler", "td", tableBody);
-            
-            for (i=0;i<items.length;i++) {
+            var items = $( tableBody ).find( 'td.handler' );
+
+            for (var i = 0; i < items.length; i++) {
                 postData += "Items%5B%5D=" + items[i].id + "&";
             }
 
@@ -75,477 +176,456 @@ YAHOO.ez.BlockDD = function() {
 
             postData += "Block=" + tableID + "&ContentObjectAttributeID=" + cfg.attributeid + "&Version=" + cfg.version;
 
-            YAHOO.util.Connect.asyncRequest( 'POST', cfg.url, '', postData );
-            
-        },
+            $.ajax( { type: 'POST', url: cfg.url, data: postData } );
+        };
 
-        onDragDrop: function(e, id) {
-            if (DDM.interactionInfo.drop.length === 1) {
-                var pt = DDM.interactionInfo.point; 
-                var region = DDM.interactionInfo.sourceRegion; 
-
-                if (!region.intersect(pt)) {
-                    var destEl = Dom.get(id);
-                    var srcEl = this.getEl();
-                    var destDD = DDM.getDDById(id);
-                    var srcTargetID = srcEl.parentNode.parentNode.id;
-                    var destTargetID = destEl.parentNode.parentNode.id;
-
-                    if(srcTargetID == destTargetID) {
-                        destEl.appendChild(this.getEl());
-                        destDD.isEmpty = false;
+        var initRow = function( row ) {
+            eZFlow.proxyDrag( row, {
+                invalid: 'a',
+                stopPropagation: true,
+                candidates: function() {
+                    return $( row.parentNode ).children( 'tr' ).filter( function() {
+                        return $( this ).children( 'td.handler' ).length > 0;
+                    } ).get();
+                },
+                start: function( proxy ) {
+                    $( row ).css( 'visibility', 'hidden' );
+                    proxy.innerHTML = row.innerHTML;
+                    $( proxy ).css( {
+                        opacity: 0.67,
+                        color: $( row ).css( 'color' ),
+                        backgroundColor: $( row ).css( 'background-color' ),
+                        border: '2px solid gray'
+                    } );
+                },
+                over: function( destEl, goingUp ) {
+                    if ( destEl.parentNode.parentNode.id === row.parentNode.parentNode.id ) {
+                        var p = destEl.parentNode;
+                        if ( goingUp ) {
+                            p.insertBefore( row, destEl );
+                        } else {
+                            p.insertBefore( row, destEl.nextSibling );
+                        }
                     }
-                
-                    DDM.refreshCache();
+                },
+                end: function( proxy ) {
+                    var tableBody = row.parentNode,
+                        to = $( row ).offset();
+
+                    $( proxy ).animate( { left: to.left, top: to.top }, 200, 'ezflowEaseOut', function() {
+                        $( proxy ).remove();
+                        $( row ).css( 'visibility', '' );
+                        // clear the time left of items in rotation queue
+                        $( tableBody ).find( 'span.rotation-time-left' ).html( '' );
+                    } );
+
+                    storeItemOrder( tableBody );
+                }
+            } );
+        };
+
+        return {
+
+            init: function() {
+                this.initCfg();
+                this.initDragHandlers();
+            },
+
+            initDragHandlers: function() {
+                $( '#zone-tabs-container' ).find( 'table.queue, table.online' ).each( function() {
+                    $( this ).find( 'td.handler' ).each( function() {
+                        initRow( this.parentNode );
+                    } );
+                } );
+            },
+
+            initCfg: function() {
+                cfg = this.cfg;
+            },
+
+            cfg: {}
+        };
+
+    }();
+
+    // function taken from the modernizr library
+    eZFlow.hasStorage = (function() {
+        var mod = '_ez_ls_check';
+
+        try {
+            localStorage.setItem(mod, mod);
+            localStorage.removeItem(mod);
+            return true;
+        } catch(e) {
+            return false;
+        }
+    }());
+
+    // Sub value cookie ( name=sub1=value1&sub2=value2 ), used when localStorage is not available
+    eZFlow.Cookie = {
+        getSubs: function( name ) {
+            var parts = document.cookie ? document.cookie.split( /;\s*/ ) : [], subs = {}, i, j, pair, value;
+
+            for ( i = 0; i < parts.length; i++ ) {
+                if ( parts[i].indexOf( name + '=' ) === 0 ) {
+                    value = parts[i].substring( name.length + 1 );
+                    if ( value === '' ) {
+                        return subs;
+                    }
+                    pair = value.split( '&' );
+                    for ( j = 0; j < pair.length; j++ ) {
+                        var kv = pair[j].split( '=' );
+                        subs[ decodeURIComponent( kv[0] ) ] = decodeURIComponent( kv.slice( 1 ).join( '=' ) );
+                    }
+                    return subs;
                 }
             }
+            return null;
         },
-
-        onDrag: function(e) {
-            var y = Event.getPageY(e);
-
-            if (y < this.lastY) {
-                this.goingUp = true;
-            } else if (y > this.lastY) {
-                this.goingUp = false;
-            }
-
-            this.lastY = y;
-        },
-
-        onDragOver: function(e, id) {
-            var srcEl = this.getEl();
-            var destEl = Dom.get(id);
-            var srcTargetID = srcEl.parentNode.parentNode.id;
-            var destTargetID = destEl.parentNode.parentNode.id;
-
-            if (destEl.nodeName.toLowerCase() == "tr" && 
-                srcTargetID == destTargetID) {
-                var orig_p = srcEl.parentNode;
-                var p = destEl.parentNode;
-
-                if (this.goingUp) {
-                    p.insertBefore(srcEl, destEl);
-                } else {
-                    p.insertBefore(srcEl, destEl.nextSibling);
-                }
-
-                DDM.refreshCache();
-            }
-        }
-    });
-
-    return {
-        
-        init: function() {
-            this.initCfg();
-            this.initDragHandlers();
-        },
-        
-        initDragHandlers: function() {
-            var qTable = Dom.getElementsByClassName("queue", "table", "zone-tabs-container");
-            var oTable = Dom.getElementsByClassName("online", "table", "zone-tabs-container");
-
-            for(var i = 0; i < qTable.length; i+=1) {
-                new YAHOO.util.DDTarget(qTable[i].id);
-                var qItems = Dom.getElementsByClassName("handler", "td", qTable[i].id);
-
-                for(var j = 0; j < qItems.length; j+=1) {
-                    new YAHOO.ez.DDList(qItems[j].parentNode.id);
+        setSubs: function( name, subs, path ) {
+            var list = [], key;
+            for ( key in subs ) {
+                if ( Object.prototype.hasOwnProperty.call( subs, key ) ) {
+                    list.push( encodeURIComponent( key ) + '=' + encodeURIComponent( subs[key] ) );
                 }
             }
-            for(var i = 0; i < oTable.length; i+=1) {
-                new YAHOO.util.DDTarget(oTable[i].id);
-                var oItems = Dom.getElementsByClassName("handler", "td", oTable[i].id);
-
-                for(var j = 0; j < oItems.length; j+=1) {
-                    new YAHOO.ez.DDList(oItems[j].parentNode.id);
+            document.cookie = name + '=' + list.join( '&' ) + '; path=' + ( path || '/' );
+        },
+        getSub: function( name, sub ) {
+            var subs = this.getSubs( name );
+            return ( subs && Object.prototype.hasOwnProperty.call( subs, sub ) ) ? subs[sub] : null;
+        },
+        setSub: function( name, sub, value, path ) {
+            var subs = this.getSubs( name ) || {};
+            subs[sub] = value;
+            this.setSubs( name, subs, path );
+        },
+        removeSub: function( name, sub, path ) {
+            var subs = this.getSubs( name ) || {};
+            delete subs[sub];
+            this.setSubs( name, subs, path );
+        },
+        get: function( name ) {
+            var parts = document.cookie ? document.cookie.split( /;\s*/ ) : [], i;
+            for ( i = 0; i < parts.length; i++ ) {
+                if ( parts[i].indexOf( name + '=' ) === 0 ) {
+                    return decodeURIComponent( parts[i].substring( name.length + 1 ) );
                 }
             }
+            return null;
         },
-        
-        initCfg: function() {
-            cfg = this.cfg;
-        },
-        
-        cfg: {}
-    };
-
-}();
-
-// function taken from the modernizr library
-YAHOO.ez.hasStorage = (function() {
-    var mod = '_ez_ls_check';
-
-    try {
-        localStorage.setItem(mod, mod);
-        localStorage.removeItem(mod);
-        return true;
-    } catch(e) {
-        return false;
-    }
-}());
-
-YAHOO.ez.BlockCollapse = function(){
-    var Dom = YAHOO.util.Dom,
-        Event = YAHOO.util.Event,
-        Cookie;
-
-    if ( !YAHOO.ez.hasStorage )
-    {
-        Cookie = YAHOO.util.Cookie;
-    }
-
-    var getTriggers = function() {
-        var emTriggers = Dom.getElementsByClassName( "trigger", "em", "zone-tabs-container" );
-        var aTriggers = Dom.getElementsByClassName( "trigger", "a", "zone-tabs-container" );
-        var buttonTriggers = Dom.getElementsByClassName( "trigger", "button", "zone-tabs-container" );
-        var triggers = emTriggers.concat(aTriggers).concat(buttonTriggers);
-
-        return triggers;
-    };
-    
-    var exec = function() {
-        var triggers = getTriggers();
-
-        for( var i = 0; i < triggers.length; i++ ) {
-            var triggerEl = triggers[i];
-            
-            setTriggerEvent(triggerEl);
-
-            if(triggerEl.nodeName.toLowerCase() === "em") {
-                updateBlockView(triggerEl);
-            }
-        }
-    };
-    
-    var setTriggerEvent = function(o) {
-        Event.purgeElement(o);
-        Event.on(o, "click", triggerAction, o, true);
-    };
-
-    var getBlockContainer = function(o) {
-        var currentEl = o;
-        var isContainer = false;
-        
-        while(!isContainer) {
-            if( Dom.hasClass(currentEl, "block-container") ) {
-                isContainer = true;
-            }
-            else {
-                currentEl = currentEl.parentNode;
-            }
-        }
-        
-        return currentEl;
-    }
-
-    var getCollapsedEl = function(o) {
-        var blockContainer = getBlockContainer(o);
-        var collapsedEl = Dom.getElementsByClassName("collapsed", "div", blockContainer)[0];
-        
-        return collapsedEl;
-    };
-    
-    var getExpandedEl = function(o) {
-        var blockContainer = getBlockContainer(o);
-        var expandedEl = Dom.getElementsByClassName("expanded", "div", blockContainer)[0];
-        
-        return expandedEl;
-    };
-    
-    var getBlockID = function(o) {
-        var blockContainer = getBlockContainer(o);
-        var id = blockContainer.id;
-        
-        return id;
-    };
-
-    function setStorageItem(item) {
-
-        if( YAHOO.ez.hasStorage ){
-            localStorage.setItem( "eZPBS_" + item, "1" );
-        }
-        else{
-            Cookie.setSub("eZPageBlockState", item, "0", {path: "/"});
+        set: function( name, value, path ) {
+            document.cookie = name + '=' + encodeURIComponent( value ) + '; path=' + ( path || '/' );
         }
     };
 
-    function removeStorageItem(item) {
+    eZFlow.BlockCollapse = function(){
+        var Cookie;
 
-        if( YAHOO.ez.hasStorage ){
-            localStorage.removeItem( "eZPBS_" + item );
-        }
-        else{
-            Cookie.removeSub("eZPageBlockState", item, {path: "/"});
-        }
-    };
-    
-    function getStorageItemState(item) {
-
-        if( YAHOO.ez.hasStorage ){
-            return ( localStorage.getItem( "eZPBS_" + item ) === null )? "0" : "1";
-        }
-        else if (Cookie){
-            return (Cookie.getSub("eZPageBlockState", item) === null)? "0" : "1";
-        }
-        else{
-            return "0";
-        }
-    };
-    
-    var expandBlock = function(o) {
-        Dom.replaceClass(o,"expand", "collapse" );
-
-        var collapsedEl = getCollapsedEl(o);
-
-        if(collapsedEl) {
-            Dom.replaceClass( collapsedEl, "collapsed", "expanded" );
-        }
-        
-        // we save only expanded blocks
-        setStorageItem(getBlockID(o));
-    };
-    
-    var collapseBlock = function(o) {
-        Dom.replaceClass( o, "collapse", "expand" );
-            
-        var expandedEl = getExpandedEl(o);
-            
-        if(expandedEl) {
-            Dom.replaceClass( expandedEl, "expanded", "collapsed" );
-        }
-        
-        removeStorageItem(getBlockID(o));
-    };
-    
-    var updateBlockView = function(o) {
-        var state = getStorageItemState(getBlockID(o));
-
-        if(state == "1")
+        if ( !eZFlow.hasStorage )
         {
-            expandBlock(o);
+            Cookie = eZFlow.Cookie;
         }
-        else
-        {
-            collapseBlock(o);
+
+        var getTriggers = function() {
+            var container = $( '#zone-tabs-container' );
+            var emTriggers = container.find( 'em.trigger' ).get();
+            var aTriggers = container.find( 'a.trigger' ).get();
+            var buttonTriggers = container.find( 'button.trigger' ).get();
+
+            return emTriggers.concat(aTriggers).concat(buttonTriggers);
+        };
+
+        var exec = function() {
+            var triggers = getTriggers();
+
+            for( var i = 0; i < triggers.length; i++ ) {
+                var triggerEl = triggers[i];
+
+                setTriggerEvent(triggerEl);
+
+                if(triggerEl.nodeName.toLowerCase() === "em") {
+                    updateBlockView(triggerEl);
+                }
+            }
+        };
+
+        var setTriggerEvent = function(o) {
+            $( o ).off( 'click.ezflowcollapse' ).on( 'click.ezflowcollapse', function( e ) {
+                triggerAction( e, o );
+            } );
+        };
+
+        var getBlockContainer = function(o) {
+            return $( o ).closest( '.block-container' )[0];
+        };
+
+        var getCollapsedEl = function(o) {
+            return $( getBlockContainer(o) ).find( 'div.collapsed' )[0];
+        };
+
+        var getExpandedEl = function(o) {
+            return $( getBlockContainer(o) ).find( 'div.expanded' )[0];
+        };
+
+        var getBlockID = function(o) {
+            return getBlockContainer(o).id;
+        };
+
+        var replaceClass = function( el, oldClass, newClass ) {
+            $( el ).removeClass( oldClass ).addClass( newClass );
+        };
+
+        function setStorageItem(item) {
+
+            if( eZFlow.hasStorage ){
+                localStorage.setItem( "eZPBS_" + item, "1" );
+            }
+            else{
+                Cookie.setSub("eZPageBlockState", item, "0", "/");
+            }
         }
-    };
-    
-    var expandAll = function() {
-        var triggers = getTriggers();
-        
-        for( var i = 0; i < triggers.length; i++ ) {
-            var triggerEl = triggers[i];
-            
-            if(triggerEl.nodeName.toLowerCase() == "em") {
+
+        function removeStorageItem(item) {
+
+            if( eZFlow.hasStorage ){
+                localStorage.removeItem( "eZPBS_" + item );
+            }
+            else{
+                Cookie.removeSub("eZPageBlockState", item, "/");
+            }
+        }
+
+        function getStorageItemState(item) {
+
+            if( eZFlow.hasStorage ){
+                return ( localStorage.getItem( "eZPBS_" + item ) === null )? "0" : "1";
+            }
+            else if (Cookie){
+                return (Cookie.getSub("eZPageBlockState", item) === null)? "0" : "1";
+            }
+            else{
+                return "0";
+            }
+        }
+
+        var expandBlock = function(o) {
+            replaceClass( o, "expand", "collapse" );
+
+            var collapsedEl = getCollapsedEl(o);
+
+            if(collapsedEl) {
+                replaceClass( collapsedEl, "collapsed", "expanded" );
+            }
+
+            // we save only expanded blocks
+            setStorageItem(getBlockID(o));
+        };
+
+        var collapseBlock = function(o) {
+            replaceClass( o, "collapse", "expand" );
+
+            var expandedEl = getExpandedEl(o);
+
+            if(expandedEl) {
+                replaceClass( expandedEl, "expanded", "collapsed" );
+            }
+
+            removeStorageItem(getBlockID(o));
+        };
+
+        var updateBlockView = function(o) {
+            var state = getStorageItemState(getBlockID(o));
+
+            if(state == "1")
+            {
+                expandBlock(o);
+            }
+            else
+            {
+                collapseBlock(o);
+            }
+        };
+
+        var expandAll = function() {
+            var triggers = getTriggers();
+
+            for( var i = 0; i < triggers.length; i++ ) {
+                var triggerEl = triggers[i];
+
+                if(triggerEl.nodeName.toLowerCase() == "em") {
+                    expandBlock(triggerEl);
+                }
+            }
+        };
+
+        var collapseAll = function() {
+            var triggers = getTriggers();
+
+            for( var i = 0; i < triggers.length; i++ ) {
+                var triggerEl = triggers[i];
+
+                if(triggerEl.nodeName.toLowerCase() == "em") {
+                    collapseBlock(triggerEl);
+                }
+            }
+        };
+
+        var triggerAction = function(e, triggerEl) {
+            var $t = $( triggerEl );
+
+            if( $t.hasClass( "expand" ) ) {
                 expandBlock(triggerEl);
             }
-        }
-    };
-    
-    var collapseAll = function() {
-        var triggers = getTriggers();
-        
-        for( var i = 0; i < triggers.length; i++ ) {
-            var triggerEl = triggers[i];
-            
-            if(triggerEl.nodeName.toLowerCase() == "em") {
+            else if( $t.hasClass( "collapse" ) ) {
                 collapseBlock(triggerEl);
             }
-        }
-    };
-    
-    var triggerAction = function(e, triggerEl) {
-        if( Dom.hasClass( triggerEl, "expand" ) ) {
-            expandBlock(triggerEl);
-        }
-        else if( Dom.hasClass( triggerEl, "collapse" ) ) {
-            collapseBlock(triggerEl);
-        }
-        else if( Dom.hasClass( triggerEl, "expand-all" ) ) {
-            expandAll();
-        }
-        else if( Dom.hasClass( triggerEl, "collapse-all" ) ) {
-            collapseAll();
-        }
-        Event.preventDefault(e);
-    };
+            else if( $t.hasClass( "expand-all" ) ) {
+                expandAll();
+            }
+            else if( $t.hasClass( "collapse-all" ) ) {
+                collapseAll();
+            }
+            e.preventDefault();
+        };
 
-    return {
-        init: function() {
-            exec();
-        }
-    };
-}();
+        return {
+            init: function() {
+                exec();
+            }
+        };
+    }();
+
+})( jQuery );
 
 var BlockDDInit = function() {
-    YUI( YUI3_config ).use('dd-constrain', 'dd-proxy', 'dd-drop', 'io-ez', function(Y) {
-        Y.DD.DDM.on('drop:over', function(e) {
-            var drag = e.drag.get('node'), drop = e.drop.get('node');
-            
-            if (drop.get('tagName').toLowerCase() === 'div' && drop.get('parentNode').get('id') === drag.get('parentNode').get('id') ) {
-                if (!goingUp) {
-                    var dropSibling = drop.get('nextSibling');
-                    if (!dropSibling) {
-                        drop.get('parentNode').append(drag);
+    var $ = jQuery,
+        zoneSelector = '#zone-' + BlockDDInit.cfg.zone + '-blocks',
+        zoneNode = $( zoneSelector )[0];
+
+    function storeOrder(blocks) {
+        var data = '';
+
+        blocks.each(function() {
+            data += 'block_order%5B%5D=' + this.id;
+            data += '&';
+        });
+
+        data += 'contentobject_attribute_id=' + BlockDDInit.cfg.attributeid;
+        data += '&version=' + BlockDDInit.cfg.version;
+        data += '&zone=' + BlockDDInit.cfg.zone;
+        $.ez( 'ezflow::updateblockorder', data, _callBack );
+    }
+
+    function updateInputIndex(blocks) {
+        var index = 0;
+
+        blocks.each(function() {
+            $( this ).find( '.block-control' ).each( function() {
+                var input = this,
+                    name = input.getAttribute( 'name' );
+
+                if ( !name ) {
+                    return;
+                }
+
+                if( name.match(/([a-z]+)+_([\d]+)\[([\d]+)\]\[([\d]+)\]/) ) {
+                    name = name.replace( /([a-z]+)+_([\d]+)\[([\d]+)\]\[([\d]+)\]/, "$1_$2[$3][" + index + "]" );
+                } else if ( name.match(/([a-zA-Z+]+)\[([\d-\w_]+)-([\d]+)+(-[\w_]+)?\]/) ) {
+                    name = name.replace( /([a-zA-Z+]+)\[([\d-\w_]+)-([\d]+)+(-[\w_]+)?\]/, "$1[$2-" + index + "$4]" );
+                } else if ( name.match(/([a-zA-Z]+)+\_+([0-9])/) ) {
+                    name = name.replace( /([a-zA-Z]+)+\_+([0-9])/, "$1_" + index );
+                }
+
+                input.setAttribute( 'name', name );
+            } );
+
+            index++;
+        });
+    }
+
+    function _callBack() {
+
+    }
+
+    if ( !zoneNode ) {
+        return;
+    }
+
+    $( zoneNode ).children( '.block-container' ).each( function() {
+        var block = this;
+
+        eZFlow.proxyDrag( block, {
+            invalid: 'textarea, input, a, button, select',
+            constrain: zoneNode,
+            candidates: function() {
+                return $( block.parentNode ).children( '.block-container' ).get();
+            },
+            start: function( proxy ) {
+                $( block ).css( 'opacity', '.25' );
+                $( '<div></div>' ).addClass( 'block-container' ).html( block.innerHTML ).appendTo( proxy );
+                $( proxy ).css( {
+                    border: '1px solid #808080',
+                    opacity: '.5',
+                    borderColor: $( block ).css( 'border-top-color' ),
+                    backgroundColor: $( block ).css( 'background-color' )
+                } );
+            },
+            over: function( drop, goingUp ) {
+                if ( drop.parentNode.id === block.parentNode.id ) {
+                    if ( !goingUp ) {
+                        var dropSibling = drop.nextSibling;
+                        if ( !dropSibling ) {
+                            drop.parentNode.appendChild( block );
+                        } else {
+                            drop.parentNode.insertBefore( block, dropSibling );
+                        }
                     } else {
-                        drop.get('parentNode').insertBefore(drag, dropSibling);
+                        drop.parentNode.insertBefore( block, drop );
                     }
+                }
+            },
+            end: function( proxy ) {
+                var blocks = $( block.parentNode ).find( '.block-container' );
+
+                $( block ).css( { visibility: '', opacity: '1' } );
+                $( proxy ).remove();
+
+                updateInputIndex(blocks);
+                storeOrder(blocks);
+            }
+        } );
+    } );
+
+    // configuring the up and down button
+    $( zoneNode ).find( 'input[name*="_move_block"]' ).off( 'click.ezflowmove' ).on( 'click.ezflowmove', function (e) {
+        var blocks = $( zoneSelector + ' .block-container' ),
+            movedBlock = $( e.currentTarget ).closest( '.block-container' )[0],
+            goingUp = ( e.currentTarget.getAttribute( 'name' ).indexOf( 'move_block_up' ) !== -1 );
+
+        e.preventDefault();
+        blocks.each( function( i ) {
+            var refBlock;
+
+            if ( this.id === movedBlock.id ) {
+                if ( goingUp ) {
+                    refBlock = i > 0 ? blocks[i - 1] : null;
                 } else {
-                    drop.get('parentNode').insertBefore(drag, drop);
+                    refBlock = blocks[i + 1];
                 }
-                e.drop.sizeShim();
-            }
-        });
-
-        Y.DD.DDM.on('drag:drag', function(e) {
-            var y = e.target.lastXY[1];
-
-            if (y < lastY) {
-                goingUp = true;
-            }
-            else {
-                goingUp = false;
-            }
-
-            lastY = y;
-        });
-
-        Y.DD.DDM.on('drag:start', function(e) {
-            var drag = e.target;
-
-            drag.get('node').setStyle('opacity', '.25');
-            drag.get('dragNode').appendChild( Y.Node.create( '<div></div>' ).addClass( 'block-container' ).set('innerHTML', drag.get('node').get('innerHTML') ) );
-            drag.get('dragNode').setStyles({
-                opacity: '.5',
-                borderColor: drag.get('node').getStyle('borderColor'),
-                backgroundColor: drag.get('node').getStyle('backgroundColor')
-            });
-        });
-
-
-        function storeOrder(blocks) {
-            var data = '',
-                form = Y.one('#zone-' + BlockDDInit.cfg.zone + '-blocks').ancestor('form');
-
-            blocks.each(function(v, k) {
-                data += 'block_order%5B%5D=' + v.get('id');
-                data += '&';
-            });
-
-            data += 'contentobject_attribute_id=' + BlockDDInit.cfg.attributeid;
-            data += '&version=' + BlockDDInit.cfg.version;
-            data += '&zone=' + BlockDDInit.cfg.zone;
-            Y.io.ez( 'ezflow::updateblockorder', { on: { success: _callBack }, method: 'POST', data: data } );
-        }
-
-        function updateInputIndex(blocks) {
-            var index = 0;
-
-            blocks.each(function(v, k) {
-                var inputList = v.all('.block-control'),
-                    i, input, name;
-
-                for(i = 0; i < inputList.size(); i++) {
-                    input = inputList.item(i);
-                    name = input.get('name');
-
-                    if( name.match(/([a-z]+)+_([\d]+)\[([\d]+)\]\[([\d]+)\]/) ) {
-                        name = name.replace( /([a-z]+)+_([\d]+)\[([\d]+)\]\[([\d]+)\]/, "$1_$2[$3][" + index + "]" );
-                    } else if ( name.match(/([a-zA-Z+]+)\[([\d-\w_]+)-([\d]+)+(-[\w_]+)?\]/) ) {
-                        name = name.replace( /([a-zA-Z+]+)\[([\d-\w_]+)-([\d]+)+(-[\w_]+)?\]/, "$1[$2-" + index + "$4]" );
-                    } else if ( name.match(/([a-zA-Z]+)+\_+([0-9])/) ) {
-                        name = name.replace( /([a-zA-Z]+)+\_+([0-9])/, "$1_" + index );
-                    }
-
-                    input.set('name', name);
-                }
-
-                index++;
-            });
-        }
-
-        Y.DD.DDM.on('drag:end', function(e) {
-            var drag = e.target,
-                blocks = drag.get('node').get('parentNode').all('.block-container');
-
-            drag.get('node').setStyles({
-                visibility: '',
-                opacity: '1'
-            });
-            drag.get('dragNode').set('innerHTML', '');
-
-            updateInputIndex(blocks);
-            storeOrder(blocks);
-        });
-
-        Y.DD.DDM.on('drag:drophit', function(e) {
-            var drop = e.drop.get('node'), drag = e.drag.get('node');
-            
-            if (drop.get('tagName').toLowerCase() !== 'div' && drop.get('id') !== drag.get('parentNode').get('id') ) {
-                if (!drop.contains(drag)) {
-                    drop.appendChild(drag);
-                }
-            }
-        });
-
-        function _callBack( id, o ) {
-
-        }
-
-        var goingUp = false, lastY = 0;
-        
-        var dragList = Y.Node.all('#zone-' + BlockDDInit.cfg.zone + '-blocks .block-container');
-        dragList.each(function(v, k) {
-            var dd = new Y.DD.Drag({
-                node: v,
-                target: {
-                    padding: '0'
-                }
-            }).plug(Y.Plugin.DDProxy, {
-                moveOnEnd: false
-            }).plug(Y.Plugin.DDConstrained, {
-                constrain2node: '#zone-' + BlockDDInit.cfg.zone + '-blocks'
-            });
-            // Workround for Safari 4.0.2
-            // TODO: Remove after 3.0.0 GA release
-            dd.addInvalid('select');
-        });
-
-        var dropList = Y.Node.all('#zone-' + BlockDDInit.cfg.zone + '-blocks');
-        dropList.each(function(v, k) {
-            var drop = new Y.DD.Drop({
-                node: v
-            });
-        });
-
-        // configuring the up and down button
-        Y.all('#zone-' + BlockDDInit.cfg.zone + '-blocks input[name*="_move_block"]').on('click', function (e) {
-            var blocks = Y.all('#zone-' + BlockDDInit.cfg.zone + '-blocks .block-container'),
-                movedBlock = e.target.ancestor('.block-container'),
-                goingUp = (e.target.get('name').indexOf('move_block_up') !== -1);
-
-            e.preventDefault();
-            blocks.some(function (block, i) {
-                var refBlock;
-
-                if ( block.get('id') === movedBlock.get('id') ) {
+                if ( refBlock ) {
                     if ( goingUp ) {
-                        refBlock = blocks.item(i - 1);
+                        $( refBlock ).before( movedBlock );
                     } else {
-                        refBlock = blocks.item(i + 1);
+                        $( refBlock ).after( movedBlock );
                     }
-                    if ( refBlock ) {
-                        refBlock.insert(movedBlock, (goingUp ? 'before' : 'after'));
-                        blocks = Y.all('#zone-' + BlockDDInit.cfg.zone + '-blocks .block-container');
-                        updateInputIndex(blocks);
-                        storeOrder(blocks);
-                    }
-                    return true;
+                    blocks = $( zoneSelector + ' .block-container' );
+                    updateInputIndex(blocks);
+                    storeOrder(blocks);
                 }
                 return false;
-            });
-        });
+            }
+        } );
     });
-}
+};
+BlockDDInit.cfg = {};

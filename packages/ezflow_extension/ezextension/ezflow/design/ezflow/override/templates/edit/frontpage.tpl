@@ -43,8 +43,8 @@
 
 <div class="block date-range">
     <label>{'Date range'|i18n( 'design/ezflow/edit/frontpage' )}</label>
-    <input name="SearchDate" type="radio" value="1" onclick="javascript:showDateRange(this);" /> {'Past day'|i18n( 'design/ezflow/edit/frontpage' )} <input name="SearchDate" type="radio" value="2" onclick="javascript:showDateRange(this);" /> {'Past week'|i18n( 'design/ezflow/edit/frontpage' )} <br />
-    <input name="SearchDate" type="radio" value="3" onclick="javascript:showDateRange(this);" /> {'Past month'|i18n( 'design/ezflow/edit/frontpage' )} <input name="SearchDate" type="radio" value="4" onclick="javascript:showDateRange(this);" /> {'Past 3 months'|i18n( 'design/ezflow/edit/frontpage' )} <br />
+    <input name="SearchDate" type="radio" value="1" onclick="javascript:showDateRange(this);" /> {'Past day'|i18n( 'design/ezflow/edit/frontpage' )} <input name="SearchDate" type="radio" value="2" onclick="javascript:showDateRange(this);" /> {'Past week'|i18n( 'design/ezflow/edit/frontpage' )} <br>
+    <input name="SearchDate" type="radio" value="3" onclick="javascript:showDateRange(this);" /> {'Past month'|i18n( 'design/ezflow/edit/frontpage' )} <input name="SearchDate" type="radio" value="4" onclick="javascript:showDateRange(this);" /> {'Past 3 months'|i18n( 'design/ezflow/edit/frontpage' )} <br>
     <input name="SearchDate" type="radio" value="5" onclick="javascript:showDateRange(this);" /> {'Past year'|i18n( 'design/ezflow/edit/frontpage' )}
 </div>
 *}
@@ -78,19 +78,8 @@
 
 {foreach $content_attributes as $content_attribute}
 {if eq( $content_attribute.data_type_string, 'ezpage' )}
-<script type="text/javascript">
-{literal}
-function addBlock( object, id )
-{
-    var $select = object;
-    var $id = id;
-    var addToBlock = document.getElementById( 'addtoblock' );
-    addToBlock.name = 'CustomActionButton[' + $id  +'_new_item' + '-' + $select.value + ']';
-}
-{/literal}
-</script>
 <p>
-<select name="zonelist" onchange="addBlock( this, {$content_attribute.id} );">
+<select name="zonelist" data-ezflow-add-block="{$content_attribute.id}">
 <option>{'Select:'|i18n( 'design/ezflow/edit/frontpage' )}</option>
 {def $zone_id = ''
      $zone_name = ezini( $content_attribute.content.zone_layout, 'ZoneName', 'zone.ini' )}
@@ -117,18 +106,17 @@ function addBlock( object, id )
 
 </div>
 
-{ezscript_require( array( 'ezjsc::yui3', 'ezjsc::yui3io', 'ezajaxsearch.js' ) )}
+{ezscript_require( array( 'ezjsc::jquery', 'ezjsc::jqueryio', 'ezajaxsearch.js', 'ezflow_edit.js' ) )}
 
-<script type="text/javascript">
-eZAJAXSearch.cfg = {ldelim}
-                        searchstring: '#search-string-{$object.id}',
-                        searchbutton: '#search-button-{$object.id}',
-                        searchresults: '#search-results-{$object.id}',
-                        dateformattype: 'shortdatetime',
-                        resulttemplate: '<div class="result-item float-break"><div class="item-title"><img src={"item-bullet.gif"|ezimage} />&nbsp;{ldelim}title{rdelim}</div><div class="item-published-date">[{ldelim}class_name{rdelim}] {ldelim}date{rdelim}</div><div class="item-selector"><input type="checkbox" value="{ldelim}node_id{rdelim}" name="SelectedNodeIDArray[]" /></div></div>'
-                   {rdelim};
-eZAJAXSearch.init();
-</script>
+{* The quick search settings, read by ezajaxsearch.js when the page is ready (no inline code). *}
+{set-block variable=ezflow_result_template}<div class="result-item float-break"><div class="item-title"><img src={"item-bullet.gif"|ezimage} />&nbsp;{ldelim}title{rdelim}</div><div class="item-published-date">[{ldelim}class_name{rdelim}] {ldelim}date{rdelim}</div><div class="item-selector"><input type="checkbox" value="{ldelim}node_id{rdelim}" name="SelectedNodeIDArray[]" /></div></div>{/set-block}
+<div hidden="hidden"
+     data-ezflow-ajaxsearch="1"
+     data-search-string="#search-string-{$object.id}"
+     data-search-button="#search-button-{$object.id}"
+     data-search-results="#search-results-{$object.id}"
+     data-date-format="shortdatetime"
+     data-result-template="{$ezflow_result_template|wash}"></div>
 
 <!-- SEARCH BOX: END -->
 

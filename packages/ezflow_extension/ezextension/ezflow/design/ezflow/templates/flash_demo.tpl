@@ -17,18 +17,7 @@
     {set $flash_var_value=concat( "moviepath=", $path, $list[0] )}
 {/if}
 
-<script type="text/javascript">
-    insertMedia( '<object type="application/x-shockwave-flash" data="{$flash_player}" width="{$width}" height="{$height}"> ');
-    insertMedia( '<param name="movie" value="{$flash_player}" /> ');
-    insertMedia( '<param name="scale" value="exactfit" /> ');
-    insertMedia( '<param name="allowScriptAccess" value="sameDomain" />');
-    insertMedia( '<param name="allowFullScreen" value="true" />');
-    insertMedia( '<param name="flashvars" value="{$flash_var_value}" />');
-    insertMedia( '<p>No <a href="http://www.macromedia.com/go/getflashplayer">Flash player</a> avaliable!</p>');
-    insertMedia( '</object>' );
-</script>
-
-<noscript>
+{* The player, printed directly (it was written by an inline script before; no inline code). *}
 <object type="application/x-shockwave-flash" data="{$flash_player}" width="{$width}" height="{$height}">          
     <param name="movie" value="{$flash_player}" />
     <param name="scale" value="exactfit" />
@@ -37,7 +26,6 @@
     <param name="flashvars" value="{$flash_var_value}" />
     <p>No <a href="http://www.macromedia.com/go/getflashplayer">Flash player</a> avaliable!</p>
 </object>
-</noscript>
 </td>
 <td valign="top">
 <div class="attribute-heading">

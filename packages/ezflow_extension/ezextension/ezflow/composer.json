@@ -6,17 +6,20 @@
     "authors": [
         {
             "name": "eZ Publish dev-team & eZ Community",
-            "homepage": "https://github.com/se7enxweb/ezflow-ezpackage"
+            "homepage": "https://github.com/se7enxweb/ezflow-extension"
         }
     ],
     "minimum-stability": "dev",
     "require": {
         "se7enxweb/ezpublish-legacy-installer": "*"
     },
+    "replace": {
+        "se7enxweb/ezflow-ls-extension": "self.version"
+    },
     "suggest": {
-        "se7enxweb/ezwt-ls-extension": "~5.3",
-        "se7enxweb/ezgmaplocation-ls-extension": "~5.3",
-        "se7enxweb/ezstarrating-ls-extension": "~5.3"
+        "se7enxweb/ezwt": "~6.0.16",
+        "se7enxweb/ezgmaplocation": "~6.1",
+        "se7enxweb/ezstarrating": "~6.0.16"
     },
     "extra": {
         "ezpublish-legacy-extension-name": "ezflow"

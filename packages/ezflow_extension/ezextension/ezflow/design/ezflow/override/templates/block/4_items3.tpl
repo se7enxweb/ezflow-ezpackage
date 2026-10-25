@@ -44,7 +44,7 @@
 </div>
 </div>
 
-<br />
+<br>
 
 <div class="columns-two">
 <div class="col-1">

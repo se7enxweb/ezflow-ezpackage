@@ -1,10 +1,10 @@
-<h1>Welcome to eZ Publish and eZ Flow</h1>
+<h1>Welcome to Exponential and eZ Flow</h1>
 
 <p>You chose the eZ Flow package with a clean install and no evaluation data, this installation is empty of content.</p>
 
 <p>To learn more about eZ Flow, please visit our website and watch <a href="http://ez.no/ezflow">the introduction video</a>.</p>
 
-<p>This page is the home page of your website, you can access the administration interface of your website by selecting the appropriate check box on the <a href="{'/user/login'|ezurl( 'no' )}">login page</a>, you will need to use the "admin" username and the password you defined when installing eZ Publish.</p>
+<p>This page is the home page of your website, you can access the administration interface of your website by selecting the appropriate check box on the <a href="{'/user/login'|ezurl( 'no' )}">login page</a>, you will need to use the "admin" username and the password you defined when installing Exponential.</p>
 
 <p>If you want to use the eZ toolbar for front end editing, please <a href="{'/user/login'|ezurl( 'no' )}">login</a> to the website with the same administrator account or with any account you might have setup with sufficient rights.</p>
 

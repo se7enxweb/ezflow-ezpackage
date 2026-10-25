@@ -33,20 +33,17 @@
 
 {ezscript_require( 'ezflgmapview.js' )}
 
-<script type="text/javascript">
-(function() {ldelim}
-    var gmapDataArray = [];
-
-    {foreach $locations as $location}
-    gmapDataArray.push( {ldelim}
-                            point: new google.maps.LatLng( {$location.data_map[$attribute].content.latitude}, {$location.data_map[$attribute].content.longitude} ),
-                            address: '{$location.data_map[$attribute].content.address|wash("javascript")}'
-                        {rdelim} );
-    {/foreach}
-
-    eZFLGMapAddListener( window, 'load', function(){ldelim} eZFLGMapView( '{$block.id}', gmapDataArray ) {rdelim}, false );
-{rdelim})();
-</script>
+{* The locations for javascript/ezflgmapview.js, which draws the map when the page has loaded (no inline code).
+   ezflgmapview.js hands the address to infoWindow.setContent(), which reads HTML: it is escaped for HTML. A location
+   without a map value is left out. *}
+{def $ezflow_points = array()}
+{foreach $locations as $location}
+    {if is_set( $location.data_map[$attribute] )|not}{continue}{/if}
+    {if $location.data_map[$attribute].has_content|not}{continue}{/if}
+    {set $ezflow_points = $ezflow_points|merge( array( hash( 'lat', $location.data_map[$attribute].content.latitude,
+                                                             'lng', $location.data_map[$attribute].content.longitude,
+                                                             'address', $location.data_map[$attribute].content.address|wash ) ) )}
+{/foreach}
 
 <h2>{$block.name|wash()}</h2>
 
@@ -56,6 +53,6 @@
 {/foreach}
 </ul>
 
-<div id="ezflb-map-{$block.id}" style="width: {$width}px; height: {$height}px"></div>
+<div id="ezflb-map-{$block.id}" style="width: {$width}px; height: {$height}px" data-block-id="{$block.id|wash}" data-ezflow-geomap="{json_encode( $ezflow_points )|wash}"></div>
 
-{undef $limit $width $height $locations $attribute $index $location}
+{undef $limit $width $height $locations $attribute $index $location $ezflow_points}

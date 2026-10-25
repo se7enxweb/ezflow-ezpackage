@@ -3,6 +3,7 @@
 // ## BEGIN COPYRIGHT, LICENSE AND WARRANTY NOTICE ##
 // SOFTWARE NAME: eZ Flow
 // SOFTWARE RELEASE: 1.1-0
+// COPYRIGHT NOTICE: Copyright (C) 1998 - 2026 7x & Exponential Foundation
 // COPYRIGHT NOTICE: Copyright (C) 1999-2014 eZ Systems AS
 // SOFTWARE LICENSE: GNU General Public License v2.0
 // NOTICE: >
@@ -24,6 +25,26 @@
 // ## END COPYRIGHT, LICENSE AND WARRANTY NOTICE ##
 //
 
+
+if ( !function_exists( 'expModuleViewEzflowRequestCreateParamsFromStr' ) ) {
+function expModuleViewEzflowRequestCreateParamsFromStr( $str )
+{
+    $params = array();
+
+    foreach( explode( '_', $str ) as $id )
+    {
+        $elem = explode( ':', $id );
+
+        $key = isset( $elem[0] ) ? $elem[0] : null;
+        $value = isset( $elem[1] ) ? $elem[1] : null;
+
+        $params[$key] = $value;
+    }
+
+    return $params;
+}
+}
+
 $http = eZHTTPTool::instance();
 
 if ( $http->hasPostVariable( 'ContentObjectAttributeID' ) )
@@ -36,7 +57,7 @@ if ( $http->hasPostVariable( 'Items' ) )
     $items = $http->postVariable( 'Items' );
 
 if ( $http->hasPostVariable( 'Block' ) )
-    $blockParams = createParamsFromStr( $http->postVariable( 'Block' ) );
+    $blockParams = expModuleViewEzflowRequestCreateParamsFromStr( $http->postVariable( 'Block' ) );
 
 if ( isset( $blockParams['z'] ) )
     $zoneID = $blockParams['z'];
@@ -57,7 +78,7 @@ $waitingCount = count( $block->attribute('waiting') );
 
 foreach( $items as $key => $item )
 {
-    $itemParams = createParamsFromStr( $item );
+    $itemParams = expModuleViewEzflowRequestCreateParamsFromStr( $item );
 
     if( array_key_exists( 'o', $blockParams ) )
     {
@@ -125,21 +146,5 @@ $contentObjectAttribute->store();
 
 eZExecution::cleanExit();
 
-function createParamsFromStr( $str )
-{
-    $params = array();
-
-    foreach( explode( '_', $str ) as $id )
-    {
-        $elem = explode( ':', $id );
-
-        $key = isset( $elem[0] ) ? $elem[0] : null;
-        $value = isset( $elem[1] ) ? $elem[1] : null;
-
-        $params[$key] = $value;
-    }
-
-    return $params;
-}
 
 ?>

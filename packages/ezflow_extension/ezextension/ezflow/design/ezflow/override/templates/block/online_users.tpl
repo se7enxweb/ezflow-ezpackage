@@ -1,4 +1,5 @@
-<div class="block-type-online-users block-view-{$block.view}">
+{* The count is refreshed through ezjscore by javascript/ezflow_blocks.js (no inline code). *}
+<div class="block-type-online-users block-view-{$block.view}" data-ezflow-online-users="{$block.id|wash}">
 
 <div class="attribute-header"><h2>{$block.name|wash()}</h2></div>
 
@@ -12,29 +13,5 @@
 
 </div>
 
-{ezscript_require( array( 'ezjsc::yui3', 'ezjsc::yui3io' ) )}
-<script type="text/javascript">
-{literal}
-(function() {
-YUI(YUI3_config).use('node', 'event', 'io-ez', function(Y) {
-    function ioCallBack( id, o )
-    {
-        if ( o.responseJSON !== undefined )
-        {
-            var response = o.responseJSON;
-            if ( response.content !== undefined )
-            {
-{/literal}
-                Y.one( '#logged-in-count-{$block.id}' ).set( 'innerHTML', response.content.logged_in_count );
-                //Y.one( '#anonymous-count-{$block.id}' ).set( 'innerHTML', response.content.anonymous_count );
-{literal}
-            }
-        }
-    }
-    Y.io.ez( 'ezflow::onlineusers', { on: { success: ioCallBack } } );
-});
-
-})();
-{/literal}
-</script>
+{ezscript_require( array( 'ezjsc::jquery', 'ezjsc::jqueryio', 'ezflow_blocks.js' ) )}
 {undef $logged_in_count}

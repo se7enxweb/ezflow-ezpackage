@@ -3,9 +3,10 @@
      $frontpage_list = fetch( 'content', 'tree', hash( 'parent_node_id', $root_node,
                                                        'class_filter_type', 'include',
                                                        'class_filter_array', $classes ))}
-<div id="page-datatype-container" class="yui-skin-sam yui-skin-ezflow">
+<div id="page-datatype-container" class="ezpage-tabs-skin">
 
-<form method="post" action="{concat('ezflow/push/', $node.node_id)|ezurl('no')}">
+{* The settings of the placement tools (ezpushtoblock.js reads them when the page is ready; no inline code). *}
+<form method="post" action="{concat('ezflow/push/', $node.node_id)|ezurl('no')}" data-ezflow-push="{json_encode( hash( 'requesturl', 'ezflow/get'|ezurl('no'), 'nodename', $node.name|wash()|shorten( '50' ), 'imagepath', 'ezpage/clock_ico.gif'|ezimage('no'), 'nodeid', $node.node_id ) )|wash}">
 
 <div class="context-block">
 
@@ -60,38 +61,5 @@
 
 </div>
 
-{ezscript_require(array( 'ezjsc::yui2' ) )}
-
-<script type="text/javascript">
-    YUILoader.onSuccess = function() {ldelim}
-        eZPushToBlock.cfg = {ldelim}
-            requesturl: "{'ezflow/get'|ezurl('no')}",
-            nodename: "{$node.name|wash()|shorten( '50' )}",
-            imagepath: "{'ezpage/clock_ico.gif'|ezimage('no')}",
-            nodeid: {$node.node_id}
-        {rdelim}
-        
-        eZPushToBlock.init();
-    {rdelim}
-
-    YUILoader.addModule({ldelim}
-        name: 'ezpushtoblock',
-        type: 'js',
-        fullpath: '{"javascript/ezpushtoblock.js"|ezdesign( 'no' )}'
-    {rdelim});
-
-    YUILoader.addModule({ldelim}
-        name: 'scheduledialog',
-        type: 'js',
-        fullpath: '{"javascript/scheduledialog.js"|ezdesign( 'no' )}'
-    {rdelim});
-
-    YUILoader.addModule({ldelim}
-        name: 'scheduledialog-css',
-        type: 'css',
-        fullpath: '{"stylesheets/scheduledialog.css"|ezdesign( 'no' )}'
-    {rdelim});
-
-    YUILoader.require(["button","menu","calendar","container","json","utilities","scheduledialog","scheduledialog-css", "ezpushtoblock"]);
-    YUILoader.insert();
-</script>
+{ezscript_require( array( 'ezjsc::jquery', 'ezflowcalendar.js', 'scheduledialog.js', 'ezpushtoblock.js' ) )}
+{ezcss_require( array( 'ezflowwidgets.css', 'scheduledialog.css' ) )}

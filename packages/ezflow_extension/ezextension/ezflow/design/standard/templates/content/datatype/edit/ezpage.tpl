@@ -34,7 +34,23 @@
         {set $zone_names = ezini( $zone_layout, 'ZoneName', 'zone.ini' )}
     {/if}
 
-<div id="page-datatype-container" class="yui-skin-sam yui-skin-ezflow">
+{* The zone layout and the zone tabs, for javascript/ezflow_edit.js (no inline code): one tab per zone, its content
+   loaded once from the ezflow/zone view, with the settings of the block tools. *}
+{def $ezflow_tabs = array()}
+{foreach $attribute.content.zones as $index => $zone}
+    {if and( is_set( $zone.action ), eq( $zone.action, 'remove' ) )}
+        {skip}
+    {/if}
+    {set $ezflow_tabs = $ezflow_tabs|merge( array( hash( 'label', $zone_names[$zone.zone_identifier],
+                                                          'dataSrc', concat( '/ezflow/zone/', $attribute.id, '/', $attribute.version, '/', $index )|ezurl( 'no' ) ) ) )}
+{/foreach}
+<div id="page-datatype-container" class="ezpage-tabs-skin" data-ezflow-page="{json_encode( hash( 'allowedzones', $allowed_zones|json(),
+                                                                                                 'zonelayout', $zone_layout,
+                                                                                                 'tabs', $ezflow_tabs,
+                                                                                                 'blockCfg', hash( 'url', 'ezflow/request'|ezurl( 'no' ),
+                                                                                                                   'attributeid', $attribute.id,
+                                                                                                                   'version', $attribute.version ) ) )|wash}">
+{undef $ezflow_tabs}
 {if and( $can_change_layout, $layout_for_current_class )}
 <div class="zones float-break">
 {foreach $allowed_zones as $allowed_zone}
@@ -65,116 +81,5 @@
 <div id="zone-tabs-container"></div>
 </div>
 
-{ezscript_require( array( 'ezjsc::yui2', 'ezjsc::yui3', 'ezjsc::yui3io' ) )}
-
-<script type="text/javascript">
-(function() {ldelim}
-    var loader = new YAHOO.util.YUILoader(YUI2_config);
-
-    loader.onSuccess = function() {ldelim}
-        YAHOO.ez.ZoneLayout.cfg = {ldelim} 'allowedzones': '{$allowed_zones|json()}',
-                                           'zonelayout': '{$zone_layout}' {rdelim};
-        YAHOO.ez.ZoneLayout.init();
-
-        var tabView = new YAHOO.widget.TabView();
-
-        {foreach $attribute.content.zones as $index => $zone}
-            {if and( is_set( $zone.action ), eq( $zone.action, 'remove' ) )}
-                {skip}
-            {/if}
-            tabView.addTab( new YAHOO.widget.Tab({ldelim}
-                label: '{$zone_names[$zone.zone_identifier]}',
-                dataSrc: '{concat( '/ezflow/zone/', $attribute.id, '/', $attribute.version, '/', $index  )|ezurl(no)}',
-                cacheData: true
-                {rdelim}));
-        {/foreach}
-
-        {literal}
-        var activeTabIndex = YAHOO.util.Cookie.get( 'eZPageActiveTabIndex' );
-
-        if ( activeTabIndex ) {
-            if ( tabView.getTab( activeTabIndex ) ) {
-                tabView.set( 'activeIndex',  activeTabIndex );
-            }
-            else {
-                tabView.set( 'activeIndex', 0 );
-            }
-        }
-        else {
-            tabView.set( 'activeIndex', 0 );
-        }
-
-        var tabs = tabView.get("tabs");
-        for( var i = 0; i < tabs.length; i++ ) {
-            tabs[i].on("dataLoadedChange", function(e) {
-                YAHOO.util.Event.onContentReady("zone-tabs-container", function() {
-                    var cfg = {
-        {/literal} 
-                        url: "{'ezflow/request'|ezurl('no')}",
-                        attributeid: {$attribute.id},
-                        version: {$attribute.version},
-                        zone: tabView.getTabIndex(this)
-        {literal} 
-                    };
-                    YAHOO.ez.BlockDD.cfg = cfg;
-                    YAHOO.ez.BlockDD.init();
-                    YAHOO.ez.BlockCollapse.init();
-                    YAHOO.ez.sheduleDialog.init();
-                    BlockDDInit.cfg = cfg;
-                    BlockDDInit();
-                }, this, true);
-            });
-        }
-
-        tabView.on("activeTabChange", function(e) {
-            var tabIndex = tabView.getTabIndex( e.newValue );
-            YAHOO.util.Cookie.set("eZPageActiveTabIndex", tabIndex, {path: "/"});
-            BlockDDInit.cfg.zone = tabIndex;
-        });
-
-        tabView.appendTo('zone-tabs-container');
-        {/literal}
-    {rdelim}
-
-    loader.addModule({ldelim}
-        name: 'blocktools',
-        type: 'js',
-        fullpath: '{"javascript/blocktools.js"|ezdesign( 'no' )}'
-    {rdelim});
-
-    loader.addModule({ldelim}
-        name: 'zonetools',
-        type: 'js',
-        fullpath: '{"javascript/zonetools.js"|ezdesign( 'no' )}'
-    {rdelim});
-
-    loader.addModule({ldelim}
-        name: 'scheduledialog',
-        type: 'js',
-        fullpath: '{"javascript/scheduledialog.js"|ezdesign( 'no' )}'
-    {rdelim});
-
-    loader.addModule({ldelim}
-        name: 'scheduledialog-css',
-        type: 'css',
-        fullpath: '{"stylesheets/scheduledialog.css"|ezdesign( 'no' )}'
-    {rdelim});
-
-    loader.addModule({ldelim}
-        name: 'pagedatatype-css',
-        type: 'css',
-        fullpath: '{"stylesheets/ezpage/ezpage.css"|ezdesign( 'no' )}'
-    {rdelim});
-
-    loader.require(["button","calendar","container","cookie","get","json","tabview","utilities","blocktools","zonetools","scheduledialog","scheduledialog-css", "pagedatatype-css"]);
-
-    loader.insert();
-
-{rdelim})();
-
-function confirmDiscard( question )
-{ldelim}
-    // Ask user if he really wants to do it.
-    return confirm( question );
-{rdelim}
-</script>
+{ezscript_require( array( 'ezjsc::jquery', 'ezjsc::jqueryio', 'ezflowcalendar.js', 'blocktools.js', 'zonetools.js', 'scheduledialog.js', 'ezflow_edit.js' ) )}
+{ezcss_require( array( 'ezflowwidgets.css', 'scheduledialog.css', 'ezpage/ezpage.css' ) )}

@@ -3,6 +3,7 @@
 // ## BEGIN COPYRIGHT, LICENSE AND WARRANTY NOTICE ##
 // SOFTWARE NAME: eZ Flow
 // SOFTWARE RELEASE: 2.2.0
+// COPYRIGHT NOTICE: Copyright (C) 1998 - 2026 7x & Exponential Foundation
 // COPYRIGHT NOTICE: Copyright (C) 1999-2014 eZ Systems AS
 // SOFTWARE LICENSE: GNU General Public License v2.0
 // NOTICE: >
@@ -121,7 +122,24 @@ class eZFlowOperations
             $db->begin();
 
             if ( $itemsToRemove > 0 )
-                $db->query( "DELETE FROM ezm_pool WHERE block_id='".$block['id']."' ORDER BY ts_publication ASC LIMIT " . $itemsToRemove);
+            {
+                // DELETE ... ORDER BY ... LIMIT exists on MySQL alone; the oldest
+                // items are selected with the driver's own row limit instead and
+                // removed by their key (block_id, object_id), as the archive
+                // trimming in update() does.
+                $escapedBlockID = $db->escapeString( $block['id'] );
+                $oldestItems = $db->arrayQuery( "SELECT object_id FROM ezm_pool WHERE block_id='" . $escapedBlockID . "' ORDER BY ts_publication ASC",
+                                                array( 'limit' => $itemsToRemove ) );
+                $oldestObjectIDs = array();
+                if ( is_array( $oldestItems ) )
+                {
+                    foreach ( $oldestItems as $oldestItem )
+                        $oldestObjectIDs[] = (int)$oldestItem['object_id'];
+                }
+                if ( !empty( $oldestObjectIDs ) )
+                    $db->query( "DELETE FROM ezm_pool WHERE block_id='" . $escapedBlockID . "' AND " .
+                                $db->generateSQLINStatement( $oldestObjectIDs, 'object_id', false, true, 'int' ) );
+            }
             if ( !empty( $newItems ) )
                 eZFlowPool::insertItems( $newItems );
 

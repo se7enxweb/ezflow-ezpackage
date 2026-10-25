@@ -1,0 +1,9 @@
+/* The styles of the ezflow admin templates, loaded through design.ini [StylesheetSettings] BackendCSSFileList
+   so the ezjscore packer bundles them. The templates carry no style="" attribute: a Content-Security-Policy without
+   'unsafe-inline' for style-src-attr drops those. */
+
+/* Frontpage edit and "add to block": the box the search results are written into */
+.ezflow-search-results { overflow: hidden; }
+
+/* Language flags next to the translation names (the same as the shared .a4-flag, for designs without it) */
+img.ezflow-flag { vertical-align: middle; }

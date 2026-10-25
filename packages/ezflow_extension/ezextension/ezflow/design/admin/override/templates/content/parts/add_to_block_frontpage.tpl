@@ -21,26 +21,15 @@
 </div>
 
 <div class="block search-results">
-    <div id="search-results-{$object.id}" style="overflow: hidden">
+    <div id="search-results-{$object.id}" class="ezflow-search-results">
 </div>
 
 {foreach $content_attributes as $content_attribute}
 {if eq( $content_attribute.data_type_string, 'ezpage' )}
-<script type="text/javascript">
-{literal}
-function addBlock( object, id )
-{
-    var $select = object;
-    var $id = id;
-    var addToBlock = document.getElementById( 'addtoblock' );
-    addToBlock.name = 'CustomActionButton[' + $id  +'_new_item' + '-' + $select.value + ']';
-}
-{/literal}
-</script>
 
 <div class="block">
 <label>{'Select block'|i18n( 'design/admin/content/edit' )}</label>
-<select name="zonelist" onchange="addBlock( this, {$content_attribute.id} );">
+<select name="zonelist" data-ezflow-add-block="{$content_attribute.id}">
 <option>{'Select:'|i18n( 'design/admin/content/edit' )}</option>
 {def $zone_id = ''
      $zone_layout = cond( $attribute.content.zone_layout, $attribute.content.zone_layout, '' )
@@ -75,20 +64,17 @@ function addBlock( object, id )
 
 </div>
 
-{ezscript_require( array( 'ezjsc::yui3', 'ezjsc::yui3io', 'ezajaxsearch.js' ) )}
+{ezscript_require( array( 'ezjsc::jquery', 'ezjsc::jqueryio', 'ezajaxsearch.js', 'ezflow_edit.js' ) )}
 
-<script type="text/javascript">
-<!--
-eZAJAXSearch.cfg = {ldelim}
-                        searchstring: '#search-string-{$object.id}',
-                        searchbutton: '#search-button-{$object.id}',
-                        searchresults: '#search-results-{$object.id}',
-                        dateformattype: 'shortdatetime',
-                        resulttemplate: '<div class="block"><div class="item-title">{ldelim}title{rdelim}<\/div><div class="item-published-date">[{ldelim}class_name{rdelim}] {ldelim}date{rdelim}<\/div><div class="item-selector"><input type="checkbox" value="{ldelim}node_id{rdelim}" name="SelectedNodeIDArray[]" /></div></div>'
-                   {rdelim};
-eZAJAXSearch.init();
--->
-</script>
+{* The quick search settings, read by ezajaxsearch.js when the page is ready (no inline code). *}
+{set-block variable=ezflow_result_template}<div class="block"><div class="item-title">{ldelim}title{rdelim}</div><div class="item-published-date">[{ldelim}class_name{rdelim}] {ldelim}date{rdelim}</div><div class="item-selector"><input type="checkbox" value="{ldelim}node_id{rdelim}" name="SelectedNodeIDArray[]" /></div></div>{/set-block}
+<div hidden="hidden"
+     data-ezflow-ajaxsearch="1"
+     data-search-string="#search-string-{$object.id}"
+     data-search-button="#search-button-{$object.id}"
+     data-search-results="#search-results-{$object.id}"
+     data-date-format="shortdatetime"
+     data-result-template="{$ezflow_result_template|wash}"></div>
 
 <!-- SEARCH BOX: END -->
 

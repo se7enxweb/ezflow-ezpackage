@@ -9,18 +9,7 @@
     {* Embed Link *}
     {set $flash_var=$flash_var|append( "&amp;embedlink=", concat( $siteurl, $object.main_node.url_alias|ezurl(no) ) )}
     
-    <script type="text/javascript">
-        insertMedia( '<object type="application/x-shockwave-flash"  data="{'flash/flash_player.swf'|ezdesign(no)}"  width="448" height="354"> ');
-        insertMedia( '<param name="movie" value="{'flash/flash_player.swf'|ezdesign(no)}"  /> ');
-        insertMedia( '<param name="scale" value="exactfit" /> ');
-        insertMedia( '<param name="allowScriptAccess" value="sameDomain" />');
-        insertMedia( '<param name="allowFullScreen" value="true" />');
-        insertMedia( '<param name="flashvars" value="{$flash_var}" />');
-        insertMedia( '<p>No <a href="http://www.macromedia.com/go/getflashplayer">Flash player<\/a> avaliable!<\/p>');
-        insertMedia( '<\/object>' );
-    </script>
-
-    <noscript>
+    {* The player, printed directly (it was written by an inline script before; no inline code). *}
     <object type="application/x-shockwave-flash" data="{'flash/flash_player.swf'|ezdesign(no)}" width="448" height="354">
         <param name="movie" value="{'flash/flash_player.swf'|ezdesign(no)}" />
         <param name="scale" value="exactfit" />
@@ -29,4 +18,3 @@
         <param name="flashvars" value="{$flash_var}" />
         <p>No <a href="http://www.macromedia.com/go/getflashplayer">Flash player</a> avaliable!</p>
     </object>
-    </noscript>
