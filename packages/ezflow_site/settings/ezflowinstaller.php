@@ -157,7 +157,7 @@ class eZFlownInstaller extends eZSiteInstaller
                     'iphone'
                 ),
                 'access_type' => $this->setting( 'access_type' ),
-                'access_type_value' => (int) $this->setting( 'access_type_value' ) + count( $this->setting( 'language_based_siteaccess_list' ) ) + 1,
+                'access_type_value' => (int) $this->setting( 'access_type_value' ) + ( is_array( $this->setting( 'language_based_siteaccess_list' ) ) ? count( $this->setting( 'language_based_siteaccess_list' ) ) : 0 ) + 1,
                 'host' => $this->setting( 'host' ),
                 'exclude_port_list' => array(
                     $this->setting( 'admin_access_type_value' ),
