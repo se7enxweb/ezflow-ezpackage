@@ -85,7 +85,7 @@
     </message>
     <message>
         <source>Discard draft</source>
-        <translation>Annuler le brouillon</translation>
+        <translation>Abandonner le brouillon</translation>
     </message>
     <message>
         <source>Are you sure you want to discard the draft?</source>

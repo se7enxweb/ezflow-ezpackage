@@ -1,0 +1,6 @@
+Changes from 6.1.13 to 6.1.14 (2026-10-26)
+
+- Fixed: Translations that contradicted their language guide: wrong meanings, glossary breaches, forms of address,
+  typos and English left in the text, from ekked's pull request #6.
+
+Upgrading: nothing to do beyond composer update; no code, setting or database change.

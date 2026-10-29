@@ -502,6 +502,8 @@
   <file name="CHANGELOG-2.2-0-to-2.3-0" path="/doc/changelogs/2.3" md5sum="715c48dead3096c8c4f77e3f5eea8bfb"/>
   <file name="2.4" path="/doc/changelogs" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
   <file name="CHANGELOG-2.3.0-to-2.4.0" path="/doc/changelogs/2.4" md5sum="3c0405cbf4b12e027775da0501afd23c"/>
+  <file name="6.1" path="/doc/changelogs" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="CHANGELOG-6.1.13-to-6.1.14" path="/doc/changelogs/6.1" md5sum="1ff955b3b4355ab089af1c65a2e952eb"/>
   <file name="deprecated" path="/doc" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
   <file name="eZ Flow Pool.odt" path="/doc/deprecated" md5sum="50bdeafd8dc077d037872a5cd25b63c3"/>
   <file name="eZ Flow fetch functions.odt" path="/doc/deprecated" md5sum="1dfd0666f67a80983e4d7a2b950b3ed2"/>
@@ -514,10 +516,10 @@
   <file name="event" path="/eventtypes" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
   <file name="ezpageswap" path="/eventtypes/event" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
   <file name="ezpageswaptype.php" path="/eventtypes/event/ezpageswap" md5sum="6352d59969e4411d877953afb419b0b1"/>
-  <file name="extension.xml" md5sum="f857eb10c2371b6c839a2a80b85e754d"/>
+  <file name="extension.xml" md5sum="71e880b83000f25c4cf62275a6787d90"/>
   <file name="extras" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
   <file name="flash_video_list.php" path="/extras" md5sum="6a49ee4c09a519a6803d1febb8fd50ac"/>
-  <file name="ezinfo.php" md5sum="28e4d78ac414a54161d454c6be47b11f"/>
+  <file name="ezinfo.php" md5sum="6d7a20ccaa060d99f84f02135427f112"/>
   <file name="modules" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
   <file name="ezflow" path="/modules" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
   <file name="block.php" path="/modules/ezflow" md5sum="ca7fe3725987f197243816ccd93151a2"/>
@@ -584,7 +586,7 @@
   <file name="esl-ES" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
   <file name="translation.ts" path="/translations/esl-ES" md5sum="aaa220fedff58c6ccd4b859e372148e1"/>
   <file name="fre-FR" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
-  <file name="translation.ts" path="/translations/fre-FR" md5sum="16fc3b21fca3e245d063ca81682ddd84"/>
+  <file name="translation.ts" path="/translations/fre-FR" md5sum="8ed8ab7a651bf77b659ab80be12d0c8c"/>
   <file name="ger-DE" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
   <file name="translation.ts" path="/translations/ger-DE" md5sum="fdf8eda35ae3c8ca513d5f7225413411"/>
   <file name="ita-IT" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
@@ -596,7 +598,7 @@
   <file name="pol-PL" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
   <file name="translation.ts" path="/translations/pol-PL" md5sum="08426bb6ef587c9e9aab54314ef22bf7"/>
   <file name="por-BR" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
-  <file name="translation.ts" path="/translations/por-BR" md5sum="97ced8a29fc811b63ef278a50809315f"/>
+  <file name="translation.ts" path="/translations/por-BR" md5sum="96eaa56c2e68411e7beaea2a61a620dd"/>
   <file name="swe-SE" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
   <file name="translation.ts" path="/translations/swe-SE" md5sum="d5c6e0b8881a29e20ec4d5c865aed96e"/>
   <file name="tur-TR" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
