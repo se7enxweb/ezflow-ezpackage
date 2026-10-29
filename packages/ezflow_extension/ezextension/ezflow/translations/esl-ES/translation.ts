@@ -183,7 +183,7 @@
     </message>
     <message>
         <source>No search results found for:</source>
-        <translation type="unfinished"></translation>
+        <translation>No se han encontrado resultados de búsqueda para:</translation>
     </message>
 </context>
 <context>
@@ -485,7 +485,7 @@
     </message>
     <message>
         <source>Publishing schedule for: </source>
-        <translation type="unfinished"></translation>
+        <translation>Programación de publicación para: </translation>
     </message>
 </context>
 <context>
@@ -588,14 +588,14 @@
     </message>
     <message>
         <source>Push to block</source>
-        <translation type="unfinished">Añadir a bloque</translation>
+        <translation>Enviar al bloque</translation>
     </message>
 </context>
 <context>
     <name>kernel/workflow/event</name>
     <message>
         <source>eZ Page swap workflow event</source>
-        <translation type="unfinished"></translation>
+        <translation>Evento de flujo de trabajo de intercambio de eZ Page</translation>
     </message>
 </context>
 </TS>

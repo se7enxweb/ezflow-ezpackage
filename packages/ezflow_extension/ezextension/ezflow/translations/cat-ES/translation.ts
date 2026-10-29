@@ -167,7 +167,7 @@
     </message>
     <message>
         <source>No search results found for:</source>
-        <translation type="unfinished"></translation>
+        <translation>No s&apos;han trobat resultats de cerca per a:</translation>
     </message>
 </context>
 <context>
@@ -242,7 +242,7 @@
     </message>
     <message>
         <source>Edit &lt;%object_name&gt; (%class_name)</source>
-        <translation type="unfinished"></translation>
+        <translation>Edita &lt;%object_name&gt; (%class_name)</translation>
     </message>
 </context>
 <context>
@@ -457,19 +457,19 @@
     </message>
     <message>
         <source>Add item</source>
-        <translation type="unfinished"></translation>
+        <translation>Afegeix un element</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nom:</translation>
     </message>
     <message>
         <source>Current source:</source>
-        <translation type="unfinished"></translation>
+        <translation>Font actual:</translation>
     </message>
     <message>
         <source>Publishing schedule for: </source>
-        <translation type="unfinished"></translation>
+        <translation>Calendari de publicació per a: </translation>
     </message>
 </context>
 <context>
@@ -522,11 +522,11 @@
     </message>
     <message>
         <source>Expand All</source>
-        <translation type="unfinished"></translation>
+        <translation>Desplega-ho tot</translation>
     </message>
     <message>
         <source>Collapse All</source>
-        <translation type="unfinished"></translation>
+        <translation>Replega-ho tot</translation>
     </message>
 </context>
 <context>
@@ -572,14 +572,14 @@
     </message>
     <message>
         <source>Push to block</source>
-        <translation type="unfinished"></translation>
+        <translation>Envia al bloc</translation>
     </message>
 </context>
 <context>
     <name>kernel/workflow/event</name>
     <message>
         <source>eZ Page swap workflow event</source>
-        <translation type="unfinished"></translation>
+        <translation>Esdeveniment de flux de treball d&apos;intercanvi de pàgines d&apos;eZ Page</translation>
     </message>
 </context>
 </TS>

@@ -183,7 +183,7 @@
     </message>
     <message>
         <source>No search results found for:</source>
-        <translation type="unfinished"></translation>
+        <translation>次の検索結果は見つかりませんでした:</translation>
     </message>
 </context>
 <context>
@@ -477,15 +477,15 @@
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>名前:</translation>
     </message>
     <message>
         <source>Current source:</source>
-        <translation type="unfinished"></translation>
+        <translation>現在のソース:</translation>
     </message>
     <message>
         <source>Publishing schedule for: </source>
-        <translation type="unfinished"></translation>
+        <translation>公開スケジュールの対象: </translation>
     </message>
 </context>
 <context>
@@ -538,11 +538,11 @@
     </message>
     <message>
         <source>Expand All</source>
-        <translation type="unfinished"></translation>
+        <translation>すべて展開</translation>
     </message>
     <message>
         <source>Collapse All</source>
-        <translation type="unfinished"></translation>
+        <translation>すべて折りたたみ</translation>
     </message>
 </context>
 <context>
@@ -588,14 +588,14 @@
     </message>
     <message>
         <source>Push to block</source>
-        <translation type="unfinished"></translation>
+        <translation>ブロックへ送信</translation>
     </message>
 </context>
 <context>
     <name>kernel/workflow/event</name>
     <message>
         <source>eZ Page swap workflow event</source>
-        <translation type="unfinished"></translation>
+        <translation>eZ Page の入れ替えワークフローイベント</translation>
     </message>
 </context>
 </TS>

@@ -504,6 +504,7 @@
   <file name="CHANGELOG-2.3.0-to-2.4.0" path="/doc/changelogs/2.4" md5sum="3c0405cbf4b12e027775da0501afd23c"/>
   <file name="6.1" path="/doc/changelogs" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
   <file name="CHANGELOG-6.1.13-to-6.1.14" path="/doc/changelogs/6.1" md5sum="1ff955b3b4355ab089af1c65a2e952eb"/>
+  <file name="CHANGELOG-6.1.14-to-6.1.15" path="/doc/changelogs/6.1" md5sum="95161280396c94bb044bcbdb2f95c5d2"/>
   <file name="deprecated" path="/doc" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
   <file name="eZ Flow Pool.odt" path="/doc/deprecated" md5sum="50bdeafd8dc077d037872a5cd25b63c3"/>
   <file name="eZ Flow fetch functions.odt" path="/doc/deprecated" md5sum="1dfd0666f67a80983e4d7a2b950b3ed2"/>
@@ -516,10 +517,10 @@
   <file name="event" path="/eventtypes" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
   <file name="ezpageswap" path="/eventtypes/event" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
   <file name="ezpageswaptype.php" path="/eventtypes/event/ezpageswap" md5sum="6352d59969e4411d877953afb419b0b1"/>
-  <file name="extension.xml" md5sum="71e880b83000f25c4cf62275a6787d90"/>
+  <file name="extension.xml" md5sum="4cd3229cad4827e83b69449e89a838ff"/>
   <file name="extras" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
   <file name="flash_video_list.php" path="/extras" md5sum="6a49ee4c09a519a6803d1febb8fd50ac"/>
-  <file name="ezinfo.php" md5sum="6d7a20ccaa060d99f84f02135427f112"/>
+  <file name="ezinfo.php" md5sum="914855f73891621e294a1f6dd6689c10"/>
   <file name="modules" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
   <file name="ezflow" path="/modules" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
   <file name="block.php" path="/modules/ezflow" md5sum="ca7fe3725987f197243816ccd93151a2"/>
@@ -573,36 +574,262 @@
   <file name="tests" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
   <file name="ezflowadmininlinecsstest.php" path="/tests" md5sum="334116103d2c0b4435a6451f3f72f18c"/>
   <file name="translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="afr-ZA" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/afr-ZA" md5sum="1b2b6dae75da5117ffa6160a6522c9c9"/>
+  <file name="aka-GH" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/aka-GH" md5sum="40982970c5ece3abaabe47806a1c02cc"/>
+  <file name="amh-ET" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/amh-ET" md5sum="14e1c2b3b9d556425c665286e3af36d4"/>
+  <file name="ara-SA" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/ara-SA" md5sum="b5b244904f6474f6c593033453548d0c"/>
+  <file name="arc-IQ" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/arc-IQ" md5sum="102c072eae59b5efb7320fda851ca777"/>
+  <file name="asm-IN" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/asm-IN" md5sum="29987329319f12a68347452df23b9c6c"/>
+  <file name="aze-AZ" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/aze-AZ" md5sum="1a75fdd759631a99841d44c4a53ca53e"/>
+  <file name="bel-BY" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/bel-BY" md5sum="45859bba847cf3309a20bf344d2a7147"/>
+  <file name="ben-BD" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/ben-BD" md5sum="04a1c00d4de5520fef626a83fabe6d1e"/>
+  <file name="bho-IN" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/bho-IN" md5sum="32f44e0dc2c069804357b3fe2a396c74"/>
+  <file name="bod-CN" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/bod-CN" md5sum="079f47aa591e931f443caad28ca194e3"/>
+  <file name="bos-BA" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/bos-BA" md5sum="9f03da074871126052c4c4871c7e880c"/>
+  <file name="bul-BG" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/bul-BG" md5sum="20c98c8e0bce92f3ad67e7bc93226edd"/>
   <file name="cat-ES" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
-  <file name="translation.ts" path="/translations/cat-ES" md5sum="24c91ab25d3d2a8edc5397827e06fda9"/>
+  <file name="translation.ts" path="/translations/cat-ES" md5sum="593c0d422c8f2804a181d6d2382c2172"/>
+  <file name="ceb-PH" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/ceb-PH" md5sum="611c5ce3a79b5819adc9900f1d8d0266"/>
+  <file name="che-RU" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/che-RU" md5sum="49c6d497efc25e2eac9aa3715b099032"/>
+  <file name="chi-CN" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/chi-CN" md5sum="15da89309adce46c5a70cc1458bee297"/>
+  <file name="chi-TW" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/chi-TW" md5sum="675710d82cc4592bc5f75330cbc4b57c"/>
+  <file name="ckb-IQ" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/ckb-IQ" md5sum="25d608a3b388a5a7449251fd1f073f71"/>
   <file name="cro-HR" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
   <file name="translation.ts" path="/translations/cro-HR" md5sum="0d7c1201d33f847a43bd7febee82de78"/>
+  <file name="cym-GB" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/cym-GB" md5sum="6dc601a001b50de9e7cfd5109cd8f4c0"/>
   <file name="cze-CZ" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
   <file name="translation.ts" path="/translations/cze-CZ" md5sum="79ff4cb5726df39a8fd7d0264661b8a5"/>
   <file name="dan-DK" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
   <file name="translation.ts" path="/translations/dan-DK" md5sum="b1dfe65eb826a86a651eb1f7e7d07796"/>
+  <file name="dsb-DE" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/dsb-DE" md5sum="c60fa2aa0b13bd75f0768b411ba18256"/>
   <file name="dut-NL" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
   <file name="translation.ts" path="/translations/dut-NL" md5sum="23c4f50e14ee07e7be2467a3e5f2b9a3"/>
+  <file name="ell-GR" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/ell-GR" md5sum="0c85e0f76d21fc8db76f4f3d573e36ed"/>
+  <file name="eng-AU" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/eng-AU" md5sum="2775929045f60b7ddb0d64f1e0423c89"/>
+  <file name="eng-US" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/eng-US" md5sum="4e82f73c7cdcf28c59042f4af640cf51"/>
   <file name="esl-ES" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
-  <file name="translation.ts" path="/translations/esl-ES" md5sum="aaa220fedff58c6ccd4b859e372148e1"/>
+  <file name="translation.ts" path="/translations/esl-ES" md5sum="a188fcf4b339f68040f1f4bc34522b5a"/>
+  <file name="esl-MX" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/esl-MX" md5sum="0530454b1c56a5131a699c6bad841932"/>
+  <file name="est-EE" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/est-EE" md5sum="70130de2bbd54cdb571b69795cce71bc"/>
+  <file name="eus-ES" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/eus-ES" md5sum="e85fcc608c9484006c2d90399ad3b820"/>
+  <file name="fas-IR" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/fas-IR" md5sum="338e1f8ef78f1b099b6224f18721eb64"/>
+  <file name="fil-PH" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/fil-PH" md5sum="1d4cdca675ba95edac9ac4c0a4c47abb"/>
+  <file name="fin-FI" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/fin-FI" md5sum="b7b57f51ccaccdce768b415a3b684fd7"/>
   <file name="fre-FR" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
   <file name="translation.ts" path="/translations/fre-FR" md5sum="8ed8ab7a651bf77b659ab80be12d0c8c"/>
+  <file name="ful-SN" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/ful-SN" md5sum="938e9c0d1b83b259928434decc866613"/>
   <file name="ger-DE" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
-  <file name="translation.ts" path="/translations/ger-DE" md5sum="fdf8eda35ae3c8ca513d5f7225413411"/>
+  <file name="translation.ts" path="/translations/ger-DE" md5sum="f7d3126c16558d71d4ccf18dfea55ae3"/>
+  <file name="gla-GB" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/gla-GB" md5sum="fee2b0b7af3e3bba6370399bb1a13bae"/>
+  <file name="gle-IE" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/gle-IE" md5sum="93c56f0ce065a55a58c76c4f64c58a5f"/>
+  <file name="glg-ES" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/glg-ES" md5sum="744402d9888d254daeb50e2774252759"/>
+  <file name="guj-IN" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/guj-IN" md5sum="286d00a0b1a7d768af2738a811cb8947"/>
+  <file name="hau-NG" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/hau-NG" md5sum="cc51f87ab456cae75d0adaf749f02ef6"/>
+  <file name="haw-US" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/haw-US" md5sum="b00520be4e4a80cde963b5589ea22810"/>
+  <file name="heb-IL" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/heb-IL" md5sum="b313f3d8ad11179ec4530e432ba86849"/>
+  <file name="hin-IN" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/hin-IN" md5sum="4527725d6363446352b857257539dbc0"/>
+  <file name="hun-HU" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/hun-HU" md5sum="e2798a1d3a7b0ad32b3ad39911259ad4"/>
+  <file name="huy-IL" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/huy-IL" md5sum="102c072eae59b5efb7320fda851ca777"/>
+  <file name="hye-AM" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/hye-AM" md5sum="86a0e63df3447b275812ed6399208917"/>
+  <file name="ibo-NG" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/ibo-NG" md5sum="ca61e56a172cae35af5ad8bcfcfc28a8"/>
+  <file name="ind-ID" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/ind-ID" md5sum="fd9bf24defe7f65c1ad91b9ae2b9a68f"/>
+  <file name="isl-IS" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/isl-IS" md5sum="0d00fb669aab85eac9bd93fe8724c5f0"/>
   <file name="ita-IT" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
   <file name="translation.ts" path="/translations/ita-IT" md5sum="9816bdfe46d1179bee412fe02eb92c8e"/>
+  <file name="jav-ID" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/jav-ID" md5sum="9a4589ee48382a7a7450e8fa658e35b1"/>
   <file name="jpn-JP" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
-  <file name="translation.ts" path="/translations/jpn-JP" md5sum="60f1621a659bc39a7fbb8c5fd86b25ca"/>
+  <file name="translation.ts" path="/translations/jpn-JP" md5sum="96374ae946554cc31eb47b647ab41555"/>
+  <file name="kal-GL" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/kal-GL" md5sum="1c93c1b271504743df916b1e63a5bfac"/>
+  <file name="kan-IN" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/kan-IN" md5sum="347e101b11958a678d6bf9815f447b1e"/>
+  <file name="kat-GE" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/kat-GE" md5sum="ec89635ac7285dc0c0fc54610527087a"/>
+  <file name="kaz-KZ" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/kaz-KZ" md5sum="a1545fdcb9b88ab9db6449b4a7d129fd"/>
+  <file name="khm-KH" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/khm-KH" md5sum="e9ec4fb3c6c85d101a69d1ced739c8c4"/>
+  <file name="kik-KE" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/kik-KE" md5sum="c87d5abb6180548235593b0340168fc5"/>
+  <file name="kin-RW" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/kin-RW" md5sum="2c52c68e16abe81e389daec27a440f09"/>
+  <file name="kir-KG" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/kir-KG" md5sum="8722abe9e9da6a9af9fce162cba98481"/>
+  <file name="kor-KR" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/kor-KR" md5sum="69b617256e9b2312ff74a02ac111cac6"/>
+  <file name="kur-TR" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/kur-TR" md5sum="970e7f71d5dc8d06cfc4eefb35d3eeec"/>
+  <file name="lao-LA" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/lao-LA" md5sum="3389b675344351ea7d61ddab86f0a4a7"/>
+  <file name="lat-VA" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/lat-VA" md5sum="379c54a2e85aa4c08d90c476086efdef"/>
+  <file name="lav-LV" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/lav-LV" md5sum="4c5a6405cc60a00828a919a9a8804201"/>
+  <file name="lin-CD" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/lin-CD" md5sum="e7625d8a505c630bcd68fa106cc84502"/>
+  <file name="lit-LT" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/lit-LT" md5sum="84aca5bb0508e5398693c1dc0cd96fdb"/>
+  <file name="ltz-LU" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/ltz-LU" md5sum="feedbad50f2b703b9f77202911b0881e"/>
+  <file name="lug-UG" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/lug-UG" md5sum="4132ca2cea4ed863fb6f109debe208ad"/>
+  <file name="mai-IN" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/mai-IN" md5sum="f86e6ffe0262bfd73e061079077aa10d"/>
+  <file name="mal-IN" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/mal-IN" md5sum="754e9f1c3dbc9516b96513b0f667d56c"/>
+  <file name="mar-IN" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/mar-IN" md5sum="ebc7e4b7e166a15b076660fd59e5ec89"/>
+  <file name="mkd-MK" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/mkd-MK" md5sum="9eab1f941f0f15e23392df2fb1824fb7"/>
+  <file name="mlg-MG" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/mlg-MG" md5sum="ccc3481b785973203f434216d1b9d000"/>
+  <file name="mlt-MT" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/mlt-MT" md5sum="e156884506ebfdf2002c51b2e4464458"/>
+  <file name="mon-MN" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/mon-MN" md5sum="c91ab4b300239abfe8fefe87aa6c21ba"/>
+  <file name="mri-NZ" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/mri-NZ" md5sum="8ea5eb53ca16e3f845ace664cb1864b1"/>
+  <file name="msa-MY" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/msa-MY" md5sum="29cf9b8128dffec6788dcc2901094e02"/>
+  <file name="mya-MM" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/mya-MM" md5sum="a708378f1cf402f397752b6031e348d3"/>
+  <file name="nep-NP" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/nep-NP" md5sum="3a7af9785c7f3ecdad2ccee2a405f6a5"/>
   <file name="nor-NO" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
   <file name="translation.ts" path="/translations/nor-NO" md5sum="1af9793b678165f47d786b28df912bad"/>
+  <file name="ori-IN" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/ori-IN" md5sum="9878e07a049552832fa119e03abc7a95"/>
+  <file name="orm-ET" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/orm-ET" md5sum="37984cf79c01b32ff6c99278f9239983"/>
+  <file name="pan-IN" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/pan-IN" md5sum="229e508b6ffa0d83e738edac5c565e4a"/>
+  <file name="pcm-NG" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/pcm-NG" md5sum="4a5dc963c28408643e130980463bc6f4"/>
+  <file name="pnb-PK" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/pnb-PK" md5sum="9922142f42e7f29f0ed2b2c91d2bff0a"/>
   <file name="pol-PL" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
   <file name="translation.ts" path="/translations/pol-PL" md5sum="08426bb6ef587c9e9aab54314ef22bf7"/>
   <file name="por-BR" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
   <file name="translation.ts" path="/translations/por-BR" md5sum="96eaa56c2e68411e7beaea2a61a620dd"/>
+  <file name="por-PT" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/por-PT" md5sum="5a95d5447af5d06bd98dba528577173b"/>
+  <file name="pus-AF" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/pus-AF" md5sum="aafadfe781c5eb33df51c22f6fbee508"/>
+  <file name="ron-RO" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/ron-RO" md5sum="ca5e3d534745d490044f0d5453d33a6d"/>
+  <file name="run-BI" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/run-BI" md5sum="3d2f514aed8a469ec67025dcbad8aad6"/>
+  <file name="rus-RU" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/rus-RU" md5sum="ca517ebe3972c32577bf79f5e9a0f27a"/>
+  <file name="ser-SR" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/ser-SR" md5sum="09b2639389bdde60589f0a6e4aecbf33"/>
+  <file name="sin-LK" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/sin-LK" md5sum="284944e73b9b469d27c822a5c1118295"/>
+  <file name="slk-SK" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/slk-SK" md5sum="e130bdd1212bc5b0bf56456332048cd7"/>
+  <file name="slv-SI" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/slv-SI" md5sum="fb5d7455b539c428aa4ae6e8d34c7100"/>
+  <file name="sna-ZW" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/sna-ZW" md5sum="50a65502075da1743a21f25c954dd51a"/>
+  <file name="snd-PK" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/snd-PK" md5sum="722f5306c1773b1e2ba7518d42381e73"/>
+  <file name="som-SO" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/som-SO" md5sum="e3e5a65d6d707a9dcbb46895401a304e"/>
+  <file name="sqi-AL" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/sqi-AL" md5sum="f216e172b98871f4f444122c348a658d"/>
+  <file name="srp-RS" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/srp-RS" md5sum="0ea8571e241ed286fe7bf9dca0caff98"/>
+  <file name="sun-ID" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/sun-ID" md5sum="735593729135e441d5ccaaa79af7f4b6"/>
+  <file name="swa-KE" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/swa-KE" md5sum="5b2815f24385da0c35139c49b8f3adee"/>
   <file name="swe-SE" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
   <file name="translation.ts" path="/translations/swe-SE" md5sum="d5c6e0b8881a29e20ec4d5c865aed96e"/>
+  <file name="syr-IQ" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/syr-IQ" md5sum="da40c9b2e16f0cd24cb81939d653c2d8"/>
+  <file name="tam-IN" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/tam-IN" md5sum="ad31dee861f124f9a56a047332d1ccdc"/>
+  <file name="tat-RU" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/tat-RU" md5sum="2673f4a1c258edaa8a0b757705ba6163"/>
+  <file name="tel-IN" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/tel-IN" md5sum="33b951cb7abbaea6f879e2536bddb68a"/>
+  <file name="tgk-TJ" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/tgk-TJ" md5sum="f6beb04b98d38747e90d505dc441d839"/>
+  <file name="tha-TH" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/tha-TH" md5sum="7822f64d5dd0eb55bc94ae4954441f19"/>
+  <file name="tir-ET" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/tir-ET" md5sum="d4ff1da1a70373d3fe83a876073ace66"/>
+  <file name="tlh-QO" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/tlh-QO" md5sum="4f34f90bf34342cd227198f59f5e7ee1"/>
+  <file name="tuk-TM" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/tuk-TM" md5sum="304c592b95a306307f4043268b2ae6c7"/>
   <file name="tur-TR" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
   <file name="translation.ts" path="/translations/tur-TR" md5sum="926a58cbfa546cbc89e8c5e916684186"/>
+  <file name="uig-CN" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/uig-CN" md5sum="94cefb7471996de2001f2ed49880c688"/>
+  <file name="ukr-UA" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/ukr-UA" md5sum="4ef798a78170d641c263a15d092d7bbe"/>
   <file name="untranslated" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
   <file name="translation.ts" path="/translations/untranslated" md5sum="6d3bc4467a536630e1c990474dec2144"/>
+  <file name="urd-PK" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/urd-PK" md5sum="db3f4b7b8f142026d5a474c8bc6cc564"/>
+  <file name="uzb-UZ" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/uzb-UZ" md5sum="ad38569443a8f365f4b63a835d639b90"/>
+  <file name="vie-VN" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/vie-VN" md5sum="8b21ac3fa351e9ad8148bb3126a44333"/>
+  <file name="wol-SN" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/wol-SN" md5sum="40501560b9ea38f5f8709f46a98af086"/>
+  <file name="xho-ZA" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/xho-ZA" md5sum="bd85ca8f0664f6364372faf17d1fa3b5"/>
+  <file name="yid-US" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/yid-US" md5sum="f8fb40f844a820345854388f62e7e3d0"/>
+  <file name="yor-NG" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/yor-NG" md5sum="42eacd3716048bfd30faa9a05a0cab42"/>
+  <file name="zul-ZA" path="/translations" md5sum="d41d8cd98f00b204e9800998ecf8427e" type="dir"/>
+  <file name="translation.ts" path="/translations/zul-ZA" md5sum="8ed685ba8778f74b5a4cc56986d4fcd0"/>
 </extension>
