@@ -1,0 +1,5 @@
+Changes from 6.1.15 to 6.1.16 (2026-10-29)
+
+- Updated: One copyright notice, Exponential Foundation and 7x.
+
+Upgrading: composer update and clear the caches.

@@ -17,7 +17,7 @@
     </maintainer>
   </maintainers>
   <packaging>
-    <timestamp>1793255577</timestamp>
+    <timestamp>1793301896</timestamp>
     <host>packages.ez.no</host>
   </packaging>
   <documents>
@@ -31,7 +31,7 @@
   <simple-files/>
   <version>
     <number>6.1</number>
-    <release>15</release>
+    <release>16</release>
   </version>
   <licence>GPL</licence>
   <state>stable</state>
