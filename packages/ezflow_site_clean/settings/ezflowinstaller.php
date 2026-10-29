@@ -97,7 +97,6 @@ class eZFlownInstaller extends eZSiteInstaller
             'bcwebsitestatistics', 
             'bccie', 
             'xrowextract', 
-            'bcwebshop', 
             'ezwebin', 
             'ezmultiupload' 
         ) );
