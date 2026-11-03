@@ -1625,7 +1625,7 @@ class eZFlownInstaller extends eZSiteInstaller
                 "DataText" => "Site settings" 
             ), 
             "footer_text" => array( 
-                "DataText" => "<a href=\"https://exponential.earth\">Exponential</a> Copyright &#169; 1998-2026 Exponential Foundation and 7x" 
+                "DataText" => "Copyright © 1998–2026 Exponential Foundation and 7x" 
             ), 
             "hide_powered_by" => array( 
                 "DataInt" => 0 
@@ -2876,7 +2876,8 @@ class eZFlownInstaller extends eZSiteInstaller
         $settings['SiteAccessSettings'] = array( 
             'RequireUserLogin' => 'false', 
             'ShowHiddenNodes' => 'false',
-            'DetectMobileDevice' => 'enabled',
+            // the site design is responsive: phones get the same pages (the iphone siteaccess stays for direct use)
+            'DetectMobileDevice' => 'disabled',
             'MobileSiteAccessList' => array( 'iphone' ),
             'MobileSiteAccessURL' => 'http://' . $siteaccessUrl['mobile']['iphone']['url']
         );
