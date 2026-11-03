@@ -1767,7 +1767,7 @@ class eZFlownInstaller extends eZSiteInstaller
         // ezflow.ini (the dynamic blocks' fetch classes, the safety delay) come in only with them
         if ( !eZINI::instance( 'ezflow.ini' )->hasGroup( 'SafetyDelay' ) )
         {
-            eZExtension::activateExtensions( 'default' );
+            eZINI::instance()->prependOverrideDir( eZExtension::baseDirectory() . '/ezflow/settings', true, 'extension:ezflow', 'extension' );
             eZINI::resetInstance( 'ezflow.ini' );
             eZINI::resetInstance( 'block.ini' );
         }
