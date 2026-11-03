@@ -1763,6 +1763,14 @@ class eZFlownInstaller extends eZSiteInstaller
                 $attribute->store();
             }
         }
+        // During the site installation the settings of the active extensions are not loaded yet: ezflow's block.ini and
+        // ezflow.ini (the dynamic blocks' fetch classes, the safety delay) come in only with them
+        if ( !eZINI::instance( 'ezflow.ini' )->hasGroup( 'SafetyDelay' ) )
+        {
+            eZExtension::activateExtensions( 'default' );
+            eZINI::resetInstance( 'ezflow.ini' );
+            eZINI::resetInstance( 'block.ini' );
+        }
         if ( class_exists( 'eZFlowOperations' ) )
             eZFlowOperations::update();
         if ( $nodeIDs )
