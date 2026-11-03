@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<package version="3.5.2" development="false" install_type="import">
+<package version="3.5.2" development="false" install_type="install">
   <name>ezflow_democontent</name>
   <summary>Demo content of the ezflow site: a block-built home page, platform and solution pages, news, blog, events, a gallery, a poll and a contact form</summary>
   <description>The re-imagined demo content of the ezflow site for Exponential 6.0.15. Photos are CC0 (see CREDITS.md).</description>
