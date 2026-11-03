@@ -1316,6 +1316,10 @@ class eZFlownInstaller extends eZSiteInstaller
                 ) 
             ),
             array(
+                '_function' => 'fillDemoFrontpageBlocks',
+                '_params' => array()
+            ),
+            array(
                 '_function' => 'addMetaDataAttributeToEveryClass',
                 '_params' => array()
             ),
@@ -1422,7 +1426,8 @@ class eZFlownInstaller extends eZSiteInstaller
                 'AvailableDataTypes' => $availableDatatype 
             ) 
         ) );
-        $this->insertDBFile( 'ezflow_extension', 'ezflow', true );
+        // the tables only: the block rows of the demo come from the step fillDemoFrontpageBlocks
+        $this->insertDBFile( 'ezflow_extension', 'ezflow', false );
         // Composer installs ezstarrating and ezgmaplocation (no package carries them any more): their tables
         // come from the extension's share/db_schema.dba, created where missing on any database engine.
         foreach ( array( 'ezstarrating', 'ezgmaplocation' ) as $extensionWithTables )
@@ -1550,6 +1555,239 @@ class eZFlownInstaller extends eZSiteInstaller
      A class that has the attribute keeps it and gets only what it lacks. Done by xrowmetadata
      (xrowMetaDataType::addToEveryClass()); an older xrowmetadata without it leaves the classes as they are.
     */
+    // BEGIN generated: fillDemoFrontpageBlocks (generated from the demo content builder; do not edit by hand)
+    /*!
+     The demo frontpages (Home, Platform, Solutions, the global zone): every block gets its rows in ezm_block, its
+     manual items (by object remote id) and the node ids its custom attributes and fetch parameters name. The
+     RSS feed lists the News articles.
+    */
+    function fillDemoFrontpageBlocks( $params = false )
+    {
+        $map = array(
+            '8a9c9c761004866fb458d89910f52bee' => array(
+                '0aa5b5b6ffb684e073473b9ba2e85813' => array(
+                    'items' => array( 'ezflowdemo-feature-editing' )
+                ),
+                'f6c660c310108f039a1cc4104100e20c' => array(
+                    'items' => array( 'ezflowdemo-feature-layouts', 'ezflowdemo-feature-velocity', 'ezflowdemo-feature-design', 'ezflowdemo-feature-security' )
+                ),
+                '533e511053521717631336d982f29822' => array(
+                    'items' => array( 'ezflowdemo-solution-media', 'ezflowdemo-solution-government', 'ezflowdemo-solution-education' )
+                ),
+                '02b186549b10f25f28e0083cf1213d68' => array(
+                    'fetch' => array(
+                        'Source' => 'remote:ezflowdemo-news',
+                        'Classes' => 'article'
+                    )
+                ),
+                'c1d9757a6142d52890ac07d1e503a02f' => array(
+                    'items' => array( 'ezflowdemo-photo-gallery-mountains', 'ezflowdemo-photo-gallery-aurora', 'ezflowdemo-photo-gallery-coast', 'ezflowdemo-photo-gallery-city' )
+                ),
+                'e47c305fa950188e883e3906d947a49a' => array(
+                    'items' => array( 'ezflowdemo-quote-editor', 'ezflowdemo-quote-dev', 'ezflowdemo-quote-it' )
+                ),
+                '323236d193dc00d1fe09e333db2d165d' => array(
+                    'items' => array( 'ezflowdemo-blog-typography', 'ezflowdemo-blog-performance', 'ezflowdemo-blog-content', 'ezflowdemo-blog-teams' )
+                ),
+                '925df4bef21a8f0e4da7f3dfbc579903' => array(
+                    'custom' => array(
+                        'poll_node_id' => 'remote:ezflowdemo-poll-build'
+                    )
+                ),
+                '5fb59b39008bc61155699bfdbf2fc725' => array(
+                    'items' => array( 'ezflowdemo-about-foundation' )
+                )
+            ),
+            'ezflowdemo-platform' => array(
+                'a5a41585ae981a256b012628c7b580f4' => array(
+                    'items' => array( 'ezflowdemo-feature-velocity' )
+                ),
+                '6f1fc200faf30c35073c6658eaa72fcd' => array(
+                    'items' => array( 'ezflowdemo-feature-editing', 'ezflowdemo-feature-layouts', 'ezflowdemo-feature-design', 'ezflowdemo-feature-databases' )
+                ),
+                '819c66606d672e918b3fc6bf360f015f' => array(
+                    'items' => array( 'ezflowdemo-feature-security', 'ezflowdemo-feature-help', 'ezflowdemo-feature-migrations' )
+                ),
+                'fd5019c60b400ee36591efc0f80b9ff0' => array(
+                    'fetch' => array(
+                        'Source' => 'remote:ezflowdemo-news',
+                        'Keywords' => 'release, velocity, accessibility',
+                        'Classes' => 'article'
+                    )
+                ),
+                'a98cc3a6a87e03b189bbabbc60ec08ad' => array(
+                    'custom' => array(
+                        'subtree_node_id' => 'remote:ezflowdemo-platform'
+                    )
+                )
+            ),
+            'ezflowdemo-solutions' => array(
+                '1c1fe5ed9c9a547efaf3dc713c144c36' => array(
+                    'items' => array( 'ezflowdemo-solution-intranet' )
+                ),
+                '72979b7f633b993737232839408b475b' => array(
+                    'items' => array( 'ezflowdemo-solution-commerce', 'ezflowdemo-solution-nonprofit' )
+                ),
+                '0eb17946640f59f8d552b609ed3c4908' => array(
+                    'items' => array( 'ezflowdemo-solution-media', 'ezflowdemo-solution-government', 'ezflowdemo-solution-education', 'ezflowdemo-solution-commerce', 'ezflowdemo-solution-nonprofit', 'ezflowdemo-solution-intranet' )
+                ),
+                'bace5af88210a50c54e8903c5127f019' => array(
+                    'items' => array( 'ezflowdemo-solution-media', 'ezflowdemo-solution-government', 'ezflowdemo-solution-education', 'ezflowdemo-solution-commerce', 'ezflowdemo-solution-intranet' )
+                ),
+                'dd072b43f9045b75e7edecb0600ca577' => array(
+                    'fetch' => array(
+                        'Source' => 'remote:ezflowdemo-gallery',
+                        'Classes' => 'image'
+                    )
+                )
+            ),
+            'dbf56770d0cb1273f5d056e50c96fbeb' => array(
+                '60eb7208b9b20324410f0fbdb39701c3' => array(
+                    'fetch' => array(
+                        'Source' => 'remote:ezflowdemo-news',
+                        'Classes' => 'article'
+                    )
+                ),
+                '60842272f743be6f81e616f86df1608a' => array(
+                    'custom' => array(
+                        'source_node_id' => 'remote:ezflowdemo-blog',
+                        'limit' => '4'
+                    )
+                )
+            )
+        );
+        $db = eZDB::instance();
+        $problems = array();
+        $now = time();
+        $resolve = function ( $value ) use ( &$problems )
+        {
+            if ( is_string( $value ) && strpos( $value, 'remote:' ) === 0 )
+            {
+                $object = eZContentObject::fetchByRemoteID( substr( $value, 7 ) );
+                if ( !$object instanceof eZContentObject )
+                {
+                    $problems[] = "no object $value";
+                    return '';
+                }
+                return (string)$object->attribute( 'main_node_id' );
+            }
+            return (string)$value;
+        };
+        $nodeIDs = array();
+        foreach ( $map as $pageRemoteID => $blocks )
+        {
+            $page = eZContentObject::fetchByRemoteID( $pageRemoteID );
+            if ( !$page instanceof eZContentObject )
+            {
+                $problems[] = "no frontpage $pageRemoteID";
+                continue;
+            }
+            $pageNodeID = (int)$page->attribute( 'main_node_id' );
+            $nodeIDs[] = $pageNodeID;
+            foreach ( $page->contentObjectAttributes() as $attribute )
+            {
+                if ( $attribute->attribute( 'data_type_string' ) !== 'ezpage' )
+                    continue;
+                $dom = new DOMDocument( '1.0', 'utf-8' );
+                if ( !$attribute->attribute( 'data_text' ) || !@$dom->loadXML( $attribute->attribute( 'data_text' ) ) )
+                {
+                    $problems[] = "frontpage $pageRemoteID has no page XML";
+                    continue;
+                }
+                $xpath = new DOMXPath( $dom );
+                foreach ( $xpath->query( '//block' ) as $blockNode )
+                {
+                    $blockID = substr( $blockNode->getAttribute( 'id' ), 3 );
+                    if ( !isset( $blocks[$blockID] ) )
+                        continue;
+                    $spec = $blocks[$blockID] + array( 'items' => array(), 'custom' => array(), 'fetch' => array() );
+                    $zoneID = (string)$xpath->evaluate( 'string(zone_id)', $blockNode );
+                    $name = (string)$xpath->evaluate( 'string(name)', $blockNode );
+                    $type = (string)$xpath->evaluate( 'string(type)', $blockNode );
+                    if ( $spec['custom'] )
+                    {
+                        $custom = $xpath->query( 'custom_attributes', $blockNode )->item( 0 );
+                        if ( !$custom )
+                            $custom = $blockNode->appendChild( $dom->createElement( 'custom_attributes' ) );
+                        foreach ( $spec['custom'] as $key => $value )
+                        {
+                            foreach ( $xpath->query( $key, $custom ) as $old )
+                                $custom->removeChild( $old );
+                            $custom->appendChild( $dom->createElement( $key ) )->appendChild( $dom->createTextNode( $resolve( $value ) ) );
+                        }
+                    }
+                    $fetchParams = (string)$xpath->evaluate( 'string(fetch_params)', $blockNode );
+                    if ( $spec['fetch'] )
+                    {
+                        $params = array();
+                        foreach ( $spec['fetch'] as $key => $value )
+                            $params[$key] = $resolve( $value );
+                        $fetchParams = serialize( $params );
+                        foreach ( $xpath->query( 'fetch_params', $blockNode ) as $old )
+                            $blockNode->removeChild( $old );
+                        $blockNode->appendChild( $dom->createElement( 'fetch_params' ) )->appendChild( $dom->createTextNode( $fetchParams ) );
+                    }
+                    $escapedID = $db->escapeString( $blockID );
+                    $exists = $db->arrayQuery( "SELECT COUNT( id ) AS count FROM ezm_block WHERE id='$escapedID'" );
+                    if ( empty( $exists[0]['count'] ) )
+                    {
+                        $db->query( "INSERT INTO ezm_block ( id, zone_id, name, node_id, overflow_id, last_update, block_type, fetch_params, rotation_type, rotation_interval, is_removed )
+                                     VALUES ( '$escapedID', '" . $db->escapeString( $zoneID ) . "', '" . $db->escapeString( $name ) . "', $pageNodeID, '', 0,
+                                              '" . $db->escapeString( $type ) . "', '" . $db->escapeString( $fetchParams ) . "', 0, 0, 0 )" );
+                    }
+                    else
+                    {
+                        $db->query( "UPDATE ezm_block SET node_id=$pageNodeID, is_removed=0, last_update=0, name='" . $db->escapeString( $name ) . "',
+                                     fetch_params='" . $db->escapeString( $fetchParams ) . "' WHERE id='$escapedID'" );
+                    }
+                    if ( $spec['items'] )
+                    {
+                        $db->query( "DELETE FROM ezm_pool WHERE block_id='$escapedID'" );
+                        $count = count( $spec['items'] );
+                        foreach ( array_values( $spec['items'] ) as $index => $itemRemoteID )
+                        {
+                            $item = eZContentObject::fetchByRemoteID( $itemRemoteID );
+                            if ( !$item instanceof eZContentObject || !$item->attribute( 'main_node_id' ) )
+                            {
+                                $problems[] = "block $blockID: no item $itemRemoteID";
+                                continue;
+                            }
+                            $priority = $count - $index;
+                            $db->query( "INSERT INTO ezm_pool ( block_id, object_id, node_id, priority, ts_publication, ts_visible, ts_hidden, rotation_until, moved_to )
+                                         VALUES ( '$escapedID', " . (int)$item->attribute( 'id' ) . ', ' . (int)$item->attribute( 'main_node_id' ) . ",
+                                                  $priority, " . ( $now - 60 ) . ", $now, 0, 0, '' )" );
+                        }
+                    }
+                }
+                $attribute->setAttribute( 'data_text', $dom->saveXML( $dom->documentElement ) );
+                $attribute->store();
+            }
+        }
+        if ( class_exists( 'eZFlowOperations' ) )
+            eZFlowOperations::update();
+        if ( $nodeIDs )
+            eZContentCacheManager::clearContentCacheIfNeeded( array_map( function ( $n ) { return eZContentObjectTreeNode::fetch( $n )->attribute( 'contentobject_id' ); }, $nodeIDs ) );
+        foreach ( $problems as $problem )
+            eZDebug::writeWarning( $problem, __METHOD__ );
+        $news = eZContentObject::fetchByRemoteID( 'ezflowdemo-news' );
+        $articleClass = eZContentClass::fetchByIdentifier( 'article' );
+        $feed = eZRSSExport::fetchByName( 'my_feed' );
+        if ( $news && $articleClass && $feed )
+        {
+            $feed->setAttribute( 'title', 'News' );
+            $feed->store();
+            foreach ( $feed->itemList() as $item )
+            {
+                $item->setAttribute( 'source_node_id', $news->attribute( 'main_node_id' ) );
+                $item->setAttribute( 'class_id', $articleClass->attribute( 'id' ) );
+                $item->setAttribute( 'title', 'title' );
+                $item->setAttribute( 'description', 'intro' );
+                $item->store();
+            }
+        }
+    }
+    // END generated: fillDemoFrontpageBlocks
+
     function addMetaDataAttributeToEveryClass( $params = false )
     {
         $dataType = eZDataType::create( 'xrowmetadata' );
@@ -1880,7 +2118,7 @@ class eZFlownInstaller extends eZSiteInstaller
     function postInstallUserSiteaccessINIUpdate( $params = false )
     {
         $siteINI = eZINI::instance( "site.ini.append.php", "settings/siteaccess/" . $this->setting( 'user_siteaccess' ), null, false, null, true );
-        $siteINI->setVariable( "SiteSettings", "SiteDescription", "This is an eZ Publish website about online shopping!" );
+        $siteINI->setVariable( "SiteSettings", "SiteDescription", "An Exponential site built from zones and blocks: modern, accessible and fast." );
         $siteINI->setVariable( "FileSettings", "VarDir", "var/site" );
         $siteINI->setVariable( "DesignSettings", "SiteDesign", $this->setting( 'main_site_design' ) );
         $siteINI->setVariable( "DesignSettings", "AdditionalSiteDesignList", array( 

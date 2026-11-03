@@ -1,227 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<package version="5.3.0">
-    <name>ezflow_democontent</name>
-    <summary>Global zone, Events, Getting started, Blogs, Message Board, Live Video, eZ Publish Enterprise, Media
-        chooses eZ Publish
-    </summary>
-    <description>This package contains the following nodes :&#13;
-        Global zone - subtree&#13;
-        Events - subtree&#13;
-        Getting started - subtree&#13;
-        Blogs - subtree&#13;
-        Message Board - subtree&#13;
-        Live Video - subtree&#13;
-        eZ Publish Enterprise - subtree&#13;
-        Media chooses eZ Publish - subtree&#13;
-    </description>
-    <vendor>eZ systems</vendor>
-    <type value="contentobject"/>
-    <ezpublish>
-        <version>5.3.0</version>
-        <named-version>5.3</named-version>
-    </ezpublish>
-    <maintainers>
-        <maintainer>
-            <name>Administrator User</name>
-            <email>nospam@ez.no</email>
-            <role>lead</role>
-        </maintainer>
-    </maintainers>
-    <packaging>
-        <timestamp>1300109477</timestamp>
-        <host>packages.ez.no</host>
-    </packaging>
-    <documents>
-        <document mime-type="text/plain" name="LICENCE"/>
-    </documents>
-    <changelog>
-        <entry timestamp="1300109477" person="Administrator User" email="bk@ez.no" release="1">
-            <change>Creation of package.</change>
-        </entry>
-    </changelog>
-    <simple-files>
-        <simple-file key="58434df041efe5c20bd75d78f62fff9b"
-                     original-path="var/ezflow_site/storage/images/events/ez-conferene-2011/simon-wan-wsj/897-1-eng-GB/Simon-Wan-WSJ.jpg"
-                     package-path="simplefiles/f020b1ce.jpg"/>
-        <simple-file key="e944984caededd516c0065344b319225"
-                     original-path="var/ezflow_site/storage/images/events/ez-conferene-2011/ez-awards-winners/901-1-eng-GB/eZ-Awards-Winners.jpg"
-                     package-path="simplefiles/6131b019.jpg"/>
-        <simple-file key="cb3c19f955eac769000111919d52b450"
-                     original-path="var/ezflow_site/storage/images/events/ez-conferene-2011/ez-awards-party/905-1-eng-GB/eZ-Awards-Party.jpg"
-                     package-path="simplefiles/4b8837a5.jpg"/>
-        <simple-file key="d1d8e83ade3bc8690db2d48ac0e61814"
-                     original-path="var/ezflow_site/storage/original/video/6c99835b418abce0db95b5eade06660f.mp4"
-                     package-path="simplefiles/9857fb76.mp4"/>
-        <simple-file key="696f7007938f618c870d91cd3843aaa3"
-                     original-path="var/ezflow_site/storage/images/events/ez-conference/ez-announces-record-breaking-success-at-annual-conference/292-2-eng-GB/eZ-Announces-Record-Breaking-Success-at-Annual-Conference.jpg"
-                     package-path="simplefiles/4f88fe81.jpg"/>
-        <simple-file key="607919c22a3aa3436dd525a32f562112"
-                     original-path="var/ezflow_site/storage/images/getting-started/news/ez-adds-recommendation-engine/596-3-eng-GB/eZ-adds-Recommendation-Engine.png"
-                     package-path="simplefiles/5fecea40.png"/>
-        <simple-file key="f715c429f8ac061e705007c6d64d56f1"
-                     original-path="var/ezflow_site/storage/images/getting-started/news/discover-ez-publish-4.6/620-3-eng-GB/Discover-eZ-Publish-4.6.jpg"
-                     package-path="simplefiles/06a322ee.jpg"/>
-        <simple-file key="eee5b07b1853d786f071abded9ab57b8"
-                     original-path="var/ezflow_site/storage/images/getting-started/tutorials-for/how-to-manage-ez-publish/326-1-eng-GB/How-to-manage-eZ-Publish.jpg"
-                     package-path="simplefiles/318227ad.jpg"/>
-        <simple-file key="2525d4429b7c24a2a00f23df5c07abbb"
-                     original-path="var/ezflow_site/storage/images/getting-started/tutorials-for/how-to-manage-ez-publish/graphics1/334-1-eng-GB/graphics1.jpg"
-                     package-path="simplefiles/b8632b25.jpg"/>
-        <simple-file key="126845372b91418b8c88f3f41bed0bc6"
-                     original-path="var/ezflow_site/storage/images/getting-started/tutorials-for/how-to-manage-ez-publish/graphics12/338-1-eng-GB/graphics1.jpg"
-                     package-path="simplefiles/59393fc7.jpg"/>
-        <simple-file key="c1451c6f9281868e3b9190954143fa34"
-                     original-path="var/ezflow_site/storage/images/getting-started/tutorials-for/how-to-manage-ez-publish/graphics13/342-1-eng-GB/graphics1.jpg"
-                     package-path="simplefiles/581c77fb.jpg"/>
-        <simple-file key="6d6f1a7a3afd49837fcf4fac440b64da"
-                     original-path="var/ezflow_site/storage/images/getting-started/tutorials-for/how-to-manage-ez-publish/graphics14/346-1-eng-GB/graphics1.jpg"
-                     package-path="simplefiles/277ee540.jpg"/>
-        <simple-file key="fda15772da2880fc620ac9b33f9cb48c"
-                     original-path="var/ezflow_site/storage/images/getting-started/tutorials-for/how-to-manage-ez-publish/graphics15/350-1-eng-GB/graphics1.jpg"
-                     package-path="simplefiles/c1193a88.jpg"/>
-        <simple-file key="fc7c0ae4a2994a26b140f8e316f354ab"
-                     original-path="var/ezflow_site/storage/images/getting-started/tutorials-for/how-to-manage-ez-publish/graphics16/354-1-eng-GB/graphics1.jpg"
-                     package-path="simplefiles/ecf9ac82.jpg"/>
-        <simple-file key="cb39bab965066e0944c9a83cc4bcabb4"
-                     original-path="var/ezflow_site/storage/images/getting-started/tutorials-for/how-to-manage-ez-publish/graphics17/358-1-eng-GB/graphics1.jpg"
-                     package-path="simplefiles/e0b64bb8.jpg"/>
-        <simple-file key="3527dae726c5fb062f98d34640ceee48"
-                     original-path="var/ezflow_site/storage/images/getting-started/how-to-develop-with-ez-publish/390-1-eng-GB/How-to-develop-with-eZ-Publish.png"
-                     package-path="simplefiles/fbd58ccc.png"/>
-        <simple-file key="ba23610da942d0b5857eb50126ecde0d"
-                     original-path="var/ezflow_site/storage/images/getting-started/how-to-develop-with-ez-publish/graphics1/398-1-eng-GB/graphics1.jpg"
-                     package-path="simplefiles/bd3b0897.jpg"/>
-        <simple-file key="e879ee16ffce412909d92c620ee80e0c"
-                     original-path="var/ezflow_site/storage/images/getting-started/how-to-develop-with-ez-publish/graphics12/402-1-eng-GB/graphics1.png"
-                     package-path="simplefiles/d6e49558.png"/>
-        <simple-file key="5987812170752386d568a2891d5712f2"
-                     original-path="var/ezflow_site/storage/images/getting-started/how-to-develop-with-ez-publish/graphics13/406-1-eng-GB/graphics1.png"
-                     package-path="simplefiles/e2a65111.png"/>
-        <simple-file key="5ce9e615c024adaaeea3201cdfc557ce"
-                     original-path="var/ezflow_site/storage/images/getting-started/how-to-use-ez-publish/414-1-eng-GB/How-to-use-eZ-Publish.jpg"
-                     package-path="simplefiles/3fc43a50.jpg"/>
-        <simple-file key="68e37aa7a26c57fa01f84024b72360c0"
-                     original-path="var/ezflow_site/storage/images/getting-started/how-to-use-ez-publish/graphics16/442-1-eng-GB/graphics1.jpg"
-                     package-path="simplefiles/b1ded901.jpg"/>
-        <simple-file key="34729d0f57f1d276ca1d023c7857c3e4"
-                     original-path="var/ezflow_site/storage/images/getting-started/how-to-use-ez-publish/graphics17/446-1-eng-GB/graphics1.jpg"
-                     package-path="simplefiles/b41ec550.jpg"/>
-        <simple-file key="87c5b9d035289f9583b8a6fbb8de4286"
-                     original-path="var/ezflow_site/storage/images/getting-started/how-to-use-ez-publish/graphics18/450-1-eng-GB/graphics1.jpg"
-                     package-path="simplefiles/3ab243fd.jpg"/>
-        <simple-file key="bbcc6b2c8e82a0cf83cb36cf4318a1e1"
-                     original-path="var/ezflow_site/storage/images/getting-started/how-to-use-ez-publish/graphics19/454-1-eng-GB/graphics1.jpg"
-                     package-path="simplefiles/2ca68380.jpg"/>
-        <simple-file key="42e0757a182f1824e966ecbc1d8f213c"
-                     original-path="var/ezflow_site/storage/images/getting-started/how-to-use-ez-publish/graphics1/422-1-eng-GB/graphics1.jpg"
-                     package-path="simplefiles/f4f9ccd8.jpg"/>
-        <simple-file key="f0f17272ed3df346db0ef5c382479a83"
-                     original-path="var/ezflow_site/storage/images/getting-started/how-to-use-ez-publish/graphics12/426-1-eng-GB/graphics1.jpg"
-                     package-path="simplefiles/b289bfa4.jpg"/>
-        <simple-file key="15473d908c8b7d60dec50bd41f99f098"
-                     original-path="var/ezflow_site/storage/images/getting-started/how-to-use-ez-publish/graphics13/430-1-eng-GB/graphics1.jpg"
-                     package-path="simplefiles/6b286a04.jpg"/>
-        <simple-file key="363dfdb00a93f8952ddddcee512fee9c"
-                     original-path="var/ezflow_site/storage/images/getting-started/how-to-use-ez-publish/graphics14/434-1-eng-GB/graphics1.jpg"
-                     package-path="simplefiles/52f85395.jpg"/>
-        <simple-file key="35fbb1d7a24d71721601a3761b7c59d3"
-                     original-path="var/ezflow_site/storage/images/getting-started/how-to-use-ez-publish/graphics15/438-1-eng-GB/graphics1.jpg"
-                     package-path="simplefiles/7077e059.jpg"/>
-        <simple-file key="7f506fb1119d531cdbc0c1c4df8758c0"
-                     original-path="var/ezflow_site/storage/images/media/images/icon-footer-ez/762-1-eng-GB/icon-footer-ez.png"
-                     package-path="simplefiles/870bc9ce.png"/>
-        <simple-file key="b425f0eb5be18e25c48a59b211a2e3aa"
-                     original-path="var/ezflow_site/storage/images/media/images/twitter/766-1-eng-GB/twitter.png"
-                     package-path="simplefiles/e84c5c9d.png"/>
-        <simple-file key="6620fc211b469e38ae8edbce836497d8"
-                     original-path="var/ezflow_site/storage/images/media/images/screen-capture-17/770-1-eng-GB/screen-capture-17.png"
-                     package-path="simplefiles/f61d4fdc.png"/>
-        <simple-file key="828ec7496cfe2f5a26be3b9691e9bcee"
-                     original-path="var/ezflow_site/storage/images/media/images/async1/774-1-eng-GB/async1.jpg"
-                     package-path="simplefiles/2cd2663c.jpg"/>
-        <simple-file key="f7112cb81c8d0a3ec40a20ecd7813acf"
-                     original-path="var/ezflow_site/storage/images/media/images/frontend1/778-1-eng-GB/frontend1.jpg"
-                     package-path="simplefiles/faabe76f.jpg"/>
-        <simple-file key="b3a3f31b52159d33fe5551020bf2b176"
-                     original-path="var/ezflow_site/storage/images/media/images/frontend12/782-1-eng-GB/frontend1.jpg"
-                     package-path="simplefiles/ea1c1d99.jpg"/>
-        <simple-file key="d6265b0346a41e2b44663bfd34862af9"
-                     original-path="var/ezflow_site/storage/images/media/images/frontend2/786-1-eng-GB/frontend2.jpg"
-                     package-path="simplefiles/2bea8869.jpg"/>
-        <simple-file key="4cd6b1020897aedd5189e2beccbb7b3f"
-                     original-path="var/ezflow_site/storage/images/media/images/frontend3/790-1-eng-GB/frontend3.jpg"
-                     package-path="simplefiles/8fa14307.jpg"/>
-        <simple-file key="bf779ab37330601d7d51cdffaa653626"
-                     original-path="var/ezflow_site/storage/images/media/images/frontend4/794-1-eng-GB/frontend4.jpg"
-                     package-path="simplefiles/125d4984.jpg"/>
-        <simple-file key="5073f9b00423c4dc27deb7c41e240b8c"
-                     original-path="var/ezflow_site/storage/images/media/images/frontend13/798-1-eng-GB/frontend1.jpg"
-                     package-path="simplefiles/941c74f7.jpg"/>
-        <simple-file key="7c37627b8e1c7f507e41e56f07359e08"
-                     original-path="var/ezflow_site/storage/images/media/images/block_edit/802-1-eng-GB/block_edit.jpg"
-                     package-path="simplefiles/4fa10a18.jpg"/>
-        <simple-file key="50c80c7152910507953f8a552d86f482"
-                     original-path="var/ezflow_site/storage/images/media/images/block_edit2/806-1-eng-GB/block_edit2.jpg"
-                     package-path="simplefiles/36ec3d71.jpg"/>
-        <simple-file key="9f21ba8b88100091a07f2ba387dd364d"
-                     original-path="var/ezflow_site/storage/images/media/images/finishuserregistration/810-1-eng-GB/FinishUserRegistration.png"
-                     package-path="simplefiles/8e02326c.png"/>
-        <simple-file key="d8dbcba5d132dd0ae79944d3f9b1de68"
-                     original-path="var/ezflow_site/storage/images/media/images/user_registration/814-1-eng-GB/user_registration.jpg"
-                     package-path="simplefiles/0aeab9ca.jpg"/>
-        <simple-file key="29639e4a3ebcb99dbe89e8ff5b9fad02"
-                     original-path="var/ezflow_site/storage/images/media/images/activate_account/818-1-eng-GB/activate_account.jpg"
-                     package-path="simplefiles/de034905.jpg"/>
-        <simple-file key="8dca563538e954200794e9cac7f23a36"
-                     original-path="var/ezflow_site/storage/images/media/images/screen-capture-20/822-1-eng-GB/screen-capture-20.png"
-                     package-path="simplefiles/916aedd6.png"/>
-        <simple-file key="887934a80727f1279c6a6cca6941a799"
-                     original-path="var/ezflow_site/storage/images/media/images/discover-ez-publish-4.5_medium/826-1-eng-GB/Discover-eZ-Publish-4.5_medium.jpg"
-                     package-path="simplefiles/57d1a649.jpg"/>
-        <simple-file key="af2fe2e3bd35fce50db7ce640e1064bc"
-                     original-path="var/ezflow_site/storage/images/media/images/screen-capture-18/830-1-eng-GB/screen-capture-18.png"
-                     package-path="simplefiles/a68f1cf6.png"/>
-        <simple-file key="c45357a976543e2c8267b81c499f1dd6"
-                     original-path="var/ezflow_site/storage/images/media/images/screen-capture-19/834-1-eng-GB/screen-capture-19.png"
-                     package-path="simplefiles/286d7035.png"/>
-        <simple-file key="db2454cf1bbd23ab2147fd7b474156a2"
-                     original-path="var/ezflow_site/storage/images/media/images/screen-capture-202/838-1-eng-GB/screen-capture-20.png"
-                     package-path="simplefiles/e68e9fdb.png"/>
-        <simple-file key="3ae0f6a28d6441254e1ab4d1520cf87c"
-                     original-path="var/ezflow_site/storage/images/media/images/screen-capture-21/842-1-eng-GB/screen-capture-21.png"
-                     package-path="simplefiles/e4dc9c53.png"/>
-        <simple-file key="a175da87846af353a84b0d1724840396"
-                     original-path="var/ezflow_site/storage/images/media/images/screen-capture-22/846-1-eng-GB/screen-capture-22.png"
-                     package-path="simplefiles/b9d99d97.png"/>
-        <simple-file key="faca5b478708d87ebb6e03c1a526cf19"
-                     original-path="var/ezflow_site/storage/images/media/images/screen-capture-222/850-1-eng-GB/screen-capture-22.png"
-                     package-path="simplefiles/3b5917d2.png"/>
-        <simple-file key="04e69448c7b777a196c56643554cd088"
-                     original-path="var/ezflow_site/storage/images/media/images/screen-capture-223/854-1-eng-GB/screen-capture-22.png"
-                     package-path="simplefiles/37cdea48.png"/>
-        <simple-file key="51f3e2930684cfcaf0236229a72aeb77"
-                     original-path="var/ezflow_site/storage/images/media/images/screen-capture-182/858-1-eng-GB/screen-capture-18.png"
-                     package-path="simplefiles/e3c67471.png"/>
-        <simple-file key="8ca0c6a5f1fce996443dfc4d71bf1d36"
-                     original-path="var/ezflow_site/storage/images/media/images/community-and-enterprise-codebases/862-1-eng-GB/Community-and-Enterprise-codebases.jpg"
-                     package-path="simplefiles/fb073539.jpg"/>
-    </simple-files>
-    <version>
-        <number>5.3</number>
-        <release>0</release>
-    </version>
-    <licence>GPL</licence>
-    <state>stable</state>
-    <dependencies>
-        <provides/>
-        <requires/>
-        <obsoletes/>
-        <conflicts/>
-    </dependencies>
-    <install>
-        <item type="ezcontentobject" filename="contentobjects" sub-directory="ezcontentobject"/>
-    </install>
-    <uninstall>
-        <item type="ezcontentobject" filename="contentobjects" sub-directory="ezcontentobject"/>
-    </uninstall>
+<package version="3.5.2" development="false" install_type="import">
+  <name>ezflow_democontent</name>
+  <summary>Demo content of the ezflow site: a block-built home page, platform and solution pages, news, blog, events, a gallery, a poll and a contact form</summary>
+  <description>The re-imagined demo content of the ezflow site for Exponential 6.0.15. Photos are CC0 (see CREDITS.md).</description>
+  <vendor>Exponential Foundation and 7x</vendor>
+  <type value="contentobject"/>
+  <ezpublish>
+    <version>6.0.15stable</version>
+    <named-version>6.0stable</named-version>
+  </ezpublish>
+  <maintainers>
+    <maintainer>
+      <name>Exponential Foundation and 7x</name>
+      <email>partners@se7enx.com</email>
+      <role>lead</role>
+    </maintainer>
+  </maintainers>
+  <packaging>
+    <timestamp>1793720875</timestamp>
+    <host>exponential.earth</host>
+  </packaging>
+  <documents>
+    <document mime-type="text/plain" name="LICENCE"/>
+    <document mime-type="text/markdown" name="CREDITS.md"/>
+  </documents>
+  <changelog>
+    <entry timestamp="1793664000" person="Exponential Foundation and 7x" email="partners@se7enx.com" release="15">
+      <change>The demo content re-imagined for Exponential 6.0.15: new structure, copy and CC0 photos.</change>
+    </entry>
+  </changelog>
+  <simple-files>
+    <simple-file key="15c5b0812e03542332a7298a981b577d" original-path="var/site/storage/images/gallery/mountain-lake/1849-6-eng-US/mountain-lake.jpg" package-path="simplefiles/e4e7c8bb.jpg"/>
+    <simple-file key="99eb824e88e1f0fea4a71eeb09032169" original-path="var/site/storage/images/gallery/cliffs-and-a-bay/1853-6-eng-US/cliffs-and-a-bay.jpg" package-path="simplefiles/82899a04.jpg"/>
+    <simple-file key="51e70cc2c608bb2ddb9c49b731a64a31" original-path="var/site/storage/images/gallery/city-lights-at-dusk/1857-6-eng-US/city-lights-at-dusk.jpg" package-path="simplefiles/c4d0df47.jpg"/>
+    <simple-file key="88f98d3f35e40593c143c2780b7c1c2d" original-path="var/site/storage/images/gallery/dunes-in-the-desert/1861-6-eng-US/dunes-in-the-desert.jpg" package-path="simplefiles/6fe5a589.jpg"/>
+    <simple-file key="3522456ff1154b9ed575c7951b5afd4a" original-path="var/site/storage/images/gallery/misty-forest/1865-6-eng-US/misty-forest.jpg" package-path="simplefiles/1714a212.jpg"/>
+    <simple-file key="cb99533fd31e3fd7f02167eeaeb15a02" original-path="var/site/storage/images/gallery/northern-lights/1869-6-eng-US/northern-lights.jpg" package-path="simplefiles/5b9713a4.jpg"/>
+    <simple-file key="2860f7851d9f6f58b06c94236b14d33c" original-path="var/site/storage/images/gallery/waterfall-in-winter/1873-6-eng-US/waterfall-in-winter.jpg" package-path="simplefiles/1615c075.jpg"/>
+    <simple-file key="ef45a8116d2396fd93cc7fd0153445c5" original-path="var/site/storage/images/gallery/grass-at-sunset/1877-6-eng-US/grass-at-sunset.jpg" package-path="simplefiles/f54302e9.jpg"/>
+    <simple-file key="3eb5cbac7b899d43996e61357e291d08" original-path="var/site/storage/images/gallery/snow-capped-peak/1881-6-eng-US/snow-capped-peak.jpg" package-path="simplefiles/30325b24.jpg"/>
+    <simple-file key="ce87bfcf0e6b0de77dd8174070f08a44" original-path="var/site/storage/images/gallery/suspension-bridge-in-a-gorge/1885-6-eng-US/suspension-bridge-in-a-gorge.jpg" package-path="simplefiles/5a31e6ac.jpg"/>
+    <simple-file key="84d36b941594328b690535aaf2689ec6" original-path="var/site/storage/images/media/images/exponential-demo/calm-workspace-with-an-open-laptop/1413-6-eng-US/calm-workspace-with-an-open-laptop.jpg" package-path="simplefiles/25ebb42b.jpg"/>
+    <simple-file key="70fdaf2c7b8857cda2e794bd2f96c1ef" original-path="var/site/storage/images/media/images/exponential-demo/laptop-notebook-and-coffee/1417-6-eng-US/laptop-notebook-and-coffee.jpg" package-path="simplefiles/34265ffd.jpg"/>
+    <simple-file key="2bab345324dbc092beb430602fd5d341" original-path="var/site/storage/images/media/images/exponential-demo/spiral-of-architectural-panels/1421-6-eng-US/spiral-of-architectural-panels.jpg" package-path="simplefiles/24eb03c9.jpg"/>
+    <simple-file key="5f3aca1edf9c984774c2cb2d84752f1f" original-path="var/site/storage/images/media/images/exponential-demo/light-trails-on-a-highway-at-night/1425-6-eng-US/light-trails-on-a-highway-at-night.jpg" package-path="simplefiles/b62bb431.jpg"/>
+    <simple-file key="805445b81b04aca504f4c48fc7f8c99b" original-path="var/site/storage/images/media/images/exponential-demo/colored-pencils-in-a-circle/1429-6-eng-US/colored-pencils-in-a-circle.jpg" package-path="simplefiles/07bdd28e.jpg"/>
+    <simple-file key="77aaac0f452d4d6db16b057a632e9666" original-path="var/site/storage/images/media/images/exponential-demo/data-center-from-above/1433-6-eng-US/data-center-from-above.jpg" package-path="simplefiles/dc69544a.jpg"/>
+    <simple-file key="305e82882cc4fdf4c85be2c1c66192cf" original-path="var/site/storage/images/media/images/exponential-demo/padlocks-on-a-bridge-railing/1437-6-eng-US/padlocks-on-a-bridge-railing.jpg" package-path="simplefiles/5059870c.jpg"/>
+    <simple-file key="025a63db5b11cc49e582c9a47818b765" original-path="var/site/storage/images/media/images/exponential-demo/library-shelves/1441-6-eng-US/library-shelves.jpg" package-path="simplefiles/e24b2508.jpg"/>
+    <simple-file key="0e3e17854fd286e044b96b074fea05bb" original-path="var/site/storage/images/media/images/exponential-demo/bridge-rising-out-of-the-morning-fog/1445-6-eng-US/bridge-rising-out-of-the-morning-fog.jpg" package-path="simplefiles/6127a725.jpg"/>
+    <simple-file key="4feb29f46f31f9e06893b4e07769c99a" original-path="var/site/storage/images/media/images/exponential-demo/morning-paper-and-an-espresso/1449-6-eng-US/morning-paper-and-an-espresso.jpg" package-path="simplefiles/fc68fced.jpg"/>
+    <simple-file key="1828689c3580602365ee99451b1fdb5c" original-path="var/site/storage/images/media/images/exponential-demo/state-capitol-building/1453-6-eng-US/state-capitol-building.jpg" package-path="simplefiles/ce22f341.jpg"/>
+    <simple-file key="f230a40cfdbf80a65055181888065a04" original-path="var/site/storage/images/media/images/exponential-demo/university-library-building/1457-6-eng-US/university-library-building.jpg" package-path="simplefiles/9a04f0e4.jpg"/>
+    <simple-file key="683ff39e7b38a16b71636862523c2431" original-path="var/site/storage/images/media/images/exponential-demo/geometric-glass-ceiling-of-a-shopping-hall/1461-6-eng-US/geometric-glass-ceiling-of-a-shopping-hall.jpg" package-path="simplefiles/215ff1e4.jpg"/>
+    <simple-file key="e33aa52497346e8ff0b04574c2b7dc7f" original-path="var/site/storage/images/media/images/exponential-demo/forest-path-in-evening-sun/1465-6-eng-US/forest-path-in-evening-sun.jpg" package-path="simplefiles/26969195.jpg"/>
+    <simple-file key="0e0ee4f90e1af826e486b784317a8de1" original-path="var/site/storage/images/media/images/exponential-demo/meeting-room-with-white-chairs/1469-6-eng-US/meeting-room-with-white-chairs.jpg" package-path="simplefiles/6845b929.jpg"/>
+    <simple-file key="efd0628221a758b44eed877552fe349b" original-path="var/site/storage/images/media/images/exponential-demo/launch-at-night/1473-6-eng-US/launch-at-night.jpg" package-path="simplefiles/595732cb.jpg"/>
+    <simple-file key="2762e4e86bde1b6ba596cb45861b5b9b" original-path="var/site/storage/images/media/images/exponential-demo/a-young-plant/1477-6-eng-US/a-young-plant.jpg" package-path="simplefiles/f9d0c477.jpg"/>
+    <simple-file key="c16c2b3c55dfcfe911418594f416d3a9" original-path="var/site/storage/images/media/images/exponential-demo/auditorium-seats/1481-6-eng-US/auditorium-seats.jpg" package-path="simplefiles/87fa7d81.jpg"/>
+    <simple-file key="0198fd0b5f50b81e42d7d824e9b91c29" original-path="var/site/storage/images/media/images/exponential-demo/laptop-on-a-wooden-table/1485-6-eng-US/laptop-on-a-wooden-table.jpg" package-path="simplefiles/9966847b.jpg"/>
+    <simple-file key="11c4191993d987334a340314f7df6183" original-path="var/site/storage/images/media/images/exponential-demo/peak-above-a-sea-of-clouds/1489-6-eng-US/peak-above-a-sea-of-clouds.jpg" package-path="simplefiles/e38205cf.jpg"/>
+    <simple-file key="d4b95b27bf7afde95873b875415bebd5" original-path="var/site/storage/images/media/images/exponential-demo/keyboard-close-up/1493-6-eng-US/keyboard-close-up.jpg" package-path="simplefiles/ab30e3b9.jpg"/>
+    <simple-file key="10ae9ca4b98355725a3ff98725ab65a1" original-path="var/site/storage/images/media/images/exponential-demo/vintage-typewriter/1497-6-eng-US/vintage-typewriter.jpg" package-path="simplefiles/1b1164fb.jpg"/>
+    <simple-file key="02531da992807c11af4c52badd899a6c" original-path="var/site/storage/images/media/images/exponential-demo/stopwatch-dial/1501-6-eng-US/stopwatch-dial.jpg" package-path="simplefiles/a1858905.jpg"/>
+    <simple-file key="467d47d0b6a164364904d1b80a84836c" original-path="var/site/storage/images/media/images/exponential-demo/writing-in-a-notebook/1505-6-eng-US/writing-in-a-notebook.jpg" package-path="simplefiles/8dd51f6f.jpg"/>
+    <simple-file key="8ab0a1d8fc100e3beed40a08dd376786" original-path="var/site/storage/images/media/images/exponential-demo/desk-in-a-dark-office/1509-6-eng-US/desk-in-a-dark-office.jpg" package-path="simplefiles/e94bc647.jpg"/>
+    <simple-file key="316cae59c5a06a7ce148de12de68897c" original-path="var/site/storage/images/media/images/exponential-demo/lighthouse-in-the-evening-sun/1513-6-eng-US/lighthouse-in-the-evening-sun.jpg" package-path="simplefiles/611f2264.jpg"/>
+    <simple-file key="2f894c4db67f911cbadff62499f616c6" original-path="var/site/storage/images/media/images/exponential-demo/office-with-tall-windows/1517-6-eng-US/office-with-tall-windows.jpg" package-path="simplefiles/60a3a901.jpg"/>
+  </simple-files>
+  <version>
+    <number>6.0</number>
+    <release>15</release>
+  </version>
+  <licence>GPL</licence>
+  <state>stable</state>
+  <dependencies>
+    <provides/>
+    <requires/>
+    <obsoletes/>
+    <conflicts/>
+  </dependencies>
+  <install>
+    <item type="ezcontentobject" filename="contentobjects" sub-directory="ezcontentobject"/>
+  </install>
+  <uninstall>
+    <item type="ezcontentobject" filename="contentobjects" sub-directory="ezcontentobject"/>
+  </uninstall>
 </package>

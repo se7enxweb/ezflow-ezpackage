@@ -1880,7 +1880,7 @@ class eZFlownInstaller extends eZSiteInstaller
     function postInstallUserSiteaccessINIUpdate( $params = false )
     {
         $siteINI = eZINI::instance( "site.ini.append.php", "settings/siteaccess/" . $this->setting( 'user_siteaccess' ), null, false, null, true );
-        $siteINI->setVariable( "SiteSettings", "SiteDescription", "This is an eZ Publish website about online shopping!" );
+        $siteINI->setVariable( "SiteSettings", "SiteDescription", "An Exponential site built from zones and blocks: modern, accessible and fast." );
         $siteINI->setVariable( "FileSettings", "VarDir", "var/site" );
         $siteINI->setVariable( "DesignSettings", "SiteDesign", $this->setting( 'main_site_design' ) );
         $siteINI->setVariable( "DesignSettings", "AdditionalSiteDesignList", array( 
