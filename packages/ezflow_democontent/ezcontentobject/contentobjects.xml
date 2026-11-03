@@ -112,7 +112,7 @@
             </ezobject:attribute>
           </ezobject:object-translation>
           <ezobject:node-assignment-list>
-            <node-assignment is-main-node="1" name="Home" node-id="2" remote-id="f3e90596361e31d496d4026eb624c983" sort-field="priority" sort-order="1" priority="0"/>
+            <node-assignment is-main-node="1" name="Home" node-id="2" remote-id="07cdfd23373b17c6b337251c22b7ea57" sort-field="priority" sort-order="1" priority="0"/>
           </ezobject:node-assignment-list>
         </ezobject:version>
       </ezobject:version-list>
@@ -4702,7 +4702,7 @@
     <site-access>site</site-access>
   </site-access-list>
   <top-node-list>
-    <top-node node-id="2" remote-id="f3e90596361e31d496d4026eb624c983">Home</top-node>
+    <top-node node-id="2" remote-id="07cdfd23373b17c6b337251c22b7ea57">Home</top-node>
     <top-node node-id="214" remote-id="dc96485b2b59ce50403dc9fd688151b9">Exponential demo</top-node>
   </top-node-list>
 </content-object>
