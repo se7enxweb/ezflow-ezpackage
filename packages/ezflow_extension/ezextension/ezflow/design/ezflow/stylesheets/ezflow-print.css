@@ -1,0 +1,9 @@
+/* ezflow site design, print: the content only, black on white, link targets written out. */
+.fx-header, .fx-footer, .fx-crumbs, .fx-toolbar, .fx-article__aside, .fx-carousel__nav, .fx-skip, .fx-poll form, expwt-sidebar { display: none !important; }
+body { background: #fff; color: #000; font-size: 11pt; }
+.fx-hero, .fx-cta { background: none; color: #000; min-height: 0; box-shadow: none; }
+.fx-hero::before, .fx-cta::before { display: none; }
+.fx-hero__title, .fx-cta__title, .fx-hero__text { color: #000; }
+.fx-card, .fx-quote, .fx-panel, .fx-event { box-shadow: none; break-inside: avoid; border: 1px solid #999; }
+.fx-prose a[href^="http"]::after { content: " (" attr(href) ")"; font-size: .85em; }
+.fx-js [data-fx-reveal] { opacity: 1; transform: none; }

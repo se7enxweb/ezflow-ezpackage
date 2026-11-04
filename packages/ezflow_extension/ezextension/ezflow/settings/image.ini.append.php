@@ -9,6 +9,10 @@ AliasList[]=block2items2
 AliasList[]=block3items3
 AliasList[]=blockgallery1
 AliasList[]=imagelarge
+# the modern ezflow design: widths only, the stylesheet crops with object-fit
+AliasList[]=fx_thumb
+AliasList[]=fx_card
+AliasList[]=fx_wide
 
 [mainstory1]
 Reference=
@@ -57,4 +61,18 @@ Reference=
 Filters[]
 Filters[]=geometry/scaledownonly=448;622
 
+[fx_thumb]
+Reference=
+Filters[]
+Filters[]=geometry/scalewidthdownonly=480
+
+[fx_card]
+Reference=
+Filters[]
+Filters[]=geometry/scalewidthdownonly=880
+
+[fx_wide]
+Reference=
+Filters[]
+Filters[]=geometry/scalewidthdownonly=1600
 */ ?>

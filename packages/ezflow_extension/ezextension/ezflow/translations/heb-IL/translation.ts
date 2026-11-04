@@ -258,6 +258,74 @@
         <source>Skip to main content</source>
         <translation>דילוג לתוכן הראשי</translation>
     </message>
+    <message>
+        <source>Automatic</source>
+        <translation>אוטומטי</translation>
+    </message>
+    <message>
+        <source>Breadcrumb</source>
+        <translation>נתיב ניווט</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>זכויות יוצרים</translation>
+    </message>
+    <message>
+        <source>Dark mode</source>
+        <translation>מצב כהה</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>תיעוד</translation>
+    </message>
+    <message>
+        <source>Light mode</source>
+        <translation>מצב בהיר</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>ראשי</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>תפריט</translation>
+    </message>
+    <message>
+        <source>Powered by</source>
+        <translation>מופעל על ידי</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>חיפוש</translation>
+    </message>
+    <message>
+        <source>Search text:</source>
+        <translation>טקסט לחיפוש:</translation>
+    </message>
+    <message>
+        <source>Sections</source>
+        <translation>מדורים</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>כניסה</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>התנתקות</translation>
+    </message>
+    <message>
+        <source>Site map</source>
+        <translation>מפת אתר</translation>
+    </message>
+    <message>
+        <source>Tag cloud</source>
+        <translation>ענן תגיות</translation>
+    </message>
+    <message>
+        <source>This site</source>
+        <translation>האתר הזה</translation>
+    </message>
 </context>
 <context>
     <name>design/ezflow/parts/website_toolbar</name>
@@ -268,6 +336,10 @@
     <message>
         <source>Add to block in frontpage</source>
         <translation>הוספה לבלוק בעמוד השער</translation>
+    </message>
+    <message>
+        <source>Push to block</source>
+        <translation>שליחה לבלוק</translation>
     </message>
 </context>
 <context>
@@ -560,6 +632,70 @@
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>אירוע זרימת עבודה להחלפת eZ Page</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/block</name>
+    <message>
+        <source>Next</source>
+        <translation>הבא</translation>
+    </message>
+    <message>
+        <source>Poll results</source>
+        <translation>תוצאות הסקר</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>הקודם</translation>
+    </message>
+    <message>
+        <source>Read more</source>
+        <translation>להמשך קריאה</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>הצגת הכול</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/article</name>
+    <message>
+        <source>Comments</source>
+        <translation>תגובות</translation>
+    </message>
+    <message>
+        <source>New comment</source>
+        <translation>תגובה חדשה</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/event</name>
+    <message>
+        <source>Calendar</source>
+        <translation>לוח שנה</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>קטגוריה</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>מקור</translation>
+    </message>
+    <message>
+        <source>Past events</source>
+        <translation>אירועים קודמים</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>עד</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/feedback_form</name>
+    <message>
+        <source>Send form</source>
+        <translation>שליחת הטופס</translation>
     </message>
 </context>
 </TS>

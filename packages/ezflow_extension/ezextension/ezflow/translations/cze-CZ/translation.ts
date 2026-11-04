@@ -258,6 +258,74 @@
         <source>Skip to main content</source>
         <translation>Přeskočit na hlavní obsah</translation>
     </message>
+    <message>
+        <source>Automatic</source>
+        <translation>Automaticky</translation>
+    </message>
+    <message>
+        <source>Breadcrumb</source>
+        <translation>Drobečková navigace</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>Autorská práva</translation>
+    </message>
+    <message>
+        <source>Dark mode</source>
+        <translation>Tmavý režim</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>Dokumentace</translation>
+    </message>
+    <message>
+        <source>Light mode</source>
+        <translation>Světlý režim</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>Hlavní</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>Nabídka</translation>
+    </message>
+    <message>
+        <source>Powered by</source>
+        <translation>Běží na</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Hledat</translation>
+    </message>
+    <message>
+        <source>Search text:</source>
+        <translation>Hledaný text:</translation>
+    </message>
+    <message>
+        <source>Sections</source>
+        <translation>Sekce</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>Přihlásit se</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Odhlásit</translation>
+    </message>
+    <message>
+        <source>Site map</source>
+        <translation>Mapa webu</translation>
+    </message>
+    <message>
+        <source>Tag cloud</source>
+        <translation>Oblak štítků</translation>
+    </message>
+    <message>
+        <source>This site</source>
+        <translation>Tento web</translation>
+    </message>
 </context>
 <context>
     <name>design/ezflow/parts/website_toolbar</name>
@@ -268,6 +336,10 @@
     <message>
         <source>Add to block in frontpage</source>
         <translation>Přidat do bloku na titulní straně</translation>
+    </message>
+    <message>
+        <source>Push to block</source>
+        <translation>Vložit do bloku</translation>
     </message>
 </context>
 <context>
@@ -580,6 +652,70 @@
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>Událost pracovního postupu pro záměnu eZ Page</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/block</name>
+    <message>
+        <source>Next</source>
+        <translation>Další</translation>
+    </message>
+    <message>
+        <source>Poll results</source>
+        <translation>Výsledky ankety</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>Předchozí</translation>
+    </message>
+    <message>
+        <source>Read more</source>
+        <translation>Číst dále</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Zobrazit vše</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/article</name>
+    <message>
+        <source>Comments</source>
+        <translation>Komentáře</translation>
+    </message>
+    <message>
+        <source>New comment</source>
+        <translation>Nový komentář</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/event</name>
+    <message>
+        <source>Calendar</source>
+        <translation>Kalendář</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>Kategorie</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Z</translation>
+    </message>
+    <message>
+        <source>Past events</source>
+        <translation>Minulé události</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Do</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/feedback_form</name>
+    <message>
+        <source>Send form</source>
+        <translation>Odeslat formulář</translation>
     </message>
 </context>
 </TS>

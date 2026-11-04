@@ -258,6 +258,74 @@
         <source>Skip to main content</source>
         <translation>Gara qabiyyee ijootti darbi</translation>
     </message>
+    <message>
+        <source>Automatic</source>
+        <translation>Ofumaan</translation>
+    </message>
+    <message>
+        <source>Breadcrumb</source>
+        <translation>Karaa buufata</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>Mirga abbummaa</translation>
+    </message>
+    <message>
+        <source>Dark mode</source>
+        <translation>Haala dukkanaa</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>Galmee</translation>
+    </message>
+    <message>
+        <source>Light mode</source>
+        <translation>Haala ifaa</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>Ijoo</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>Menuu</translation>
+    </message>
+    <message>
+        <source>Powered by</source>
+        <translation>Kan hojjete</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Barbaadi</translation>
+    </message>
+    <message>
+        <source>Search text:</source>
+        <translation>Barruu barbaaduu:</translation>
+    </message>
+    <message>
+        <source>Sections</source>
+        <translation>Kutaawwan</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>Seeni</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Ba'i</translation>
+    </message>
+    <message>
+        <source>Site map</source>
+        <translation>Kaartaa marsariitii</translation>
+    </message>
+    <message>
+        <source>Tag cloud</source>
+        <translation>Duumessa mallattoo jechaa</translation>
+    </message>
+    <message>
+        <source>This site</source>
+        <translation>Marsariitii kana</translation>
+    </message>
 </context>
 <context>
     <name>design/ezflow/parts/website_toolbar</name>
@@ -268,6 +336,10 @@
     <message>
         <source>Add to block in frontpage</source>
         <translation>Bilookii fuula jalqabaa irratti ida&apos;i</translation>
+    </message>
+    <message>
+        <source>Push to block</source>
+        <translation>Gara blookiitti ergi</translation>
     </message>
 </context>
 <context>
@@ -560,6 +632,70 @@
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>Taatee adeemsa hojii jijjiirraa fuula eZ</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/block</name>
+    <message>
+        <source>Next</source>
+        <translation>Itti aanu</translation>
+    </message>
+    <message>
+        <source>Poll results</source>
+        <translation>Bu'aa gaafannoo</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>Kan duraa</translation>
+    </message>
+    <message>
+        <source>Read more</source>
+        <translation>Dabalataan dubbisi</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Hunda agarsiisi</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/article</name>
+    <message>
+        <source>Comments</source>
+        <translation>Yaada</translation>
+    </message>
+    <message>
+        <source>New comment</source>
+        <translation>Yaada haaraa</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/event</name>
+    <message>
+        <source>Calendar</source>
+        <translation>Kaalaandarii</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>Ramaddii</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Irraa</translation>
+    </message>
+    <message>
+        <source>Past events</source>
+        <translation>Taateewwan darban</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Hanga</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/feedback_form</name>
+    <message>
+        <source>Send form</source>
+        <translation>Unka ergi</translation>
     </message>
 </context>
 </TS>

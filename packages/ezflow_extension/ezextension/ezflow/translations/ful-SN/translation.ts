@@ -258,6 +258,74 @@
         <source>Skip to main content</source>
         <translation>Yaa e loowdi mawndi</translation>
     </message>
+    <message>
+        <source>Automatic</source>
+        <translation>Ko'o ɗum</translation>
+    </message>
+    <message>
+        <source>Breadcrumb</source>
+        <translation>Laawol hello</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>Copyright</translation>
+    </message>
+    <message>
+        <source>Dark mode</source>
+        <translation>Ngonka ɓaleeri baaɗo</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>Dokimaa</translation>
+    </message>
+    <message>
+        <source>Light mode</source>
+        <translation>Ngonka ɓaleeri</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>Mawngal</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>Menu</translation>
+    </message>
+    <message>
+        <source>Powered by</source>
+        <translation>Huuɓnaama ko</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Yiylo</translation>
+    </message>
+    <message>
+        <source>Search text:</source>
+        <translation>Binndol yiylagol:</translation>
+    </message>
+    <message>
+        <source>Sections</source>
+        <translation>Taƴreeji</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>Naat</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Yaltu</translation>
+    </message>
+    <message>
+        <source>Site map</source>
+        <translation>Natal lowre</translation>
+    </message>
+    <message>
+        <source>Tag cloud</source>
+        <translation>Duule maande</translation>
+    </message>
+    <message>
+        <source>This site</source>
+        <translation>Lowre ndee</translation>
+    </message>
 </context>
 <context>
     <name>design/ezflow/parts/website_toolbar</name>
@@ -268,6 +336,10 @@
     <message>
         <source>Add to block in frontpage</source>
         <translation>Ɓeydu e bloc ka hello adannde</translation>
+    </message>
+    <message>
+        <source>Push to block</source>
+        <translation>Naatnu e blok</translation>
     </message>
 </context>
 <context>
@@ -560,6 +632,70 @@
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>Huunde waɗnde laawol golle lomtugol hello eZ Page</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/block</name>
+    <message>
+        <source>Next</source>
+        <translation>ɗiɗaɓo</translation>
+    </message>
+    <message>
+        <source>Poll results</source>
+        <translation>Njaɓɓi sarwooji</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>Adiiɗo</translation>
+    </message>
+    <message>
+        <source>Read more</source>
+        <translation>Tar ɓeydu</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Hollu fof</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/article</name>
+    <message>
+        <source>Comments</source>
+        <translation>Yamɗe</translation>
+    </message>
+    <message>
+        <source>New comment</source>
+        <translation>Tinndinol kesol</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/event</name>
+    <message>
+        <source>Calendar</source>
+        <translation>Kalaandiriye</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>Fannu</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Diga</translation>
+    </message>
+    <message>
+        <source>Past events</source>
+        <translation>Ñaawooji ɗi njaadi</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Haa</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/feedback_form</name>
+    <message>
+        <source>Send form</source>
+        <translation>Neldu formulaire</translation>
     </message>
 </context>
 </TS>

@@ -258,6 +258,74 @@
         <source>Skip to main content</source>
         <translation>Naar de hoofdinhoud gaan</translation>
     </message>
+    <message>
+        <source>Automatic</source>
+        <translation>Automatisch</translation>
+    </message>
+    <message>
+        <source>Breadcrumb</source>
+        <translation>Kruimelpad</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>Copyright</translation>
+    </message>
+    <message>
+        <source>Dark mode</source>
+        <translation>Donkere modus</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>Documentatie</translation>
+    </message>
+    <message>
+        <source>Light mode</source>
+        <translation>Lichte modus</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>Hoofdtaal</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>Menu</translation>
+    </message>
+    <message>
+        <source>Powered by</source>
+        <translation>Mogelijk gemaakt door</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Zoeken</translation>
+    </message>
+    <message>
+        <source>Search text:</source>
+        <translation>Zoektekst:</translation>
+    </message>
+    <message>
+        <source>Sections</source>
+        <translation>Secties</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>Inloggen</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Uitloggen</translation>
+    </message>
+    <message>
+        <source>Site map</source>
+        <translation>Sitemap</translation>
+    </message>
+    <message>
+        <source>Tag cloud</source>
+        <translation>Tagwolk</translation>
+    </message>
+    <message>
+        <source>This site</source>
+        <translation>Deze site</translation>
+    </message>
 </context>
 <context>
     <name>design/ezflow/parts/website_toolbar</name>
@@ -268,6 +336,10 @@
     <message>
         <source>Add to block in frontpage</source>
         <translation>Aan blok op de voorpagina toevoegen</translation>
+    </message>
+    <message>
+        <source>Push to block</source>
+        <translation>Naar blok pushen</translation>
     </message>
 </context>
 <context>
@@ -580,6 +652,70 @@
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>Workflowgebeurtenis voor wisselen van eZ Page</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/block</name>
+    <message>
+        <source>Next</source>
+        <translation>Volgende</translation>
+    </message>
+    <message>
+        <source>Poll results</source>
+        <translation>Resultaten van de peiling</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>Vorige</translation>
+    </message>
+    <message>
+        <source>Read more</source>
+        <translation>Lees meer</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Alles tonen</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/article</name>
+    <message>
+        <source>Comments</source>
+        <translation>Reacties</translation>
+    </message>
+    <message>
+        <source>New comment</source>
+        <translation>Nieuwe reactie</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/event</name>
+    <message>
+        <source>Calendar</source>
+        <translation>Kalender</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>Categorie</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Van</translation>
+    </message>
+    <message>
+        <source>Past events</source>
+        <translation>Afgelopen evenementen</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Aan</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/feedback_form</name>
+    <message>
+        <source>Send form</source>
+        <translation>Formulier verzenden</translation>
     </message>
 </context>
 </TS>

@@ -11,9 +11,9 @@
  *   cal.setPageDate( new Date() ); cal.select( new Date() ); cal.render();
  *   cal.show(); cal.hide();
  *
- * Requires jQuery.
+ * Plain JavaScript (an ES module); the calendar is window.eZFlowCalendar.
  */
-var eZFlowCalendar = (function( $ ) {
+window.eZFlowCalendar = (function() {
     'use strict';
 
     var WEEKDAYS_SHORT = [ 'Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa' ],
@@ -33,7 +33,7 @@ var eZFlowCalendar = (function( $ ) {
 
         this.id = id;
         this.container = typeof container === 'string' ? document.getElementById( container ) : container;
-        this.options = $.extend( { pages: 1, onSelect: null }, options || {} );
+        this.options = Object.assign( { pages: 1, onSelect: null }, options || {} );
         this.pageDate = new Date( today.getFullYear(), today.getMonth(), 1 );
         this.selected = null;
         this.WEEKDAYS_LONG = WEEKDAYS_LONG;
@@ -41,29 +41,24 @@ var eZFlowCalendar = (function( $ ) {
         this.MONTHS_SHORT = MONTHS_SHORT;
 
         var self = this;
-        $( this.container )
-            .on( 'click.ezflowcal', 'a.calnavleft', function( e ) {
-                e.preventDefault();
-                self.previousMonth();
-            } )
-            .on( 'click.ezflowcal', 'a.calnavright', function( e ) {
-                e.preventDefault();
-                self.nextMonth();
-            } )
-            .on( 'click.ezflowcal', 'td.selectable', function( e ) {
-                e.preventDefault();
-                var parts = this.getAttribute( 'data-date' ).split( '-' ),
-                    year = parseInt( parts[0], 10 ),
-                    month = parseInt( parts[1], 10 ),
-                    day = parseInt( parts[2], 10 );
-
-                self.selected = new Date( year, month - 1, day );
-                self.render();
-                if ( self.options.onSelect )
-                {
-                    self.options.onSelect.call( self, year, month, day );
-                }
-            } );
+        this.container.addEventListener( 'click', function( e )
+        {
+            var t = e.target;
+            if ( t.closest( 'a.calnavleft' ) ) { e.preventDefault(); self.previousMonth(); return; }
+            if ( t.closest( 'a.calnavright' ) ) { e.preventDefault(); self.nextMonth(); return; }
+            var cell = t.closest( 'td.selectable' );
+            if ( !cell ) return;
+            e.preventDefault();
+            var parts = cell.getAttribute( 'data-date' ).split( '-' ),
+                year = parseInt( parts[0], 10 ),
+                month = parseInt( parts[1], 10 ),
+                day = parseInt( parts[2], 10 );
+            self.selected = new Date( year, month - 1, day );
+            self.render();
+            var again = self.container.querySelector( 'td.selected a' );
+            if ( again ) again.focus();
+            if ( self.options.onSelect ) self.options.onSelect.call( self, year, month, day );
+        } );
     }
 
     Calendar.prototype.setPageDate = function( date )
@@ -102,12 +97,12 @@ var eZFlowCalendar = (function( $ ) {
         html += '<thead><tr><th colspan="7" class="calhead"><div class="calheader">';
         if ( isFirst )
         {
-            html += '<a class="calnavleft" href="#">&#160;</a>';
+            html += '<a class="calnavleft" href="#" aria-label="Previous month">&#160;</a>';
         }
         html += MONTHS_LONG[month] + ' ' + year;
         if ( isLast )
         {
-            html += '<a class="calnavright" href="#">&#160;</a>';
+            html += '<a class="calnavright" href="#" aria-label="Next month">&#160;</a>';
         }
         html += '</div></th></tr><tr class="calweekdayrow">';
         for ( day = 0; day < 7; day++ )
@@ -167,10 +162,8 @@ var eZFlowCalendar = (function( $ ) {
             html = this.renderPage( 0, this.pageDate, true, true );
         }
 
-        $( this.container )
-            .addClass( 'ezflow-calcontainer' )
-            .addClass( pages > 1 ? 'multi' : 'single' )
-            .html( html );
+        this.container.classList.add( 'ezflow-calcontainer', pages > 1 ? 'multi' : 'single' );
+        this.container.innerHTML = html;
     };
 
     Calendar.prototype.show = function()
@@ -184,4 +177,4 @@ var eZFlowCalendar = (function( $ ) {
     };
 
     return Calendar;
-})( jQuery );
+})();

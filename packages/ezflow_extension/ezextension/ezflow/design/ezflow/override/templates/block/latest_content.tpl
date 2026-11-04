@@ -1,49 +1,13 @@
+{* latest_content: the newest items of the block's source as dated cards, with a link to the source. In a narrow
+   zone (the global zone beside articles) the cards drop their images (stylesheet, container query). *}
 {def $valid_nodes = $block.valid_nodes
-     $valid_node = false()}
-
-<!-- BLOCK: START -->
-<div class="block-type-latest-content">
-
-<div class="border-box block-style1-box-outside">
-<div class="border-tl"><div class="border-tr"><div class="border-tc"></div></div></div>
-<div class="border-ml"><div class="border-mr"><div class="border-mc">
-<div class="border-content">
-
-<!-- BLOCK BORDER INSIDE: START -->
-
-<div class="border-box block-style1-box-inside">
-<div class="border-tl"><div class="border-tr"><div class="border-tc"></div></div></div>
-<div class="border-ml"><div class="border-mr"><div class="border-mc">
-<div class="border-content">
-
-<!-- BLOCK CONTENT: START -->
-
-{foreach $valid_nodes as $valid_node}
-
-{node_view_gui view='block_item' image_class='block2items1' content_node=$valid_node}
-
-{delimiter}
-<div class="separator"></div>
-{/delimiter}
-
-{/foreach}
-
-<!-- BLOCK CONTENT: END -->
-
-</div>
-</div></div></div>
-<div class="border-bl"><div class="border-br"><div class="border-bc"></div></div></div>
-</div>
-
-<!-- BLOCK BORDER INSIDE: END -->
-
-
-</div>
-</div></div></div>
-<div class="border-bl"><div class="border-br"><div class="border-bc"></div></div></div>
-</div>
-
-</div>
-<!-- BLOCK: END -->
-
-{undef $valid_nodes $valid_node}
+     $fx_source   = cond( is_set( $block.fetch_params.Source ), fetch( 'content', 'node', hash( 'node_id', $block.fetch_params.Source ) ), false() )}
+<section class="fx-block fx-block--latest"{if $block.name|trim} aria-labelledby="fx-b-{$block.id}"{/if}>
+    {include uri='design:parts/ezflow/block_head.tpl' more=$fx_source}
+    <div class="fx-grid fx-grid--3">
+    {foreach $valid_nodes as $valid_node}
+        {include uri='design:parts/ezflow/card.tpl' node=$valid_node meta=true() placeholder=false()}
+    {/foreach}
+    </div>
+</section>
+{undef $valid_nodes $fx_source}

@@ -258,6 +258,74 @@
         <source>Skip to main content</source>
         <translation>עברא למליותא רשיתא</translation>
     </message>
+    <message>
+        <source>Automatic</source>
+        <translation>מן נפשה</translation>
+    </message>
+    <message>
+        <source>Breadcrumb</source>
+        <translation>שבילא דפתתא</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>זדקא דנסחא</translation>
+    </message>
+    <message>
+        <source>Dark mode</source>
+        <translation>אורחא חשוכא</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>ܬܘܬܒܐ</translation>
+    </message>
+    <message>
+        <source>Light mode</source>
+        <translation>אורחא נהירא</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>רשיא</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>מנו</translation>
+    </message>
+    <message>
+        <source>Powered by</source>
+        <translation>מתחיל ביד</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>בציא</translation>
+    </message>
+    <message>
+        <source>Search text:</source>
+        <translation>כתיבתא דבציא:</translation>
+    </message>
+    <message>
+        <source>Sections</source>
+        <translation>פלגותא</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>עללא</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>פלטא</translation>
+    </message>
+    <message>
+        <source>Site map</source>
+        <translation>מפתיא דאתרא</translation>
+    </message>
+    <message>
+        <source>Tag cloud</source>
+        <translation>עננא דאתותא</translation>
+    </message>
+    <message>
+        <source>This site</source>
+        <translation>ܗܢܐ ܐܬܪܐ</translation>
+    </message>
 </context>
 <context>
     <name>design/ezflow/parts/website_toolbar</name>
@@ -268,6 +336,10 @@
     <message>
         <source>Add to block in frontpage</source>
         <translation>מוספא לבלוך בפאתא קדמיתא</translation>
+    </message>
+    <message>
+        <source>Push to block</source>
+        <translation>ܕܚܘܩ ܠܓܘ ܦܠܓܘܬܐ</translation>
     </message>
 </context>
 <context>
@@ -560,6 +632,70 @@
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>גדשא דרדיא דעבדא דחליפותא דפאתא ד eZ</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/block</name>
+    <message>
+        <source>Next</source>
+        <translation>דבתר</translation>
+    </message>
+    <message>
+        <source>Poll results</source>
+        <translation>פלטא דקטא</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>דקדם</translation>
+    </message>
+    <message>
+        <source>Read more</source>
+        <translation>ܩܪܝ ܝܬܝܪ</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>מחויא דכל</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/article</name>
+    <message>
+        <source>Comments</source>
+        <translation>פושקא</translation>
+    </message>
+    <message>
+        <source>New comment</source>
+        <translation>פושקא חדתא</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/event</name>
+    <message>
+        <source>Calendar</source>
+        <translation>לוחא דתאריכא</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>קטיגוריא</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>מן</translation>
+    </message>
+    <message>
+        <source>Past events</source>
+        <translation>גדשא עברא</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>עד</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/feedback_form</name>
+    <message>
+        <source>Send form</source>
+        <translation>שדרא דפורמא</translation>
     </message>
 </context>
 </TS>

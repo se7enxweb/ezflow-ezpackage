@@ -1,20 +1,11 @@
-{def $valid_nodes = $block.valid_nodes
-     $valid_node = false()}
-
-<div class="block-type-3items block-view-{$block.view}">
-
-<div class="attribute-header"><h2>{$block.name}</h2></div>
-
-{foreach $valid_nodes as $valid_node}
-
-{node_view_gui view='block_item' image_class='articlethumbnail' content_node=$valid_node}
-
-{delimiter}
-<div class="separator"></div>
-{/delimiter}
-
-{/foreach}
-
-</div>
-
-{undef $valid_nodes $valid_node}
+{* 3_items1: the block's items as a grid of cards (container query: 1 to 3 columns by zone width). *}
+{def $valid_nodes = $block.valid_nodes}
+<section class="fx-block fx-block--items fx-block--3"{if $block.name|trim} aria-labelledby="fx-b-{$block.id}"{/if}>
+    {include uri='design:parts/ezflow/block_head.tpl'}
+    <div class="fx-grid fx-grid--3">
+    {foreach $valid_nodes as $valid_node}
+        {include uri='design:parts/ezflow/card.tpl' node=$valid_node variant='card'}
+    {/foreach}
+    </div>
+</section>
+{undef $valid_nodes}

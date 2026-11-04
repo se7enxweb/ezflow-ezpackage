@@ -258,6 +258,74 @@
         <source>Skip to main content</source>
         <translation>Pereiti prie pagrindinio turinio</translation>
     </message>
+    <message>
+        <source>Automatic</source>
+        <translation>Automatiškai</translation>
+    </message>
+    <message>
+        <source>Breadcrumb</source>
+        <translation>Naršymo kelias</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>Autorių teisės</translation>
+    </message>
+    <message>
+        <source>Dark mode</source>
+        <translation>Tamsusis režimas</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>Dokumentacija</translation>
+    </message>
+    <message>
+        <source>Light mode</source>
+        <translation>Šviesusis režimas</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>Pagrindinė</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>Meniu</translation>
+    </message>
+    <message>
+        <source>Powered by</source>
+        <translation>Veikia su</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Paieška</translation>
+    </message>
+    <message>
+        <source>Search text:</source>
+        <translation>Paieškos tekstas:</translation>
+    </message>
+    <message>
+        <source>Sections</source>
+        <translation>Skyriai</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>Prisijungti</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Atjungti</translation>
+    </message>
+    <message>
+        <source>Site map</source>
+        <translation>Turinys</translation>
+    </message>
+    <message>
+        <source>Tag cloud</source>
+        <translation>Žymių debesis</translation>
+    </message>
+    <message>
+        <source>This site</source>
+        <translation>Ši svetainė</translation>
+    </message>
 </context>
 <context>
     <name>design/ezflow/parts/website_toolbar</name>
@@ -268,6 +336,10 @@
     <message>
         <source>Add to block in frontpage</source>
         <translation>Pridėti į pradžios puslapio bloką</translation>
+    </message>
+    <message>
+        <source>Push to block</source>
+        <translation>Perkelti į bloką</translation>
     </message>
 </context>
 <context>
@@ -560,6 +632,70 @@
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>eZ Page sukeitimo darbo eigos įvykis</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/block</name>
+    <message>
+        <source>Next</source>
+        <translation>Kitas</translation>
+    </message>
+    <message>
+        <source>Poll results</source>
+        <translation>Apklausos rezultatai</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>Ankstesnis</translation>
+    </message>
+    <message>
+        <source>Read more</source>
+        <translation>Skaityti daugiau</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Rodyti visus</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/article</name>
+    <message>
+        <source>Comments</source>
+        <translation>Komentarai</translation>
+    </message>
+    <message>
+        <source>New comment</source>
+        <translation>Naujas komentaras</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/event</name>
+    <message>
+        <source>Calendar</source>
+        <translation>Kalendorius</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>Kategorija</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Iš</translation>
+    </message>
+    <message>
+        <source>Past events</source>
+        <translation>Praėję renginiai</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Iki</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/feedback_form</name>
+    <message>
+        <source>Send form</source>
+        <translation>Siųsti formą</translation>
     </message>
 </context>
 </TS>

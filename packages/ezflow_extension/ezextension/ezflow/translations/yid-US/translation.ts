@@ -258,6 +258,74 @@
         <source>Skip to main content</source>
         <translation>שפּרינגען צום הויפּט־אינהאַלט</translation>
     </message>
+    <message>
+        <source>Automatic</source>
+        <translation>אויטאָמאַטיש</translation>
+    </message>
+    <message>
+        <source>Breadcrumb</source>
+        <translation>ברויטקרישלעך</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>מחבר־רעכט</translation>
+    </message>
+    <message>
+        <source>Dark mode</source>
+        <translation>טונקעלער מאָדוס</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>דאָקומענטאַציע</translation>
+    </message>
+    <message>
+        <source>Light mode</source>
+        <translation>ליכטיקער מאָדוס</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>הויפּט</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>מעניו</translation>
+    </message>
+    <message>
+        <source>Powered by</source>
+        <translation>געטריבן דורך</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>זוכן</translation>
+    </message>
+    <message>
+        <source>Search text:</source>
+        <translation>זוך־טעקסט:</translation>
+    </message>
+    <message>
+        <source>Sections</source>
+        <translation>אָפּטיילן</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>אַרייַנלאָגירן</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>אַרויסלאָגירן</translation>
+    </message>
+    <message>
+        <source>Site map</source>
+        <translation>מאַפּע פֿונעם וועבזייַטל</translation>
+    </message>
+    <message>
+        <source>Tag cloud</source>
+        <translation>עטיקעטן־וואָלקן</translation>
+    </message>
+    <message>
+        <source>This site</source>
+        <translation>דעם וועבזייטל</translation>
+    </message>
 </context>
 <context>
     <name>design/ezflow/parts/website_toolbar</name>
@@ -268,6 +336,10 @@
     <message>
         <source>Add to block in frontpage</source>
         <translation>צוגעבן צום בלאָק אין פֿראָנטפּעידזש</translation>
+    </message>
+    <message>
+        <source>Push to block</source>
+        <translation>שטופּן אין בלאָק</translation>
     </message>
 </context>
 <context>
@@ -560,6 +632,70 @@
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>eZ Page־אויסבייַט־געשעעניש פֿונעם אַרבעטס־גאַנג</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/block</name>
+    <message>
+        <source>Next</source>
+        <translation>ווייַטער</translation>
+    </message>
+    <message>
+        <source>Poll results</source>
+        <translation>רעזולטאַטן פֿון דער אַנקעטע</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>פֿריִער</translation>
+    </message>
+    <message>
+        <source>Read more</source>
+        <translation>לייענט מער</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>ווייַזן אַלץ</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/article</name>
+    <message>
+        <source>Comments</source>
+        <translation>קאָמענטאַרן</translation>
+    </message>
+    <message>
+        <source>New comment</source>
+        <translation>נייַער קאָמענטאַר</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/event</name>
+    <message>
+        <source>Calendar</source>
+        <translation>קאַלענדאַר</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>קאַטעגאָריע</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>פֿון</translation>
+    </message>
+    <message>
+        <source>Past events</source>
+        <translation>פֿאַרגאַנגענע געשעענישן</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>ביז</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/feedback_form</name>
+    <message>
+        <source>Send form</source>
+        <translation>שיקן דעם פֿאָרמולאַר</translation>
     </message>
 </context>
 </TS>

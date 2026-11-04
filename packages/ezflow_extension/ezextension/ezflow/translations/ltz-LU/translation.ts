@@ -258,6 +258,74 @@
         <source>Skip to main content</source>
         <translation>Direkt zum Haaptinhalt sprangen</translation>
     </message>
+    <message>
+        <source>Automatic</source>
+        <translation>Automatesch</translation>
+    </message>
+    <message>
+        <source>Breadcrumb</source>
+        <translation>Brotkrumm-Navigatioun</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>Copyright</translation>
+    </message>
+    <message>
+        <source>Dark mode</source>
+        <translation>Donkelen Modus</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>Dokumentatioun</translation>
+    </message>
+    <message>
+        <source>Light mode</source>
+        <translation>Hellen Modus</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>Haapt</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>Menü</translation>
+    </message>
+    <message>
+        <source>Powered by</source>
+        <translation>Ugedriwwen vun</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Sichen</translation>
+    </message>
+    <message>
+        <source>Search text:</source>
+        <translation>Sichtext:</translation>
+    </message>
+    <message>
+        <source>Sections</source>
+        <translation>Sektiounen</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>Umellen</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Ofmellen</translation>
+    </message>
+    <message>
+        <source>Site map</source>
+        <translation>Site-Iwwersiicht</translation>
+    </message>
+    <message>
+        <source>Tag cloud</source>
+        <translation>Tagwollek</translation>
+    </message>
+    <message>
+        <source>This site</source>
+        <translation>Dëse Site</translation>
+    </message>
 </context>
 <context>
     <name>design/ezflow/parts/website_toolbar</name>
@@ -268,6 +336,10 @@
     <message>
         <source>Add to block in frontpage</source>
         <translation>Zum Block op der Haaptsäit derbäisetzen</translation>
+    </message>
+    <message>
+        <source>Push to block</source>
+        <translation>An e Block setzen</translation>
     </message>
 </context>
 <context>
@@ -560,6 +632,70 @@
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>eZ-Page-Tausch-Evenement vum Aarbechtsoflaf</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/block</name>
+    <message>
+        <source>Next</source>
+        <translation>Weider</translation>
+    </message>
+    <message>
+        <source>Poll results</source>
+        <translation>Resultater vun der Ëmfro</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>Zréck</translation>
+    </message>
+    <message>
+        <source>Read more</source>
+        <translation>Méi liesen</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>All weisen</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/article</name>
+    <message>
+        <source>Comments</source>
+        <translation>Kommentarer</translation>
+    </message>
+    <message>
+        <source>New comment</source>
+        <translation>Neie Kommentar</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/event</name>
+    <message>
+        <source>Calendar</source>
+        <translation>Kalenner</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>Kategorie</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Vun</translation>
+    </message>
+    <message>
+        <source>Past events</source>
+        <translation>Vergaange Evenementer</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Bis</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/feedback_form</name>
+    <message>
+        <source>Send form</source>
+        <translation>Formulaire schécken</translation>
     </message>
 </context>
 </TS>

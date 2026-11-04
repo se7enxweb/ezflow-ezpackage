@@ -258,6 +258,74 @@
         <source>Skip to main content</source>
         <translation>Wefee gaa na ọdịnaya bụ isi</translation>
     </message>
+    <message>
+        <source>Automatic</source>
+        <translation>Nke akpaaka</translation>
+    </message>
+    <message>
+        <source>Breadcrumb</source>
+        <translation>Ụzọ nchọgharị</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>Ikike mbipụta</translation>
+    </message>
+    <message>
+        <source>Dark mode</source>
+        <translation>Ọnọdụ ọchịchịrị</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>Akwụkwọ ntuziaka</translation>
+    </message>
+    <message>
+        <source>Light mode</source>
+        <translation>Ọnọdụ ìhè</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>Isi</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>Menu</translation>
+    </message>
+    <message>
+        <source>Powered by</source>
+        <translation>Onye na-akwado ya</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Chọọ</translation>
+    </message>
+    <message>
+        <source>Search text:</source>
+        <translation>Ederede nchọ:</translation>
+    </message>
+    <message>
+        <source>Sections</source>
+        <translation>Ngalaba</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>Banye</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Pụọ</translation>
+    </message>
+    <message>
+        <source>Site map</source>
+        <translation>Maapụ saịtị</translation>
+    </message>
+    <message>
+        <source>Tag cloud</source>
+        <translation>Igwe ojii tag</translation>
+    </message>
+    <message>
+        <source>This site</source>
+        <translation>Saịtị a</translation>
+    </message>
 </context>
 <context>
     <name>design/ezflow/parts/website_toolbar</name>
@@ -268,6 +336,10 @@
     <message>
         <source>Add to block in frontpage</source>
         <translation>Tinye na mgbochi n&apos;ibe mbụ</translation>
+    </message>
+    <message>
+        <source>Push to block</source>
+        <translation>Tinye na ngọngọ</translation>
     </message>
 </context>
 <context>
@@ -560,6 +632,70 @@
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>Ihe omume nhazi ọrụ maka Gbanwee eZ Page</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/block</name>
+    <message>
+        <source>Next</source>
+        <translation>Sonụ</translation>
+    </message>
+    <message>
+        <source>Poll results</source>
+        <translation>Nsonaazụ ntụle</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>Gara aga</translation>
+    </message>
+    <message>
+        <source>Read more</source>
+        <translation>Gụkwuo</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Gosi ha niile</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/article</name>
+    <message>
+        <source>Comments</source>
+        <translation>Nkọwa</translation>
+    </message>
+    <message>
+        <source>New comment</source>
+        <translation>Nkọwa ọhụrụ</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/event</name>
+    <message>
+        <source>Calendar</source>
+        <translation>Kalenda</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>Otu</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Site na</translation>
+    </message>
+    <message>
+        <source>Past events</source>
+        <translation>Mmemme gara aga</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Ruo</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/feedback_form</name>
+    <message>
+        <source>Send form</source>
+        <translation>Zipụ fọm</translation>
     </message>
 </context>
 </TS>

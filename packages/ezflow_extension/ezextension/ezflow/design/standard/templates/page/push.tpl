@@ -53,5 +53,5 @@
 
 </div>
 
-{ezscript_require( array( 'ezjsc::jquery', 'ezflowcalendar.js', 'scheduledialog.js', 'ezpushtoblock.js' ) )}
+{include uri='design:parts/ezflow_scripts.tpl' scripts=array( 'ezflowcalendar.js', 'scheduledialog.js', 'ezpushtoblock.js' )}
 {ezcss_require( array( 'ezflowwidgets.css', 'scheduledialog.css' ) )}

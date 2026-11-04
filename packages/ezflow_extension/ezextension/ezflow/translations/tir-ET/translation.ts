@@ -258,6 +258,74 @@
         <source>Skip to main content</source>
         <translation>ናብ ቀንዲ ትሕዝቶ ሰጉር</translation>
     </message>
+    <message>
+        <source>Automatic</source>
+        <translation>ባዕሉ</translation>
+    </message>
+    <message>
+        <source>Breadcrumb</source>
+        <translation>መስርዕ መንገዲ</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>መሰል ደራሲ</translation>
+    </message>
+    <message>
+        <source>Dark mode</source>
+        <translation>ሞድ ጸልማት</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>ሰነዳት</translation>
+    </message>
+    <message>
+        <source>Light mode</source>
+        <translation>ሞድ ብርሃን</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>ቀንዲ</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>ዝርዝር</translation>
+    </message>
+    <message>
+        <source>Powered by</source>
+        <translation>ዝሰርሕ ብ</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>ድለ</translation>
+    </message>
+    <message>
+        <source>Search text:</source>
+        <translation>ጽሑፍ ምድላይ:</translation>
+    </message>
+    <message>
+        <source>Sections</source>
+        <translation>ክፍልታት</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>እቶ</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>ውጻእ</translation>
+    </message>
+    <message>
+        <source>Site map</source>
+        <translation>ካርታ መርበብ</translation>
+    </message>
+    <message>
+        <source>Tag cloud</source>
+        <translation>ደመና ምልክታት</translation>
+    </message>
+    <message>
+        <source>This site</source>
+        <translation>እዚ መርበብ</translation>
+    </message>
 </context>
 <context>
     <name>design/ezflow/parts/website_toolbar</name>
@@ -268,6 +336,10 @@
     <message>
         <source>Add to block in frontpage</source>
         <translation>ኣብ ቀዳማይ ገጽ ናብ ብሎክ ወስኽ</translation>
+    </message>
+    <message>
+        <source>Push to block</source>
+        <translation>ናብ ብሎክ ስደድ</translation>
     </message>
 </context>
 <context>
@@ -560,6 +632,70 @@
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>ፍጻመ ውሕጅ ስራሕ ምትካእ ገጽ eZ Page</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/block</name>
+    <message>
+        <source>Next</source>
+        <translation>ዝቕጽል</translation>
+    </message>
+    <message>
+        <source>Poll results</source>
+        <translation>ውጽኢት ዳሕሳስ</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>ዝሓለፈ</translation>
+    </message>
+    <message>
+        <source>Read more</source>
+        <translation>ተወሳኺ ኣንብብ</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>ኩሉ ኣርኢ</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/article</name>
+    <message>
+        <source>Comments</source>
+        <translation>ርእይቶታት</translation>
+    </message>
+    <message>
+        <source>New comment</source>
+        <translation>ሓድሽ ርእይቶ</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/event</name>
+    <message>
+        <source>Calendar</source>
+        <translation>ካለንደር</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>ምድብ</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>ካብ</translation>
+    </message>
+    <message>
+        <source>Past events</source>
+        <translation>ዝሓለፉ ፍጻመታት</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>ናብ</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/feedback_form</name>
+    <message>
+        <source>Send form</source>
+        <translation>ቅጥዒ ስደድ</translation>
     </message>
 </context>
 </TS>

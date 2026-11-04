@@ -258,6 +258,74 @@
         <source>Skip to main content</source>
         <translation>Ĩhĩtũkĩre gũthiĩ ũhoro-inĩ mũnene</translation>
     </message>
+    <message>
+        <source>Automatic</source>
+        <translation>Nĩ kwĩyendera</translation>
+    </message>
+    <message>
+        <source>Breadcrumb</source>
+        <translation>Njĩra ya kũgerera</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>Kĩrĩ kĩa gwĩka</translation>
+    </message>
+    <message>
+        <source>Dark mode</source>
+        <translation>Mũtugo wa nduma</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>Mabuku ma ũtaaro</translation>
+    </message>
+    <message>
+        <source>Light mode</source>
+        <translation>Mũtugo wa ũtheru</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>Kĩnene</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>Menu</translation>
+    </message>
+    <message>
+        <source>Powered by</source>
+        <translation>Nĩ ĩtengeretio nĩ</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Caria</translation>
+    </message>
+    <message>
+        <source>Search text:</source>
+        <translation>Kĩrĩũrũ gĩa gũcaria:</translation>
+    </message>
+    <message>
+        <source>Sections</source>
+        <translation>Ikũnjĩ</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>Ingĩra</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Ekia nja</translation>
+    </message>
+    <message>
+        <source>Site map</source>
+        <translation>Rũgano rwa saiti</translation>
+    </message>
+    <message>
+        <source>Tag cloud</source>
+        <translation>Ithũnũ rĩa matagi</translation>
+    </message>
+    <message>
+        <source>This site</source>
+        <translation>Thaiti ĩno</translation>
+    </message>
 </context>
 <context>
     <name>design/ezflow/parts/website_toolbar</name>
@@ -268,6 +336,10 @@
     <message>
         <source>Add to block in frontpage</source>
         <translation>Ongerera mbloko-inĩ ya ũrũa wa mbere</translation>
+    </message>
+    <message>
+        <source>Push to block</source>
+        <translation>Ikia thĩinĩ wa block</translation>
     </message>
 </context>
 <context>
@@ -560,6 +632,70 @@
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>Ũndũ wa mũtaratara wa wĩra wa kũthanania eZ Page</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/block</name>
+    <message>
+        <source>Next</source>
+        <translation>Ĩrĩa ĩrũmĩrĩire</translation>
+    </message>
+    <message>
+        <source>Poll results</source>
+        <translation>Maumĩrĩro ma kĩũria</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>Ĩrĩa ĩhĩtũku</translation>
+    </message>
+    <message>
+        <source>Read more</source>
+        <translation>Thoma makĩria</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Rora ciothe</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/article</name>
+    <message>
+        <source>Comments</source>
+        <translation>Mathimo</translation>
+    </message>
+    <message>
+        <source>New comment</source>
+        <translation>Ũhoro mũerũ wa kũgweta</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/event</name>
+    <message>
+        <source>Calendar</source>
+        <translation>Kalenda</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>Gĩkundi</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Kuuma</translation>
+    </message>
+    <message>
+        <source>Past events</source>
+        <translation>Maũndũ marĩa mahĩtũku</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Nginya</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/feedback_form</name>
+    <message>
+        <source>Send form</source>
+        <translation>Tũma foromu</translation>
     </message>
 </context>
 </TS>

@@ -1,14 +1,15 @@
 /**
- * Timeline preview (Exponential, jQuery): a three month calendar to pick the
+ * Timeline preview (Exponential; plain JavaScript, an ES module): a three month calendar to pick the
  * day and a slider to pick the time; every change fetches the blocks of the
  * node as they will look at that moment from the ezflow/preview view.
  *
  * The template sets eZFlowTimeline.slider.* and eZFlowTimeline.calendar.*
- * and then calls eZFlowTimeline.init(). Requires jQuery and ezflowcalendar.js.
+ * and then calls eZFlowTimeline.init(). Needs ezflow_core.js and ezflowcalendar.js.
  */
-var eZFlowTimeline = window.eZFlowTimeline || { calendar: {}, slider: {}, common: {} };
+var eZFlowTimeline = window.eZFlowTimeline = window.eZFlowTimeline || { calendar: {}, slider: {}, common: {} };
 
-(function( $, timeline ) {
+(function( timeline ) {
+    'use strict';
 
 // Calendar Start
 
@@ -89,7 +90,7 @@ timeline.calendar.init = function()
 
     timeline.calendar.cal1.render();
 
-    $( calendar ).on( "click", timeline.calendar.toogleCalendar );
+    if ( calendar ) calendar.addEventListener( "click", timeline.calendar.toogleCalendar );
 };
 // End Calendar
 
@@ -121,7 +122,7 @@ function HorizontalSlider( bg, thumb, minimum, maximum, tickSize )
         this.bg.setAttribute( 'tabindex', '-1' );
     }
 
-    $( this.bg ).on( 'pointerdown', function( e ) {
+    this.bg.addEventListener( 'pointerdown', function( e ) {
         if ( e.pointerType === 'mouse' && e.button !== 0 )
         {
             return;
@@ -129,31 +130,33 @@ function HorizontalSlider( bg, thumb, minimum, maximum, tickSize )
         e.preventDefault();
         self.bg.focus();
 
-        var thumbLeft = $( self.thumb ).offset().left,
-            grab = $.contains( self.thumb, e.target ) || e.target === self.thumb ?
+        var thumbLeft = self.thumb.getBoundingClientRect().left + window.pageXOffset,
+            grab = self.thumb.contains( e.target ) ?
                    e.pageX - thumbLeft : self.thumb.offsetWidth / 2;
 
         var moveTo = function( pageX ) {
-            var origin = $( self.bg ).offset().left;
+            var origin = self.bg.getBoundingClientRect().left + window.pageXOffset;
             self.setValue( pageX - grab - origin, false );
         };
 
         moveTo( e.pageX );
 
-        $( document )
-            .on( 'pointermove.ezflowslider', function( ev ) {
-                moveTo( ev.pageX );
-            } )
-            .on( 'pointerup.ezflowslider pointercancel.ezflowslider', function() {
-                $( document ).off( '.ezflowslider' );
-                self.fire( 'slideEnd' );
-            } );
+        var onMove = function( ev ) { moveTo( ev.pageX ); };
+        var onUp = function() {
+            document.removeEventListener( 'pointermove', onMove );
+            document.removeEventListener( 'pointerup', onUp );
+            document.removeEventListener( 'pointercancel', onUp );
+            self.fire( 'slideEnd' );
+        };
+        document.addEventListener( 'pointermove', onMove );
+        document.addEventListener( 'pointerup', onUp );
+        document.addEventListener( 'pointercancel', onUp );
     } );
 
-    $( this.bg ).on( 'keydown', function( e ) {
+    this.bg.addEventListener( 'keydown', function( e ) {
         var newValue = null;
 
-        switch ( e.which )
+        switch ( { ArrowLeft: 37, ArrowUp: 38, ArrowRight: 39, ArrowDown: 40, Home: 36, End: 35 }[e.key] || e.which )
         {
             case 37: // left
             case 38: // up
@@ -377,8 +380,8 @@ var extractScripts = function( text )
 {
     var matchOne = new RegExp( scriptFragment, 'im' );
 
-    return $.map( text.match( new RegExp( scriptFragment, 'img' ) ) || [], function( scriptTag ) {
-        return ( scriptTag.match( matchOne ) || [ '', '' ] )[1];
+    return ( text.match( new RegExp( scriptFragment, 'img' ) ) || [] ).map( function( scriptTag ) {
+        return scriptTag;
     } );
 };
 
@@ -399,9 +402,8 @@ timeline.common.updateBlocks = function()
 
     var sourceURL = fetchURL + "/" + timestamp + "/" + nodeid;
 
-    $.ajax( { type: 'GET', url: sourceURL, dataType: 'text' } )
-        .done( timeline.common.updateBlocksCallback.success )
-        .fail( timeline.common.updateBlocksCallback.failure );
+    window.eZFlow.io.get( sourceURL )
+        .then( timeline.common.updateBlocksCallback.success, timeline.common.updateBlocksCallback.failure );
     timeline.slider.toogleProgressBar();
 };
 
@@ -416,8 +418,9 @@ timeline.common.updateBlocksCallback =
             {
                 var blocks = JSON.parse( responseText );
 
-                $.each( blocks, function( index, item )
+                Object.keys( blocks ).forEach( function( index )
                 {
+                    var item = blocks[index];
                     // make sure all items are valid objects.
                     if ( item == undefined )
                         return;
@@ -434,16 +437,19 @@ timeline.common.updateBlocksCallback =
 
                     var node = document.getElementById( blockID );
                     node.innerHTML = xhtml;
-                    // execute any scripts that might have been in the returned xhtml
-                    $.each( myScripts, function( i, script )
+                    // Scripts of the returned blocks: an external one (src) is loaded again; inline code is not run
+                    // (a Content Security Policy forbids it, and the ezflow block templates have none)
+                    myScripts.forEach( function( tag )
                     {
-                        // Remove any html comments that might exists in the js.
-                        script = script.split( "<!--" ).join( "" );
-                        script = script.split( "//-->" ).join( "" );
-                        script = script.split( "-->" ).join( "" );
-
-                        $.globalEval( script );
-                    });
+                        var src = tag.match( /\ssrc\s*=\s*["']([^"']+)["']/i );
+                        if ( !src ) return;
+                        var el = document.createElement( 'script' );
+                        if ( /type\s*=\s*["']module["']/i.test( tag ) ) el.type = 'module';
+                        el.src = src[1];
+                        document.head.appendChild( el );
+                    } );
+                    // the new blocks are shown at once (no scroll-in reveal in a preview)
+                    node.querySelectorAll( '[data-fx-reveal]' ).forEach( function( el ) { el.classList.add( 'is-in' ); } );
 
                     // If return xhtml contains <div id="address-..."> we need to remove it, if not
                     // we end up with double sets of <div id="address-..."> since we put the returned
@@ -464,7 +470,7 @@ timeline.common.updateBlocksCallback =
     failure: function()
     {
         timeline.slider.toogleProgressBar();
-        alert( "Timeline was unable to retrieve data from the server, please try again later..." );
+        window.alert( "Timeline was unable to retrieve data from the server, please try again later..." );
     }
 };
 
@@ -474,32 +480,32 @@ timeline.init = function()
     timeline.slider.init();
 };
 
-})( jQuery, eZFlowTimeline );
+})( eZFlowTimeline );
 
 /*
  * Templates without inline code: extra/timeline.tpl carries the settings above in data-ezflow-timeline (JSON: slider
  * and calendar, merged into eZFlowTimeline.slider / .calendar) and the timeline starts from them when the page is
  * ready, the way the inline script did. Set up once, however often this file is printed.
  */
-( function( $, timeline )
+( function( timeline )
 {
     if ( timeline.dataSetup ) return;
     timeline.dataSetup = true;
 
-    $( function()
+    window.eZFlow.ready( function()
     {
-        var box = $( '[data-ezflow-timeline]' ).first(), cfg;
-        if ( !box.length ) return;
+        var box = document.querySelector( '[data-ezflow-timeline]' ), cfg;
+        if ( !box ) return;
         try
         {
-            cfg = JSON.parse( box.attr( 'data-ezflow-timeline' ) );
+            cfg = JSON.parse( box.getAttribute( 'data-ezflow-timeline' ) );
         }
         catch ( e )
         {
             return;
         }
-        $.extend( timeline.slider, cfg.slider || {} );
-        $.extend( timeline.calendar, cfg.calendar || {} );
+        Object.assign( timeline.slider, cfg.slider || {} );
+        Object.assign( timeline.calendar, cfg.calendar || {} );
         timeline.init();
     } );
-} )( jQuery, eZFlowTimeline );
+} )( eZFlowTimeline );

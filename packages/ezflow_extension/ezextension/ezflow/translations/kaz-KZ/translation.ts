@@ -258,6 +258,74 @@
         <source>Skip to main content</source>
         <translation>Негізгі мазмұнға өту</translation>
     </message>
+    <message>
+        <source>Automatic</source>
+        <translation>Автоматты</translation>
+    </message>
+    <message>
+        <source>Breadcrumb</source>
+        <translation>Навигация жолы</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>Авторлық құқық</translation>
+    </message>
+    <message>
+        <source>Dark mode</source>
+        <translation>Қараңғы режим</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>Құжаттама</translation>
+    </message>
+    <message>
+        <source>Light mode</source>
+        <translation>Жарық режим</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>Негізгі</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>Мәзір</translation>
+    </message>
+    <message>
+        <source>Powered by</source>
+        <translation>Қуат беруші</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Іздеу</translation>
+    </message>
+    <message>
+        <source>Search text:</source>
+        <translation>Іздеу мәтіні:</translation>
+    </message>
+    <message>
+        <source>Sections</source>
+        <translation>Бөлімдер</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>Кіру</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Шығу</translation>
+    </message>
+    <message>
+        <source>Site map</source>
+        <translation>Сайт картасы</translation>
+    </message>
+    <message>
+        <source>Tag cloud</source>
+        <translation>Тегтер бұлты</translation>
+    </message>
+    <message>
+        <source>This site</source>
+        <translation>Осы сайт</translation>
+    </message>
 </context>
 <context>
     <name>design/ezflow/parts/website_toolbar</name>
@@ -268,6 +336,10 @@
     <message>
         <source>Add to block in frontpage</source>
         <translation>Бастапқы беттегі блокқа қосу</translation>
+    </message>
+    <message>
+        <source>Push to block</source>
+        <translation>Блокқа қосу</translation>
     </message>
 </context>
 <context>
@@ -560,6 +632,70 @@
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>eZ Page swap жұмыс процесінің оқиғасы</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/block</name>
+    <message>
+        <source>Next</source>
+        <translation>Келесі</translation>
+    </message>
+    <message>
+        <source>Poll results</source>
+        <translation>Сауалнама нәтижелері</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>Алдыңғы</translation>
+    </message>
+    <message>
+        <source>Read more</source>
+        <translation>Толығырақ</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Барлығын көрсету</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/article</name>
+    <message>
+        <source>Comments</source>
+        <translation>Пікірлер</translation>
+    </message>
+    <message>
+        <source>New comment</source>
+        <translation>Жаңа пікір</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/event</name>
+    <message>
+        <source>Calendar</source>
+        <translation>Күнтізбе</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>Санат</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Қайдан</translation>
+    </message>
+    <message>
+        <source>Past events</source>
+        <translation>Өткен оқиғалар</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Дейін</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/feedback_form</name>
+    <message>
+        <source>Send form</source>
+        <translation>Пішінді жіберу</translation>
     </message>
 </context>
 </TS>

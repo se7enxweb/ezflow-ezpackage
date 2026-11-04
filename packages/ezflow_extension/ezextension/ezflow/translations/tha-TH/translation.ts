@@ -258,6 +258,74 @@
         <source>Skip to main content</source>
         <translation>ข้ามไปยังเนื้อหาหลัก</translation>
     </message>
+    <message>
+        <source>Automatic</source>
+        <translation>อัตโนมัติ</translation>
+    </message>
+    <message>
+        <source>Breadcrumb</source>
+        <translation>เส้นทางนำทาง</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>ลิขสิทธิ์</translation>
+    </message>
+    <message>
+        <source>Dark mode</source>
+        <translation>โหมดมืด</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>เอกสาร</translation>
+    </message>
+    <message>
+        <source>Light mode</source>
+        <translation>โหมดสว่าง</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>หลัก</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>เมนู</translation>
+    </message>
+    <message>
+        <source>Powered by</source>
+        <translation>ขับเคลื่อนโดย</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>ค้นหา</translation>
+    </message>
+    <message>
+        <source>Search text:</source>
+        <translation>ข้อความค้นหา:</translation>
+    </message>
+    <message>
+        <source>Sections</source>
+        <translation>ส่วน</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>เข้าสู่ระบบ</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>ออกจากระบบ</translation>
+    </message>
+    <message>
+        <source>Site map</source>
+        <translation>แผนผังไซต์</translation>
+    </message>
+    <message>
+        <source>Tag cloud</source>
+        <translation>กลุ่มแท็ก</translation>
+    </message>
+    <message>
+        <source>This site</source>
+        <translation>เว็บไซต์นี้</translation>
+    </message>
 </context>
 <context>
     <name>design/ezflow/parts/website_toolbar</name>
@@ -268,6 +336,10 @@
     <message>
         <source>Add to block in frontpage</source>
         <translation>เพิ่มไปยังบล็อกในหน้าแรก</translation>
+    </message>
+    <message>
+        <source>Push to block</source>
+        <translation>เพิ่มลงในบล็อก</translation>
     </message>
 </context>
 <context>
@@ -560,6 +632,70 @@
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>เหตุการณ์เวิร์กโฟลว์การสลับ eZ Page</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/block</name>
+    <message>
+        <source>Next</source>
+        <translation>ถัดไป</translation>
+    </message>
+    <message>
+        <source>Poll results</source>
+        <translation>ผลแบบสำรวจ</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>ก่อนหน้า</translation>
+    </message>
+    <message>
+        <source>Read more</source>
+        <translation>อ่านเพิ่มเติม</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>แสดงทั้งหมด</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/article</name>
+    <message>
+        <source>Comments</source>
+        <translation>ความคิดเห็น</translation>
+    </message>
+    <message>
+        <source>New comment</source>
+        <translation>ความคิดเห็นใหม่</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/event</name>
+    <message>
+        <source>Calendar</source>
+        <translation>ปฏิทิน</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>หมวดหมู่</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>จาก</translation>
+    </message>
+    <message>
+        <source>Past events</source>
+        <translation>กิจกรรมที่ผ่านมา</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>ถึง</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/feedback_form</name>
+    <message>
+        <source>Send form</source>
+        <translation>ส่งแบบฟอร์ม</translation>
     </message>
 </context>
 </TS>

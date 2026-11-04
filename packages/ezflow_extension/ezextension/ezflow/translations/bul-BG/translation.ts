@@ -258,6 +258,74 @@
         <source>Skip to main content</source>
         <translation>Към основното съдържание</translation>
     </message>
+    <message>
+        <source>Automatic</source>
+        <translation>Автоматично</translation>
+    </message>
+    <message>
+        <source>Breadcrumb</source>
+        <translation>Пътека за навигация</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>Авторски права</translation>
+    </message>
+    <message>
+        <source>Dark mode</source>
+        <translation>Тъмен режим</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>Документация</translation>
+    </message>
+    <message>
+        <source>Light mode</source>
+        <translation>Светъл режим</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>Основен</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>Меню</translation>
+    </message>
+    <message>
+        <source>Powered by</source>
+        <translation>Задвижвано от</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Търси</translation>
+    </message>
+    <message>
+        <source>Search text:</source>
+        <translation>Текст за търсене:</translation>
+    </message>
+    <message>
+        <source>Sections</source>
+        <translation>Раздели</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>Вход</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Изход</translation>
+    </message>
+    <message>
+        <source>Site map</source>
+        <translation>Съдържание</translation>
+    </message>
+    <message>
+        <source>Tag cloud</source>
+        <translation>Облак от етикети</translation>
+    </message>
+    <message>
+        <source>This site</source>
+        <translation>Този сайт</translation>
+    </message>
 </context>
 <context>
     <name>design/ezflow/parts/website_toolbar</name>
@@ -268,6 +336,10 @@
     <message>
         <source>Add to block in frontpage</source>
         <translation>Добави към блок на началната страница</translation>
+    </message>
+    <message>
+        <source>Push to block</source>
+        <translation>Изпрати към блок</translation>
     </message>
 </context>
 <context>
@@ -560,6 +632,70 @@
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>Събитие на работния процес за размяна на eZ страница</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/block</name>
+    <message>
+        <source>Next</source>
+        <translation>Напред</translation>
+    </message>
+    <message>
+        <source>Poll results</source>
+        <translation>Резултати от анкетата</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>Назад</translation>
+    </message>
+    <message>
+        <source>Read more</source>
+        <translation>Прочетете още</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Покажи всички</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/article</name>
+    <message>
+        <source>Comments</source>
+        <translation>Коментари</translation>
+    </message>
+    <message>
+        <source>New comment</source>
+        <translation>Нов коментар</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/event</name>
+    <message>
+        <source>Calendar</source>
+        <translation>Календар</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>Категория</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>От</translation>
+    </message>
+    <message>
+        <source>Past events</source>
+        <translation>Минали събития</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>До</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/feedback_form</name>
+    <message>
+        <source>Send form</source>
+        <translation>Изпрати формуляра</translation>
     </message>
 </context>
 </TS>

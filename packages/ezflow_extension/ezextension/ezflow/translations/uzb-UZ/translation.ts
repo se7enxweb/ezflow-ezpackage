@@ -258,6 +258,74 @@
         <source>Skip to main content</source>
         <translation>Asosiy kontentga oʻtish</translation>
     </message>
+    <message>
+        <source>Automatic</source>
+        <translation>Avtomatik</translation>
+    </message>
+    <message>
+        <source>Breadcrumb</source>
+        <translation>Navigatsiya izi</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>Mualliflik huquqi</translation>
+    </message>
+    <message>
+        <source>Dark mode</source>
+        <translation>Qorongʻi rejim</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>Hujjatlar</translation>
+    </message>
+    <message>
+        <source>Light mode</source>
+        <translation>Yorugʻ rejim</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>Asosiy</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>Menyu</translation>
+    </message>
+    <message>
+        <source>Powered by</source>
+        <translation>Quvvatlaydi:</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Qidirish</translation>
+    </message>
+    <message>
+        <source>Search text:</source>
+        <translation>Qidiruv matni:</translation>
+    </message>
+    <message>
+        <source>Sections</source>
+        <translation>Boʻlimlar</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>Kirish</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Chiqish</translation>
+    </message>
+    <message>
+        <source>Site map</source>
+        <translation>Sayt xaritasi</translation>
+    </message>
+    <message>
+        <source>Tag cloud</source>
+        <translation>Teglar buluti</translation>
+    </message>
+    <message>
+        <source>This site</source>
+        <translation>Bu sayt</translation>
+    </message>
 </context>
 <context>
     <name>design/ezflow/parts/website_toolbar</name>
@@ -268,6 +336,10 @@
     <message>
         <source>Add to block in frontpage</source>
         <translation>Bosh sahifadagi blokka qoʻshish</translation>
+    </message>
+    <message>
+        <source>Push to block</source>
+        <translation>Blokka qo‘shish</translation>
     </message>
 </context>
 <context>
@@ -560,6 +632,70 @@
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>eZ Page almashtirish ish jarayoni hodisasi</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/block</name>
+    <message>
+        <source>Next</source>
+        <translation>Keyingi</translation>
+    </message>
+    <message>
+        <source>Poll results</source>
+        <translation>Soʻrovnoma natijalari</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>Oldingi</translation>
+    </message>
+    <message>
+        <source>Read more</source>
+        <translation>Batafsil</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Hammasini koʻrsatish</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/article</name>
+    <message>
+        <source>Comments</source>
+        <translation>Izohlar</translation>
+    </message>
+    <message>
+        <source>New comment</source>
+        <translation>Yangi izoh</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/event</name>
+    <message>
+        <source>Calendar</source>
+        <translation>Taqvim</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>Kategoriya</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Manba</translation>
+    </message>
+    <message>
+        <source>Past events</source>
+        <translation>Oʻtgan tadbirlar</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Gacha</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/feedback_form</name>
+    <message>
+        <source>Send form</source>
+        <translation>Shaklni yuborish</translation>
     </message>
 </context>
 </TS>

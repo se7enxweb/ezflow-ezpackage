@@ -258,6 +258,74 @@
         <source>Skip to main content</source>
         <translation>Pāriet uz galveno saturu</translation>
     </message>
+    <message>
+        <source>Automatic</source>
+        <translation>Automātiski</translation>
+    </message>
+    <message>
+        <source>Breadcrumb</source>
+        <translation>Navigācijas ceļš</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>Autortiesības</translation>
+    </message>
+    <message>
+        <source>Dark mode</source>
+        <translation>Tumšais režīms</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>Dokumentācija</translation>
+    </message>
+    <message>
+        <source>Light mode</source>
+        <translation>Gaišais režīms</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>Galvenā</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>Izvēlne</translation>
+    </message>
+    <message>
+        <source>Powered by</source>
+        <translation>Darbina</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Meklēt</translation>
+    </message>
+    <message>
+        <source>Search text:</source>
+        <translation>Meklējamais teksts:</translation>
+    </message>
+    <message>
+        <source>Sections</source>
+        <translation>Sadaļas</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>Pierakstīties</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Izrakstīt</translation>
+    </message>
+    <message>
+        <source>Site map</source>
+        <translation>Vietnes karte</translation>
+    </message>
+    <message>
+        <source>Tag cloud</source>
+        <translation>Tagu mākonis</translation>
+    </message>
+    <message>
+        <source>This site</source>
+        <translation>Šī vietne</translation>
+    </message>
 </context>
 <context>
     <name>design/ezflow/parts/website_toolbar</name>
@@ -268,6 +336,10 @@
     <message>
         <source>Add to block in frontpage</source>
         <translation>Pievienot sākumlapas blokam</translation>
+    </message>
+    <message>
+        <source>Push to block</source>
+        <translation>Nosūtīt uz bloku</translation>
     </message>
 </context>
 <context>
@@ -560,6 +632,70 @@
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>eZ Page apmaiņas darbplūsmas notikums</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/block</name>
+    <message>
+        <source>Next</source>
+        <translation>Tālāk</translation>
+    </message>
+    <message>
+        <source>Poll results</source>
+        <translation>Aptaujas rezultāti</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>Iepriekšējais</translation>
+    </message>
+    <message>
+        <source>Read more</source>
+        <translation>Lasīt vairāk</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Rādīt visu</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/article</name>
+    <message>
+        <source>Comments</source>
+        <translation>Komentāri</translation>
+    </message>
+    <message>
+        <source>New comment</source>
+        <translation>Jauns komentārs</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/event</name>
+    <message>
+        <source>Calendar</source>
+        <translation>Kalendārs</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>Kategorija</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>No</translation>
+    </message>
+    <message>
+        <source>Past events</source>
+        <translation>Pagājušie notikumi</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Līdz</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/feedback_form</name>
+    <message>
+        <source>Send form</source>
+        <translation>Nosūtīt veidlapu</translation>
     </message>
 </context>
 </TS>

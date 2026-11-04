@@ -13,13 +13,16 @@
  *   data-ezflow-page="{json}"          the page datatype's zone layout and zone tabs (one tab per zone, loaded once
  *                                      from the ezflow/zone view), with blockCfg for the block tools
  *
- * Plain JavaScript and the jQuery the page already loads (ezjsc::jquery) for the zone tabs; works in every admin
- * design and with the zone content loaded later (the listeners are delegated). Set up once, however often printed.
+ *   data-ezflow-date-range             the date presets of the quick search: a preset hides the custom date range
+ *
+ * Plain JavaScript (an ES module, needs ezflow_core.js); works in every admin design and with the zone content loaded
+ * later (the listeners are delegated). Set up once, however often printed.
  */
 ( function()
 {
     if ( window.eZFlowEdit ) return;
-    window.eZFlowEdit = { 'version': 1 };
+    window.eZFlowEdit = { 'version': 2 };
+    var eZFlow = window.eZFlow = window.eZFlow || {};
 
     document.addEventListener( 'click', function( e )
     {
@@ -59,7 +62,7 @@
         }
     } );
 
-    function zoneTabs( $, container )
+    function zoneTabs( container )
     {
         var data;
         try
@@ -77,23 +80,25 @@
             eZFlow.ZoneLayout.init();
         }
 
-        var tabs = [];
-        $.each( data.tabs || [], function( i, tab )
-        {
-            tabs.push( { label: tab.label, dataSrc: tab.dataSrc, dataLoaded: false } );
-        } );
+        var tabs = ( data.tabs || [] ).map( function( tab ) { return { label: tab.label, dataSrc: tab.dataSrc, dataLoaded: false }; } );
         var blockCfg = data.blockCfg;
+        var target = document.getElementById( 'zone-tabs-container' );
+        if ( !target ) return;
 
-        // Zone tab view: one tab per zone, its content loaded once from the ezflow/zone view
-        var navset = $( '<div class="ezpage-tabs ezpage-tabs-top"><ul class="ezpage-tabs-nav"></ul><div class="ezpage-tabs-content"></div></div>' ),
-            nav = navset.children( '.ezpage-tabs-nav' ),
-            content = navset.children( '.ezpage-tabs-content' ),
+        // Zone tab view: one tab per zone (ARIA tabs), its content loaded once from the ezflow/zone view
+        var navset = document.createElement( 'div' ),
+            nav = document.createElement( 'ul' ),
+            content = document.createElement( 'div' ),
             activeIndex = -1;
+        navset.className = 'ezpage-tabs ezpage-tabs-top';
+        nav.className = 'ezpage-tabs-nav';
+        nav.setAttribute( 'role', 'tablist' );
+        content.className = 'ezpage-tabs-content';
+        navset.append( nav, content );
 
         var onDataLoaded = function( tabIndex )
         {
-            var cfg = $.extend( {}, blockCfg, { zone: tabIndex } );
-
+            var cfg = Object.assign( {}, blockCfg, { zone: tabIndex } );
             eZFlow.BlockDD.cfg = cfg;
             eZFlow.BlockDD.init();
             eZFlow.BlockCollapse.init();
@@ -105,89 +110,119 @@
         var loadTab = function( tabIndex )
         {
             var tab = tabs[tabIndex];
-
-            if ( tab.dataLoaded || tab.loading )
-            {
-                return;
-            }
+            if ( tab.dataLoaded || tab.loading ) return;
             tab.loading = true;
-            content.addClass( 'loading' );
-            $.ajax( { type: 'GET', url: tab.dataSrc, dataType: 'html' } )
-                .done( function( html )
-                {
-                    tab.contentEl.innerHTML = html;
-                    tab.dataLoaded = true;
-                    onDataLoaded( tabIndex );
-                } )
-                .always( function()
-                {
-                    tab.loading = false;
-                    content.removeClass( 'loading' );
-                } );
+            content.classList.add( 'loading' );
+            content.setAttribute( 'aria-busy', 'true' );
+            eZFlow.io.get( tab.dataSrc ).then( function( html )
+            {
+                tab.contentEl.innerHTML = html;
+                tab.dataLoaded = true;
+                onDataLoaded( tabIndex );
+            } ).catch( function() {} ).then( function()
+            {
+                tab.loading = false;
+                content.classList.remove( 'loading' );
+                content.removeAttribute( 'aria-busy' );
+            } );
         };
 
         var setActiveIndex = function( tabIndex, fireChange )
         {
-            if ( tabIndex === activeIndex || !tabs[tabIndex] )
-            {
-                return;
-            }
+            if ( tabIndex === activeIndex || !tabs[tabIndex] ) return;
             if ( tabs[activeIndex] )
             {
-                tabs[activeIndex].li.removeClass( 'selected' ).removeAttr( 'title' );
-                $( tabs[activeIndex].contentEl ).addClass( 'ezpage-tabs-hidden' );
+                tabs[activeIndex].li.classList.remove( 'selected' );
+                tabs[activeIndex].li.removeAttribute( 'title' );
+                tabs[activeIndex].a.setAttribute( 'aria-selected', 'false' );
+                tabs[activeIndex].a.tabIndex = -1;
+                tabs[activeIndex].contentEl.classList.add( 'ezpage-tabs-hidden' );
+                tabs[activeIndex].contentEl.hidden = true;
             }
             activeIndex = tabIndex;
-            tabs[tabIndex].li.addClass( 'selected' ).attr( 'title', 'active' );
-            $( tabs[tabIndex].contentEl ).removeClass( 'ezpage-tabs-hidden' );
+            tabs[tabIndex].li.classList.add( 'selected' );
+            tabs[tabIndex].li.setAttribute( 'title', 'active' );
+            tabs[tabIndex].a.setAttribute( 'aria-selected', 'true' );
+            tabs[tabIndex].a.tabIndex = 0;
+            tabs[tabIndex].contentEl.classList.remove( 'ezpage-tabs-hidden' );
+            tabs[tabIndex].contentEl.hidden = false;
             loadTab( tabIndex );
 
             if ( fireChange )
             {
-                eZFlow.Cookie.set( "eZPageActiveTabIndex", tabIndex, "/" );
+                eZFlow.Cookie.set( 'eZPageActiveTabIndex', tabIndex, '/' );
                 BlockDDInit.cfg.zone = tabIndex;
             }
         };
 
-        $.each( tabs, function( i, tab )
+        tabs.forEach( function( tab, i )
         {
-            tab.li = $( '<li><a href="#"><em></em></a></li>' );
-            tab.li.find( 'em' ).html( tab.label );
-            tab.li.children( 'a' ).on( 'click', function( e )
+            tab.li = document.createElement( 'li' );
+            tab.li.setAttribute( 'role', 'presentation' );
+            tab.a = document.createElement( 'a' );
+            tab.a.href = '#';
+            tab.a.id = 'ezpage-tab-' + i;
+            tab.a.setAttribute( 'role', 'tab' );
+            tab.a.setAttribute( 'aria-controls', 'ezpage-tabpanel-' + i );
+            tab.a.setAttribute( 'aria-selected', 'false' );
+            tab.a.tabIndex = -1;
+            var em = document.createElement( 'em' );
+            em.innerHTML = tab.label;
+            tab.a.appendChild( em );
+            tab.a.addEventListener( 'click', function( e )
             {
                 e.preventDefault();
                 setActiveIndex( i, true );
             } );
-            nav.append( tab.li );
-            tab.contentEl = $( '<div class="ezpage-tabs-hidden"></div>' ).appendTo( content )[0];
+            tab.a.addEventListener( 'keydown', function( e )
+            {
+                var next = e.key === 'ArrowRight' ? i + 1 : e.key === 'ArrowLeft' ? i - 1 : -2;
+                if ( next === -2 ) return;
+                e.preventDefault();
+                next = ( next + tabs.length ) % tabs.length;
+                setActiveIndex( next, true );
+                tabs[next].a.focus();
+            } );
+            tab.li.appendChild( tab.a );
+            nav.appendChild( tab.li );
+            tab.contentEl = document.createElement( 'div' );
+            tab.contentEl.className = 'ezpage-tabs-hidden';
+            tab.contentEl.id = 'ezpage-tabpanel-' + i;
+            tab.contentEl.setAttribute( 'role', 'tabpanel' );
+            tab.contentEl.setAttribute( 'aria-labelledby', tab.a.id );
+            tab.contentEl.hidden = true;
+            content.appendChild( tab.contentEl );
         } );
 
-        navset.appendTo( '#zone-tabs-container' );
+        target.appendChild( navset );
 
         var activeTabIndex = eZFlow.Cookie.get( 'eZPageActiveTabIndex' );
-
         if ( activeTabIndex && tabs[ parseInt( activeTabIndex, 10 ) ] )
-        {
             setActiveIndex( parseInt( activeTabIndex, 10 ), false );
-        }
         else
-        {
             setActiveIndex( 0, false );
-        }
     }
+
+    // The date range of the quick search in the frontpage edit view: a preset hides the custom range (the
+    // onclick="showDateRange(this)" of earlier versions called a function that no longer existed)
+    document.addEventListener( 'change', function( e )
+    {
+        var radio = e.target;
+        if ( !radio || !radio.matches || !radio.matches( 'input[name="SearchDate"][data-ezflow-date-range]' ) ) return;
+        var form = radio.closest( 'form' ) || document;
+        var custom = form.querySelector( '.date-range-selection' );
+        if ( custom ) custom.hidden = radio.value !== '-1';
+    } );
 
     function start()
     {
-        if ( !window.jQuery ) return;
-        jQuery( function( $ )
+        document.querySelectorAll( '[data-ezflow-page]' ).forEach( function( container )
         {
-            $( '[data-ezflow-page]' ).each( function()
-            {
-                if ( this.getAttribute( 'data-ezflow-page-ready' ) ) return;
-                this.setAttribute( 'data-ezflow-page-ready', '1' );
-                zoneTabs( $, this );
-            } );
+            if ( container.getAttribute( 'data-ezflow-page-ready' ) ) return;
+            container.setAttribute( 'data-ezflow-page-ready', '1' );
+            zoneTabs( container );
         } );
+        document.querySelectorAll( '.date-range-selection' ).forEach( function( el ) { el.hidden = true; } );
     }
 
     if ( document.readyState === 'loading' )

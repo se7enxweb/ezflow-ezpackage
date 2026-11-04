@@ -258,6 +258,74 @@
         <source>Skip to main content</source>
         <translation>Kalo te përmbajtja kryesore</translation>
     </message>
+    <message>
+        <source>Automatic</source>
+        <translation>Automatike</translation>
+    </message>
+    <message>
+        <source>Breadcrumb</source>
+        <translation>Gjurma e navigimit</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>Të drejtat e autorit</translation>
+    </message>
+    <message>
+        <source>Dark mode</source>
+        <translation>Modaliteti i errët</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>Dokumentacioni</translation>
+    </message>
+    <message>
+        <source>Light mode</source>
+        <translation>Modaliteti i çelët</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>Kryesore</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>Menyja</translation>
+    </message>
+    <message>
+        <source>Powered by</source>
+        <translation>Mundësuar nga</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Kërko</translation>
+    </message>
+    <message>
+        <source>Search text:</source>
+        <translation>Teksti i kërkimit:</translation>
+    </message>
+    <message>
+        <source>Sections</source>
+        <translation>Seksionet</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>Identifikohu</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Dil</translation>
+    </message>
+    <message>
+        <source>Site map</source>
+        <translation>Harta e sajtit</translation>
+    </message>
+    <message>
+        <source>Tag cloud</source>
+        <translation>Reja e etiketave</translation>
+    </message>
+    <message>
+        <source>This site</source>
+        <translation>Ky sajt</translation>
+    </message>
 </context>
 <context>
     <name>design/ezflow/parts/website_toolbar</name>
@@ -268,6 +336,10 @@
     <message>
         <source>Add to block in frontpage</source>
         <translation>Shto në bllok në faqen kryesore</translation>
+    </message>
+    <message>
+        <source>Push to block</source>
+        <translation>Dërgo në bllok</translation>
     </message>
 </context>
 <context>
@@ -560,6 +632,70 @@
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>Ngjarje e rrjedhës së punës për shkëmbimin e eZ Page</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/block</name>
+    <message>
+        <source>Next</source>
+        <translation>Tjetri</translation>
+    </message>
+    <message>
+        <source>Poll results</source>
+        <translation>Rezultatet e sondazhit</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>I mëparshmi</translation>
+    </message>
+    <message>
+        <source>Read more</source>
+        <translation>Lexo më shumë</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Shfaqi të gjitha</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/article</name>
+    <message>
+        <source>Comments</source>
+        <translation>Komentet</translation>
+    </message>
+    <message>
+        <source>New comment</source>
+        <translation>Koment i ri</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/event</name>
+    <message>
+        <source>Calendar</source>
+        <translation>Kalendari</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>Kategoria</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Nga</translation>
+    </message>
+    <message>
+        <source>Past events</source>
+        <translation>Ngjarjet e kaluara</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Deri</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/feedback_form</name>
+    <message>
+        <source>Send form</source>
+        <translation>Dërgo formularin</translation>
     </message>
 </context>
 </TS>

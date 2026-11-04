@@ -258,6 +258,74 @@
         <source>Skip to main content</source>
         <translation>Salt la conținutul principal</translation>
     </message>
+    <message>
+        <source>Automatic</source>
+        <translation>Automat</translation>
+    </message>
+    <message>
+        <source>Breadcrumb</source>
+        <translation>Traseu de navigare</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>Drepturi de autor</translation>
+    </message>
+    <message>
+        <source>Dark mode</source>
+        <translation>Mod întunecat</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>Documentație</translation>
+    </message>
+    <message>
+        <source>Light mode</source>
+        <translation>Mod luminos</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>Principală</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>Meniu</translation>
+    </message>
+    <message>
+        <source>Powered by</source>
+        <translation>Susținut de</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Căutare</translation>
+    </message>
+    <message>
+        <source>Search text:</source>
+        <translation>Text de căutat:</translation>
+    </message>
+    <message>
+        <source>Sections</source>
+        <translation>Secțiuni</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>Conectare</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Deconectare</translation>
+    </message>
+    <message>
+        <source>Site map</source>
+        <translation>Harta site-ului</translation>
+    </message>
+    <message>
+        <source>Tag cloud</source>
+        <translation>Nor de etichete</translation>
+    </message>
+    <message>
+        <source>This site</source>
+        <translation>Acest site</translation>
+    </message>
 </context>
 <context>
     <name>design/ezflow/parts/website_toolbar</name>
@@ -268,6 +336,10 @@
     <message>
         <source>Add to block in frontpage</source>
         <translation>Adăugare în bloc pe prima pagină</translation>
+    </message>
+    <message>
+        <source>Push to block</source>
+        <translation>Trimitere în bloc</translation>
     </message>
 </context>
 <context>
@@ -560,6 +632,70 @@
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>Eveniment de flux de lucru pentru interschimbare eZ Page</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/block</name>
+    <message>
+        <source>Next</source>
+        <translation>Următorul</translation>
+    </message>
+    <message>
+        <source>Poll results</source>
+        <translation>Rezultatele sondajului</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>Anteriorul</translation>
+    </message>
+    <message>
+        <source>Read more</source>
+        <translation>Citește mai mult</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Afișare toate</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/article</name>
+    <message>
+        <source>Comments</source>
+        <translation>Comentarii</translation>
+    </message>
+    <message>
+        <source>New comment</source>
+        <translation>Comentariu nou</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/event</name>
+    <message>
+        <source>Calendar</source>
+        <translation>Calendar</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>Categorie</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Din</translation>
+    </message>
+    <message>
+        <source>Past events</source>
+        <translation>Evenimente trecute</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Până la</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/feedback_form</name>
+    <message>
+        <source>Send form</source>
+        <translation>Trimitere formular</translation>
     </message>
 </context>
 </TS>

@@ -258,6 +258,74 @@
         <source>Skip to main content</source>
         <translation>مکھ مواد ولے جاؤ</translation>
     </message>
+    <message>
+        <source>Automatic</source>
+        <translation>آپوں آپ</translation>
+    </message>
+    <message>
+        <source>Breadcrumb</source>
+        <translation>بریڈ کرمب</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>کاپی رائٹ</translation>
+    </message>
+    <message>
+        <source>Dark mode</source>
+        <translation>گہرا موڈ</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>دستاویزات</translation>
+    </message>
+    <message>
+        <source>Light mode</source>
+        <translation>روشن موڈ</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>مکھ</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>مینیو</translation>
+    </message>
+    <message>
+        <source>Powered by</source>
+        <translation>طاقت</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>لبھو</translation>
+    </message>
+    <message>
+        <source>Search text:</source>
+        <translation>لبھت ٹیکسٹ:</translation>
+    </message>
+    <message>
+        <source>Sections</source>
+        <translation>سیکشن</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>لاگ ان کرو</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>لاگ آؤٹ کرو</translation>
+    </message>
+    <message>
+        <source>Site map</source>
+        <translation>سائٹ میپ</translation>
+    </message>
+    <message>
+        <source>Tag cloud</source>
+        <translation>ٹیگ کلاؤڈ</translation>
+    </message>
+    <message>
+        <source>This site</source>
+        <translation>ایہہ سائٹ</translation>
+    </message>
 </context>
 <context>
     <name>design/ezflow/parts/website_toolbar</name>
@@ -268,6 +336,10 @@
     <message>
         <source>Add to block in frontpage</source>
         <translation>فرنٹ پیج دے بلاک وچ جوڑو</translation>
+    </message>
+    <message>
+        <source>Push to block</source>
+        <translation>بلاک وچ بھیجو</translation>
     </message>
 </context>
 <context>
@@ -560,6 +632,70 @@
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>eZ Page صفحہ بدلݨ دا ورک فلو واقعہ</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/block</name>
+    <message>
+        <source>Next</source>
+        <translation>اگلا</translation>
+    </message>
+    <message>
+        <source>Poll results</source>
+        <translation>رائے شماری دے نتیجے</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>پچھلا</translation>
+    </message>
+    <message>
+        <source>Read more</source>
+        <translation>ہور پڑھو</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>سارے وکھاؤ</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/article</name>
+    <message>
+        <source>Comments</source>
+        <translation>تبصرے</translation>
+    </message>
+    <message>
+        <source>New comment</source>
+        <translation>نواں تبصرہ</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/event</name>
+    <message>
+        <source>Calendar</source>
+        <translation>کیلنڈر</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>زمرہ</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>توں</translation>
+    </message>
+    <message>
+        <source>Past events</source>
+        <translation>پچھلے ایونٹ</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>ول</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/feedback_form</name>
+    <message>
+        <source>Send form</source>
+        <translation>فارم گھلو</translation>
     </message>
 </context>
 </TS>

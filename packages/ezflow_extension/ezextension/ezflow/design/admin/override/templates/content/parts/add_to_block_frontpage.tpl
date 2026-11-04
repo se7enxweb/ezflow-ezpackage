@@ -64,7 +64,7 @@
 
 </div>
 
-{ezscript_require( array( 'ezjsc::jquery', 'ezjsc::jqueryio', 'ezajaxsearch.js', 'ezflow_edit.js' ) )}
+{include uri='design:parts/ezflow_scripts.tpl' scripts=array( 'ezajaxsearch.js', 'ezflow_edit.js' )}
 
 {* The quick search settings, read by ezajaxsearch.js when the page is ready (no inline code). *}
 {set-block variable=ezflow_result_template}<div class="block"><div class="item-title">{ldelim}title{rdelim}</div><div class="item-published-date">[{ldelim}class_name{rdelim}] {ldelim}date{rdelim}</div><div class="item-selector"><input type="checkbox" value="{ldelim}node_id{rdelim}" name="SelectedNodeIDArray[]" /></div></div>{/set-block}

@@ -258,6 +258,74 @@
         <source>Skip to main content</source>
         <translation>ወደ ዋናው ይዘት ዝለል</translation>
     </message>
+    <message>
+        <source>Automatic</source>
+        <translation>ራስ-ሰር</translation>
+    </message>
+    <message>
+        <source>Breadcrumb</source>
+        <translation>የዱካ አሰሳ</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>የቅጂ መብት</translation>
+    </message>
+    <message>
+        <source>Dark mode</source>
+        <translation>ጨለማ ሁነታ</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>ሰነዶች</translation>
+    </message>
+    <message>
+        <source>Light mode</source>
+        <translation>ብርሃን ሁነታ</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>ዋና</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>ምናሌ</translation>
+    </message>
+    <message>
+        <source>Powered by</source>
+        <translation>የተጎላበተው በ</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>ፈልግ</translation>
+    </message>
+    <message>
+        <source>Search text:</source>
+        <translation>የፍለጋ ጽሑፍ:</translation>
+    </message>
+    <message>
+        <source>Sections</source>
+        <translation>ክፍሎች</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>ግባ</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>ውጣ</translation>
+    </message>
+    <message>
+        <source>Site map</source>
+        <translation>የጣቢያ ካርታ</translation>
+    </message>
+    <message>
+        <source>Tag cloud</source>
+        <translation>የመለያ ምልክት ደመና</translation>
+    </message>
+    <message>
+        <source>This site</source>
+        <translation>ይህ ጣቢያ</translation>
+    </message>
 </context>
 <context>
     <name>design/ezflow/parts/website_toolbar</name>
@@ -268,6 +336,10 @@
     <message>
         <source>Add to block in frontpage</source>
         <translation>በመነሻ ገጹ ውስጥ ወዳለ ብሎክ ጨምር</translation>
+    </message>
+    <message>
+        <source>Push to block</source>
+        <translation>ወደ ብሎክ ግፋ</translation>
     </message>
 </context>
 <context>
@@ -560,6 +632,70 @@
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>የeZ Page ቀያይር የሥራ ፍሰት ክስተት</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/block</name>
+    <message>
+        <source>Next</source>
+        <translation>ቀጣይ</translation>
+    </message>
+    <message>
+        <source>Poll results</source>
+        <translation>የሕዝበ ውሳኔ ውጤቶች</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>ቀዳሚ</translation>
+    </message>
+    <message>
+        <source>Read more</source>
+        <translation>ተጨማሪ ያንብቡ</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>ሁሉንም አሳይ</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/article</name>
+    <message>
+        <source>Comments</source>
+        <translation>አስተያየቶች</translation>
+    </message>
+    <message>
+        <source>New comment</source>
+        <translation>አዲስ አስተያየት</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/event</name>
+    <message>
+        <source>Calendar</source>
+        <translation>ቀን መቁጠሪያ</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>ምድብ</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>ከ</translation>
+    </message>
+    <message>
+        <source>Past events</source>
+        <translation>ያለፉ ዝግጅቶች</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>እስከ</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/feedback_form</name>
+    <message>
+        <source>Send form</source>
+        <translation>ቅጽ ላክ</translation>
     </message>
 </context>
 </TS>

@@ -14,7 +14,7 @@
  *   data-ezflow-nav-toggle="<menu id>"                   the iphone design's menu button (pagelayout.tpl): slides
  *                                                        the menu open
  *
- * jQuery (ezjsc::jquery, ezjsc::jqueryio) where the old code used it. Set up once, however often it is printed.
+ * Plain JavaScript (an ES module), the server calls through ezflow_core.js. Set up once, however often it is printed.
  */
 ( function()
 {
@@ -32,77 +32,59 @@
         }
     }
 
-    function carousel( $, box )
+    function carousel( box )
     {
         var blockId = box.getAttribute( 'data-ezflow-carousel' ),
             offset = 0,
             limit = 3,
             total = parseInt( box.getAttribute( 'data-total' ), 10 ) || 0;
 
-        var callBack = function( response )
+        var show = function( content )
         {
-            if ( response !== undefined && response !== null )
+            if ( !content ) return;
+            box.querySelectorAll( '.col-content' ).forEach( function( col, i )
             {
-                var colContent = $( box ).find( '.col-content' );
-
-                for ( var i = 0; i < colContent.length; i++ )
-                {
-                    var colNode = colContent.eq( i );
-                    if ( response.content[i] !== undefined )
-                        colNode.html( response.content[i] );
-                }
-            }
+                col.classList.remove( 'loading' );
+                col.style.height = '';
+                if ( content[i] !== undefined ) col.innerHTML = content[i];
+            } );
         };
 
         var handleRequest = function( e )
         {
-            var className = e.target.className;
-            if ( className == 'carousel-next-button' )
+            var className = e.currentTarget.className;
+            if ( className.indexOf( 'carousel-next-button' ) !== -1 )
             {
                 offset += 3;
-
-                if ( offset > total )
-                    offset = 0;
+                if ( offset > total ) offset = 0;
             }
-
-            if ( className == 'carousel-prev-button' )
+            if ( className.indexOf( 'carousel-prev-button' ) !== -1 )
             {
-                if ( offset == 0 )
-                    offset = Math.floor( total / 3 ) * 3;
-                else
-                    offset -= 3;
+                offset = offset == 0 ? Math.floor( total / 3 ) * 3 : offset - 3;
             }
-
-            $( box ).find( '.col-content' ).each( function()
+            box.querySelectorAll( '.col-content' ).forEach( function( col )
             {
-                var n = $( this );
-                n.addClass( 'loading' );
-                var height = this.getBoundingClientRect().bottom - this.getBoundingClientRect().top;
-                n.css( 'height', height + 'px' );
-                n.html( '' );
+                col.classList.add( 'loading' );
+                col.style.height = col.getBoundingClientRect().height + 'px';
+                col.replaceChildren();
             } );
-
-            var data = 'http_accept=json&offset=' + offset;
-            data += '&limit=' + limit;
-            data += '&block_id=' + encodeURIComponent( blockId );
-
-            $.ez( 'ezflow::getvaliditems', data, callBack );
+            window.eZFlow.io.call( 'ezflow::getvaliditems', { http_accept: 'json', offset: offset, limit: limit, block_id: blockId } )
+                .then( show ).catch( function() { show( [] ); } );
         };
 
-        $( box ).find( 'input.carousel-prev-button' ).first().on( 'click', handleRequest );
-        $( box ).find( 'input.carousel-next-button' ).first().on( 'click', handleRequest );
+        var prev = box.querySelector( 'input.carousel-prev-button' ), next = box.querySelector( 'input.carousel-next-button' );
+        if ( prev ) { prev.setAttribute( 'aria-label', 'Previous' ); prev.addEventListener( 'click', handleRequest ); }
+        if ( next ) { next.setAttribute( 'aria-label', 'Next' ); next.addEventListener( 'click', handleRequest ); }
     }
 
-    function onlineUsers( $, box )
+    function onlineUsers( box )
     {
         var blockId = box.getAttribute( 'data-ezflow-online-users' );
-        $.ez( 'ezflow::onlineusers', false, function( response )
+        window.eZFlow.io.call( 'ezflow::onlineusers' ).then( function( content )
         {
-            if ( response !== undefined && response !== null && response.content !== undefined )
-            {
-                $( document.getElementById( 'logged-in-count-' + blockId ) ).html( response.content.logged_in_count );
-            }
-        } );
+            var el = document.getElementById( 'logged-in-count-' + blockId );
+            if ( el && content && content.logged_in_count !== undefined ) el.textContent = content.logged_in_count;
+        } ).catch( function() {} );
     }
 
     function gmap( container )
@@ -123,7 +105,7 @@
             }
             else
             {
-                alert( "Geocode was not successful for the following reason: " + status );
+                window.console && console.warn( "Geocode was not successful for the following reason: " + status );
             }
         } );
     }
@@ -175,15 +157,9 @@
     function start()
     {
         each( '[data-ezflow-nav-toggle]', navToggle );
-        if ( window.jQuery )
-        {
-            jQuery( function( $ )
-            {
-                each( '[data-ezflow-carousel]', function( box ) { carousel( $, box ); } );
-                if ( $.ez ) each( '[data-ezflow-online-users]', function( box ) { onlineUsers( $, box ); } );
-                each( '[data-ezflow-gmap-location]', gmap );
-            } );
-        }
+        each( '[data-ezflow-carousel]', carousel );
+        if ( window.eZFlow && window.eZFlow.io ) each( '[data-ezflow-online-users]', onlineUsers );
+        each( '[data-ezflow-gmap-location]', gmap );
     }
 
     if ( document.readyState === 'loading' )

@@ -59,7 +59,7 @@ $nodeResult = eZNodeviewfunctions::generateNodeViewData( $tpl, $node, $contentOb
 // Generate a unique cache key for use in cache-blocks in pagelayout.tpl.
 // This should be looked as a temporary fix as ideally all cache-blocks
 // should be disabled by this view.
-$cacheKey = "timeline-" + time();
+$cacheKey = "timeline-" . time();
 $nodeResult["title_path"] = array( array( "text" => "Timeline Preview" ), array( "text" => $node->attribute( 'name' ) ) );
 
 $httpCharset = eZTextCodec::httpCharset();

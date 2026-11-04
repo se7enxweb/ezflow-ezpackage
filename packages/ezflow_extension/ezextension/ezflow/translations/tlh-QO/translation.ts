@@ -258,6 +258,74 @@
         <source>Skip to main content</source>
         <translation>De&apos; potlhDaq yIghoS</translation>
     </message>
+    <message>
+        <source>Automatic</source>
+        <translation>pat wIv</translation>
+    </message>
+    <message>
+        <source>Breadcrumb</source>
+        <translation>He tetlh</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>ghItlh ghajghach</translation>
+    </message>
+    <message>
+        <source>Dark mode</source>
+        <translation>Hurghbogh Segh</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>QaH ghItlhmey</translation>
+    </message>
+    <message>
+        <source>Light mode</source>
+        <translation>wov Segh</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>Hol&amp;apos;a&amp;apos;</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>HIDjolev</translation>
+    </message>
+    <message>
+        <source>Powered by</source>
+        <translation>HoS:</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>yInej</translation>
+    </message>
+    <message>
+        <source>Search text:</source>
+        <translation>nejmeH ghItlh:</translation>
+    </message>
+    <message>
+        <source>Sections</source>
+        <translation>&amp;apos;ay&amp;apos;mey</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>yI&amp;apos;el</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>yImej</translation>
+    </message>
+    <message>
+        <source>Site map</source>
+        <translation>yoS pu&amp;apos;jIn</translation>
+    </message>
+    <message>
+        <source>Tag cloud</source>
+        <translation>per &amp;apos;eng</translation>
+    </message>
+    <message>
+        <source>This site</source>
+        <translation>Daq vam</translation>
+    </message>
 </context>
 <context>
     <name>design/ezflow/parts/website_toolbar</name>
@@ -268,6 +336,10 @@
     <message>
         <source>Add to block in frontpage</source>
         <translation>wa&apos;DIch nav ngoghDaq yIchel</translation>
+    </message>
+    <message>
+        <source>Push to block</source>
+        <translation>ngoghDaq yIlan</translation>
     </message>
 </context>
 <context>
@@ -560,6 +632,70 @@
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>eZ Page tammeH Qu&apos; mIw wanI&apos;</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/block</name>
+    <message>
+        <source>Next</source>
+        <translation>yIghoS</translation>
+    </message>
+    <message>
+        <source>Poll results</source>
+        <translation>wIvmeH yu&amp;apos; mI&amp;apos;mey</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>nungbogh</translation>
+    </message>
+    <message>
+        <source>Read more</source>
+        <translation>latlh yIlaD</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Hoch yI&amp;apos;ang</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/article</name>
+    <message>
+        <source>Comments</source>
+        <translation>ja&amp;apos;ghachmey</translation>
+    </message>
+    <message>
+        <source>New comment</source>
+        <translation>ja&amp;apos;ghach chu&amp;apos;</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/event</name>
+    <message>
+        <source>Calendar</source>
+        <translation>poH tetlh</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>tlhegh ghom</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Hal</translation>
+    </message>
+    <message>
+        <source>Past events</source>
+        <translation>wanI&amp;apos;mey ret</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>ghoch</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/feedback_form</name>
+    <message>
+        <source>Send form</source>
+        <translation>De&amp;apos; lanmeH ghItlh yIngeH</translation>
     </message>
 </context>
 </TS>

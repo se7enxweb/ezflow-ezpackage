@@ -81,5 +81,5 @@
 <div id="zone-tabs-container"></div>
 </div>
 
-{ezscript_require( array( 'ezjsc::jquery', 'ezjsc::jqueryio', 'ezflowcalendar.js', 'blocktools.js', 'zonetools.js', 'scheduledialog.js', 'ezflow_edit.js' ) )}
+{include uri='design:parts/ezflow_scripts.tpl' scripts=array( 'ezflowcalendar.js', 'blocktools.js', 'zonetools.js', 'scheduledialog.js', 'ezflow_edit.js' )}
 {ezcss_require( array( 'ezflowwidgets.css', 'scheduledialog.css', 'ezpage/ezpage.css' ) )}

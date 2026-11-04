@@ -258,6 +258,74 @@
         <source>Skip to main content</source>
         <translation>跳到主要内容</translation>
     </message>
+    <message>
+        <source>Automatic</source>
+        <translation>自动</translation>
+    </message>
+    <message>
+        <source>Breadcrumb</source>
+        <translation>面包屑导航</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>版权</translation>
+    </message>
+    <message>
+        <source>Dark mode</source>
+        <translation>深色模式</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>文档</translation>
+    </message>
+    <message>
+        <source>Light mode</source>
+        <translation>浅色模式</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>主语言</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>菜单</translation>
+    </message>
+    <message>
+        <source>Powered by</source>
+        <translation>技术支持</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>搜索</translation>
+    </message>
+    <message>
+        <source>Search text:</source>
+        <translation>搜索文本：</translation>
+    </message>
+    <message>
+        <source>Sections</source>
+        <translation>分区</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>登录</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>退出登录</translation>
+    </message>
+    <message>
+        <source>Site map</source>
+        <translation>站点地图</translation>
+    </message>
+    <message>
+        <source>Tag cloud</source>
+        <translation>标签云</translation>
+    </message>
+    <message>
+        <source>This site</source>
+        <translation>本站</translation>
+    </message>
 </context>
 <context>
     <name>design/ezflow/parts/website_toolbar</name>
@@ -268,6 +336,10 @@
     <message>
         <source>Add to block in frontpage</source>
         <translation>添加到首页区块</translation>
+    </message>
+    <message>
+        <source>Push to block</source>
+        <translation>推送到区块</translation>
     </message>
 </context>
 <context>
@@ -560,6 +632,70 @@
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>eZ 页面交换工作流事件</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/block</name>
+    <message>
+        <source>Next</source>
+        <translation>下一页</translation>
+    </message>
+    <message>
+        <source>Poll results</source>
+        <translation>投票结果</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>上一页</translation>
+    </message>
+    <message>
+        <source>Read more</source>
+        <translation>阅读更多</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>显示全部</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/article</name>
+    <message>
+        <source>Comments</source>
+        <translation>评论</translation>
+    </message>
+    <message>
+        <source>New comment</source>
+        <translation>新建评论</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/event</name>
+    <message>
+        <source>Calendar</source>
+        <translation>日历</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>分类</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>开始时间</translation>
+    </message>
+    <message>
+        <source>Past events</source>
+        <translation>过去的活动</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>至</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/feedback_form</name>
+    <message>
+        <source>Send form</source>
+        <translation>提交表单</translation>
     </message>
 </context>
 </TS>

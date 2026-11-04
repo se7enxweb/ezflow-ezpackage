@@ -258,6 +258,74 @@
         <source>Skip to main content</source>
         <translation>მთავარ შიგთავსზე გადასვლა</translation>
     </message>
+    <message>
+        <source>Automatic</source>
+        <translation>ავტომატური</translation>
+    </message>
+    <message>
+        <source>Breadcrumb</source>
+        <translation>ნავიგაციის ჯაჭვი</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>საავტორო უფლებები</translation>
+    </message>
+    <message>
+        <source>Dark mode</source>
+        <translation>მუქი რეჟიმი</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>დოკუმენტაცია</translation>
+    </message>
+    <message>
+        <source>Light mode</source>
+        <translation>ღია რეჟიმი</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>მთავარი</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>მენიუ</translation>
+    </message>
+    <message>
+        <source>Powered by</source>
+        <translation>შექმნილია</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>ძიება</translation>
+    </message>
+    <message>
+        <source>Search text:</source>
+        <translation>საძიებო ტექსტი:</translation>
+    </message>
+    <message>
+        <source>Sections</source>
+        <translation>სექციები</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>შესვლა</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>გასვლა</translation>
+    </message>
+    <message>
+        <source>Site map</source>
+        <translation>საიტის რუკა</translation>
+    </message>
+    <message>
+        <source>Tag cloud</source>
+        <translation>ტეგების ღრუბელი</translation>
+    </message>
+    <message>
+        <source>This site</source>
+        <translation>ეს საიტი</translation>
+    </message>
 </context>
 <context>
     <name>design/ezflow/parts/website_toolbar</name>
@@ -268,6 +336,10 @@
     <message>
         <source>Add to block in frontpage</source>
         <translation>მთავარი გვერდის ბლოკში დამატება</translation>
+    </message>
+    <message>
+        <source>Push to block</source>
+        <translation>ბლოკში დამატება</translation>
     </message>
 </context>
 <context>
@@ -560,6 +632,70 @@
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>eZ Page-ის ჩანაცვლების სამუშაო პროცესის მოვლენა</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/block</name>
+    <message>
+        <source>Next</source>
+        <translation>შემდეგი</translation>
+    </message>
+    <message>
+        <source>Poll results</source>
+        <translation>გამოკითხვის შედეგები</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>წინა</translation>
+    </message>
+    <message>
+        <source>Read more</source>
+        <translation>მეტის წაკითხვა</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>ყველას ჩვენება</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/article</name>
+    <message>
+        <source>Comments</source>
+        <translation>კომენტარები</translation>
+    </message>
+    <message>
+        <source>New comment</source>
+        <translation>ახალი კომენტარი</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/event</name>
+    <message>
+        <source>Calendar</source>
+        <translation>კალენდარი</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>კატეგორია</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>საიდან</translation>
+    </message>
+    <message>
+        <source>Past events</source>
+        <translation>გასული ღონისძიებები</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>მიმღები</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/feedback_form</name>
+    <message>
+        <source>Send form</source>
+        <translation>ფორმის გაგზავნა</translation>
     </message>
 </context>
 </TS>

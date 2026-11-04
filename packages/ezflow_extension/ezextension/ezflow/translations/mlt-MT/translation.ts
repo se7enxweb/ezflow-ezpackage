@@ -258,6 +258,74 @@
         <source>Skip to main content</source>
         <translation>Aqbeż għall-kontenut ewlieni</translation>
     </message>
+    <message>
+        <source>Automatic</source>
+        <translation>Awtomatiku</translation>
+    </message>
+    <message>
+        <source>Breadcrumb</source>
+        <translation>Mogħdija tan-navigazzjoni</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>Drittijiet tal-awtur</translation>
+    </message>
+    <message>
+        <source>Dark mode</source>
+        <translation>Modalità skura</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>Dokumentazzjoni</translation>
+    </message>
+    <message>
+        <source>Light mode</source>
+        <translation>Modalità ċara</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>Ewlieni</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>Menu</translation>
+    </message>
+    <message>
+        <source>Powered by</source>
+        <translation>Imħaddem minn</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Fittex</translation>
+    </message>
+    <message>
+        <source>Search text:</source>
+        <translation>Test tat-tfittxija:</translation>
+    </message>
+    <message>
+        <source>Sections</source>
+        <translation>Taqsimiet</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>Idħol</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Oħroġ</translation>
+    </message>
+    <message>
+        <source>Site map</source>
+        <translation>Mappa tas-sit</translation>
+    </message>
+    <message>
+        <source>Tag cloud</source>
+        <translation>Sħaba tat-tikketti</translation>
+    </message>
+    <message>
+        <source>This site</source>
+        <translation>Dan is-sit</translation>
+    </message>
 </context>
 <context>
     <name>design/ezflow/parts/website_toolbar</name>
@@ -268,6 +336,10 @@
     <message>
         <source>Add to block in frontpage</source>
         <translation>Żid ma&apos; blokk fil-paġna ewlenija</translation>
+    </message>
+    <message>
+        <source>Push to block</source>
+        <translation>Ibgħat għall-blokk</translation>
     </message>
 </context>
 <context>
@@ -560,6 +632,70 @@
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>Avveniment tal-fluss tax-xogħol għall-iskambju ta&apos; eZ Page</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/block</name>
+    <message>
+        <source>Next</source>
+        <translation>Li jmiss</translation>
+    </message>
+    <message>
+        <source>Poll results</source>
+        <translation>Riżultati tal-istħarriġ</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>Ta&amp;apos; qabel</translation>
+    </message>
+    <message>
+        <source>Read more</source>
+        <translation>Aqra iktar</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Uri kollox</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/article</name>
+    <message>
+        <source>Comments</source>
+        <translation>Kummenti</translation>
+    </message>
+    <message>
+        <source>New comment</source>
+        <translation>Kumment ġdid</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/event</name>
+    <message>
+        <source>Calendar</source>
+        <translation>Kalendarju</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>Kategorija</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Minn</translation>
+    </message>
+    <message>
+        <source>Past events</source>
+        <translation>Avvenimenti li għaddew</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Sa</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/feedback_form</name>
+    <message>
+        <source>Send form</source>
+        <translation>Ibgħat il-formola</translation>
     </message>
 </context>
 </TS>

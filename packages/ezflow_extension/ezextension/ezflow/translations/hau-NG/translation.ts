@@ -258,6 +258,74 @@
         <source>Skip to main content</source>
         <translation>Tsallaka zuwa babban abun ciki</translation>
     </message>
+    <message>
+        <source>Automatic</source>
+        <translation>Na atomatik</translation>
+    </message>
+    <message>
+        <source>Breadcrumb</source>
+        <translation>Hanyar shafi</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>Haƙƙin mallaka</translation>
+    </message>
+    <message>
+        <source>Dark mode</source>
+        <translation>Yanayin duhu</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>Takardun bayani</translation>
+    </message>
+    <message>
+        <source>Light mode</source>
+        <translation>Yanayin haske</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>Babba</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>Menu</translation>
+    </message>
+    <message>
+        <source>Powered by</source>
+        <translation>Tare da ƙarfin</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Nema</translation>
+    </message>
+    <message>
+        <source>Search text:</source>
+        <translation>Rubutun nema:</translation>
+    </message>
+    <message>
+        <source>Sections</source>
+        <translation>Sassa</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>Shiga</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Fita</translation>
+    </message>
+    <message>
+        <source>Site map</source>
+        <translation>Taswirar shafi</translation>
+    </message>
+    <message>
+        <source>Tag cloud</source>
+        <translation>Gajimaren alamu</translation>
+    </message>
+    <message>
+        <source>This site</source>
+        <translation>Wannan shafin</translation>
+    </message>
 </context>
 <context>
     <name>design/ezflow/parts/website_toolbar</name>
@@ -268,6 +336,10 @@
     <message>
         <source>Add to block in frontpage</source>
         <translation>Ƙara zuwa toshe a shafin farko</translation>
+    </message>
+    <message>
+        <source>Push to block</source>
+        <translation>Tura zuwa toshe</translation>
     </message>
 </context>
 <context>
@@ -560,6 +632,70 @@
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>Abin da ya faru a tsarin aiki na musanya Shafi na eZ</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/block</name>
+    <message>
+        <source>Next</source>
+        <translation>Na gaba</translation>
+    </message>
+    <message>
+        <source>Poll results</source>
+        <translation>Sakamakon zaɓen ra&amp;apos;ayi</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>Na baya</translation>
+    </message>
+    <message>
+        <source>Read more</source>
+        <translation>Kara karantawa</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Nuna duka</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/article</name>
+    <message>
+        <source>Comments</source>
+        <translation>Sharhuna</translation>
+    </message>
+    <message>
+        <source>New comment</source>
+        <translation>Sabon sharhi</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/event</name>
+    <message>
+        <source>Calendar</source>
+        <translation>Kalanda</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>Rukuni</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Daga</translation>
+    </message>
+    <message>
+        <source>Past events</source>
+        <translation>Abubuwan da suka faru a baya</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Zuwa</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/feedback_form</name>
+    <message>
+        <source>Send form</source>
+        <translation>Aika fom</translation>
     </message>
 </context>
 </TS>

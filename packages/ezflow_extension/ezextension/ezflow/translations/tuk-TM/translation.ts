@@ -258,6 +258,74 @@
         <source>Skip to main content</source>
         <translation>Esasy mazmuna geç</translation>
     </message>
+    <message>
+        <source>Automatic</source>
+        <translation>Awtomatik</translation>
+    </message>
+    <message>
+        <source>Breadcrumb</source>
+        <translation>Nawigasiýa yzy</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>Awtorlyk hukugy</translation>
+    </message>
+    <message>
+        <source>Dark mode</source>
+        <translation>Garaňky režim</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>Resminamalar</translation>
+    </message>
+    <message>
+        <source>Light mode</source>
+        <translation>Ýagty režim</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>Esasy</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>Menýu</translation>
+    </message>
+    <message>
+        <source>Powered by</source>
+        <translation>Işleýän:</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Gözle</translation>
+    </message>
+    <message>
+        <source>Search text:</source>
+        <translation>Gözleg teksti:</translation>
+    </message>
+    <message>
+        <source>Sections</source>
+        <translation>Bölümler</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>Gir</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Çyk</translation>
+    </message>
+    <message>
+        <source>Site map</source>
+        <translation>Saýt kartasy</translation>
+    </message>
+    <message>
+        <source>Tag cloud</source>
+        <translation>Teg buludy</translation>
+    </message>
+    <message>
+        <source>This site</source>
+        <translation>Bu saýt</translation>
+    </message>
 </context>
 <context>
     <name>design/ezflow/parts/website_toolbar</name>
@@ -268,6 +336,10 @@
     <message>
         <source>Add to block in frontpage</source>
         <translation>Baş sahypadaky bloga goş</translation>
+    </message>
+    <message>
+        <source>Push to block</source>
+        <translation>Bloka goş</translation>
     </message>
 </context>
 <context>
@@ -560,6 +632,70 @@
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>eZ Page çalyşmak iş akymy wakasy</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/block</name>
+    <message>
+        <source>Next</source>
+        <translation>Indiki</translation>
+    </message>
+    <message>
+        <source>Poll results</source>
+        <translation>Ses bermegiň netijeleri</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>Öňki</translation>
+    </message>
+    <message>
+        <source>Read more</source>
+        <translation>Doly oka</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Hemmesini görkez</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/article</name>
+    <message>
+        <source>Comments</source>
+        <translation>Teswirler</translation>
+    </message>
+    <message>
+        <source>New comment</source>
+        <translation>Täze teswir</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/event</name>
+    <message>
+        <source>Calendar</source>
+        <translation>Senenama</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>Kategoriýa</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Nireden</translation>
+    </message>
+    <message>
+        <source>Past events</source>
+        <translation>Geçen wakalar</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Çenli</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/feedback_form</name>
+    <message>
+        <source>Send form</source>
+        <translation>Formany ibermek</translation>
     </message>
 </context>
 </TS>

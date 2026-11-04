@@ -258,6 +258,74 @@
         <source>Skip to main content</source>
         <translation>Μετάβαση στο κύριο περιεχόμενο</translation>
     </message>
+    <message>
+        <source>Automatic</source>
+        <translation>Αυτόματη</translation>
+    </message>
+    <message>
+        <source>Breadcrumb</source>
+        <translation>Διαδρομή πλοήγησης</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>Πνευματικά δικαιώματα</translation>
+    </message>
+    <message>
+        <source>Dark mode</source>
+        <translation>Σκοτεινή λειτουργία</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>Τεκμηρίωση</translation>
+    </message>
+    <message>
+        <source>Light mode</source>
+        <translation>Φωτεινή λειτουργία</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>Κύρια</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>Μενού</translation>
+    </message>
+    <message>
+        <source>Powered by</source>
+        <translation>Με την υποστήριξη</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Αναζήτηση</translation>
+    </message>
+    <message>
+        <source>Search text:</source>
+        <translation>Κείμενο αναζήτησης:</translation>
+    </message>
+    <message>
+        <source>Sections</source>
+        <translation>Ενότητες</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>Σύνδεση</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Αποσύνδεση</translation>
+    </message>
+    <message>
+        <source>Site map</source>
+        <translation>Χάρτης ιστότοπου</translation>
+    </message>
+    <message>
+        <source>Tag cloud</source>
+        <translation>Σύννεφο ετικετών</translation>
+    </message>
+    <message>
+        <source>This site</source>
+        <translation>Αυτός ο ιστότοπος</translation>
+    </message>
 </context>
 <context>
     <name>design/ezflow/parts/website_toolbar</name>
@@ -268,6 +336,10 @@
     <message>
         <source>Add to block in frontpage</source>
         <translation>Προσθήκη σε μπλοκ της αρχικής σελίδας</translation>
+    </message>
+    <message>
+        <source>Push to block</source>
+        <translation>Προώθηση σε μπλοκ</translation>
     </message>
 </context>
 <context>
@@ -560,6 +632,70 @@
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>Συμβάν ροής εργασιών εναλλαγής eZ Page</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/block</name>
+    <message>
+        <source>Next</source>
+        <translation>Επόμενο</translation>
+    </message>
+    <message>
+        <source>Poll results</source>
+        <translation>Αποτελέσματα δημοσκόπησης</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>Προηγούμενο</translation>
+    </message>
+    <message>
+        <source>Read more</source>
+        <translation>Διαβάστε περισσότερα</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Εμφάνιση όλων</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/article</name>
+    <message>
+        <source>Comments</source>
+        <translation>Σχόλια</translation>
+    </message>
+    <message>
+        <source>New comment</source>
+        <translation>Νέο σχόλιο</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/event</name>
+    <message>
+        <source>Calendar</source>
+        <translation>Ημερολόγιο</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>Κατηγορία</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Από</translation>
+    </message>
+    <message>
+        <source>Past events</source>
+        <translation>Προηγούμενες εκδηλώσεις</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Έως</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/feedback_form</name>
+    <message>
+        <source>Send form</source>
+        <translation>Αποστολή φόρμας</translation>
     </message>
 </context>
 </TS>

@@ -1,22 +1,13 @@
-<h2>{$block.name|wash()}</h2>
-<form id="search-form-{$block.id}" action="{'ezajax/search'|ezurl('no')}" method="post">
-    <input id="search-string-{$block.id}" type="text" name="SearchStr" value="" />
-    <input id="search-button-{$block.id}" class="button" type="submit" name="SearchButton" value="{'Search'|i18n( 'design/ezflow/block/search' )}" />
-    <input name="SearchOffset" type="hidden" value="0"  />
-    <input name="SearchLimit" type="hidden" value="10"  />
-</form>
-
-<div id="search-results-{$block.id}"></div>
-{ezscript_require( array( 'ezjsc::jquery', 'ezjsc::jqueryio', 'ezajaxsearch.js' ) )}
-
-{* The quick search settings, read by ezajaxsearch.js when the page is ready (no inline code). *}
-{set-block variable=ezflow_noresult_template}<p>{'No search results found for:'|i18n( 'design/ezflow/block/search' )} "{ldelim}search_string{rdelim}"</p>{/set-block}
-{set-block variable=ezflow_result_template}<div class="result-item float-break"><div class="item-title"><a href="{ldelim}url_alias{rdelim}">{ldelim}title{rdelim}</a></div><div class="item-published-date">[{ldelim}class_name{rdelim}] {ldelim}date{rdelim}</div></div>{/set-block}
-<div hidden="hidden"
-     data-ezflow-ajaxsearch="1"
-     data-search-string="#search-string-{$block.id|wash}"
-     data-search-button="#search-button-{$block.id|wash}"
-     data-search-results="#search-results-{$block.id|wash}"
-     data-date-format="shortdatetime"
-     data-noresult-template="{$ezflow_noresult_template|wash}"
-     data-result-template="{$ezflow_result_template|wash}"></div>
+{* search: a search form. It posts to content/search; with JavaScript the first results show below it without
+   leaving the page (javascript/ezflow-site.js, through ezjscore's ezjsc::search, as ezajaxsearch.js did). *}
+<section class="fx-block fx-block--compact fx-panel" aria-labelledby="fx-b-{$block.id}">
+    <header class="fx-block__head"><h2 class="fx-block__title" id="fx-b-{$block.id}">{cond( $block.name|trim, $block.name, 'Search'|i18n( 'design/ezflow/block/search' ) )|wash}</h2></header>
+    <form class="fx-inline-search" role="search" method="post" action={"/content/search"|ezurl}
+          data-fx-quicksearch data-fx-call={"ezjscore/call"|ezurl} data-fx-base={"/"|ezurl} data-fx-limit="6"
+          data-fx-none="{'No search results found for:'|i18n( 'design/ezflow/block/search' )|wash}">
+        <label class="fx-sr-only" for="fx-qs-{$block.id}">{'Search'|i18n( 'design/ezflow/block/search' )}</label>
+        <input id="fx-qs-{$block.id}" type="search" name="SearchText" autocomplete="off">
+        <button class="fx-btn" type="submit">{'Search'|i18n( 'design/ezflow/block/search' )}</button>
+    </form>
+    <div class="fx-qs-results" data-fx-quicksearch-results aria-live="polite"></div>
+</section>

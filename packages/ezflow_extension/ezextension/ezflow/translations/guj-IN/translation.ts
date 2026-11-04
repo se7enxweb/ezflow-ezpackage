@@ -258,6 +258,74 @@
         <source>Skip to main content</source>
         <translation>મુખ્ય સામગ્રી પર જાઓ</translation>
     </message>
+    <message>
+        <source>Automatic</source>
+        <translation>આપોઆપ</translation>
+    </message>
+    <message>
+        <source>Breadcrumb</source>
+        <translation>બ્રેડક્રમ્બ</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>કૉપિરાઇટ</translation>
+    </message>
+    <message>
+        <source>Dark mode</source>
+        <translation>ડાર્ક મોડ</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>દસ્તાવેજીકરણ</translation>
+    </message>
+    <message>
+        <source>Light mode</source>
+        <translation>લાઇટ મોડ</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>મુખ્ય</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>મેનુ</translation>
+    </message>
+    <message>
+        <source>Powered by</source>
+        <translation>આના દ્વારા સંચાલિત</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>શોધો</translation>
+    </message>
+    <message>
+        <source>Search text:</source>
+        <translation>શોધ ટેક્સ્ટ:</translation>
+    </message>
+    <message>
+        <source>Sections</source>
+        <translation>વિભાગો</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>સાઇન ઇન કરો</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>સાઇન આઉટ કરો</translation>
+    </message>
+    <message>
+        <source>Site map</source>
+        <translation>સાઇટ નકશો</translation>
+    </message>
+    <message>
+        <source>Tag cloud</source>
+        <translation>ટૅગ ક્લાઉડ</translation>
+    </message>
+    <message>
+        <source>This site</source>
+        <translation>આ સાઇટ</translation>
+    </message>
 </context>
 <context>
     <name>design/ezflow/parts/website_toolbar</name>
@@ -268,6 +336,10 @@
     <message>
         <source>Add to block in frontpage</source>
         <translation>ફ્રન્ટપેજના બ્લૉકમાં ઉમેરો</translation>
+    </message>
+    <message>
+        <source>Push to block</source>
+        <translation>બ્લૉકમાં મોકલો</translation>
     </message>
 </context>
 <context>
@@ -560,6 +632,70 @@
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>eZ Page અદલાબદલી વર્કફ્લો ઇવેન્ટ</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/block</name>
+    <message>
+        <source>Next</source>
+        <translation>આગળ</translation>
+    </message>
+    <message>
+        <source>Poll results</source>
+        <translation>મતદાનના પરિણામો</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>પહેલાનું</translation>
+    </message>
+    <message>
+        <source>Read more</source>
+        <translation>વધુ વાંચો</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>બધા બતાવો</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/article</name>
+    <message>
+        <source>Comments</source>
+        <translation>ટિપ્પણીઓ</translation>
+    </message>
+    <message>
+        <source>New comment</source>
+        <translation>નવી ટિપ્પણી</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/event</name>
+    <message>
+        <source>Calendar</source>
+        <translation>કૅલેન્ડર</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>શ્રેણી</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>પ્રેષક</translation>
+    </message>
+    <message>
+        <source>Past events</source>
+        <translation>ભૂતકાળની ઇવેન્ટ</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>પ્રતિ</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/feedback_form</name>
+    <message>
+        <source>Send form</source>
+        <translation>ફૉર્મ મોકલો</translation>
     </message>
 </context>
 </TS>

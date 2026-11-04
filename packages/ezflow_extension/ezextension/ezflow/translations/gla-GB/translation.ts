@@ -258,6 +258,74 @@
         <source>Skip to main content</source>
         <translation>Leum chun na prìomh-shusbainte</translation>
     </message>
+    <message>
+        <source>Automatic</source>
+        <translation>Fèin-obrachail</translation>
+    </message>
+    <message>
+        <source>Breadcrumb</source>
+        <translation>Slighe nam pronnan</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>Còir-lethbhreac</translation>
+    </message>
+    <message>
+        <source>Dark mode</source>
+        <translation>Modh dorcha</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>Docamaideadh</translation>
+    </message>
+    <message>
+        <source>Light mode</source>
+        <translation>Modh soilleir</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>Prìomh</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>Clàr-taice</translation>
+    </message>
+    <message>
+        <source>Powered by</source>
+        <translation>Le cumhachd o</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Lorg</translation>
+    </message>
+    <message>
+        <source>Search text:</source>
+        <translation>Teacsa-luirg:</translation>
+    </message>
+    <message>
+        <source>Sections</source>
+        <translation>Earrannan</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>Clàraich a-steach</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Clàraich a-mach</translation>
+    </message>
+    <message>
+        <source>Site map</source>
+        <translation>Mapa na làraich</translation>
+    </message>
+    <message>
+        <source>Tag cloud</source>
+        <translation>Sgòth thagaichean</translation>
+    </message>
+    <message>
+        <source>This site</source>
+        <translation>An làrach seo</translation>
+    </message>
 </context>
 <context>
     <name>design/ezflow/parts/website_toolbar</name>
@@ -268,6 +336,10 @@
     <message>
         <source>Add to block in frontpage</source>
         <translation>Cuir ris a&apos; bhloca sa phrìomh-dhuilleag</translation>
+    </message>
+    <message>
+        <source>Push to block</source>
+        <translation>Cuir ann am bloca</translation>
     </message>
 </context>
 <context>
@@ -560,6 +632,70 @@
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>Tachartas sruth-obrach iomlaid eZ Page</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/block</name>
+    <message>
+        <source>Next</source>
+        <translation>Air adhart</translation>
+    </message>
+    <message>
+        <source>Poll results</source>
+        <translation>Toraidhean a' chunntais-bheachd</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>Air ais</translation>
+    </message>
+    <message>
+        <source>Read more</source>
+        <translation>Leugh tuilleadh</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Seall na h-uile</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/article</name>
+    <message>
+        <source>Comments</source>
+        <translation>Beachdan</translation>
+    </message>
+    <message>
+        <source>New comment</source>
+        <translation>Beachd ùr</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/event</name>
+    <message>
+        <source>Calendar</source>
+        <translation>Mìosachan</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>Roinn-seòrsa</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Bho</translation>
+    </message>
+    <message>
+        <source>Past events</source>
+        <translation>Tachartasan a chaidh seachad</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Gu</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/feedback_form</name>
+    <message>
+        <source>Send form</source>
+        <translation>Cuir am foirm</translation>
     </message>
 </context>
 </TS>

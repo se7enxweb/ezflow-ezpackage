@@ -258,6 +258,74 @@
         <source>Skip to main content</source>
         <translation>K głownemu wopśimjeśeju skócyś</translation>
     </message>
+    <message>
+        <source>Automatic</source>
+        <translation>Awtomatiski</translation>
+    </message>
+    <message>
+        <source>Breadcrumb</source>
+        <translation>Nawigaciska sćažka</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>Awtorske pšawo</translation>
+    </message>
+    <message>
+        <source>Dark mode</source>
+        <translation>Śamny modus</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>Dokumentacija</translation>
+    </message>
+    <message>
+        <source>Light mode</source>
+        <translation>Swětły modus</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>Głowna</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>Meni</translation>
+    </message>
+    <message>
+        <source>Powered by</source>
+        <translation>Z pomocu</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Pytaś</translation>
+    </message>
+    <message>
+        <source>Search text:</source>
+        <translation>Pytański tekst:</translation>
+    </message>
+    <message>
+        <source>Sections</source>
+        <translation>Wótrězki</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>Pśizjawiś se</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Wótzjawiś</translation>
+    </message>
+    <message>
+        <source>Site map</source>
+        <translation>Pśeglěd sedła</translation>
+    </message>
+    <message>
+        <source>Tag cloud</source>
+        <translation>Mrokawa wobznamjenjow</translation>
+    </message>
+    <message>
+        <source>This site</source>
+        <translation>Toś to sedło</translation>
+    </message>
 </context>
 <context>
     <name>design/ezflow/parts/website_toolbar</name>
@@ -268,6 +336,10 @@
     <message>
         <source>Add to block in frontpage</source>
         <translation>Blokoju na titelnem boku pśidaś</translation>
+    </message>
+    <message>
+        <source>Push to block</source>
+        <translation>Do bloka pósłaś</translation>
     </message>
 </context>
 <context>
@@ -560,6 +632,70 @@
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>Tšojenje źěłowego wótběga za wuměnu eZ Page</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/block</name>
+    <message>
+        <source>Next</source>
+        <translation>Dalej</translation>
+    </message>
+    <message>
+        <source>Poll results</source>
+        <translation>Wuslědki ankety</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>Pjerwjejšny</translation>
+    </message>
+    <message>
+        <source>Read more</source>
+        <translation>Dalej cytaś</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Wšykno pokazaś</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/article</name>
+    <message>
+        <source>Comments</source>
+        <translation>Komentary</translation>
+    </message>
+    <message>
+        <source>New comment</source>
+        <translation>Nowy komentar</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/event</name>
+    <message>
+        <source>Calendar</source>
+        <translation>Kalender</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>Kategorija</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Wót</translation>
+    </message>
+    <message>
+        <source>Past events</source>
+        <translation>Zajźone tšojenja</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Do</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/feedback_form</name>
+    <message>
+        <source>Send form</source>
+        <translation>Formular wótpósłaś</translation>
     </message>
 </context>
 </TS>

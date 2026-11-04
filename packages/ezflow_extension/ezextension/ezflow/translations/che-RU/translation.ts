@@ -258,6 +258,74 @@
         <source>Skip to main content</source>
         <translation>Коьрта чулацаме дӀахьажа</translation>
     </message>
+    <message>
+        <source>Automatic</source>
+        <translation>Автоматически</translation>
+    </message>
+    <message>
+        <source>Breadcrumb</source>
+        <translation>Некъан хьажор</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>Авторан бакъо</translation>
+    </message>
+    <message>
+        <source>Dark mode</source>
+        <translation>Бодане режим</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>Документаци</translation>
+    </message>
+    <message>
+        <source>Light mode</source>
+        <translation>Сирла режим</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>Коьрта</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>Меню</translation>
+    </message>
+    <message>
+        <source>Powered by</source>
+        <translation>Болх беш бу</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Лехар</translation>
+    </message>
+    <message>
+        <source>Search text:</source>
+        <translation>Лехаран текст:</translation>
+    </message>
+    <message>
+        <source>Sections</source>
+        <translation>Дакъош</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>ЧугӀо</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Аравала</translation>
+    </message>
+    <message>
+        <source>Site map</source>
+        <translation>Сайтан карта</translation>
+    </message>
+    <message>
+        <source>Tag cloud</source>
+        <translation>Тегийн марха</translation>
+    </message>
+    <message>
+        <source>This site</source>
+        <translation>ХӀара сайт</translation>
+    </message>
 </context>
 <context>
     <name>design/ezflow/parts/website_toolbar</name>
@@ -268,6 +336,10 @@
     <message>
         <source>Add to block in frontpage</source>
         <translation>Коьрта агӀонехь блоке тӀетоха</translation>
+    </message>
+    <message>
+        <source>Push to block</source>
+        <translation>Блоке тоха</translation>
     </message>
 </context>
 <context>
@@ -560,6 +632,70 @@
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>eZ Page swap белхан некъан хилларг</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/block</name>
+    <message>
+        <source>Next</source>
+        <translation>ТӀехьара</translation>
+    </message>
+    <message>
+        <source>Poll results</source>
+        <translation>Овзаран жамӀаш</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>Хьалхара</translation>
+    </message>
+    <message>
+        <source>Read more</source>
+        <translation>Кхин а еша</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Массо гайта</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/article</name>
+    <message>
+        <source>Comments</source>
+        <translation>Комментарийш</translation>
+    </message>
+    <message>
+        <source>New comment</source>
+        <translation>Керла комментари</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/event</name>
+    <message>
+        <source>Calendar</source>
+        <translation>Календарь</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>Категори</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Хьост</translation>
+    </message>
+    <message>
+        <source>Past events</source>
+        <translation>Хилла хилларш</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Кхузе</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/feedback_form</name>
+    <message>
+        <source>Send form</source>
+        <translation>Кепан хаамаш дахьийта</translation>
     </message>
 </context>
 </TS>

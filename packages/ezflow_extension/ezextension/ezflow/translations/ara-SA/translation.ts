@@ -258,6 +258,74 @@
         <source>Skip to main content</source>
         <translation>التخطي إلى المحتوى الرئيسي</translation>
     </message>
+    <message>
+        <source>Automatic</source>
+        <translation>تلقائي</translation>
+    </message>
+    <message>
+        <source>Breadcrumb</source>
+        <translation>مسار التنقل</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>حقوق النشر</translation>
+    </message>
+    <message>
+        <source>Dark mode</source>
+        <translation>الوضع الداكن</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>الوثائق</translation>
+    </message>
+    <message>
+        <source>Light mode</source>
+        <translation>الوضع الفاتح</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>الرئيسية</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>القائمة</translation>
+    </message>
+    <message>
+        <source>Powered by</source>
+        <translation>مدعوم من</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>بحث</translation>
+    </message>
+    <message>
+        <source>Search text:</source>
+        <translation>نص البحث:</translation>
+    </message>
+    <message>
+        <source>Sections</source>
+        <translation>الأقسام</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>تسجيل الدخول</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>تسجيل الخروج</translation>
+    </message>
+    <message>
+        <source>Site map</source>
+        <translation>خريطة الموقع</translation>
+    </message>
+    <message>
+        <source>Tag cloud</source>
+        <translation>سحابة الوسوم</translation>
+    </message>
+    <message>
+        <source>This site</source>
+        <translation>هذا الموقع</translation>
+    </message>
 </context>
 <context>
     <name>design/ezflow/parts/website_toolbar</name>
@@ -268,6 +336,10 @@
     <message>
         <source>Add to block in frontpage</source>
         <translation>إضافة إلى كتلة في الصفحة الرئيسية</translation>
+    </message>
+    <message>
+        <source>Push to block</source>
+        <translation>الإرسال إلى الكتلة</translation>
     </message>
 </context>
 <context>
@@ -560,6 +632,70 @@
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>حدث سير عمل تبديل eZ Page</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/block</name>
+    <message>
+        <source>Next</source>
+        <translation>التالي</translation>
+    </message>
+    <message>
+        <source>Poll results</source>
+        <translation>نتائج الاستطلاع</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>السابق</translation>
+    </message>
+    <message>
+        <source>Read more</source>
+        <translation>اقرأ المزيد</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>إظهار الكل</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/article</name>
+    <message>
+        <source>Comments</source>
+        <translation>التعليقات</translation>
+    </message>
+    <message>
+        <source>New comment</source>
+        <translation>تعليق جديد</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/event</name>
+    <message>
+        <source>Calendar</source>
+        <translation>التقويم</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>التصنيف</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>من</translation>
+    </message>
+    <message>
+        <source>Past events</source>
+        <translation>الأحداث الماضية</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>إلى</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/feedback_form</name>
+    <message>
+        <source>Send form</source>
+        <translation>إرسال النموذج</translation>
     </message>
 </context>
 </TS>

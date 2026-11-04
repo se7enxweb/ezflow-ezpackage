@@ -258,6 +258,74 @@
         <source>Skip to main content</source>
         <translation>Lele i ka ʻike nui</translation>
     </message>
+    <message>
+        <source>Automatic</source>
+        <translation>Ponoʻī</translation>
+    </message>
+    <message>
+        <source>Breadcrumb</source>
+        <translation>Ala hele</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>Kuleana kope</translation>
+    </message>
+    <message>
+        <source>Dark mode</source>
+        <translation>ʻAno ʻeleʻele</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>Palapala kuhikuhi</translation>
+    </message>
+    <message>
+        <source>Light mode</source>
+        <translation>ʻAno māmā</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>Nui</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>Papa kuhikuhi</translation>
+    </message>
+    <message>
+        <source>Powered by</source>
+        <translation>Hāʻawi ʻia e</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>ʻImi</translation>
+    </message>
+    <message>
+        <source>Search text:</source>
+        <translation>Kikokikona ʻimi:</translation>
+    </message>
+    <message>
+        <source>Sections</source>
+        <translation>Nā māhele</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>ʻEʻe</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Haʻalele</translation>
+    </message>
+    <message>
+        <source>Site map</source>
+        <translation>Palapala ʻāina kahua</translation>
+    </message>
+    <message>
+        <source>Tag cloud</source>
+        <translation>Ao lepili</translation>
+    </message>
+    <message>
+        <source>This site</source>
+        <translation>Kēia pūnaewele</translation>
+    </message>
 </context>
 <context>
     <name>design/ezflow/parts/website_toolbar</name>
@@ -268,6 +336,10 @@
     <message>
         <source>Add to block in frontpage</source>
         <translation>Hoʻohui i ka poloka ma ka ʻaoʻao mua</translation>
+    </message>
+    <message>
+        <source>Push to block</source>
+        <translation>Hoʻouna i ka poloka</translation>
     </message>
 </context>
 <context>
@@ -560,6 +632,70 @@
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>Hanana kaʻina hana hoʻololi ʻaoʻao eZ Page</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/block</name>
+    <message>
+        <source>Next</source>
+        <translation>Aʻe</translation>
+    </message>
+    <message>
+        <source>Poll results</source>
+        <translation>Nā hualoaʻa nīnauele</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>Ma mua</translation>
+    </message>
+    <message>
+        <source>Read more</source>
+        <translation>Heluhelu hou</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Hōʻike i nā mea a pau</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/article</name>
+    <message>
+        <source>Comments</source>
+        <translation>Nā manaʻo</translation>
+    </message>
+    <message>
+        <source>New comment</source>
+        <translation>Manaʻo hou</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/event</name>
+    <message>
+        <source>Calendar</source>
+        <translation>Kālena</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>ʻĀpana</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Mai</translation>
+    </message>
+    <message>
+        <source>Past events</source>
+        <translation>Nā hanana i hala</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>I</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/feedback_form</name>
+    <message>
+        <source>Send form</source>
+        <translation>Hoʻouna i ka palapala</translation>
     </message>
 </context>
 </TS>

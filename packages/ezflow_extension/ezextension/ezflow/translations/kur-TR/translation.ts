@@ -258,6 +258,74 @@
         <source>Skip to main content</source>
         <translation>Derbasî naveroka sereke bûn</translation>
     </message>
+    <message>
+        <source>Automatic</source>
+        <translation>Otomatîk</translation>
+    </message>
+    <message>
+        <source>Breadcrumb</source>
+        <translation>Rêça navîgasyonê</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>Mafê kopîkirinê</translation>
+    </message>
+    <message>
+        <source>Dark mode</source>
+        <translation>Moda tarî</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>Belgekirin</translation>
+    </message>
+    <message>
+        <source>Light mode</source>
+        <translation>Moda ronî</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>Sereke</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>Menû</translation>
+    </message>
+    <message>
+        <source>Powered by</source>
+        <translation>Bi hêza</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Lêgerîn</translation>
+    </message>
+    <message>
+        <source>Search text:</source>
+        <translation>Nivîsa lêgerînê:</translation>
+    </message>
+    <message>
+        <source>Sections</source>
+        <translation>Beş</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>Têketin</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Derketin</translation>
+    </message>
+    <message>
+        <source>Site map</source>
+        <translation>Nexşeya malperê</translation>
+    </message>
+    <message>
+        <source>Tag cloud</source>
+        <translation>Ewra etîketan</translation>
+    </message>
+    <message>
+        <source>This site</source>
+        <translation>Ev malper</translation>
+    </message>
 </context>
 <context>
     <name>design/ezflow/parts/website_toolbar</name>
@@ -268,6 +336,10 @@
     <message>
         <source>Add to block in frontpage</source>
         <translation>Li bloka rûpela pêşîn zêde kirin</translation>
+    </message>
+    <message>
+        <source>Push to block</source>
+        <translation>Bişîne blokê</translation>
     </message>
 </context>
 <context>
@@ -560,6 +632,70 @@
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>Bûyera herikîna kar a guhertina cihan a eZ Page</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/block</name>
+    <message>
+        <source>Next</source>
+        <translation>Pêşve</translation>
+    </message>
+    <message>
+        <source>Poll results</source>
+        <translation>Encamên rapirsiyê</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>Yê berê</translation>
+    </message>
+    <message>
+        <source>Read more</source>
+        <translation>Zêdetir bixwîne</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Hemûyan nîşan dan</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/article</name>
+    <message>
+        <source>Comments</source>
+        <translation>Şîrove</translation>
+    </message>
+    <message>
+        <source>New comment</source>
+        <translation>Şîroveya nû</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/event</name>
+    <message>
+        <source>Calendar</source>
+        <translation>Salname</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>Kategorî</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Ji</translation>
+    </message>
+    <message>
+        <source>Past events</source>
+        <translation>Bûyerên borî</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Heta</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/feedback_form</name>
+    <message>
+        <source>Send form</source>
+        <translation>Formê şandin</translation>
     </message>
 </context>
 </TS>

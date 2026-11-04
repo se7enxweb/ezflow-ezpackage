@@ -258,6 +258,74 @@
         <source>Skip to main content</source>
         <translation>Jàll ci li ci biir bu mag bi</translation>
     </message>
+    <message>
+        <source>Automatic</source>
+        <translation>Boppam</translation>
+    </message>
+    <message>
+        <source>Breadcrumb</source>
+        <translation>Yoonu xët</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>Copyright</translation>
+    </message>
+    <message>
+        <source>Dark mode</source>
+        <translation>Anam bu ñuul</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>Dokimaa yi</translation>
+    </message>
+    <message>
+        <source>Light mode</source>
+        <translation>Anam bu leer</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>Mag</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>Menu</translation>
+    </message>
+    <message>
+        <source>Powered by</source>
+        <translation>Doxal na ak</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Seet</translation>
+    </message>
+    <message>
+        <source>Search text:</source>
+        <translation>Mbind mi ñuy seet:</translation>
+    </message>
+    <message>
+        <source>Sections</source>
+        <translation>Xaaj yi</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>Dugg</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Génn</translation>
+    </message>
+    <message>
+        <source>Site map</source>
+        <translation>Pexe sit</translation>
+    </message>
+    <message>
+        <source>Tag cloud</source>
+        <translation>Niir taag yi</translation>
+    </message>
+    <message>
+        <source>This site</source>
+        <translation>Dalu bii</translation>
+    </message>
 </context>
 <context>
     <name>design/ezflow/parts/website_toolbar</name>
@@ -268,6 +336,10 @@
     <message>
         <source>Add to block in frontpage</source>
         <translation>Yokk ci blokk bi ci xët wu njëkk wi</translation>
+    </message>
+    <message>
+        <source>Push to block</source>
+        <translation>Yónnee ci blok bi</translation>
     </message>
 </context>
 <context>
@@ -560,6 +632,70 @@
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>Xew-xewu doxinu liggéey bu wuutu xët eZ Page</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/block</name>
+    <message>
+        <source>Next</source>
+        <translation>Ci topp</translation>
+    </message>
+    <message>
+        <source>Poll results</source>
+        <translation>Njariñu sondaas bi</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>Ci jiitu</translation>
+    </message>
+    <message>
+        <source>Read more</source>
+        <translation>Jàng li ci des</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Wone yépp</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/article</name>
+    <message>
+        <source>Comments</source>
+        <translation>Xalaat yi</translation>
+    </message>
+    <message>
+        <source>New comment</source>
+        <translation>Xalaat bu bees</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/event</name>
+    <message>
+        <source>Calendar</source>
+        <translation>Kalaadiye</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>Mbooloo</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Ci</translation>
+    </message>
+    <message>
+        <source>Past events</source>
+        <translation>Xew-xew yu weesu</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Ba</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/feedback_form</name>
+    <message>
+        <source>Send form</source>
+        <translation>Yónne formileer bi</translation>
     </message>
 </context>
 </TS>

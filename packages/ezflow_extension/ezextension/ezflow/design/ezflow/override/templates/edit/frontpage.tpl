@@ -1,6 +1,6 @@
 <form enctype="multipart/form-data" id="editform" name="editform" method="post" action={concat("/content/edit/",$object.id,"/",$edit_version,"/",$edit_language|not|choose(concat($edit_language,"/"),''))|ezurl}>
 
-{include uri='design:parts/website_toolbar_edit.tpl'}
+{include uri='design:parts/expwt_edit_actions.tpl'}
 
 <!-- ZONE CONTENT: START -->
 
@@ -43,9 +43,9 @@
 
 <div class="block date-range">
     <label>{'Date range'|i18n( 'design/ezflow/edit/frontpage' )}</label>
-    <input name="SearchDate" type="radio" value="1" onclick="javascript:showDateRange(this);" /> {'Past day'|i18n( 'design/ezflow/edit/frontpage' )} <input name="SearchDate" type="radio" value="2" onclick="javascript:showDateRange(this);" /> {'Past week'|i18n( 'design/ezflow/edit/frontpage' )} <br>
-    <input name="SearchDate" type="radio" value="3" onclick="javascript:showDateRange(this);" /> {'Past month'|i18n( 'design/ezflow/edit/frontpage' )} <input name="SearchDate" type="radio" value="4" onclick="javascript:showDateRange(this);" /> {'Past 3 months'|i18n( 'design/ezflow/edit/frontpage' )} <br>
-    <input name="SearchDate" type="radio" value="5" onclick="javascript:showDateRange(this);" /> {'Past year'|i18n( 'design/ezflow/edit/frontpage' )}
+    <input name="SearchDate" type="radio" value="1" data-ezflow-date-range /> {'Past day'|i18n( 'design/ezflow/edit/frontpage' )} <input name="SearchDate" type="radio" value="2" data-ezflow-date-range /> {'Past week'|i18n( 'design/ezflow/edit/frontpage' )} <br>
+    <input name="SearchDate" type="radio" value="3" data-ezflow-date-range /> {'Past month'|i18n( 'design/ezflow/edit/frontpage' )} <input name="SearchDate" type="radio" value="4" data-ezflow-date-range /> {'Past 3 months'|i18n( 'design/ezflow/edit/frontpage' )} <br>
+    <input name="SearchDate" type="radio" value="5" data-ezflow-date-range /> {'Past year'|i18n( 'design/ezflow/edit/frontpage' )}
 </div>
 *}
 <div class="block date-range-selection">
@@ -106,7 +106,7 @@
 
 </div>
 
-{ezscript_require( array( 'ezjsc::jquery', 'ezjsc::jqueryio', 'ezajaxsearch.js', 'ezflow_edit.js' ) )}
+{include uri='design:parts/ezflow_scripts.tpl' scripts=array( 'ezajaxsearch.js', 'ezflow_edit.js' )}
 
 {* The quick search settings, read by ezajaxsearch.js when the page is ready (no inline code). *}
 {set-block variable=ezflow_result_template}<div class="result-item float-break"><div class="item-title"><img src={"item-bullet.gif"|ezimage} />&nbsp;{ldelim}title{rdelim}</div><div class="item-published-date">[{ldelim}class_name{rdelim}] {ldelim}date{rdelim}</div><div class="item-selector"><input type="checkbox" value="{ldelim}node_id{rdelim}" name="SelectedNodeIDArray[]" /></div></div>{/set-block}

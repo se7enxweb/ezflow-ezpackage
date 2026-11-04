@@ -258,6 +258,74 @@
         <source>Skip to main content</source>
         <translation>ప్రధాన కంటెంట్‌కు వెళ్లండి</translation>
     </message>
+    <message>
+        <source>Automatic</source>
+        <translation>స్వయంచాలకం</translation>
+    </message>
+    <message>
+        <source>Breadcrumb</source>
+        <translation>బ్రెడ్‌క్రంబ్</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>కాపీరైట్</translation>
+    </message>
+    <message>
+        <source>Dark mode</source>
+        <translation>డార్క్ మోడ్</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>డాక్యుమెంటేషన్</translation>
+    </message>
+    <message>
+        <source>Light mode</source>
+        <translation>లైట్ మోడ్</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>ప్రధాన</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>మెనూ</translation>
+    </message>
+    <message>
+        <source>Powered by</source>
+        <translation>దీని ఆధారంగా పనిచేస్తుంది</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>శోధన</translation>
+    </message>
+    <message>
+        <source>Search text:</source>
+        <translation>శోధన వచనం:</translation>
+    </message>
+    <message>
+        <source>Sections</source>
+        <translation>విభాగాలు</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>సైన్ ఇన్ చేయండి</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>సైన్ అవుట్ చేయండి</translation>
+    </message>
+    <message>
+        <source>Site map</source>
+        <translation>సైట్ మ్యాప్</translation>
+    </message>
+    <message>
+        <source>Tag cloud</source>
+        <translation>ట్యాగ్ క్లౌడ్</translation>
+    </message>
+    <message>
+        <source>This site</source>
+        <translation>ఈ సైట్</translation>
+    </message>
 </context>
 <context>
     <name>design/ezflow/parts/website_toolbar</name>
@@ -268,6 +336,10 @@
     <message>
         <source>Add to block in frontpage</source>
         <translation>ఫ్రంట్‌పేజీలోని బ్లాక్‌కు జోడించండి</translation>
+    </message>
+    <message>
+        <source>Push to block</source>
+        <translation>బ్లాక్‌కు చేర్చండి</translation>
     </message>
 </context>
 <context>
@@ -560,6 +632,70 @@
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>eZ పేజీ మార్పిడి వర్క్‌ఫ్లో ఈవెంట్</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/block</name>
+    <message>
+        <source>Next</source>
+        <translation>తదుపరి</translation>
+    </message>
+    <message>
+        <source>Poll results</source>
+        <translation>పోల్ ఫలితాలు</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>మునుపటి</translation>
+    </message>
+    <message>
+        <source>Read more</source>
+        <translation>మరింత చదవండి</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>అన్నీ చూపించండి</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/article</name>
+    <message>
+        <source>Comments</source>
+        <translation>వ్యాఖ్యలు</translation>
+    </message>
+    <message>
+        <source>New comment</source>
+        <translation>కొత్త వ్యాఖ్య</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/event</name>
+    <message>
+        <source>Calendar</source>
+        <translation>క్యాలెండర్</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>వర్గం</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>నుండి</translation>
+    </message>
+    <message>
+        <source>Past events</source>
+        <translation>గత ఈవెంట్‌లు</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>వరకు</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/feedback_form</name>
+    <message>
+        <source>Send form</source>
+        <translation>ఫారం పంపండి</translation>
     </message>
 </context>
 </TS>

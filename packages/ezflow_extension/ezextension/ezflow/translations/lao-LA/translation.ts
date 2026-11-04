@@ -258,6 +258,74 @@
         <source>Skip to main content</source>
         <translation>ຂ້າມໄປຫາເນື້ອຫາຫຼັກ</translation>
     </message>
+    <message>
+        <source>Automatic</source>
+        <translation>ອັດຕະໂນມັດ</translation>
+    </message>
+    <message>
+        <source>Breadcrumb</source>
+        <translation>ເສັ້ນທາງນຳທາງ</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>ລິຂະສິດ</translation>
+    </message>
+    <message>
+        <source>Dark mode</source>
+        <translation>ໂໝດມືດ</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>ເອກະສານ</translation>
+    </message>
+    <message>
+        <source>Light mode</source>
+        <translation>ໂໝດສະຫວ່າງ</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>ຫຼັກ</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>ເມນູ</translation>
+    </message>
+    <message>
+        <source>Powered by</source>
+        <translation>ຂັບເຄື່ອນໂດຍ</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>ຄົ້ນຫາ</translation>
+    </message>
+    <message>
+        <source>Search text:</source>
+        <translation>ຂໍ້ຄວາມຄົ້ນຫາ:</translation>
+    </message>
+    <message>
+        <source>Sections</source>
+        <translation>ພາກສ່ວນ</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>ເຂົ້າສູ່ລະບົບ</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>ອອກຈາກລະບົບ</translation>
+    </message>
+    <message>
+        <source>Site map</source>
+        <translation>ແຜນຜັງໄຊ</translation>
+    </message>
+    <message>
+        <source>Tag cloud</source>
+        <translation>ກຸ່ມແທັກ</translation>
+    </message>
+    <message>
+        <source>This site</source>
+        <translation>ເວັບໄຊນີ້</translation>
+    </message>
 </context>
 <context>
     <name>design/ezflow/parts/website_toolbar</name>
@@ -268,6 +336,10 @@
     <message>
         <source>Add to block in frontpage</source>
         <translation>ເພີ່ມໃສ່ບລັອກໃນໜ້າຫຼັກ</translation>
+    </message>
+    <message>
+        <source>Push to block</source>
+        <translation>ສົ່ງໄປບລັອກ</translation>
     </message>
 </context>
 <context>
@@ -560,6 +632,70 @@
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>ເຫດການຂັ້ນຕອນການເຮັດວຽກສະຫຼັບຂອງ eZ Page</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/block</name>
+    <message>
+        <source>Next</source>
+        <translation>ຖັດໄປ</translation>
+    </message>
+    <message>
+        <source>Poll results</source>
+        <translation>ຜົນແບບສຳຫຼວດ</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>ກ່ອນໜ້າ</translation>
+    </message>
+    <message>
+        <source>Read more</source>
+        <translation>ອ່ານຕື່ມ</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>ສະແດງທັງໝົດ</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/article</name>
+    <message>
+        <source>Comments</source>
+        <translation>ຄວາມຄິດເຫັນ</translation>
+    </message>
+    <message>
+        <source>New comment</source>
+        <translation>ຄຳເຫັນໃໝ່</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/event</name>
+    <message>
+        <source>Calendar</source>
+        <translation>ປະຕິທິນ</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>ໝວດໝູ່</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>ຈາກ</translation>
+    </message>
+    <message>
+        <source>Past events</source>
+        <translation>ເຫດການທີ່ຜ່ານມາ</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>ເຖິງ</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/feedback_form</name>
+    <message>
+        <source>Send form</source>
+        <translation>ສົ່ງແບບຟອມ</translation>
     </message>
 </context>
 </TS>

@@ -258,6 +258,74 @@
         <source>Skip to main content</source>
         <translation>ནང་དོན་གཙོ་བོར་མཆོངས།</translation>
     </message>
+    <message>
+        <source>Automatic</source>
+        <translation>རང་འགུལ།</translation>
+    </message>
+    <message>
+        <source>Breadcrumb</source>
+        <translation>ལམ་ཐིག་ལམ་སྟོན།</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>པར་དབང་།</translation>
+    </message>
+    <message>
+        <source>Dark mode</source>
+        <translation>མདངས་ནག་རྣམ་པ།</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>ཡིག་ཆ།</translation>
+    </message>
+    <message>
+        <source>Light mode</source>
+        <translation>མདངས་དཀར་རྣམ་པ།</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>གཙོ་བོ།</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>ཐོ་གཞུང་།</translation>
+    </message>
+    <message>
+        <source>Powered by</source>
+        <translation>སྐྱེད་སྤྲོད་མཁན།</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>འཚོལ་བཤེར།</translation>
+    </message>
+    <message>
+        <source>Search text:</source>
+        <translation>འཚོལ་བཤེར་ཡིག་ཚགས།:</translation>
+    </message>
+    <message>
+        <source>Sections</source>
+        <translation>སྡེ་ཚན་ཁག</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>ནང་འཛུལ།</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>ཕྱིར་ཐོན།</translation>
+    </message>
+    <message>
+        <source>Site map</source>
+        <translation>དྲ་ཚིགས་ས་ཁྲ།</translation>
+    </message>
+    <message>
+        <source>Tag cloud</source>
+        <translation>རྟགས་བྱང་སྤྲིན།</translation>
+    </message>
+    <message>
+        <source>This site</source>
+        <translation>དྲ་ཚིགས་འདི།</translation>
+    </message>
 </context>
 <context>
     <name>design/ezflow/parts/website_toolbar</name>
@@ -268,6 +336,10 @@
     <message>
         <source>Add to block in frontpage</source>
         <translation>ཤོག་ངོས་དང་པོའི་ཚན་ཁག་ལ་ཁ་སྣོན།</translation>
+    </message>
+    <message>
+        <source>Push to block</source>
+        <translation>དུམ་བུའི་ནང་འཇུག</translation>
     </message>
 </context>
 <context>
@@ -560,6 +632,70 @@
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>eZ ཤོག་ངོས་བརྗེ་སྒྱུར་ལས་རིམ་གྱི་བྱུང་རིམ།</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/block</name>
+    <message>
+        <source>Next</source>
+        <translation>རྗེས་མ།</translation>
+    </message>
+    <message>
+        <source>Poll results</source>
+        <translation>བསྡུ་ཁྲའི་འབྲས་བུ།</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>སྔོན་མ།</translation>
+    </message>
+    <message>
+        <source>Read more</source>
+        <translation>དེ་ལས་མང་བ་ཀློག</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>ཚང་མ་མངོན།</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/article</name>
+    <message>
+        <source>Comments</source>
+        <translation>བསམ་འཆར།</translation>
+    </message>
+    <message>
+        <source>New comment</source>
+        <translation>བསམ་ཚུལ་གསར་པ།</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/event</name>
+    <message>
+        <source>Calendar</source>
+        <translation>ལོ་ཐོ།</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>སྡེ་ཚན།</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>ནས།</translation>
+    </message>
+    <message>
+        <source>Past events</source>
+        <translation>འདས་པའི་བྱུང་རིམ།</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>ལ།</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/feedback_form</name>
+    <message>
+        <source>Send form</source>
+        <translation>རྣམ་བྱང་བསྐུར།</translation>
     </message>
 </context>
 </TS>

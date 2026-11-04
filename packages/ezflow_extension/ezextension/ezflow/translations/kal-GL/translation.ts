@@ -258,6 +258,74 @@
         <source>Skip to main content</source>
         <translation>Imarisanut pingaarnernut ingerlagit</translation>
     </message>
+    <message>
+        <source>Automatic</source>
+        <translation>Nammineerluni</translation>
+    </message>
+    <message>
+        <source>Breadcrumb</source>
+        <translation>Aqqutissiuut</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>Copyright-i</translation>
+    </message>
+    <message>
+        <source>Dark mode</source>
+        <translation>Taartoq</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>Allagartat</translation>
+    </message>
+    <message>
+        <source>Light mode</source>
+        <translation>Qaamasoq</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>Pingaarneq</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>Menu</translation>
+    </message>
+    <message>
+        <source>Powered by</source>
+        <translation>Ingerlatsisut</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Ujarlerit</translation>
+    </message>
+    <message>
+        <source>Search text:</source>
+        <translation>Ujarlernermi allagaq:</translation>
+    </message>
+    <message>
+        <source>Sections</source>
+        <translation>Immikkoortut</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>Iserit</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Anigit</translation>
+    </message>
+    <message>
+        <source>Site map</source>
+        <translation>Nittartakkap takussutissiaa</translation>
+    </message>
+    <message>
+        <source>Tag cloud</source>
+        <translation>Taaguutit nuiat</translation>
+    </message>
+    <message>
+        <source>This site</source>
+        <translation>Nittartagaq una</translation>
+    </message>
 </context>
 <context>
     <name>design/ezflow/parts/website_toolbar</name>
@@ -268,6 +336,10 @@
     <message>
         <source>Add to block in frontpage</source>
         <translation>Saqqaa siulleq: blokkimut ilaguk</translation>
+    </message>
+    <message>
+        <source>Push to block</source>
+        <translation>Blokkimut nassiuguk</translation>
     </message>
 </context>
 <context>
@@ -560,6 +632,70 @@
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>eZ Page: quppernerit taarseraanerannut suliap ingerlanerani pisoq</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/block</name>
+    <message>
+        <source>Next</source>
+        <translation>Tullia</translation>
+    </message>
+    <message>
+        <source>Poll results</source>
+        <translation>Taasinerup inernera</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>Siulia</translation>
+    </message>
+    <message>
+        <source>Read more</source>
+        <translation>Atuakkit</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Tamaasa takutikkit</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/article</name>
+    <message>
+        <source>Comments</source>
+        <translation>Oqaaseqaatit</translation>
+    </message>
+    <message>
+        <source>New comment</source>
+        <translation>Oqaaseqaat nutaaq</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/event</name>
+    <message>
+        <source>Calendar</source>
+        <translation>Ullorsiutit</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>Immikkoortitaq</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Pissarfia</translation>
+    </message>
+    <message>
+        <source>Past events</source>
+        <translation>Pisimasut</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Unga</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/feedback_form</name>
+    <message>
+        <source>Send form</source>
+        <translation>Immersugassiaq nassiuguk</translation>
     </message>
 </context>
 </TS>

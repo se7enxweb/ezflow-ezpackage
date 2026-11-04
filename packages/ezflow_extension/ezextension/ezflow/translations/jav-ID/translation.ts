@@ -258,6 +258,74 @@
         <source>Skip to main content</source>
         <translation>Mlumpat menyang isi utama</translation>
     </message>
+    <message>
+        <source>Automatic</source>
+        <translation>Otomatis</translation>
+    </message>
+    <message>
+        <source>Breadcrumb</source>
+        <translation>Jejak navigasi</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>Hak cipta</translation>
+    </message>
+    <message>
+        <source>Dark mode</source>
+        <translation>Mode peteng</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>Dokumentasi</translation>
+    </message>
+    <message>
+        <source>Light mode</source>
+        <translation>Mode padhang</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>Utama</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>Menu</translation>
+    </message>
+    <message>
+        <source>Powered by</source>
+        <translation>Didhukung dening</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Golek</translation>
+    </message>
+    <message>
+        <source>Search text:</source>
+        <translation>Teks panggolekan:</translation>
+    </message>
+    <message>
+        <source>Sections</source>
+        <translation>Seksi</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>Mlebu</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Metu</translation>
+    </message>
+    <message>
+        <source>Site map</source>
+        <translation>Peta situs</translation>
+    </message>
+    <message>
+        <source>Tag cloud</source>
+        <translation>Awan tag</translation>
+    </message>
+    <message>
+        <source>This site</source>
+        <translation>Situs iki</translation>
+    </message>
 </context>
 <context>
     <name>design/ezflow/parts/website_toolbar</name>
@@ -268,6 +336,10 @@
     <message>
         <source>Add to block in frontpage</source>
         <translation>Tambah menyang blok ing frontpage</translation>
+    </message>
+    <message>
+        <source>Push to block</source>
+        <translation>Kirim menyang blok</translation>
     </message>
 </context>
 <context>
@@ -560,6 +632,70 @@
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>Kedadeyan alur kerja swap eZ Page</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/block</name>
+    <message>
+        <source>Next</source>
+        <translation>Sabanjure</translation>
+    </message>
+    <message>
+        <source>Poll results</source>
+        <translation>Asil jajak pendapat</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>Sadurunge</translation>
+    </message>
+    <message>
+        <source>Read more</source>
+        <translation>Waca sabanjure</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Tampilake kabeh</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/article</name>
+    <message>
+        <source>Comments</source>
+        <translation>Komentar</translation>
+    </message>
+    <message>
+        <source>New comment</source>
+        <translation>Komentar anyar</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/event</name>
+    <message>
+        <source>Calendar</source>
+        <translation>Kalender</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>Kategori</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Saka</translation>
+    </message>
+    <message>
+        <source>Past events</source>
+        <translation>Acara kepungkur</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Nganti</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/feedback_form</name>
+    <message>
+        <source>Send form</source>
+        <translation>Kirim formulir</translation>
     </message>
 </context>
 </TS>

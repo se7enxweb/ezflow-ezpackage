@@ -258,6 +258,74 @@
         <source>Skip to main content</source>
         <translation>Neidio i&apos;r prif gynnwys</translation>
     </message>
+    <message>
+        <source>Automatic</source>
+        <translation>Awtomatig</translation>
+    </message>
+    <message>
+        <source>Breadcrumb</source>
+        <translation>Briwsion bara</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>Hawlfraint</translation>
+    </message>
+    <message>
+        <source>Dark mode</source>
+        <translation>Modd tywyll</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>Dogfennaeth</translation>
+    </message>
+    <message>
+        <source>Light mode</source>
+        <translation>Modd golau</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>Prif</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>Dewislen</translation>
+    </message>
+    <message>
+        <source>Powered by</source>
+        <translation>Wedi'i bweru gan</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Chwilio</translation>
+    </message>
+    <message>
+        <source>Search text:</source>
+        <translation>Testun chwilio:</translation>
+    </message>
+    <message>
+        <source>Sections</source>
+        <translation>Adrannau</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>Mewngofnodi</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Allgofnodi</translation>
+    </message>
+    <message>
+        <source>Site map</source>
+        <translation>Map y wefan</translation>
+    </message>
+    <message>
+        <source>Tag cloud</source>
+        <translation>Cwmwl tagiau</translation>
+    </message>
+    <message>
+        <source>This site</source>
+        <translation>Y wefan hon</translation>
+    </message>
 </context>
 <context>
     <name>design/ezflow/parts/website_toolbar</name>
@@ -268,6 +336,10 @@
     <message>
         <source>Add to block in frontpage</source>
         <translation>Ychwanegu at floc yn y dudalen flaen</translation>
+    </message>
+    <message>
+        <source>Push to block</source>
+        <translation>Gwthio i floc</translation>
     </message>
 </context>
 <context>
@@ -560,6 +632,70 @@
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>Digwyddiad llif gwaith cyfnewid eZ Page</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/block</name>
+    <message>
+        <source>Next</source>
+        <translation>Nesaf</translation>
+    </message>
+    <message>
+        <source>Poll results</source>
+        <translation>Canlyniadau'r arolwg</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>Blaenorol</translation>
+    </message>
+    <message>
+        <source>Read more</source>
+        <translation>Darllen mwy</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Dangos y cyfan</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/article</name>
+    <message>
+        <source>Comments</source>
+        <translation>Sylwadau</translation>
+    </message>
+    <message>
+        <source>New comment</source>
+        <translation>Sylw newydd</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/event</name>
+    <message>
+        <source>Calendar</source>
+        <translation>Calendr</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>Categori</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>O</translation>
+    </message>
+    <message>
+        <source>Past events</source>
+        <translation>Digwyddiadau&amp;apos;r gorffennol</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>I</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/feedback_form</name>
+    <message>
+        <source>Send form</source>
+        <translation>Anfon y ffurflen</translation>
     </message>
 </context>
 </TS>

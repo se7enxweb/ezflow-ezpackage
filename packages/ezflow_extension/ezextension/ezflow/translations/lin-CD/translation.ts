@@ -258,6 +258,74 @@
         <source>Skip to main content</source>
         <translation>Leka na makambo ya liboso</translation>
     </message>
+    <message>
+        <source>Automatic</source>
+        <translation>Yango moko</translation>
+    </message>
+    <message>
+        <source>Breadcrumb</source>
+        <translation>Nzela ya lokasa</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>Copyright</translation>
+    </message>
+    <message>
+        <source>Dark mode</source>
+        <translation>Lolenge ya moindo</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>Mikanda ya bilakeli</translation>
+    </message>
+    <message>
+        <source>Light mode</source>
+        <translation>Lolenge ya pɛpɛ</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>Ya liboso</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>Menu</translation>
+    </message>
+    <message>
+        <source>Powered by</source>
+        <translation>Esalemi na</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Lukà</translation>
+    </message>
+    <message>
+        <source>Search text:</source>
+        <translation>Maloba ya koluka:</translation>
+    </message>
+    <message>
+        <source>Sections</source>
+        <translation>Biteni</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>Kɔtá</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Bimá</translation>
+    </message>
+    <message>
+        <source>Site map</source>
+        <translation>Mapa ya site</translation>
+    </message>
+    <message>
+        <source>Tag cloud</source>
+        <translation>Nuage ya ba-elembo</translation>
+    </message>
+    <message>
+        <source>This site</source>
+        <translation>Site oyo</translation>
+    </message>
 </context>
 <context>
     <name>design/ezflow/parts/website_toolbar</name>
@@ -268,6 +336,10 @@
     <message>
         <source>Add to block in frontpage</source>
         <translation>Bakisá na bloc na frontpage</translation>
+    </message>
+    <message>
+        <source>Push to block</source>
+        <translation>Tyá na eteni</translation>
     </message>
 </context>
 <context>
@@ -560,6 +632,70 @@
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>Likambo ya nzela ya mosala ya kobongola eZ Page</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/block</name>
+    <message>
+        <source>Next</source>
+        <translation>Oyo elandi</translation>
+    </message>
+    <message>
+        <source>Poll results</source>
+        <translation>Mbuma ya sondage</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>Oyo eleki</translation>
+    </message>
+    <message>
+        <source>Read more</source>
+        <translation>Tángá míngi</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Lakisá nyɔ́nsɔ</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/article</name>
+    <message>
+        <source>Comments</source>
+        <translation>Bikomi</translation>
+    </message>
+    <message>
+        <source>New comment</source>
+        <translation>Likanisi ya sika</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/event</name>
+    <message>
+        <source>Calendar</source>
+        <translation>Calendrier</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>Catégorie</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Euti na</translation>
+    </message>
+    <message>
+        <source>Past events</source>
+        <translation>Makambo ya fɛtɛ eleki</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Epai ya</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/feedback_form</name>
+    <message>
+        <source>Send form</source>
+        <translation>Tindá formulaire</translation>
     </message>
 </context>
 </TS>

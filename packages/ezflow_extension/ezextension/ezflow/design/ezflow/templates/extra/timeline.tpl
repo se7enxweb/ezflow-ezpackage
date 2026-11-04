@@ -79,5 +79,5 @@
     </div>
 </div>
 
-{ezscript_require( array( 'ezjsc::jquery', 'ezflowcalendar.js', 'timeline/timeline.js' ) )}
+{include uri='design:parts/ezflow_scripts.tpl' scripts=array( 'ezflowcalendar.js', 'timeline/timeline.js' )}
 {ezcss_require( array( 'ezflowwidgets.css', 'timeline/timeline.css' ) )}

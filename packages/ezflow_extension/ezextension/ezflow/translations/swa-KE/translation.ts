@@ -258,6 +258,74 @@
         <source>Skip to main content</source>
         <translation>Ruka hadi maudhui makuu</translation>
     </message>
+    <message>
+        <source>Automatic</source>
+        <translation>Kiotomatiki</translation>
+    </message>
+    <message>
+        <source>Breadcrumb</source>
+        <translation>Njia ya urambazaji</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>Hakimiliki</translation>
+    </message>
+    <message>
+        <source>Dark mode</source>
+        <translation>Hali ya giza</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>Nyaraka</translation>
+    </message>
+    <message>
+        <source>Light mode</source>
+        <translation>Hali angavu</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>Kuu</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>Menyu</translation>
+    </message>
+    <message>
+        <source>Powered by</source>
+        <translation>Inaendeshwa na</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Tafuta</translation>
+    </message>
+    <message>
+        <source>Search text:</source>
+        <translation>Maandishi ya utafutaji:</translation>
+    </message>
+    <message>
+        <source>Sections</source>
+        <translation>Sehemu</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>Ingia</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Toa</translation>
+    </message>
+    <message>
+        <source>Site map</source>
+        <translation>Ramani ya tovuti</translation>
+    </message>
+    <message>
+        <source>Tag cloud</source>
+        <translation>Wingu la lebo</translation>
+    </message>
+    <message>
+        <source>This site</source>
+        <translation>Tovuti hii</translation>
+    </message>
 </context>
 <context>
     <name>design/ezflow/parts/website_toolbar</name>
@@ -268,6 +336,10 @@
     <message>
         <source>Add to block in frontpage</source>
         <translation>Ongeza kwenye bloku ya ukurasa wa mbele</translation>
+    </message>
+    <message>
+        <source>Push to block</source>
+        <translation>Weka kwenye kizuizi</translation>
     </message>
 </context>
 <context>
@@ -560,6 +632,70 @@
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>Tukio la mtiririko wa kazi la kubadilisha nafasi ya eZ Page</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/block</name>
+    <message>
+        <source>Next</source>
+        <translation>Ifuatayo</translation>
+    </message>
+    <message>
+        <source>Poll results</source>
+        <translation>Matokeo ya kura ya maoni</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>Iliyotangulia</translation>
+    </message>
+    <message>
+        <source>Read more</source>
+        <translation>Soma zaidi</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Onyesha zote</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/article</name>
+    <message>
+        <source>Comments</source>
+        <translation>Maoni</translation>
+    </message>
+    <message>
+        <source>New comment</source>
+        <translation>Maoni mapya</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/event</name>
+    <message>
+        <source>Calendar</source>
+        <translation>Kalenda</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>Kategoria</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Kutoka</translation>
+    </message>
+    <message>
+        <source>Past events</source>
+        <translation>Matukio yaliyopita</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Hadi</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/feedback_form</name>
+    <message>
+        <source>Send form</source>
+        <translation>Tuma fomu</translation>
     </message>
 </context>
 </TS>

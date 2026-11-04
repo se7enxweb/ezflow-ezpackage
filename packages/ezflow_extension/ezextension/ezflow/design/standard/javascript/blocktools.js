@@ -1,631 +1,240 @@
 /**
- * Block tools of the page datatype editor (Exponential, jQuery):
+ * Block tools of the page datatype editor (Exponential; plain JavaScript, an ES module, needs ezflow_core.js):
  *
- * - eZFlow.BlockDD: drag and drop ordering of the items in a block's queue
- *   and online tables, stored through the ezflow/request view.
- * - eZFlow.BlockCollapse: expand / collapse of the blocks, remembered in
- *   localStorage (or in the eZPageBlockState cookie as a fallback).
- * - BlockDDInit(): drag and drop ordering of the blocks of the active zone and
- *   the move up / move down buttons, stored through ezflow::updateblockorder.
+ * - eZFlow.BlockDD: drag and drop ordering of the items in a block's queue and online tables, stored through the
+ *   ezflow/request view.
+ * - eZFlow.BlockCollapse: expand / collapse of the blocks, remembered in localStorage (or in the eZPageBlockState
+ *   cookie as a fallback).
+ * - BlockDDInit(): drag and drop ordering of the blocks of the active zone and the move up / move down buttons,
+ *   stored through ezflow::updateblockorder.
  */
+( function () {
+    'use strict';
+    var eZFlow = window.eZFlow = window.eZFlow || {};
+    if ( eZFlow.BlockDD && eZFlow.BlockDD.version === 2 ) return;
 
-var eZFlow = window.eZFlow || {};
-window.eZFlow = eZFlow;
-
-(function( $ ) {
-
-    if ( $.easing.ezflowEaseOut === undefined ) {
-        // quadratic ease out
-        $.easing.ezflowEaseOut = function( p ) {
-            return 1 - ( 1 - p ) * ( 1 - p );
-        };
-    }
-
-    /**
-     * Proxy drag: drags a copy (the proxy) of an element with the pointer while
-     * the element stays in the document, and reports which of the candidate
-     * elements the pointer is over, together with the vertical direction.
-     *
-     * options: invalid (selector of children that never start a drag),
-     *          stopPropagation (true: a drag started here never reaches the
-     *          parents' drags), constrain (element the proxy stays inside), candidates (function
-     *          returning the drop elements), start( proxy ), over( target, goingUp ),
-     *          end( proxy ).
-     */
-    eZFlow.proxyDrag = function( el, options ) {
-        var $el = $( el ), ns = '.ezflowdrag';
-
-        $el.off( 'pointerdown' + ns ).on( 'pointerdown' + ns, function( e ) {
-            if ( e.pointerType === 'mouse' && e.button !== 0 ) {
-                return;
-            }
-            if ( options.invalid && $( e.target ).closest( options.invalid, el ).length ) {
-                return;
-            }
-            if ( !$( e.target ).is( 'input, select, textarea, option, button' ) ) {
-                e.preventDefault();
-            }
-            if ( options.stopPropagation ) {
-                // an item row being dragged does not drag its block as well
-                e.stopPropagation();
-            }
-
-            var startX = e.pageX, startY = e.pageY,
-                pageX = startX, pageY = startY,
-                lastY = startY, goingUp = false,
-                dragging = false, proxy = null, offsetX = 0, offsetY = 0,
-                timer = null;
-
-            var moveProxy = function() {
-                var left = pageX - offsetX, top = pageY - offsetY;
-
-                if ( options.constrain ) {
-                    var $c = $( options.constrain ), co = $c.offset();
-                    if ( co ) {
-                        left = Math.max( co.left, Math.min( left, co.left + $c.outerWidth() - proxy.offsetWidth ) );
-                        top = Math.max( co.top, Math.min( top, co.top + $c.outerHeight() - proxy.offsetHeight ) );
-                    }
-                }
-                proxy.style.left = left + 'px';
-                proxy.style.top = top + 'px';
-            };
-
-            var startDrag = function() {
-                if ( dragging ) {
-                    return;
-                }
-                dragging = true;
-                clearTimeout( timer );
-
-                var o = $el.offset();
-                offsetX = startX - o.left;
-                offsetY = startY - o.top;
-
-                proxy = document.createElement( 'div' );
-                proxy.className = 'ezflow-drag-proxy';
-                $( proxy ).css( {
-                    position: 'absolute',
-                    zIndex: 999,
-                    boxSizing: 'border-box',
-                    overflow: 'hidden',
-                    cursor: 'move',
-                    pointerEvents: 'none',
-                    left: o.left + 'px',
-                    top: o.top + 'px',
-                    width: el.offsetWidth + 'px',
-                    height: el.offsetHeight + 'px'
-                } );
-                document.body.appendChild( proxy );
-                options.start( proxy );
-                moveProxy();
-            };
-
-            var onMove = function( ev ) {
-                pageX = ev.pageX;
-                pageY = ev.pageY;
-
-                if ( !dragging ) {
-                    if ( Math.abs( pageX - startX ) > 3 || Math.abs( pageY - startY ) > 3 ) {
-                        startDrag();
-                    } else {
-                        return;
-                    }
-                }
-
-                moveProxy();
-
-                if ( pageY < lastY ) {
-                    goingUp = true;
-                } else if ( pageY > lastY ) {
-                    goingUp = false;
-                }
-                lastY = pageY;
-
-                var candidates = options.candidates();
-                for ( var i = 0; i < candidates.length; i++ ) {
-                    var target = candidates[i];
-                    if ( target === el ) {
-                        continue;
-                    }
-                    var r = target.getBoundingClientRect(),
-                        x = pageX - window.pageXOffset,
-                        y = pageY - window.pageYOffset;
-                    if ( x >= r.left && x <= r.right && y >= r.top && y <= r.bottom ) {
-                        options.over( target, goingUp );
-                        break;
-                    }
-                }
-            };
-
-            var onUp = function() {
-                clearTimeout( timer );
-                $( document ).off( ns );
-                if ( dragging ) {
-                    options.end( proxy );
-                }
-            };
-
-            // a press held for a second starts the drag without moving
-            timer = setTimeout( function() {
-                startDrag();
-            }, 1000 );
-
-            $( document )
-                .on( 'pointermove' + ns, onMove )
-                .on( 'pointerup' + ns + ' pointercancel' + ns, onUp );
-        } );
+    var children = function ( parent, selector ) {
+        return Array.prototype.filter.call( parent ? parent.children : [], function ( c ) { return c.matches( selector ); } );
     };
 
-    eZFlow.BlockDD = function() {
-
+    eZFlow.BlockDD = ( function () {
         var cfg = {};
 
-        var storeItemOrder = function( tableBody ) {
-            var postData = "",
-                _tokenNode = document.getElementById('ezxform_token_js');
-            if ( _tokenNode ) {
-                postData = 'ezxform_token=' + _tokenNode.getAttribute('title') + '&';
-            }
-            var items = $( tableBody ).find( 'td.handler' );
-
-            for (var i = 0; i < items.length; i++) {
-                postData += "Items%5B%5D=" + items[i].id + "&";
-            }
-
-            var tableID = tableBody.parentNode.id;
-
-            postData += "Block=" + tableID + "&ContentObjectAttributeID=" + cfg.attributeid + "&Version=" + cfg.version;
-
-            $.ajax( { type: 'POST', url: cfg.url, data: postData } );
+        var storeItemOrder = function ( tableBody ) {
+            var data = new URLSearchParams();
+            tableBody.querySelectorAll( 'td.handler' ).forEach( function ( td ) { data.append( 'Items[]', td.id ); } );
+            data.append( 'Block', tableBody.parentNode.id );
+            data.append( 'ContentObjectAttributeID', cfg.attributeid );
+            data.append( 'Version', cfg.version );
+            eZFlow.io.post( cfg.url, data ).catch( function () { /* the order is sent again with the next move */ } );
         };
 
-        var initRow = function( row ) {
+        var initRow = function ( row ) {
             eZFlow.proxyDrag( row, {
                 invalid: 'a',
                 stopPropagation: true,
-                candidates: function() {
-                    return $( row.parentNode ).children( 'tr' ).filter( function() {
-                        return $( this ).children( 'td.handler' ).length > 0;
-                    } ).get();
+                candidates: function () {
+                    return children( row.parentNode, 'tr' ).filter( function ( tr ) { return tr.querySelector( ':scope > td.handler' ); } );
                 },
-                start: function( proxy ) {
-                    $( row ).css( 'visibility', 'hidden' );
+                start: function ( proxy ) {
+                    var style = getComputedStyle( row );
+                    row.style.visibility = 'hidden';
                     proxy.innerHTML = row.innerHTML;
-                    $( proxy ).css( {
-                        opacity: 0.67,
-                        color: $( row ).css( 'color' ),
-                        backgroundColor: $( row ).css( 'background-color' ),
-                        border: '2px solid gray'
-                    } );
+                    Object.assign( proxy.style, { opacity: '0.67', color: style.color, backgroundColor: style.backgroundColor, border: '2px solid gray' } );
                 },
-                over: function( destEl, goingUp ) {
+                over: function ( destEl, goingUp ) {
                     if ( destEl.parentNode.parentNode.id === row.parentNode.parentNode.id ) {
-                        var p = destEl.parentNode;
-                        if ( goingUp ) {
-                            p.insertBefore( row, destEl );
-                        } else {
-                            p.insertBefore( row, destEl.nextSibling );
-                        }
+                        destEl.parentNode.insertBefore( row, goingUp ? destEl : destEl.nextSibling );
                     }
                 },
-                end: function( proxy ) {
-                    var tableBody = row.parentNode,
-                        to = $( row ).offset();
-
-                    $( proxy ).animate( { left: to.left, top: to.top }, 200, 'ezflowEaseOut', function() {
-                        $( proxy ).remove();
-                        $( row ).css( 'visibility', '' );
+                end: function ( proxy ) {
+                    var tableBody = row.parentNode, to = eZFlow.offset( row );
+                    eZFlow.moveTo( proxy, to.left, to.top, function () {
+                        proxy.remove();
+                        row.style.visibility = '';
                         // clear the time left of items in rotation queue
-                        $( tableBody ).find( 'span.rotation-time-left' ).html( '' );
+                        tableBody.querySelectorAll( 'span.rotation-time-left' ).forEach( function ( s ) { s.textContent = ''; } );
                     } );
-
                     storeItemOrder( tableBody );
                 }
             } );
         };
 
         return {
-
-            init: function() {
-                this.initCfg();
-                this.initDragHandlers();
+            version: 2,
+            init: function () { this.initCfg(); this.initDragHandlers(); },
+            initDragHandlers: function () {
+                var container = document.getElementById( 'zone-tabs-container' );
+                if ( !container ) return;
+                container.querySelectorAll( 'table.queue td.handler, table.online td.handler' ).forEach( function ( td ) { initRow( td.parentNode ); } );
             },
-
-            initDragHandlers: function() {
-                $( '#zone-tabs-container' ).find( 'table.queue, table.online' ).each( function() {
-                    $( this ).find( 'td.handler' ).each( function() {
-                        initRow( this.parentNode );
-                    } );
-                } );
-            },
-
-            initCfg: function() {
-                cfg = this.cfg;
-            },
-
+            initCfg: function () { cfg = this.cfg; },
             cfg: {}
         };
+    }() );
 
-    }();
+    eZFlow.BlockCollapse = ( function () {
+        var Cookie = eZFlow.hasStorage ? null : eZFlow.Cookie;
 
-    // function taken from the modernizr library
-    eZFlow.hasStorage = (function() {
-        var mod = '_ez_ls_check';
+        var getTriggers = function () {
+            var container = document.getElementById( 'zone-tabs-container' );
+            return container ? Array.prototype.slice.call( container.querySelectorAll( 'em.trigger, a.trigger, button.trigger' ) ) : [];
+        };
+        var getBlockContainer = function ( o ) { return o.closest( '.block-container' ); };
+        var getCollapsedEl = function ( o ) { return getBlockContainer( o ).querySelector( 'div.collapsed' ); };
+        var getExpandedEl = function ( o ) { return getBlockContainer( o ).querySelector( 'div.expanded' ); };
+        var getBlockID = function ( o ) { return getBlockContainer( o ).id; };
+        var replaceClass = function ( el, oldClass, newClass ) { el.classList.remove( oldClass ); el.classList.add( newClass ); };
 
-        try {
-            localStorage.setItem(mod, mod);
-            localStorage.removeItem(mod);
-            return true;
-        } catch(e) {
-            return false;
+        function setStorageItem( item ) {
+            if ( eZFlow.hasStorage ) localStorage.setItem( 'eZPBS_' + item, '1' );
+            else Cookie.setSub( 'eZPageBlockState', item, '0', '/' );
         }
-    }());
-
-    // Sub value cookie ( name=sub1=value1&sub2=value2 ), used when localStorage is not available
-    eZFlow.Cookie = {
-        getSubs: function( name ) {
-            var parts = document.cookie ? document.cookie.split( /;\s*/ ) : [], subs = {}, i, j, pair, value;
-
-            for ( i = 0; i < parts.length; i++ ) {
-                if ( parts[i].indexOf( name + '=' ) === 0 ) {
-                    value = parts[i].substring( name.length + 1 );
-                    if ( value === '' ) {
-                        return subs;
-                    }
-                    pair = value.split( '&' );
-                    for ( j = 0; j < pair.length; j++ ) {
-                        var kv = pair[j].split( '=' );
-                        subs[ decodeURIComponent( kv[0] ) ] = decodeURIComponent( kv.slice( 1 ).join( '=' ) );
-                    }
-                    return subs;
-                }
-            }
-            return null;
-        },
-        setSubs: function( name, subs, path ) {
-            var list = [], key;
-            for ( key in subs ) {
-                if ( Object.prototype.hasOwnProperty.call( subs, key ) ) {
-                    list.push( encodeURIComponent( key ) + '=' + encodeURIComponent( subs[key] ) );
-                }
-            }
-            document.cookie = name + '=' + list.join( '&' ) + '; path=' + ( path || '/' );
-        },
-        getSub: function( name, sub ) {
-            var subs = this.getSubs( name );
-            return ( subs && Object.prototype.hasOwnProperty.call( subs, sub ) ) ? subs[sub] : null;
-        },
-        setSub: function( name, sub, value, path ) {
-            var subs = this.getSubs( name ) || {};
-            subs[sub] = value;
-            this.setSubs( name, subs, path );
-        },
-        removeSub: function( name, sub, path ) {
-            var subs = this.getSubs( name ) || {};
-            delete subs[sub];
-            this.setSubs( name, subs, path );
-        },
-        get: function( name ) {
-            var parts = document.cookie ? document.cookie.split( /;\s*/ ) : [], i;
-            for ( i = 0; i < parts.length; i++ ) {
-                if ( parts[i].indexOf( name + '=' ) === 0 ) {
-                    return decodeURIComponent( parts[i].substring( name.length + 1 ) );
-                }
-            }
-            return null;
-        },
-        set: function( name, value, path ) {
-            document.cookie = name + '=' + encodeURIComponent( value ) + '; path=' + ( path || '/' );
+        function removeStorageItem( item ) {
+            if ( eZFlow.hasStorage ) localStorage.removeItem( 'eZPBS_' + item );
+            else Cookie.removeSub( 'eZPageBlockState', item, '/' );
         }
-    };
-
-    eZFlow.BlockCollapse = function(){
-        var Cookie;
-
-        if ( !eZFlow.hasStorage )
-        {
-            Cookie = eZFlow.Cookie;
+        function getStorageItemState( item ) {
+            if ( eZFlow.hasStorage ) return localStorage.getItem( 'eZPBS_' + item ) === null ? '0' : '1';
+            if ( Cookie ) return Cookie.getSub( 'eZPageBlockState', item ) === null ? '0' : '1';
+            return '0';
         }
 
-        var getTriggers = function() {
-            var container = $( '#zone-tabs-container' );
-            var emTriggers = container.find( 'em.trigger' ).get();
-            var aTriggers = container.find( 'a.trigger' ).get();
-            var buttonTriggers = container.find( 'button.trigger' ).get();
-
-            return emTriggers.concat(aTriggers).concat(buttonTriggers);
-        };
-
-        var exec = function() {
-            var triggers = getTriggers();
-
-            for( var i = 0; i < triggers.length; i++ ) {
-                var triggerEl = triggers[i];
-
-                setTriggerEvent(triggerEl);
-
-                if(triggerEl.nodeName.toLowerCase() === "em") {
-                    updateBlockView(triggerEl);
-                }
-            }
-        };
-
-        var setTriggerEvent = function(o) {
-            $( o ).off( 'click.ezflowcollapse' ).on( 'click.ezflowcollapse', function( e ) {
-                triggerAction( e, o );
-            } );
-        };
-
-        var getBlockContainer = function(o) {
-            return $( o ).closest( '.block-container' )[0];
-        };
-
-        var getCollapsedEl = function(o) {
-            return $( getBlockContainer(o) ).find( 'div.collapsed' )[0];
-        };
-
-        var getExpandedEl = function(o) {
-            return $( getBlockContainer(o) ).find( 'div.expanded' )[0];
-        };
-
-        var getBlockID = function(o) {
-            return getBlockContainer(o).id;
-        };
-
-        var replaceClass = function( el, oldClass, newClass ) {
-            $( el ).removeClass( oldClass ).addClass( newClass );
-        };
-
-        function setStorageItem(item) {
-
-            if( eZFlow.hasStorage ){
-                localStorage.setItem( "eZPBS_" + item, "1" );
-            }
-            else{
-                Cookie.setSub("eZPageBlockState", item, "0", "/");
-            }
-        }
-
-        function removeStorageItem(item) {
-
-            if( eZFlow.hasStorage ){
-                localStorage.removeItem( "eZPBS_" + item );
-            }
-            else{
-                Cookie.removeSub("eZPageBlockState", item, "/");
-            }
-        }
-
-        function getStorageItemState(item) {
-
-            if( eZFlow.hasStorage ){
-                return ( localStorage.getItem( "eZPBS_" + item ) === null )? "0" : "1";
-            }
-            else if (Cookie){
-                return (Cookie.getSub("eZPageBlockState", item) === null)? "0" : "1";
-            }
-            else{
-                return "0";
-            }
-        }
-
-        var expandBlock = function(o) {
-            replaceClass( o, "expand", "collapse" );
-
-            var collapsedEl = getCollapsedEl(o);
-
-            if(collapsedEl) {
-                replaceClass( collapsedEl, "collapsed", "expanded" );
-            }
-
+        var expandBlock = function ( o ) {
+            replaceClass( o, 'expand', 'collapse' );
+            o.setAttribute( 'aria-expanded', 'true' );
+            var collapsedEl = getCollapsedEl( o );
+            if ( collapsedEl ) replaceClass( collapsedEl, 'collapsed', 'expanded' );
             // we save only expanded blocks
-            setStorageItem(getBlockID(o));
+            setStorageItem( getBlockID( o ) );
         };
-
-        var collapseBlock = function(o) {
-            replaceClass( o, "collapse", "expand" );
-
-            var expandedEl = getExpandedEl(o);
-
-            if(expandedEl) {
-                replaceClass( expandedEl, "expanded", "collapsed" );
-            }
-
-            removeStorageItem(getBlockID(o));
+        var collapseBlock = function ( o ) {
+            replaceClass( o, 'collapse', 'expand' );
+            o.setAttribute( 'aria-expanded', 'false' );
+            var expandedEl = getExpandedEl( o );
+            if ( expandedEl ) replaceClass( expandedEl, 'expanded', 'collapsed' );
+            removeStorageItem( getBlockID( o ) );
         };
-
-        var updateBlockView = function(o) {
-            var state = getStorageItemState(getBlockID(o));
-
-            if(state == "1")
-            {
-                expandBlock(o);
-            }
-            else
-            {
-                collapseBlock(o);
-            }
+        var updateBlockView = function ( o ) {
+            if ( getStorageItemState( getBlockID( o ) ) === '1' ) expandBlock( o );
+            else collapseBlock( o );
         };
-
-        var expandAll = function() {
-            var triggers = getTriggers();
-
-            for( var i = 0; i < triggers.length; i++ ) {
-                var triggerEl = triggers[i];
-
-                if(triggerEl.nodeName.toLowerCase() == "em") {
-                    expandBlock(triggerEl);
-                }
-            }
+        var eachBlockTrigger = function ( fn ) {
+            getTriggers().forEach( function ( t ) { if ( t.nodeName.toLowerCase() === 'em' ) fn( t ); } );
         };
-
-        var collapseAll = function() {
-            var triggers = getTriggers();
-
-            for( var i = 0; i < triggers.length; i++ ) {
-                var triggerEl = triggers[i];
-
-                if(triggerEl.nodeName.toLowerCase() == "em") {
-                    collapseBlock(triggerEl);
-                }
-            }
-        };
-
-        var triggerAction = function(e, triggerEl) {
-            var $t = $( triggerEl );
-
-            if( $t.hasClass( "expand" ) ) {
-                expandBlock(triggerEl);
-            }
-            else if( $t.hasClass( "collapse" ) ) {
-                collapseBlock(triggerEl);
-            }
-            else if( $t.hasClass( "expand-all" ) ) {
-                expandAll();
-            }
-            else if( $t.hasClass( "collapse-all" ) ) {
-                collapseAll();
-            }
+        var triggerAction = function ( e ) {
+            var t = e.currentTarget;
+            if ( t.classList.contains( 'expand' ) ) expandBlock( t );
+            else if ( t.classList.contains( 'collapse' ) ) collapseBlock( t );
+            else if ( t.classList.contains( 'expand-all' ) ) eachBlockTrigger( expandBlock );
+            else if ( t.classList.contains( 'collapse-all' ) ) eachBlockTrigger( collapseBlock );
             e.preventDefault();
         };
-
-        return {
-            init: function() {
-                exec();
-            }
-        };
-    }();
-
-})( jQuery );
-
-var BlockDDInit = function() {
-    var $ = jQuery,
-        zoneSelector = '#zone-' + BlockDDInit.cfg.zone + '-blocks',
-        zoneNode = $( zoneSelector )[0];
-
-    function storeOrder(blocks) {
-        var data = '';
-
-        blocks.each(function() {
-            data += 'block_order%5B%5D=' + this.id;
-            data += '&';
-        });
-
-        data += 'contentobject_attribute_id=' + BlockDDInit.cfg.attributeid;
-        data += '&version=' + BlockDDInit.cfg.version;
-        data += '&zone=' + BlockDDInit.cfg.zone;
-        $.ez( 'ezflow::updateblockorder', data, _callBack );
-    }
-
-    function updateInputIndex(blocks) {
-        var index = 0;
-
-        blocks.each(function() {
-            $( this ).find( '.block-control' ).each( function() {
-                var input = this,
-                    name = input.getAttribute( 'name' );
-
-                if ( !name ) {
-                    return;
+        var exec = function () {
+            getTriggers().forEach( function ( t ) {
+                t.removeEventListener( 'click', triggerAction );
+                t.addEventListener( 'click', triggerAction );
+                if ( t.nodeName.toLowerCase() === 'em' ) {
+                    if ( !t.hasAttribute( 'tabindex' ) ) t.setAttribute( 'tabindex', '0' );
+                    t.setAttribute( 'role', 'button' );
+                    updateBlockView( t );
                 }
-
-                if( name.match(/([a-z]+)+_([\d]+)\[([\d]+)\]\[([\d]+)\]/) ) {
-                    name = name.replace( /([a-z]+)+_([\d]+)\[([\d]+)\]\[([\d]+)\]/, "$1_$2[$3][" + index + "]" );
-                } else if ( name.match(/([a-zA-Z+]+)\[([\d-\w_]+)-([\d]+)+(-[\w_]+)?\]/) ) {
-                    name = name.replace( /([a-zA-Z+]+)\[([\d-\w_]+)-([\d]+)+(-[\w_]+)?\]/, "$1[$2-" + index + "$4]" );
-                } else if ( name.match(/([a-zA-Z]+)+\_+([0-9])/) ) {
-                    name = name.replace( /([a-zA-Z]+)+\_+([0-9])/, "$1_" + index );
-                }
-
-                input.setAttribute( 'name', name );
             } );
+        };
+        // the em triggers answer the keyboard as buttons do
+        document.addEventListener( 'keydown', function ( e ) {
+            var t = e.target;
+            if ( ( e.key === 'Enter' || e.key === ' ' ) && t && t.matches && t.matches( '#zone-tabs-container em.trigger' ) ) {
+                e.preventDefault();
+                t.click();
+            }
+        } );
 
-            index++;
-        });
-    }
+        return { init: function () { exec(); } };
+    }() );
 
-    function _callBack() {
+    var BlockDDInit = function () {
+        var zoneSelector = '#zone-' + BlockDDInit.cfg.zone + '-blocks',
+            zoneNode = document.querySelector( zoneSelector );
 
-    }
+        var blocksOf = function () { return Array.prototype.slice.call( document.querySelectorAll( zoneSelector + ' .block-container' ) ); };
 
-    if ( !zoneNode ) {
-        return;
-    }
+        function storeOrder( blocks ) {
+            var data = new URLSearchParams();
+            blocks.forEach( function ( b ) { data.append( 'block_order[]', b.id ); } );
+            data.append( 'contentobject_attribute_id', BlockDDInit.cfg.attributeid );
+            data.append( 'version', BlockDDInit.cfg.version );
+            data.append( 'zone', BlockDDInit.cfg.zone );
+            eZFlow.io.call( 'ezflow::updateblockorder', data ).catch( function () { /* stored with the form as well */ } );
+        }
 
-    $( zoneNode ).children( '.block-container' ).each( function() {
-        var block = this;
-
-        eZFlow.proxyDrag( block, {
-            invalid: 'textarea, input, a, button, select',
-            constrain: zoneNode,
-            candidates: function() {
-                return $( block.parentNode ).children( '.block-container' ).get();
-            },
-            start: function( proxy ) {
-                $( block ).css( 'opacity', '.25' );
-                $( '<div></div>' ).addClass( 'block-container' ).html( block.innerHTML ).appendTo( proxy );
-                $( proxy ).css( {
-                    border: '1px solid #808080',
-                    opacity: '.5',
-                    borderColor: $( block ).css( 'border-top-color' ),
-                    backgroundColor: $( block ).css( 'background-color' )
+        function updateInputIndex( blocks ) {
+            blocks.forEach( function ( block, index ) {
+                block.querySelectorAll( '.block-control' ).forEach( function ( input ) {
+                    var name = input.getAttribute( 'name' );
+                    if ( !name ) return;
+                    if ( name.match( /([a-z]+)+_([\d]+)\[([\d]+)\]\[([\d]+)\]/ ) ) {
+                        name = name.replace( /([a-z]+)+_([\d]+)\[([\d]+)\]\[([\d]+)\]/, '$1_$2[$3][' + index + ']' );
+                    } else if ( name.match( /([a-zA-Z+]+)\[([\d-\w_]+)-([\d]+)+(-[\w_]+)?\]/ ) ) {
+                        name = name.replace( /([a-zA-Z+]+)\[([\d-\w_]+)-([\d]+)+(-[\w_]+)?\]/, '$1[$2-' + index + '$4]' );
+                    } else if ( name.match( /([a-zA-Z]+)+\_+([0-9])/ ) ) {
+                        name = name.replace( /([a-zA-Z]+)+\_+([0-9])/, '$1_' + index );
+                    }
+                    input.setAttribute( 'name', name );
                 } );
-            },
-            over: function( drop, goingUp ) {
-                if ( drop.parentNode.id === block.parentNode.id ) {
-                    if ( !goingUp ) {
-                        var dropSibling = drop.nextSibling;
-                        if ( !dropSibling ) {
-                            drop.parentNode.appendChild( block );
-                        } else {
-                            drop.parentNode.insertBefore( block, dropSibling );
-                        }
-                    } else {
-                        drop.parentNode.insertBefore( block, drop );
-                    }
+            } );
+        }
+
+        if ( !zoneNode ) return;
+
+        children( zoneNode, '.block-container' ).forEach( function ( block ) {
+            eZFlow.proxyDrag( block, {
+                invalid: 'textarea, input, a, button, select',
+                constrain: zoneNode,
+                candidates: function () { return children( block.parentNode, '.block-container' ); },
+                start: function ( proxy ) {
+                    var style = getComputedStyle( block ), copy = document.createElement( 'div' );
+                    block.style.opacity = '.25';
+                    copy.className = 'block-container';
+                    copy.innerHTML = block.innerHTML;
+                    proxy.appendChild( copy );
+                    Object.assign( proxy.style, { border: '1px solid #808080', opacity: '.5', borderColor: style.borderTopColor, backgroundColor: style.backgroundColor } );
+                },
+                over: function ( drop, goingUp ) {
+                    if ( drop.parentNode.id !== block.parentNode.id ) return;
+                    if ( goingUp ) drop.parentNode.insertBefore( block, drop );
+                    else drop.parentNode.insertBefore( block, drop.nextSibling );
+                },
+                end: function ( proxy ) {
+                    var blocks = Array.prototype.slice.call( block.parentNode.querySelectorAll( '.block-container' ) );
+                    block.style.visibility = '';
+                    block.style.opacity = '1';
+                    proxy.remove();
+                    updateInputIndex( blocks );
+                    storeOrder( blocks );
                 }
-            },
-            end: function( proxy ) {
-                var blocks = $( block.parentNode ).find( '.block-container' );
-
-                $( block ).css( { visibility: '', opacity: '1' } );
-                $( proxy ).remove();
-
-                updateInputIndex(blocks);
-                storeOrder(blocks);
-            }
+            } );
         } );
-    } );
 
-    // configuring the up and down button
-    $( zoneNode ).find( 'input[name*="_move_block"]' ).off( 'click.ezflowmove' ).on( 'click.ezflowmove', function (e) {
-        var blocks = $( zoneSelector + ' .block-container' ),
-            movedBlock = $( e.currentTarget ).closest( '.block-container' )[0],
-            goingUp = ( e.currentTarget.getAttribute( 'name' ).indexOf( 'move_block_up' ) !== -1 );
-
-        e.preventDefault();
-        blocks.each( function( i ) {
-            var refBlock;
-
-            if ( this.id === movedBlock.id ) {
-                if ( goingUp ) {
-                    refBlock = i > 0 ? blocks[i - 1] : null;
-                } else {
-                    refBlock = blocks[i + 1];
-                }
-                if ( refBlock ) {
-                    if ( goingUp ) {
-                        $( refBlock ).before( movedBlock );
-                    } else {
-                        $( refBlock ).after( movedBlock );
-                    }
-                    blocks = $( zoneSelector + ' .block-container' );
-                    updateInputIndex(blocks);
-                    storeOrder(blocks);
-                }
-                return false;
-            }
+        // the up and down buttons
+        zoneNode.querySelectorAll( 'input[name*="_move_block"]' ).forEach( function ( button ) {
+            if ( button.__ezflowMove ) button.removeEventListener( 'click', button.__ezflowMove );
+            button.__ezflowMove = function ( e ) {
+                var blocks = blocksOf(), movedBlock = e.currentTarget.closest( '.block-container' ),
+                    goingUp = e.currentTarget.getAttribute( 'name' ).indexOf( 'move_block_up' ) !== -1,
+                    i = blocks.indexOf( movedBlock ), refBlock = goingUp ? ( i > 0 ? blocks[i - 1] : null ) : blocks[i + 1];
+                e.preventDefault();
+                if ( i < 0 || !refBlock ) return;
+                if ( goingUp ) refBlock.before( movedBlock );
+                else refBlock.after( movedBlock );
+                blocks = blocksOf();
+                updateInputIndex( blocks );
+                storeOrder( blocks );
+                e.currentTarget.focus();
+            };
+            button.addEventListener( 'click', button.__ezflowMove );
         } );
-    });
-};
-BlockDDInit.cfg = {};
+    };
+    BlockDDInit.cfg = {};
+    window.BlockDDInit = BlockDDInit;
+}() );

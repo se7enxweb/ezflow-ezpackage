@@ -1,0 +1,11 @@
+Changes from 6.1.16 to 6.1.17 (2026-11-03)
+
+- Updated: The ezflow site design is rebuilt: modern, responsive and accessible, with design tokens and dark mode.
+- Updated: The block editor, the timeline and push to block run on plain JavaScript modules instead of jQuery.
+- Updated: The timeline view builds its cache key with string concatenation (PHP 8 refused the + and answered 500).
+- Updated: Front-end editing uses the edit actions of expwt, the website sidebar, in place of ezwt's website toolbar.
+- Updated: The design's strings are translated in every ezflow catalog.
+- Updated: The block editor's "Remove source" is translated into German.
+- Renamed: The extension's display name is Exponential Flow LS.
+
+Upgrading: composer update, clear the caches, and install expwt in place of ezwt (exp:wt:migrate-from-ezwt --apply).

@@ -258,6 +258,74 @@
         <source>Skip to main content</source>
         <translation>Tsiba uye kumxholo oyintloko</translation>
     </message>
+    <message>
+        <source>Automatic</source>
+        <translation>Ngokuzenzekelayo</translation>
+    </message>
+    <message>
+        <source>Breadcrumb</source>
+        <translation>Umkhondo wekhonkco</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>Ilungelo lokushicilela</translation>
+    </message>
+    <message>
+        <source>Dark mode</source>
+        <translation>Imo emnyama</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>Amaxwebhu</translation>
+    </message>
+    <message>
+        <source>Light mode</source>
+        <translation>Imowudi ekhanyayo</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>Oluphambili</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>Imenyu</translation>
+    </message>
+    <message>
+        <source>Powered by</source>
+        <translation>Ixhaswa ngu</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Khangela</translation>
+    </message>
+    <message>
+        <source>Search text:</source>
+        <translation>Umbhalo wokukhangela:</translation>
+    </message>
+    <message>
+        <source>Sections</source>
+        <translation>Amacandelo</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>Ngena</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Phuma</translation>
+    </message>
+    <message>
+        <source>Site map</source>
+        <translation>Imaphu yesayithi</translation>
+    </message>
+    <message>
+        <source>Tag cloud</source>
+        <translation>Efu leethegi</translation>
+    </message>
+    <message>
+        <source>This site</source>
+        <translation>Le sayithi</translation>
+    </message>
 </context>
 <context>
     <name>design/ezflow/parts/website_toolbar</name>
@@ -268,6 +336,10 @@
     <message>
         <source>Add to block in frontpage</source>
         <translation>Yongeza kwibhloko yephepha lokuqala</translation>
+    </message>
+    <message>
+        <source>Push to block</source>
+        <translation>Faka kwibhloko</translation>
     </message>
 </context>
 <context>
@@ -560,6 +632,70 @@
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>Isiganeko somsebenzi wokutshintshanisa iphepha le-eZ</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/block</name>
+    <message>
+        <source>Next</source>
+        <translation>Okulandelayo</translation>
+    </message>
+    <message>
+        <source>Poll results</source>
+        <translation>Iziphumo zonyulo lwengcamango</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>Okwangaphambili</translation>
+    </message>
+    <message>
+        <source>Read more</source>
+        <translation>Funda ngakumbi</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Bonisa zonke</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/article</name>
+    <message>
+        <source>Comments</source>
+        <translation>Izimvo</translation>
+    </message>
+    <message>
+        <source>New comment</source>
+        <translation>Inkcazo entsha</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/event</name>
+    <message>
+        <source>Calendar</source>
+        <translation>Ikhalenda</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>Udidi</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Ukusuka kwi</translation>
+    </message>
+    <message>
+        <source>Past events</source>
+        <translation>Imisitho edlulileyo</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Ku</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/feedback_form</name>
+    <message>
+        <source>Send form</source>
+        <translation>Thumela ifom</translation>
     </message>
 </context>
 </TS>

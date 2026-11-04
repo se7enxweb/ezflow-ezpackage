@@ -258,6 +258,74 @@
         <source>Skip to main content</source>
         <translation>ܥܒܪܐ ܠܡܠܝܘܬܐ ܪܫܝܬܐ</translation>
     </message>
+    <message>
+        <source>Automatic</source>
+        <translation>ܡܢ ܢܦܫܗ</translation>
+    </message>
+    <message>
+        <source>Breadcrumb</source>
+        <translation>ܫܒܝܠܐ ܕܦܬܬܐ</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>ܙܕܩܐ ܕܢܣܚܐ</translation>
+    </message>
+    <message>
+        <source>Dark mode</source>
+        <translation>ܐܘܪܚܐ ܚܫܘܟܐ</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>ܬܘܬܒܐ</translation>
+    </message>
+    <message>
+        <source>Light mode</source>
+        <translation>ܐܘܪܚܐ ܢܗܝܪܐ</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>ܪܫܝܐ</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>ܡܢܘ</translation>
+    </message>
+    <message>
+        <source>Powered by</source>
+        <translation>ܡܬܚܝܠ ܒܝܕ</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>ܒܨܝܐ</translation>
+    </message>
+    <message>
+        <source>Search text:</source>
+        <translation>ܟܬܝܒܬܐ ܕܒܨܝܐ:</translation>
+    </message>
+    <message>
+        <source>Sections</source>
+        <translation>ܦܠ̈ܓܘܬܐ</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>ܥܠܠܐ</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>ܦܠܛܐ</translation>
+    </message>
+    <message>
+        <source>Site map</source>
+        <translation>ܡܦܬܝܐ ܕܐܬܪܐ</translation>
+    </message>
+    <message>
+        <source>Tag cloud</source>
+        <translation>ܥܢܢܐ ܕܐܬܘ̈ܬܐ</translation>
+    </message>
+    <message>
+        <source>This site</source>
+        <translation>ܗܢܐ ܐܬܪܐ</translation>
+    </message>
 </context>
 <context>
     <name>design/ezflow/parts/website_toolbar</name>
@@ -268,6 +336,10 @@
     <message>
         <source>Add to block in frontpage</source>
         <translation>ܡܘܣܦܐ ܠܒܠܘܟ ܒܦܐܬܐ ܩܕܡܝܬܐ</translation>
+    </message>
+    <message>
+        <source>Push to block</source>
+        <translation>ܕܚܘܩ ܠܓܘ ܦܠܓܘܬܐ</translation>
     </message>
 </context>
 <context>
@@ -560,6 +632,70 @@
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>ܓܕܫܐ ܕܪܕܝܐ ܕܥܒܕܐ ܕܚܠܝܦܘܬܐ ܕܦܐܬܐ ܕ eZ</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/block</name>
+    <message>
+        <source>Next</source>
+        <translation>ܕܒܬܪ</translation>
+    </message>
+    <message>
+        <source>Poll results</source>
+        <translation>ܦ̈ܠܛܐ ܕܩܛܐ</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>ܕܩܕܡ</translation>
+    </message>
+    <message>
+        <source>Read more</source>
+        <translation>ܩܪܝ ܝܬܝܪ</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>ܡܚܘܝܐ ܕܟܠ</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/article</name>
+    <message>
+        <source>Comments</source>
+        <translation>ܦܘܫ̈ܩܐ</translation>
+    </message>
+    <message>
+        <source>New comment</source>
+        <translation>ܦܘܫܩܐ ܚܕܬܐ</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/event</name>
+    <message>
+        <source>Calendar</source>
+        <translation>ܠܘܚܐ ܕܬܐܪܝ̈ܟܐ</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>ܩܛܝܓܘܪܝܐ</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>ܡܢ</translation>
+    </message>
+    <message>
+        <source>Past events</source>
+        <translation>ܓܕ̈ܫܐ ܥܒܪ̈ܐ</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>ܥܕ</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/feedback_form</name>
+    <message>
+        <source>Send form</source>
+        <translation>ܫܕܪܐ ܕܦܘܪܡܐ</translation>
     </message>
 </context>
 </TS>

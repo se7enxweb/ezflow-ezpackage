@@ -258,6 +258,74 @@
         <source>Skip to main content</source>
         <translation>Անցնել հիմնական բովանդակությանը</translation>
     </message>
+    <message>
+        <source>Automatic</source>
+        <translation>Ավտոմատ</translation>
+    </message>
+    <message>
+        <source>Breadcrumb</source>
+        <translation>Նավարկման շղթա</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>Հեղինակային իրավունք</translation>
+    </message>
+    <message>
+        <source>Dark mode</source>
+        <translation>Մութ ռեժիմ</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>Փաստաթղթեր</translation>
+    </message>
+    <message>
+        <source>Light mode</source>
+        <translation>Լուսավոր ռեժիմ</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>Հիմնական</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>Ընտրացանկ</translation>
+    </message>
+    <message>
+        <source>Powered by</source>
+        <translation>Ապահովված է՝</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Որոնել</translation>
+    </message>
+    <message>
+        <source>Search text:</source>
+        <translation>Որոնման տեքստ:</translation>
+    </message>
+    <message>
+        <source>Sections</source>
+        <translation>Բաժիններ</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>Մուտք գործել</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Դուրս գալ</translation>
+    </message>
+    <message>
+        <source>Site map</source>
+        <translation>Կայքի քարտեզ</translation>
+    </message>
+    <message>
+        <source>Tag cloud</source>
+        <translation>Պիտակների ամպ</translation>
+    </message>
+    <message>
+        <source>This site</source>
+        <translation>Այս կայքը</translation>
+    </message>
 </context>
 <context>
     <name>design/ezflow/parts/website_toolbar</name>
@@ -268,6 +336,10 @@
     <message>
         <source>Add to block in frontpage</source>
         <translation>Ավելացնել գլխավոր էջի բլոկին</translation>
+    </message>
+    <message>
+        <source>Push to block</source>
+        <translation>Ավելացնել բլոկում</translation>
     </message>
 </context>
 <context>
@@ -560,6 +632,70 @@
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>eZ Page փոխանակման աշխատահոսքի իրադարձություն</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/block</name>
+    <message>
+        <source>Next</source>
+        <translation>Հաջորդ</translation>
+    </message>
+    <message>
+        <source>Poll results</source>
+        <translation>Հարցման արդյունքներ</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>Նախորդ</translation>
+    </message>
+    <message>
+        <source>Read more</source>
+        <translation>Կարդալ ավելին</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Ցուցադրել բոլորը</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/article</name>
+    <message>
+        <source>Comments</source>
+        <translation>Մեկնաբանություններ</translation>
+    </message>
+    <message>
+        <source>New comment</source>
+        <translation>Նոր մեկնաբանություն</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/event</name>
+    <message>
+        <source>Calendar</source>
+        <translation>Օրացույց</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>Կատեգորիա</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Ումից</translation>
+    </message>
+    <message>
+        <source>Past events</source>
+        <translation>Անցած իրադարձություններ</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Ում</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/feedback_form</name>
+    <message>
+        <source>Send form</source>
+        <translation>Ուղարկել ձևը</translation>
     </message>
 </context>
 </TS>

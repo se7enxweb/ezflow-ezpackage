@@ -258,6 +258,74 @@
         <source>Skip to main content</source>
         <translation>Saltatu eduki nagusira</translation>
     </message>
+    <message>
+        <source>Automatic</source>
+        <translation>Automatikoa</translation>
+    </message>
+    <message>
+        <source>Breadcrumb</source>
+        <translation>Nabigazio-bidea</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>Copyright</translation>
+    </message>
+    <message>
+        <source>Dark mode</source>
+        <translation>Modu iluna</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>Dokumentazioa</translation>
+    </message>
+    <message>
+        <source>Light mode</source>
+        <translation>Modu argia</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>Nagusia</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>Menua</translation>
+    </message>
+    <message>
+        <source>Powered by</source>
+        <translation>Honen teknologiarekin:</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Bilatu</translation>
+    </message>
+    <message>
+        <source>Search text:</source>
+        <translation>Bilaketa-testua:</translation>
+    </message>
+    <message>
+        <source>Sections</source>
+        <translation>Atalak</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>Hasi saioa</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Amaitu saioa</translation>
+    </message>
+    <message>
+        <source>Site map</source>
+        <translation>Gunearen mapa</translation>
+    </message>
+    <message>
+        <source>Tag cloud</source>
+        <translation>Etiketa-hodeia</translation>
+    </message>
+    <message>
+        <source>This site</source>
+        <translation>Gune hau</translation>
+    </message>
 </context>
 <context>
     <name>design/ezflow/parts/website_toolbar</name>
@@ -268,6 +336,10 @@
     <message>
         <source>Add to block in frontpage</source>
         <translation>Gehitu azala-orriko blokera</translation>
+    </message>
+    <message>
+        <source>Push to block</source>
+        <translation>Bidali blokera</translation>
     </message>
 </context>
 <context>
@@ -560,6 +632,70 @@
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>eZ Page trukatze lan-fluxuaren gertaera</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/block</name>
+    <message>
+        <source>Next</source>
+        <translation>Hurrengoa</translation>
+    </message>
+    <message>
+        <source>Poll results</source>
+        <translation>Galdeketaren emaitzak</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>Aurrekoa</translation>
+    </message>
+    <message>
+        <source>Read more</source>
+        <translation>Irakurri gehiago</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Erakutsi guztiak</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/article</name>
+    <message>
+        <source>Comments</source>
+        <translation>Iruzkinak</translation>
+    </message>
+    <message>
+        <source>New comment</source>
+        <translation>Iruzkin berria</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/event</name>
+    <message>
+        <source>Calendar</source>
+        <translation>Egutegia</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>Kategoria</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Nondik</translation>
+    </message>
+    <message>
+        <source>Past events</source>
+        <translation>Iraganeko gertaerak</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Arte</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/feedback_form</name>
+    <message>
+        <source>Send form</source>
+        <translation>Bidali formularioa</translation>
     </message>
 </context>
 </TS>

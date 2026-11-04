@@ -258,6 +258,74 @@
         <source>Skip to main content</source>
         <translation>Ad contentum principale transilire</translation>
     </message>
+    <message>
+        <source>Automatic</source>
+        <translation>Automaticum</translation>
+    </message>
+    <message>
+        <source>Breadcrumb</source>
+        <translation>Semita</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>Ius auctoris</translation>
+    </message>
+    <message>
+        <source>Dark mode</source>
+        <translation>Modus obscurus</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>Documentatio</translation>
+    </message>
+    <message>
+        <source>Light mode</source>
+        <translation>Modus clarus</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>Principalis</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>Index</translation>
+    </message>
+    <message>
+        <source>Powered by</source>
+        <translation>Agitatum per</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Quaerere</translation>
+    </message>
+    <message>
+        <source>Search text:</source>
+        <translation>Textus quaerendus:</translation>
+    </message>
+    <message>
+        <source>Sections</source>
+        <translation>Sectiones</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>Inire</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Exire</translation>
+    </message>
+    <message>
+        <source>Site map</source>
+        <translation>Tabula situs</translation>
+    </message>
+    <message>
+        <source>Tag cloud</source>
+        <translation>Nubes pittaciorum</translation>
+    </message>
+    <message>
+        <source>This site</source>
+        <translation>Hic situs</translation>
+    </message>
 </context>
 <context>
     <name>design/ezflow/parts/website_toolbar</name>
@@ -268,6 +336,10 @@
     <message>
         <source>Add to block in frontpage</source>
         <translation>Ad segmentum in frontispicio addere</translation>
+    </message>
+    <message>
+        <source>Push to block</source>
+        <translation>In segmentum mittere</translation>
     </message>
 </context>
 <context>
@@ -560,6 +632,70 @@
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>Eventus cursus operum ad permutandum in eZ Page</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/block</name>
+    <message>
+        <source>Next</source>
+        <translation>Sequens</translation>
+    </message>
+    <message>
+        <source>Poll results</source>
+        <translation>Eventus suffragationis</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>Prior</translation>
+    </message>
+    <message>
+        <source>Read more</source>
+        <translation>Plura legere</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Omnia ostendere</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/article</name>
+    <message>
+        <source>Comments</source>
+        <translation>Commentarii</translation>
+    </message>
+    <message>
+        <source>New comment</source>
+        <translation>Novum commentarium</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/event</name>
+    <message>
+        <source>Calendar</source>
+        <translation>Calendarium</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>Categoria</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Ex</translation>
+    </message>
+    <message>
+        <source>Past events</source>
+        <translation>Eventus praeteriti</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Usque ad</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/feedback_form</name>
+    <message>
+        <source>Send form</source>
+        <translation>Formularium mittere</translation>
     </message>
 </context>
 </TS>

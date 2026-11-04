@@ -258,6 +258,74 @@
         <source>Skip to main content</source>
         <translation>പ്രധാന ഉള്ളടക്കത്തിലേക്ക് പോകുക</translation>
     </message>
+    <message>
+        <source>Automatic</source>
+        <translation>സ്വയമേവ</translation>
+    </message>
+    <message>
+        <source>Breadcrumb</source>
+        <translation>ബ്രെഡ്ക്രംബ്</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>പകർപ്പവകാശം</translation>
+    </message>
+    <message>
+        <source>Dark mode</source>
+        <translation>ഡാർക്ക് മോഡ്</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>ഡോക്യുമെന്റേഷൻ</translation>
+    </message>
+    <message>
+        <source>Light mode</source>
+        <translation>ലൈറ്റ് മോഡ്</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>പ്രധാനം</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>മെനു</translation>
+    </message>
+    <message>
+        <source>Powered by</source>
+        <translation>കരുത്ത് നൽകുന്നത്</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>തിരയുക</translation>
+    </message>
+    <message>
+        <source>Search text:</source>
+        <translation>തിരയൽ വാചകം:</translation>
+    </message>
+    <message>
+        <source>Sections</source>
+        <translation>സെക്ഷനുകൾ</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>സൈൻ ഇൻ ചെയ്യുക</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>സൈൻ ഔട്ട് ചെയ്യുക</translation>
+    </message>
+    <message>
+        <source>Site map</source>
+        <translation>സൈറ്റ് മാപ്പ്</translation>
+    </message>
+    <message>
+        <source>Tag cloud</source>
+        <translation>ടാഗ് ക്ലൗഡ്</translation>
+    </message>
+    <message>
+        <source>This site</source>
+        <translation>ഈ സൈറ്റ്</translation>
+    </message>
 </context>
 <context>
     <name>design/ezflow/parts/website_toolbar</name>
@@ -268,6 +336,10 @@
     <message>
         <source>Add to block in frontpage</source>
         <translation>ഫ്രണ്ട്പേജിലെ ബ്ലോക്കിലേക്ക് ചേർക്കുക</translation>
+    </message>
+    <message>
+        <source>Push to block</source>
+        <translation>ബ്ലോക്കിലേക്ക് ചേർക്കുക</translation>
     </message>
 </context>
 <context>
@@ -560,6 +632,70 @@
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>eZ പേജ് പരസ്പരം മാറ്റൽ വർക്ക്ഫ്ലോ ഇവന്റ്</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/block</name>
+    <message>
+        <source>Next</source>
+        <translation>അടുത്തത്</translation>
+    </message>
+    <message>
+        <source>Poll results</source>
+        <translation>വോട്ടെടുപ്പ് ഫലങ്ങൾ</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>മുമ്പത്തേത്</translation>
+    </message>
+    <message>
+        <source>Read more</source>
+        <translation>കൂടുതൽ വായിക്കുക</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>എല്ലാം കാണിക്കുക</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/article</name>
+    <message>
+        <source>Comments</source>
+        <translation>അഭിപ്രായങ്ങൾ</translation>
+    </message>
+    <message>
+        <source>New comment</source>
+        <translation>പുതിയ അഭിപ്രായം</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/event</name>
+    <message>
+        <source>Calendar</source>
+        <translation>കലണ്ടർ</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>വിഭാഗം</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>അയച്ചത്</translation>
+    </message>
+    <message>
+        <source>Past events</source>
+        <translation>കഴിഞ്ഞ ഇവന്റുകൾ</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>സ്വീകർത്താവ്</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/feedback_form</name>
+    <message>
+        <source>Send form</source>
+        <translation>ഫോം അയയ്ക്കുക</translation>
     </message>
 </context>
 </TS>

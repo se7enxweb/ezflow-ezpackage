@@ -258,6 +258,74 @@
         <source>Skip to main content</source>
         <translation>Əsas məzmuna keç</translation>
     </message>
+    <message>
+        <source>Automatic</source>
+        <translation>Avtomatik</translation>
+    </message>
+    <message>
+        <source>Breadcrumb</source>
+        <translation>Naviqasiya yolu</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>Müəllif hüququ</translation>
+    </message>
+    <message>
+        <source>Dark mode</source>
+        <translation>Tünd rejim</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>Sənədlər</translation>
+    </message>
+    <message>
+        <source>Light mode</source>
+        <translation>Açıq rejim</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>Əsas</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>Menyu</translation>
+    </message>
+    <message>
+        <source>Powered by</source>
+        <translation>Dəstəkləyən:</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Axtar</translation>
+    </message>
+    <message>
+        <source>Search text:</source>
+        <translation>Axtarış mətni:</translation>
+    </message>
+    <message>
+        <source>Sections</source>
+        <translation>Bölmələr</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>Daxil ol</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Çıxış et</translation>
+    </message>
+    <message>
+        <source>Site map</source>
+        <translation>Sayt xəritəsi</translation>
+    </message>
+    <message>
+        <source>Tag cloud</source>
+        <translation>Teq buludu</translation>
+    </message>
+    <message>
+        <source>This site</source>
+        <translation>Bu sayt</translation>
+    </message>
 </context>
 <context>
     <name>design/ezflow/parts/website_toolbar</name>
@@ -268,6 +336,10 @@
     <message>
         <source>Add to block in frontpage</source>
         <translation>Ana səhifədəki bloka əlavə et</translation>
+    </message>
+    <message>
+        <source>Push to block</source>
+        <translation>Bloka göndər</translation>
     </message>
 </context>
 <context>
@@ -560,6 +632,70 @@
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>eZ Page dəyişdirmə iş axını hadisəsi</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/block</name>
+    <message>
+        <source>Next</source>
+        <translation>Növbəti</translation>
+    </message>
+    <message>
+        <source>Poll results</source>
+        <translation>Sorğu nəticələri</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>Əvvəlki</translation>
+    </message>
+    <message>
+        <source>Read more</source>
+        <translation>Ətraflı oxu</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Hamısını göstər</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/article</name>
+    <message>
+        <source>Comments</source>
+        <translation>Şərhlər</translation>
+    </message>
+    <message>
+        <source>New comment</source>
+        <translation>Yeni şərh</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/event</name>
+    <message>
+        <source>Calendar</source>
+        <translation>Təqvim</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>Kateqoriya</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Haradan</translation>
+    </message>
+    <message>
+        <source>Past events</source>
+        <translation>Keçmiş tədbirlər</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Nə vaxtadək</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/feedback_form</name>
+    <message>
+        <source>Send form</source>
+        <translation>Formu göndər</translation>
     </message>
 </context>
 </TS>

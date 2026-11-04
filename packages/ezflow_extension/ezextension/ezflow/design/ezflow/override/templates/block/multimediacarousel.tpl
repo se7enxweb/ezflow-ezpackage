@@ -1,75 +1,18 @@
-{ezscript_require( array( 'ezjsc::jquery', 'ezjsc::jqueryio', 'ezflow_blocks.js' ) )}
-
+{* multimediacarousel: the newest images of the block's source on a scroll-snap track; previous / next buttons
+   (javascript/ezflow-site.js) and arrow keys move it, and it scrolls by touch or trackpad without JavaScript. *}
 {def $valid_nodes = $block.valid_nodes}
-<!-- BLOCK: START -->
-{* The previous/next buttons load three items at a time (javascript/ezflow_blocks.js; no inline code). *}
-<div id="block-{$block.id}" class="block-type-gallery" data-ezflow-carousel="{$block.id|wash}" data-total="{$valid_nodes|count()}">
-
-<div class="border-box block-style6-box-outside">
-<div class="border-tl"><div class="border-tr"><div class="border-tc"></div></div></div>
-<div class="border-ml"><div class="border-mr"><div class="border-mc">
-<div class="border-content">
-
-<div class="block">
-    <div class="left">
-        <h2>{$block.name|wash()}</h2>
-    </div>
-    <div class="right">
-        <input type="image" src={"input-img-prev.png"|ezimage()} class="carousel-prev-button" />
-        <input type="image" src={"input-img-next.png"|ezimage()} class="carousel-next-button" />
-    </div>
-    <div class="break"></div>
-</div>
-<!-- BLOCK BORDER INSIDE: START -->
-
-<div class="border-box block-style6-box-inside">
-<div class="border-tl"><div class="border-tr"><div class="border-tc"></div></div></div>
-<div class="border-ml"><div class="border-mr"><div class="border-mc">
-<div class="border-content">
-
-<!-- BLOCK CONTENT: START -->
-
-<div class="columns-three">
-<div class="col-1-2">
-<div class="col-1">
-<div class="col-content">
-
-{node_view_gui view='block_item' image_class='blockgallery1' content_node=$valid_nodes[0]}
-
-</div>
-</div>
-<div class="col-2">
-<div class="col-content">
-
-{node_view_gui view='block_item' image_class='blockgallery1' content_node=$valid_nodes[1]}
-
-</div>
-</div>
-</div>
-<div class="col-3">
-<div class="col-content">
-
-{node_view_gui view='block_item' image_class='blockgallery1' content_node=$valid_nodes[2]}
-
-</div>
-</div>
-</div>
-
-<!-- BLOCK CONTENT: END -->
-
-</div>
-</div></div></div>
-<div class="border-bl"><div class="border-br"><div class="border-bc"></div></div></div>
-</div>
-
-<!-- BLOCK BORDER INSIDE: END -->
-
-</div>
-</div></div></div>
-<div class="border-bl"><div class="border-br"><div class="border-bc"></div></div></div>
-</div>
-
-</div>
-<!-- BLOCK: END -->
-
+<section class="fx-block fx-block--carousel fx-carousel" data-fx-carousel{if $block.name|trim} aria-labelledby="fx-b-{$block.id}"{/if}>
+    <header class="fx-block__head">
+        {if $block.name|trim}<h2 class="fx-block__title" id="fx-b-{$block.id}">{$block.name|wash}</h2>{/if}
+        <div class="fx-carousel__nav">
+            <button class="fx-iconbtn" type="button" data-fx-prev><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path d="M15 18l-6-6 6-6"/></svg><span class="fx-sr-only">{'Previous'|i18n( 'design/ezflow/block' )}</span></button>
+            <button class="fx-iconbtn" type="button" data-fx-next><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path d="M9 18l6-6-6-6"/></svg><span class="fx-sr-only">{'Next'|i18n( 'design/ezflow/block' )}</span></button>
+        </div>
+    </header>
+    <ul class="fx-carousel__track" data-fx-track data-fx-lightbox tabindex="0" aria-label="{$block.name|wash}">
+    {foreach $valid_nodes as $valid_node}
+        {include uri='design:parts/ezflow/tile.tpl' node=$valid_node}
+    {/foreach}
+    </ul>
+</section>
 {undef $valid_nodes}

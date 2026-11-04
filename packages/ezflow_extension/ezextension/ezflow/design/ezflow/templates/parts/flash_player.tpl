@@ -118,7 +118,7 @@
         <form name="embed_form" id="embed_form" action="#">
             <label>Embed code:</label>
             <input size="45" name="embed_url" type="text" readonly="readonly" value="{$embed_code|wash}" data-ezflow-select-on-click="1" />
-            {ezscript_require( array( 'ezflow_blocks.js' ) )}
+            {include uri='design:parts/ezflow_scripts.tpl' scripts=array( 'ezflow_blocks.js' )}
         </form>
     {/if}
 {else}

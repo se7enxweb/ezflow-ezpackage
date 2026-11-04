@@ -258,6 +258,74 @@
         <source>Skip to main content</source>
         <translation>ප්‍රධාන අන්තර්ගතයට පිවිසෙන්න</translation>
     </message>
+    <message>
+        <source>Automatic</source>
+        <translation>ස්වයංක්‍රීය</translation>
+    </message>
+    <message>
+        <source>Breadcrumb</source>
+        <translation>පිටු මාර්ග සලකුණ</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>ප්‍රකාශන හිමිකම</translation>
+    </message>
+    <message>
+        <source>Dark mode</source>
+        <translation>අඳුරු ප්‍රකාරය</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>ලේඛන</translation>
+    </message>
+    <message>
+        <source>Light mode</source>
+        <translation>ආලෝක ප්‍රකාරය</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>ප්‍රධාන</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>මෙනුව</translation>
+    </message>
+    <message>
+        <source>Powered by</source>
+        <translation>බලගන්වන ලද්දේ</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>සොයන්න</translation>
+    </message>
+    <message>
+        <source>Search text:</source>
+        <translation>සෙවුම් පෙළ:</translation>
+    </message>
+    <message>
+        <source>Sections</source>
+        <translation>කොටස්</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>පිවිසෙන්න</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>ඉවත් වන්න</translation>
+    </message>
+    <message>
+        <source>Site map</source>
+        <translation>අඩවි සිතියම</translation>
+    </message>
+    <message>
+        <source>Tag cloud</source>
+        <translation>ටැග වලාකුළ</translation>
+    </message>
+    <message>
+        <source>This site</source>
+        <translation>මෙම අඩවිය</translation>
+    </message>
 </context>
 <context>
     <name>design/ezflow/parts/website_toolbar</name>
@@ -268,6 +336,10 @@
     <message>
         <source>Add to block in frontpage</source>
         <translation>මුල් පිටුවේ කොටස් කුට්ටියට එක් කරන්න</translation>
+    </message>
+    <message>
+        <source>Push to block</source>
+        <translation>බ්ලොක් එකට යවන්න</translation>
     </message>
 </context>
 <context>
@@ -560,6 +632,70 @@
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>eZ Page මාරු කිරීමේ කාර්ය ප්‍රවාහ සිදුවීම</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/block</name>
+    <message>
+        <source>Next</source>
+        <translation>ඊළඟ</translation>
+    </message>
+    <message>
+        <source>Poll results</source>
+        <translation>ඡන්ද විමසුම් ප්‍රතිඵල</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>පෙර</translation>
+    </message>
+    <message>
+        <source>Read more</source>
+        <translation>තවත් කියවන්න</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>සියල්ල පෙන්වන්න</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/article</name>
+    <message>
+        <source>Comments</source>
+        <translation>අදහස්</translation>
+    </message>
+    <message>
+        <source>New comment</source>
+        <translation>නව අදහස</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/event</name>
+    <message>
+        <source>Calendar</source>
+        <translation>දින දර්ශනය</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>ප්‍රවර්ගය</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>මෙයින්</translation>
+    </message>
+    <message>
+        <source>Past events</source>
+        <translation>පසුගිය සිදුවීම්</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>වෙත</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/feedback_form</name>
+    <message>
+        <source>Send form</source>
+        <translation>පෝරමය යවන්න</translation>
     </message>
 </context>
 </TS>

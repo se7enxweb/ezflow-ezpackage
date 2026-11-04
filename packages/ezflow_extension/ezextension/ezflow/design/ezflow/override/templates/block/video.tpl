@@ -1,36 +1,14 @@
-{def $flash_node = $block.valid_nodes[0]
-     $siteurl = concat( "http://", ezini( 'SiteSettings', 'SiteURL' ) )  
-     $attribute_file = $flash_node.data_map.file
-     $video = concat("content/download/", $attribute_file.contentobject_id, "/", $attribute_file.content.contentobject_attribute_id)|ezurl(no)
-     $flash_var = concat( "moviepath=", $video )}
-
-<div class="block-type-video">
-
-<div class="attribute-header">
-    <h2>{$block.name|wash()}</h2>
-</div>
-
-     {* Embed URL, which URL to retrieve the embed code from. *}
-     {set $flash_var=$flash_var|append( "&amp;embedurl=", concat( $siteurl, "/flash/embed/", $valid_node.object.id ) )}
-
-     {* Embed Link *}
-     {set $flash_var=$flash_var|append( "&amp;embedlink=", concat( $siteurl, $valid_node.url_alias|ezurl(no) ) )}
-
-
-    <div class="content-media" id="flash-{$block.zone_id}-{$block.id}">
-
-    {* The player, printed directly (it was written by an inline script before; no inline code). *}
-    <object type="application/x-shockwave-flash" data="{'flash/flash_player.swf'|ezdesign(no)}" width="266" height="211">
-        <param name="movie" value="{'flash/flash_player.swf'|ezdesign(no)}" />
-        <param name="scale" value="exactfit" />
-        <param name="allowScriptAccess" value="sameDomain" />
-        <param name="allowFullScreen" value="true" />
-        <param name="flashvars" value="{$flash_var}" />
-        <param name="wmode" value="opaque" />
-        <p>No <a href="http://www.macromedia.com/go/getflashplayer">Flash player</a> avaliable!</p>
-    </object>
-    
-    </div>
-</div>
-
-{undef}
+{* video: the block's video item, played by the browser (<video>, no plug-in), with its thumbnail as the poster. *}
+{def $flash_node = $block.valid_nodes[0]}
+{if and( $flash_node, is_set( $flash_node.data_map.file ), $flash_node.data_map.file.has_content )}
+{def $attribute_file = $flash_node.data_map.file}
+<section class="fx-block fx-block--video"{if $block.name|trim} aria-labelledby="fx-b-{$block.id}"{/if}>
+    {include uri='design:parts/ezflow/block_head.tpl'}
+    <video class="fx-video" controls preload="metadata"{if and( is_set( $flash_node.data_map.thumbnail ), $flash_node.data_map.thumbnail.has_content )} poster={$flash_node.data_map.thumbnail.content['fx_wide'].url|ezroot}{/if}>
+        <source src={concat( "content/download/", $attribute_file.contentobject_id, "/", $attribute_file.id )|ezurl} type="{$attribute_file.content.mime_type|wash}">
+        <a href={$flash_node.url_alias|ezurl}>{$flash_node.name|wash}</a>
+    </video>
+</section>
+{undef $attribute_file}
+{/if}
+{undef $flash_node}

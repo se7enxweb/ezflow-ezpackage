@@ -258,6 +258,74 @@
         <source>Skip to main content</source>
         <translation>Ana içeriğe atla</translation>
     </message>
+    <message>
+        <source>Automatic</source>
+        <translation>Otomatik</translation>
+    </message>
+    <message>
+        <source>Breadcrumb</source>
+        <translation>İçerik haritası</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>Telif hakkı</translation>
+    </message>
+    <message>
+        <source>Dark mode</source>
+        <translation>Koyu mod</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>Belgeler</translation>
+    </message>
+    <message>
+        <source>Light mode</source>
+        <translation>Açık mod</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>Ana</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>Menü</translation>
+    </message>
+    <message>
+        <source>Powered by</source>
+        <translation>Destekleyen:</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Ara</translation>
+    </message>
+    <message>
+        <source>Search text:</source>
+        <translation>Arama metni:</translation>
+    </message>
+    <message>
+        <source>Sections</source>
+        <translation>Bölümler</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>Oturum aç</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Oturumu kapat</translation>
+    </message>
+    <message>
+        <source>Site map</source>
+        <translation>Site haritası</translation>
+    </message>
+    <message>
+        <source>Tag cloud</source>
+        <translation>Etiket bulutu</translation>
+    </message>
+    <message>
+        <source>This site</source>
+        <translation>Bu site</translation>
+    </message>
 </context>
 <context>
     <name>design/ezflow/parts/website_toolbar</name>
@@ -268,6 +336,10 @@
     <message>
         <source>Add to block in frontpage</source>
         <translation>Ön sayfadaki bloğa ekle</translation>
+    </message>
+    <message>
+        <source>Push to block</source>
+        <translation>Bloğa gönder</translation>
     </message>
 </context>
 <context>
@@ -580,6 +652,70 @@
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>eZ Page değiştirme iş akışı olayı</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/block</name>
+    <message>
+        <source>Next</source>
+        <translation>Sonraki</translation>
+    </message>
+    <message>
+        <source>Poll results</source>
+        <translation>Anket sonuçları</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>Önceki</translation>
+    </message>
+    <message>
+        <source>Read more</source>
+        <translation>Devamını oku</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Tümünü göster</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/article</name>
+    <message>
+        <source>Comments</source>
+        <translation>Yorumlar</translation>
+    </message>
+    <message>
+        <source>New comment</source>
+        <translation>Yeni yorum</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/event</name>
+    <message>
+        <source>Calendar</source>
+        <translation>Takvim</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>Kategori</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Kaynak</translation>
+    </message>
+    <message>
+        <source>Past events</source>
+        <translation>Geçmiş etkinlikler</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Bitiş</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/feedback_form</name>
+    <message>
+        <source>Send form</source>
+        <translation>Formu gönder</translation>
     </message>
 </context>
 </TS>

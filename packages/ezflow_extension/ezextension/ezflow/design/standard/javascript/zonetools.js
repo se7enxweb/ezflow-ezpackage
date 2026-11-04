@@ -1,138 +1,85 @@
 /**
- * @author ls
- *
- * Zone layout selector of the page datatype editor: when the new layout has
- * fewer zones than the current one, the previous zones must be mapped to the
- * new ones before the layout can be set. Requires jQuery.
+ * Zone layout selector of the page datatype editor (plain JavaScript, an ES module): when the new layout has fewer
+ * zones than the current one, the previous zones must be mapped to the new ones before the layout can be set.
  */
+( function () {
+    'use strict';
+    var eZFlow = window.eZFlow = window.eZFlow || {};
+    if ( eZFlow.ZoneLayout && eZFlow.ZoneLayout.version === 2 ) return;
 
-var eZFlow = window.eZFlow || {};
-window.eZFlow = eZFlow;
-
-eZFlow.ZoneLayout = function( $ ) {
-
-    // Private
-
-    var getSelectedZone = function() {
-        var selectedZone = false;
-        var selectedZoneArray = $( 'input' ).filter( function() {
-            return this.className == "zone-type-selector" && this.checked;
-        } );
-
-        if( selectedZoneArray[0] ) {
-            selectedZone = selectedZoneArray[0];
-        }
-        return selectedZone;
+    var getSelectedZone = function () {
+        return document.querySelector( 'input.zone-type-selector:checked' ) || false;
     };
 
-    var setValidatorListener = function() {
-        var zoneLayoutButton = document.getElementById("set-zone-layout");
-
-        if(zoneLayoutButton) {
-            $( zoneLayoutButton ).on( "click", validate );
-        }
-    };
-
-    var objectConv = function(a) {
-        var o = {};
-        for (var i = 0; i < a.length; i++) {
-            o[a[i]] = '';
-        }
+    var option = function ( value, text ) {
+        var o = document.createElement( 'option' );
+        o.value = value;
+        o.textContent = text;
         return o;
     };
 
-    var validate = function(e) {
+    var validate = function ( e ) {
         var selecZoneTypeElem = getSelectedZone();
-        var allowedZones = JSON.parse(eZFlow.ZoneLayout.cfg.allowedzones);
-        var allowedZoneCount = allowedZones.length;
-        var selectedZoneType, zoneLayout;
+        if ( !selecZoneTypeElem ) return;
+        var allowedZones = JSON.parse( eZFlow.ZoneLayout.cfg.allowedzones ), selectedZoneType, zoneLayout;
+        allowedZones.forEach( function ( allowedZone ) {
+            if ( allowedZone.type == selecZoneTypeElem.value ) selectedZoneType = allowedZone;
+            if ( allowedZone.type == eZFlow.ZoneLayout.cfg.zonelayout ) zoneLayout = allowedZone;
+        } );
+        if ( !selectedZoneType || !zoneLayout ) return;
 
-        for(var i=0; i<allowedZoneCount; i++) {
-            var allowedZone = allowedZones[i];
+        var zoneCountDiff = selectedZoneType.zones.length < zoneLayout.zones.length ? zoneLayout.zones.length - selectedZoneType.zones.length : 0;
+        var zoneMapContainer = document.getElementById( 'zone-map-container' );
+        var zoneMapPlaceholder = document.getElementById( 'zone-map-placeholder' );
+        var typeClass = 'type_' + selectedZoneType.type;
 
-            if(allowedZone.type == selecZoneTypeElem.value) {
-                selectedZoneType = allowedZone;
-            }
+        if ( zoneCountDiff !== 0 && !zoneMapPlaceholder.classList.contains( typeClass ) ) {
+            zoneMapPlaceholder.className = typeClass;
+            zoneMapContainer.classList.remove( 'hide' );
+            zoneMapContainer.classList.add( 'show' );
 
-            if(allowedZone.type == eZFlow.ZoneLayout.cfg.zonelayout) {
-                zoneLayout = allowedZone;
-            }
-        }
+            var typeLabel = document.createElement( 'p' );
+            typeLabel.className = 'zone-map-type';
+            typeLabel.textContent = selectedZoneType.name + ' [' + selectedZoneType.type + ']';
+            document.getElementById( 'zone-map-type' ).replaceChildren( typeLabel );
 
-        var zoneCountDiff = 0;
-        var allowedZonesCount = selectedZoneType.zones.length;
-        var existingZoneCount = zoneLayout.zones.length;
-
-        if ( allowedZonesCount < existingZoneCount )
-            zoneCountDiff = existingZoneCount - allowedZonesCount;
-
-        var zoneMapContainer = document.getElementById('zone-map-container');
-        var zoneMapPlaceholder = document.getElementById('zone-map-placeholder');
-
-        if ( zoneCountDiff != 0 && !$( zoneMapPlaceholder ).hasClass( 'type_' + selectedZoneType.type ) ) {
-            zoneMapPlaceholder.className = '';
-            $( zoneMapPlaceholder ).addClass( 'type_' + selectedZoneType.type );
-            $( zoneMapContainer ).removeClass( 'hide' ).addClass( 'show' );
-
-            document.getElementById('zone-map-type').innerHTML = '<p class="zone-map-type">' + selectedZoneType.name + ' [' + selectedZoneType.type + ']</p>';
-
-            var html = '';
-            var currZones = zoneLayout.zones;
-            var currZonesCount = zoneLayout.zones.length;
-            var selZones = selectedZoneType.zones;
-            var selZoneCount = selectedZoneType.zones.length;
-
-            for(var k=0; k<selZoneCount; k++) {
-                var selZone = selZones[k];
-                html += '<div class="zone-map-item">';
-                html += '<label>' + selZone.name + '</label>';
-                html += '<select name="ContentObjectAttribute_ezpage_zone_map[' + selZone.id + ']">';
-
-                for(var j=0; j<currZonesCount; j++) {
-                    var currZone = currZones[j];
-                    html += '<option value="' + currZone.id  + '">';
-                    html += currZone.name;
-                    html += '</option>';
-                }
-
-                html += '</select>';
-                html += '</div>';
-            }
-
-            zoneMapPlaceholder.innerHTML = html;
+            zoneMapPlaceholder.replaceChildren();
+            selectedZoneType.zones.forEach( function ( selZone ) {
+                var item = document.createElement( 'div' ), label = document.createElement( 'label' ), select = document.createElement( 'select' );
+                item.className = 'zone-map-item';
+                select.id = 'zone-map-' + selZone.id;
+                label.htmlFor = select.id;
+                label.textContent = selZone.name;
+                select.name = 'ContentObjectAttribute_ezpage_zone_map[' + selZone.id + ']';
+                zoneLayout.zones.forEach( function ( currZone ) { select.appendChild( option( currZone.id, currZone.name ) ); } );
+                item.append( label, select );
+                zoneMapPlaceholder.appendChild( item );
+            } );
             e.preventDefault();
+            var first = zoneMapPlaceholder.querySelector( 'select' );
+            if ( first ) first.focus();
+            return;
         }
 
-        if (zoneCountDiff != 0 && $( zoneMapPlaceholder ).hasClass( 'type_' + selectedZoneType.type )) {
-            var zoneIDArray = [];
-            var selectElements = $( '#zone-map-container select' ).get();
+        if ( zoneCountDiff !== 0 && zoneMapPlaceholder.classList.contains( typeClass ) ) {
+            var seen = {};
+            document.querySelectorAll( '#zone-map-container select' ).forEach( function ( select ) {
+                var value = select.value;
+                if ( seen[value] ) e.preventDefault();
+                else seen[value] = true;
+            } );
+        }
+    };
 
-            var selectElementsCount = selectElements.length;
-            for (var m = 0; m < selectElementsCount; m++) {
-                var selectElement = selectElements[m];
-                var selectedIndex = selectElement.selectedIndex;
-                var selectedValue = selectElement[selectedIndex].value;
-
-                if (selectedValue in objectConv(zoneIDArray)) {
-                    e.preventDefault();
-                }
-                else {
-                    zoneIDArray.push(selectedValue);
-                }
+    eZFlow.ZoneLayout = {
+        version: 2,
+        init: function () {
+            var button = document.getElementById( 'set-zone-layout' );
+            if ( button && !button.__ezflowZone ) {
+                button.__ezflowZone = true;
+                button.addEventListener( 'click', validate );
             }
-        }
-    };
-
-    // Public
-
-    return {
-
-        init: function() {
-            setValidatorListener();
         },
-
         cfg: {}
-
     };
-
-}( jQuery );
+}() );

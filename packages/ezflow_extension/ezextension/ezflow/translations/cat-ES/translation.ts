@@ -258,6 +258,74 @@
         <source>Skip to main content</source>
         <translation>Torna al contingut principal</translation>
     </message>
+    <message>
+        <source>Automatic</source>
+        <translation>Automàtica</translation>
+    </message>
+    <message>
+        <source>Breadcrumb</source>
+        <translation>Ruta de navegació</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>Copyright</translation>
+    </message>
+    <message>
+        <source>Dark mode</source>
+        <translation>Mode fosc</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>Documentació</translation>
+    </message>
+    <message>
+        <source>Light mode</source>
+        <translation>Mode clar</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>Principal</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>Menú</translation>
+    </message>
+    <message>
+        <source>Powered by</source>
+        <translation>Funciona amb</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Cerca</translation>
+    </message>
+    <message>
+        <source>Search text:</source>
+        <translation>Cercar texte:</translation>
+    </message>
+    <message>
+        <source>Sections</source>
+        <translation>Seccions</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>Inicia la sessió</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Tanca la sessió</translation>
+    </message>
+    <message>
+        <source>Site map</source>
+        <translation>Contingut</translation>
+    </message>
+    <message>
+        <source>Tag cloud</source>
+        <translation>Núvol d&amp;apos;etiquetes</translation>
+    </message>
+    <message>
+        <source>This site</source>
+        <translation>Aquest lloc</translation>
+    </message>
 </context>
 <context>
     <name>design/ezflow/parts/website_toolbar</name>
@@ -268,6 +336,10 @@
     <message>
         <source>Add to block in frontpage</source>
         <translation>Passa al bloc</translation>
+    </message>
+    <message>
+        <source>Push to block</source>
+        <translation>Envia al bloc</translation>
     </message>
 </context>
 <context>
@@ -580,6 +652,70 @@
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>Esdeveniment de flux de treball d&apos;intercanvi de pàgines d&apos;eZ Page</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/block</name>
+    <message>
+        <source>Next</source>
+        <translation>Següent</translation>
+    </message>
+    <message>
+        <source>Poll results</source>
+        <translation>Resultats de l&amp;apos;enquesta</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>Anterior</translation>
+    </message>
+    <message>
+        <source>Read more</source>
+        <translation>Llegiu-ne més</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Mostra-ho tot</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/article</name>
+    <message>
+        <source>Comments</source>
+        <translation>Comentaris</translation>
+    </message>
+    <message>
+        <source>New comment</source>
+        <translation>Nou comentari</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/event</name>
+    <message>
+        <source>Calendar</source>
+        <translation>Calendari</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>Categoria</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Des de</translation>
+    </message>
+    <message>
+        <source>Past events</source>
+        <translation>Events passats</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Fins a</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/feedback_form</name>
+    <message>
+        <source>Send form</source>
+        <translation>Envia el formulari</translation>
     </message>
 </context>
 </TS>

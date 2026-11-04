@@ -258,6 +258,74 @@
         <source>Skip to main content</source>
         <translation>Siirry pääsisältöön</translation>
     </message>
+    <message>
+        <source>Automatic</source>
+        <translation>Automaattinen</translation>
+    </message>
+    <message>
+        <source>Breadcrumb</source>
+        <translation>Murupolku</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>Tekijänoikeus</translation>
+    </message>
+    <message>
+        <source>Dark mode</source>
+        <translation>Tumma tila</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>Dokumentaatio</translation>
+    </message>
+    <message>
+        <source>Light mode</source>
+        <translation>Vaalea tila</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>Pääkieli</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>Valikko</translation>
+    </message>
+    <message>
+        <source>Powered by</source>
+        <translation>Tarjoaa</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Hae</translation>
+    </message>
+    <message>
+        <source>Search text:</source>
+        <translation>Hakuteksti:</translation>
+    </message>
+    <message>
+        <source>Sections</source>
+        <translation>Osiot</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>Kirjaudu sisään</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Kirjaudu ulos</translation>
+    </message>
+    <message>
+        <source>Site map</source>
+        <translation>Sivukartta</translation>
+    </message>
+    <message>
+        <source>Tag cloud</source>
+        <translation>Asiasanapilvi</translation>
+    </message>
+    <message>
+        <source>This site</source>
+        <translation>Tämä sivusto</translation>
+    </message>
 </context>
 <context>
     <name>design/ezflow/parts/website_toolbar</name>
@@ -268,6 +336,10 @@
     <message>
         <source>Add to block in frontpage</source>
         <translation>Lisää etusivun lohkoon</translation>
+    </message>
+    <message>
+        <source>Push to block</source>
+        <translation>Siirrä lohkoon</translation>
     </message>
 </context>
 <context>
@@ -560,6 +632,70 @@
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>eZ Page -vaihdon työnkulun tapahtuma</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/block</name>
+    <message>
+        <source>Next</source>
+        <translation>Seuraava</translation>
+    </message>
+    <message>
+        <source>Poll results</source>
+        <translation>Kyselyn tulokset</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>Edellinen</translation>
+    </message>
+    <message>
+        <source>Read more</source>
+        <translation>Lue lisää</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Näytä kaikki</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/article</name>
+    <message>
+        <source>Comments</source>
+        <translation>Kommentit</translation>
+    </message>
+    <message>
+        <source>New comment</source>
+        <translation>Uusi kommentti</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/event</name>
+    <message>
+        <source>Calendar</source>
+        <translation>Kalenteri</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>Kategoria</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Alkaen</translation>
+    </message>
+    <message>
+        <source>Past events</source>
+        <translation>Menneet tapahtumat</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Mihin</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/feedback_form</name>
+    <message>
+        <source>Send form</source>
+        <translation>Lähetä lomake</translation>
     </message>
 </context>
 </TS>

@@ -258,6 +258,74 @@
         <source>Skip to main content</source>
         <translation>រំលងទៅមាតិកាចម្បង</translation>
     </message>
+    <message>
+        <source>Automatic</source>
+        <translation>ស្វ័យប្រវត្តិ</translation>
+    </message>
+    <message>
+        <source>Breadcrumb</source>
+        <translation>ផ្លូវរុករក</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>សិទ្ធិអ្នកនិពន្ធ</translation>
+    </message>
+    <message>
+        <source>Dark mode</source>
+        <translation>ម៉ូដងងឹត</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>ឯកសារ</translation>
+    </message>
+    <message>
+        <source>Light mode</source>
+        <translation>ម៉ូដភ្លឺ</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>ចម្បង</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>ម៉ឺនុយ</translation>
+    </message>
+    <message>
+        <source>Powered by</source>
+        <translation>ដំណើរការដោយ</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>ស្វែងរក</translation>
+    </message>
+    <message>
+        <source>Search text:</source>
+        <translation>អត្ថបទស្វែងរក៖</translation>
+    </message>
+    <message>
+        <source>Sections</source>
+        <translation>ផ្នែក</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>ចូល</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>ចាកចេញ</translation>
+    </message>
+    <message>
+        <source>Site map</source>
+        <translation>ផែនទីគេហទំព័រ</translation>
+    </message>
+    <message>
+        <source>Tag cloud</source>
+        <translation>ពពកស្លាក</translation>
+    </message>
+    <message>
+        <source>This site</source>
+        <translation>គេហទំព័រនេះ</translation>
+    </message>
 </context>
 <context>
     <name>design/ezflow/parts/website_toolbar</name>
@@ -268,6 +336,10 @@
     <message>
         <source>Add to block in frontpage</source>
         <translation>បន្ថែមទៅប្លុកក្នុងទំព័រមុខ</translation>
+    </message>
+    <message>
+        <source>Push to block</source>
+        <translation>បញ្ចូលទៅប្លុក</translation>
     </message>
 </context>
 <context>
@@ -560,6 +632,70 @@
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>ព្រឹត្តិការណ៍លំហូរការងារប្តូរ eZ Page</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/block</name>
+    <message>
+        <source>Next</source>
+        <translation>បន្ទាប់</translation>
+    </message>
+    <message>
+        <source>Poll results</source>
+        <translation>លទ្ធផលស្ទង់មតិ</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>មុន</translation>
+    </message>
+    <message>
+        <source>Read more</source>
+        <translation>អានបន្ថែម</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>បង្ហាញទាំងអស់</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/article</name>
+    <message>
+        <source>Comments</source>
+        <translation>មតិយោបល់</translation>
+    </message>
+    <message>
+        <source>New comment</source>
+        <translation>មតិថ្មី</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/event</name>
+    <message>
+        <source>Calendar</source>
+        <translation>ប្រតិទិន</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>ប្រភេទ</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>ពី</translation>
+    </message>
+    <message>
+        <source>Past events</source>
+        <translation>ព្រឹត្តិការណ៍កន្លងមក</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>ទៅ</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/feedback_form</name>
+    <message>
+        <source>Send form</source>
+        <translation>ផ្ញើទម្រង់បែបបទ</translation>
     </message>
 </context>
 </TS>

@@ -258,6 +258,74 @@
         <source>Skip to main content</source>
         <translation>Pređi na glavni sadržaj</translation>
     </message>
+    <message>
+        <source>Automatic</source>
+        <translation>Automatski</translation>
+    </message>
+    <message>
+        <source>Breadcrumb</source>
+        <translation>Putanja navigacije</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>Autorska prava (Copyright)</translation>
+    </message>
+    <message>
+        <source>Dark mode</source>
+        <translation>Tamni režim</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>Dokumentacija</translation>
+    </message>
+    <message>
+        <source>Light mode</source>
+        <translation>Svetla tema</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>Glavni</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>Meni</translation>
+    </message>
+    <message>
+        <source>Powered by</source>
+        <translation>Pokreće</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Pretraži</translation>
+    </message>
+    <message>
+        <source>Search text:</source>
+        <translation>Tekst za pretragu:</translation>
+    </message>
+    <message>
+        <source>Sections</source>
+        <translation>Sekcije</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>Prijavi se</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Odjavi se</translation>
+    </message>
+    <message>
+        <source>Site map</source>
+        <translation>Sadržaj</translation>
+    </message>
+    <message>
+        <source>Tag cloud</source>
+        <translation>Oblak oznaka</translation>
+    </message>
+    <message>
+        <source>This site</source>
+        <translation>Ovaj sajt</translation>
+    </message>
 </context>
 <context>
     <name>design/ezflow/parts/website_toolbar</name>
@@ -268,6 +336,10 @@
     <message>
         <source>Add to block in frontpage</source>
         <translation>Dodaj u blok na naslovnoj strani</translation>
+    </message>
+    <message>
+        <source>Push to block</source>
+        <translation>Pošalji u blok</translation>
     </message>
 </context>
 <context>
@@ -560,6 +632,70 @@
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>Događaj toka rada zamene eZ stranice</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/block</name>
+    <message>
+        <source>Next</source>
+        <translation>Dalje</translation>
+    </message>
+    <message>
+        <source>Poll results</source>
+        <translation>Rezultati ankete</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>Nazad</translation>
+    </message>
+    <message>
+        <source>Read more</source>
+        <translation>Pročitajte više</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Prikaži sve</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/article</name>
+    <message>
+        <source>Comments</source>
+        <translation>Komentari</translation>
+    </message>
+    <message>
+        <source>New comment</source>
+        <translation>Novi komentari</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/event</name>
+    <message>
+        <source>Calendar</source>
+        <translation>Kalendar</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>Kategorija</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Od</translation>
+    </message>
+    <message>
+        <source>Past events</source>
+        <translation>Prošli događaji</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Za</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/feedback_form</name>
+    <message>
+        <source>Send form</source>
+        <translation>Pošalji obrazac</translation>
     </message>
 </context>
 </TS>

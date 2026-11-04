@@ -1,191 +1,113 @@
 /**
- * @author ls
- *
- * Publishing schedule dialog of the block items (page datatype editor and
- * push to block page). Clicking an img.schedule-handler opens the dialog with
- * the item's publication time; Store writes the new timestamp into the first
- * input and the new date into the first span next to the handler.
- * Requires jQuery and ezflowcalendar.js.
+ * Publishing schedule dialog of the block items (page datatype editor and push to block page); plain JavaScript, an
+ * ES module, needs ezflowcalendar.js. Clicking (or Enter on) an img.schedule-handler opens a native <dialog> with the
+ * item's publication time; Store writes the new timestamp into the first input and the new date into the first span
+ * next to the handler. Escape and Cancel close it; the focus returns to the handler.
  */
+( function () {
+    'use strict';
+    var eZFlow = window.eZFlow = window.eZFlow || {};
+    if ( eZFlow.ScheduleDialog && eZFlow.ScheduleDialog.version === 2 ) return;
 
-var eZFlow = window.eZFlow || {};
-window.eZFlow = eZFlow;
+    var CurrentHandler = false, CurrentHandlerInput = false, CurrentHandlerLabel = false, Dialog = null, Calendar = null;
+    var field = function ( id ) { return document.getElementById( 'schedule-dialog-' + id ); };
 
-eZFlow.ScheduleDialog = function( $ ) {
-
-    //Private
-
-    var CurrentHandler = false,
-        CurrentHandlerInput = false,
-        CurrentHandlerLabel = false,
-        Dialog = null,
-        Calendar = null;
-
-    var getHandlers = function() {
-        return $( 'img.schedule-handler' ).get();
+    var hideDialog = function () {
+        if ( !Dialog ) return;
+        if ( Dialog.open && Dialog.close ) Dialog.close();
+        Dialog.hidden = true;
+        if ( CurrentHandler && CurrentHandler.focus ) CurrentHandler.focus();
     };
 
-    var hideDialog = function() {
-        if ( Dialog ) {
-            Dialog.style.display = 'none';
-        }
-    };
-
-    var handleDialogSubmit = function() {
-        // Get year, month, day
-        var year = document.getElementById("schedule-dialog-year").value;
-        var month = document.getElementById("schedule-dialog-month").value;
-        var day = document.getElementById("schedule-dialog-day").value;
-
-        // Get hour, minute
-        var hour = document.getElementById("schedule-dialog-hour").value;
-        var minute = document.getElementById("schedule-dialog-minute").value;
-
-        // Convert to timestamp and assing as new value to input field
-        var timestamp = Number( new Date( year, ( month - 1 ), day, hour, minute ) ) / 1000;
-
+    var handleDialogSubmit = function () {
+        var year = field( 'year' ).value, month = field( 'month' ).value, day = field( 'day' ).value,
+            hour = field( 'hour' ).value, minute = field( 'minute' ).value;
+        var timestamp = Number( new Date( year, month - 1, day, hour, minute ) ) / 1000;
+        if ( isNaN( timestamp ) ) { field( 'day' ).focus(); return; }
         CurrentHandlerInput.value = timestamp;
-        CurrentHandlerLabel.innerHTML = day + "/" + month + "/" + year + " " + hour + ":" + minute;
-
+        CurrentHandlerLabel.textContent = day + '/' + month + '/' + year + ' ' + hour + ':' + minute;
         hideDialog();
     };
 
-    var handleDialogCancel = function() {
-        hideDialog();
-    };
-
-    var showDialog = function() {
-        // Search for input and span elements which are time holders for queue items
-        CurrentHandlerInput = $( CurrentHandler.parentNode ).find( 'input' )[0];
-        CurrentHandlerLabel = $( CurrentHandler.parentNode ).find( 'span' )[0];
-
-        var date = new Date();
-        var hasTimestamp = false;
-        // Check if CurrentHandlerInput exists and has a correct value
-        if ( CurrentHandlerInput
-                && !isNaN( parseInt( CurrentHandlerInput.value ) ) ) {
-            date = new Date( parseInt( CurrentHandlerInput.value * 1000 ) );
+    var showDialog = function () {
+        CurrentHandlerInput = CurrentHandler.parentNode.querySelector( 'input' );
+        CurrentHandlerLabel = CurrentHandler.parentNode.querySelector( 'span' );
+        var date = new Date(), hasTimestamp = false;
+        if ( CurrentHandlerInput && !isNaN( parseInt( CurrentHandlerInput.value, 10 ) ) ) {
+            date = new Date( parseInt( CurrentHandlerInput.value, 10 ) * 1000 );
             hasTimestamp = true;
         }
-
-        var year = date.getFullYear();
-        var month = ( date.getMonth() + 1 );
-        var day = date.getDate();
-        var hour = date.getHours();
-        var minutes = date.getMinutes();
-
-        // Set year, month and day to text input fields
-        document.getElementById("schedule-dialog-year").value = year;
-        document.getElementById("schedule-dialog-month").value = month;
-        document.getElementById("schedule-dialog-day").value = day;
-
-        // Set hour, minute to text input fields
-        document.getElementById("schedule-dialog-hour").value = hour;
-        document.getElementById("schedule-dialog-minute").value = minutes;
-
+        field( 'year' ).value = date.getFullYear();
+        field( 'month' ).value = date.getMonth() + 1;
+        field( 'day' ).value = date.getDate();
+        field( 'hour' ).value = date.getHours();
+        field( 'minute' ).value = date.getMinutes();
         Calendar.setPageDate( date );
         Calendar.select( hasTimestamp ? date : null );
         Calendar.render();
         Calendar.show();
-
-        Dialog.style.display = 'block';
+        Dialog.hidden = false;
+        if ( Dialog.showModal && !Dialog.open ) Dialog.showModal();
+        field( 'month' ).focus();
     };
 
-    var initDialog = function() {
-        var hasDialog = document.getElementById("schedule-dialog");
+    var input = function ( id, label ) {
+        return '<div class="element"><label for="schedule-dialog-' + id + '">' + label + ':</label>' +
+               '<input id="schedule-dialog-' + id + '" type="number" inputmode="numeric" value="" class="schedule-dialog-input" /></div>';
+    };
 
-        if(!hasDialog) {
-            var body = "<div class=\"object-left\">";
-                body += "<div class=\"block\">";
-                body += "<div class=\"element\"><label>Month:</label><input id=\"schedule-dialog-month\" type=\"text\" value=\"\" class=\"schedule-dialog-input\" /></div>";
-                body += "<div class=\"element\"><label>Day:</label><input id=\"schedule-dialog-day\" type=\"text\" value=\"\" class=\"schedule-dialog-input\" /></div>";
-                body += "<div class=\"element\"><label>Year:</label><input id=\"schedule-dialog-year\" type=\"text\" value=\"\" class=\"schedule-dialog-input\" /></div>";
-                body += "</div>";
-                body += "<div class=\"block\">";
-                body += "<div class=\"element\"><label>Hour:</label><input id=\"schedule-dialog-hour\" type=\"text\" value=\"\" class=\"schedule-dialog-input\" /></div>";
-                body += "<div class=\"element\"><label>Minute:</label><input id=\"schedule-dialog-minute\" type=\"text\" value=\"\" class=\"schedule-dialog-input\" /></div>";
-                body += "</div>";
-                body += "</div>";
-                body += "<div class=\"object-right\">";
-                body += "<div id=\"shedule-calendar-container\"></div>";
-                body += "</div>";
-                body += "<div class=\"break\"></div>";
-
-            var $dialog = $( '<div id="schedule-dialog" class="ezflow-dialog" role="dialog" aria-labelledby="schedule-dialog_h"></div>' )
-                .css( { width: '30em', display: 'none' } )
-                .append(
-                    $( '<div class="ezflow-panel"></div>' )
-                        .append( '<div class="hd" id="schedule-dialog_h"></div>' )
-                        .append( $( '<div class="bd" id="schedule-dialog-container"></div>' ).html( body ) )
-                        .append( $( '<div class="ft"><span class="button-group"></span></div>' ) )
-                        .append( '<a class="container-close" href="#">Close</a>' )
-                );
-
-            $( '<button type="button" class="ezflow-button default">Store</button>' )
-                .on( 'click', handleDialogSubmit )
-                .appendTo( $dialog.find( '.button-group' ) );
-            $( '<button type="button" class="ezflow-button">Cancel</button>' )
-                .on( 'click', handleDialogCancel )
-                .appendTo( $dialog.find( '.button-group' ) );
-            $dialog.find( '.container-close' ).on( 'click', function( e ) {
-                e.preventDefault();
-                handleDialogCancel();
-            } );
+    var initDialog = function () {
+        if ( !document.getElementById( 'schedule-dialog' ) ) {
+            Dialog = document.createElement( 'dialog' );
+            Dialog.id = 'schedule-dialog';
+            Dialog.className = 'ezflow-dialog';
+            Dialog.setAttribute( 'aria-labelledby', 'schedule-dialog_h' );
+            Dialog.hidden = true;
+            Dialog.innerHTML = '<div class="ezflow-panel"><h2 class="hd" id="schedule-dialog_h"></h2>' +
+                '<div class="bd" id="schedule-dialog-container"><div class="object-left">' +
+                '<div class="block">' + input( 'month', 'Month' ) + input( 'day', 'Day' ) + input( 'year', 'Year' ) + '</div>' +
+                '<div class="block">' + input( 'hour', 'Hour' ) + input( 'minute', 'Minute' ) + '</div>' +
+                '</div><div class="object-right"><div id="shedule-calendar-container"></div></div><div class="break"></div></div>' +
+                '<div class="ft"><span class="button-group">' +
+                '<button type="button" class="ezflow-button default" data-schedule-store>Store</button>' +
+                '<button type="button" class="ezflow-button" data-schedule-cancel>Cancel</button></span></div>' +
+                '<button type="button" class="container-close" data-schedule-cancel>Close</button></div>';
+            Dialog.querySelector( '[data-schedule-store]' ).addEventListener( 'click', handleDialogSubmit );
+            Dialog.querySelectorAll( '[data-schedule-cancel]' ).forEach( function ( b ) { b.addEventListener( 'click', hideDialog ); } );
+            Dialog.addEventListener( 'cancel', function ( e ) { e.preventDefault(); hideDialog(); } );
             // Enter in a field stores the schedule instead of submitting the page form
-            $dialog.on( 'keydown', 'input', function( e ) {
-                if ( e.which === 13 ) {
-                    e.preventDefault();
-                    handleDialogSubmit();
+            Dialog.addEventListener( 'keydown', function ( e ) {
+                if ( e.key === 'Enter' && e.target.matches( 'input' ) ) { e.preventDefault(); handleDialogSubmit(); }
+            } );
+            ( document.getElementById( 'page-datatype-container' ) || document.body ).appendChild( Dialog );
+
+            Calendar = new window.eZFlowCalendar( 'shedule-calendar', document.getElementById( 'shedule-calendar-container' ), {
+                onSelect: function ( year, month, day ) {
+                    field( 'year' ).value = year;
+                    field( 'month' ).value = month;
+                    field( 'day' ).value = day;
                 }
             } );
-
-            var datatypeContainer = document.getElementById('page-datatype-container') || document.body;
-            $dialog.appendTo( datatypeContainer );
-            Dialog = $dialog[0];
-
-            // Create Calendar instance, fill up input fields with the selected date
-            Calendar = new eZFlowCalendar( "shedule-calendar", document.getElementById( "shedule-calendar-container" ), {
-                onSelect: function( year, month, day ) {
-                    // Set year, month and day to text input fields
-                    document.getElementById("schedule-dialog-year").value = year;
-                    document.getElementById("schedule-dialog-month").value = month;
-                    document.getElementById("schedule-dialog-day").value = day;
-                }
-            } );
-
             Calendar.hide();
             Calendar.render();
+        } else if ( !Dialog ) {
+            Dialog = document.getElementById( 'schedule-dialog' );
         }
 
-        var handlers = getHandlers();
-
-        var handlersCount = handlers.length;
-
-        for(var i = 0; i < handlersCount; i++) {
-            var handler = handlers[i];
-
-            $( handler ).off( 'click.ezflowschedule' ).on( 'click.ezflowschedule', function() {
-                // Assign clicked handler element to CurrentHandler variable
-                CurrentHandler = this;
-                $( '#schedule-dialog_h' ).text( CurrentHandler.title );
-
-                hideDialog();
+        document.querySelectorAll( 'img.schedule-handler' ).forEach( function ( handler ) {
+            if ( handler.__ezflowSchedule ) return;
+            handler.__ezflowSchedule = true;
+            if ( !handler.hasAttribute( 'tabindex' ) ) handler.tabIndex = 0;
+            handler.setAttribute( 'role', 'button' );
+            var open = function () {
+                CurrentHandler = handler;
+                document.getElementById( 'schedule-dialog_h' ).textContent = handler.title;
                 showDialog();
-            } );
-        }
+            };
+            handler.addEventListener( 'click', open );
+            handler.addEventListener( 'keydown', function ( e ) { if ( e.key === 'Enter' || e.key === ' ' ) { e.preventDefault(); open(); } } );
+        } );
     };
 
-    // Public
-
-    return {
-
-        init: function() {
-            initDialog();
-        },
-
-        cfg: function() {
-
-        }
-
-    };
-}( jQuery );
+    eZFlow.ScheduleDialog = { version: 2, init: function () { initDialog(); }, cfg: function () {} };
+}() );

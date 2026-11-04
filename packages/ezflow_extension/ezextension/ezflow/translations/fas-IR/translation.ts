@@ -258,6 +258,74 @@
         <source>Skip to main content</source>
         <translation>پرش به محتوای اصلی</translation>
     </message>
+    <message>
+        <source>Automatic</source>
+        <translation>خودکار</translation>
+    </message>
+    <message>
+        <source>Breadcrumb</source>
+        <translation>مسیر راهبری</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>حق نشر</translation>
+    </message>
+    <message>
+        <source>Dark mode</source>
+        <translation>حالت تیره</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>مستندات</translation>
+    </message>
+    <message>
+        <source>Light mode</source>
+        <translation>حالت روشن</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>اصلی</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>منو</translation>
+    </message>
+    <message>
+        <source>Powered by</source>
+        <translation>قدرت‌گرفته از</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>جستجو</translation>
+    </message>
+    <message>
+        <source>Search text:</source>
+        <translation>متن جستجو:</translation>
+    </message>
+    <message>
+        <source>Sections</source>
+        <translation>بخش‌ها</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>ورود</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>خروج</translation>
+    </message>
+    <message>
+        <source>Site map</source>
+        <translation>نقشهٔ سایت</translation>
+    </message>
+    <message>
+        <source>Tag cloud</source>
+        <translation>ابر برچسب‌ها</translation>
+    </message>
+    <message>
+        <source>This site</source>
+        <translation>این سایت</translation>
+    </message>
 </context>
 <context>
     <name>design/ezflow/parts/website_toolbar</name>
@@ -268,6 +336,10 @@
     <message>
         <source>Add to block in frontpage</source>
         <translation>افزودن به بلوک در صفحهٔ اول</translation>
+    </message>
+    <message>
+        <source>Push to block</source>
+        <translation>افزودن به بلوک</translation>
     </message>
 </context>
 <context>
@@ -560,6 +632,70 @@
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>رویداد گردش کار جابه‌جایی صفحهٔ eZ</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/block</name>
+    <message>
+        <source>Next</source>
+        <translation>بعدی</translation>
+    </message>
+    <message>
+        <source>Poll results</source>
+        <translation>نتایج نظرسنجی</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>قبلی</translation>
+    </message>
+    <message>
+        <source>Read more</source>
+        <translation>ادامه مطلب</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>نمایش همه</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/article</name>
+    <message>
+        <source>Comments</source>
+        <translation>دیدگاه‌ها</translation>
+    </message>
+    <message>
+        <source>New comment</source>
+        <translation>دیدگاه جدید</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/event</name>
+    <message>
+        <source>Calendar</source>
+        <translation>تقویم</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>دسته</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>از</translation>
+    </message>
+    <message>
+        <source>Past events</source>
+        <translation>رویدادهای گذشته</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>تا</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/feedback_form</name>
+    <message>
+        <source>Send form</source>
+        <translation>ارسال فرم</translation>
     </message>
 </context>
 </TS>

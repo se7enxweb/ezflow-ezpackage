@@ -258,6 +258,74 @@
         <source>Skip to main content</source>
         <translation>Peke ki te ihirangi matua</translation>
     </message>
+    <message>
+        <source>Automatic</source>
+        <translation>Aunoa</translation>
+    </message>
+    <message>
+        <source>Breadcrumb</source>
+        <translation>Ara ārahi</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>Manatārua</translation>
+    </message>
+    <message>
+        <source>Dark mode</source>
+        <translation>Aratau pōuri</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>Tuhinga</translation>
+    </message>
+    <message>
+        <source>Light mode</source>
+        <translation>Aratau mārama</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>Matua</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>Tahua</translation>
+    </message>
+    <message>
+        <source>Powered by</source>
+        <translation>Whakamanahia e</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Rapu</translation>
+    </message>
+    <message>
+        <source>Search text:</source>
+        <translation>Kuputuhi rapu:</translation>
+    </message>
+    <message>
+        <source>Sections</source>
+        <translation>Ngā wāhanga</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>Takiuru</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Takiputa</translation>
+    </message>
+    <message>
+        <source>Site map</source>
+        <translation>Mahere pae</translation>
+    </message>
+    <message>
+        <source>Tag cloud</source>
+        <translation>Kapua tūtohu</translation>
+    </message>
+    <message>
+        <source>This site</source>
+        <translation>Tēnei pae</translation>
+    </message>
 </context>
 <context>
     <name>design/ezflow/parts/website_toolbar</name>
@@ -268,6 +336,10 @@
     <message>
         <source>Add to block in frontpage</source>
         <translation>Tāpiri ki te paraka i te whārangi tuatahi</translation>
+    </message>
+    <message>
+        <source>Push to block</source>
+        <translation>Pana ki te poraka</translation>
     </message>
 </context>
 <context>
@@ -560,6 +632,70 @@
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>Takahanga rerenga mahi whakawhiti eZ Page</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/block</name>
+    <message>
+        <source>Next</source>
+        <translation>Panuku</translation>
+    </message>
+    <message>
+        <source>Poll results</source>
+        <translation>Ngā hua pōti</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>O mua</translation>
+    </message>
+    <message>
+        <source>Read more</source>
+        <translation>Pānui atu anō</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Whakaatu katoa</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/article</name>
+    <message>
+        <source>Comments</source>
+        <translation>Ngā kōrero</translation>
+    </message>
+    <message>
+        <source>New comment</source>
+        <translation>Kōrero hou</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/event</name>
+    <message>
+        <source>Calendar</source>
+        <translation>Maramataka</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>Kāwai</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Mai i</translation>
+    </message>
+    <message>
+        <source>Past events</source>
+        <translation>Ngā takahanga o mua</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Ki</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/feedback_form</name>
+    <message>
+        <source>Send form</source>
+        <translation>Tuku puka</translation>
     </message>
 </context>
 </TS>

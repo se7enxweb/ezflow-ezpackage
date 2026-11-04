@@ -258,6 +258,74 @@
         <source>Skip to main content</source>
         <translation>跳至主要內容</translation>
     </message>
+    <message>
+        <source>Automatic</source>
+        <translation>自動</translation>
+    </message>
+    <message>
+        <source>Breadcrumb</source>
+        <translation>導覽路徑</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>著作權</translation>
+    </message>
+    <message>
+        <source>Dark mode</source>
+        <translation>深色模式</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>文件</translation>
+    </message>
+    <message>
+        <source>Light mode</source>
+        <translation>淺色模式</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>主要</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>選單</translation>
+    </message>
+    <message>
+        <source>Powered by</source>
+        <translation>技術支援提供者</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>搜尋</translation>
+    </message>
+    <message>
+        <source>Search text:</source>
+        <translation>搜尋文字：</translation>
+    </message>
+    <message>
+        <source>Sections</source>
+        <translation>區段</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>登入</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>登出</translation>
+    </message>
+    <message>
+        <source>Site map</source>
+        <translation>內容</translation>
+    </message>
+    <message>
+        <source>Tag cloud</source>
+        <translation>標籤雲</translation>
+    </message>
+    <message>
+        <source>This site</source>
+        <translation>本站</translation>
+    </message>
 </context>
 <context>
     <name>design/ezflow/parts/website_toolbar</name>
@@ -268,6 +336,10 @@
     <message>
         <source>Add to block in frontpage</source>
         <translation>新增至首頁的區塊</translation>
+    </message>
+    <message>
+        <source>Push to block</source>
+        <translation>推送到區塊</translation>
     </message>
 </context>
 <context>
@@ -560,6 +632,70 @@
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>eZ 頁面交換工作流程事件</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/block</name>
+    <message>
+        <source>Next</source>
+        <translation>下一頁</translation>
+    </message>
+    <message>
+        <source>Poll results</source>
+        <translation>投票結果</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>上一頁</translation>
+    </message>
+    <message>
+        <source>Read more</source>
+        <translation>閱讀更多</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>顯示全部</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/article</name>
+    <message>
+        <source>Comments</source>
+        <translation>留言</translation>
+    </message>
+    <message>
+        <source>New comment</source>
+        <translation>新增註釋</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/event</name>
+    <message>
+        <source>Calendar</source>
+        <translation>行事曆</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>類別</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>從</translation>
+    </message>
+    <message>
+        <source>Past events</source>
+        <translation>過去事件</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>至</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/feedback_form</name>
+    <message>
+        <source>Send form</source>
+        <translation>送出表單</translation>
     </message>
 </context>
 </TS>

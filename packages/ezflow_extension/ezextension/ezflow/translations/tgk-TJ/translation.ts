@@ -258,6 +258,74 @@
         <source>Skip to main content</source>
         <translation>Гузаштан ба мундариҷаи асосӣ</translation>
     </message>
+    <message>
+        <source>Automatic</source>
+        <translation>Худкор</translation>
+    </message>
+    <message>
+        <source>Breadcrumb</source>
+        <translation>Роҳи гузариш</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>Ҳуқуқи муаллиф</translation>
+    </message>
+    <message>
+        <source>Dark mode</source>
+        <translation>Ҳолати торик</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>Ҳуҷҷатҳо</translation>
+    </message>
+    <message>
+        <source>Light mode</source>
+        <translation>Ҳолати равшан</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>Асосӣ</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>Меню</translation>
+    </message>
+    <message>
+        <source>Powered by</source>
+        <translation>Бо қуввати</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Ҷустуҷӯ</translation>
+    </message>
+    <message>
+        <source>Search text:</source>
+        <translation>Матни ҷустуҷӯ:</translation>
+    </message>
+    <message>
+        <source>Sections</source>
+        <translation>Бахшҳо</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>Ворид шудан</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Баромадан</translation>
+    </message>
+    <message>
+        <source>Site map</source>
+        <translation>Харитаи сомона</translation>
+    </message>
+    <message>
+        <source>Tag cloud</source>
+        <translation>Абри барчаспҳо</translation>
+    </message>
+    <message>
+        <source>This site</source>
+        <translation>Ин сайт</translation>
+    </message>
 </context>
 <context>
     <name>design/ezflow/parts/website_toolbar</name>
@@ -268,6 +336,10 @@
     <message>
         <source>Add to block in frontpage</source>
         <translation>Илова ба блок дар саҳифаи асосӣ</translation>
+    </message>
+    <message>
+        <source>Push to block</source>
+        <translation>Ба блок илова кардан</translation>
     </message>
 </context>
 <context>
@@ -560,6 +632,70 @@
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>Ҳодисаи ҷараёни кории ҷойивазкунии саҳифаи eZ</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/block</name>
+    <message>
+        <source>Next</source>
+        <translation>Баъдӣ</translation>
+    </message>
+    <message>
+        <source>Poll results</source>
+        <translation>Натиҷаҳои пурсиш</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>Қаблӣ</translation>
+    </message>
+    <message>
+        <source>Read more</source>
+        <translation>Бештар хонед</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Нишон додани ҳама</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/article</name>
+    <message>
+        <source>Comments</source>
+        <translation>Шарҳҳо</translation>
+    </message>
+    <message>
+        <source>New comment</source>
+        <translation>Шарҳи нав</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/event</name>
+    <message>
+        <source>Calendar</source>
+        <translation>Тақвим</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>Категория</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Аз</translation>
+    </message>
+    <message>
+        <source>Past events</source>
+        <translation>Ҳодисаҳои гузашта</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Ба</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/feedback_form</name>
+    <message>
+        <source>Send form</source>
+        <translation>Фиристодани форма</translation>
     </message>
 </context>
 </TS>

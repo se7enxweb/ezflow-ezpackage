@@ -258,6 +258,74 @@
         <source>Skip to main content</source>
         <translation>Liigu põhisisu juurde</translation>
     </message>
+    <message>
+        <source>Automatic</source>
+        <translation>Automaatne</translation>
+    </message>
+    <message>
+        <source>Breadcrumb</source>
+        <translation>Navigeerimisjälg</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>Autoriõigus</translation>
+    </message>
+    <message>
+        <source>Dark mode</source>
+        <translation>Tume režiim</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>Dokumentatsioon</translation>
+    </message>
+    <message>
+        <source>Light mode</source>
+        <translation>Hele režiim</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>Põhikeel</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>Menüü</translation>
+    </message>
+    <message>
+        <source>Powered by</source>
+        <translation>Platvorm:</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Otsi</translation>
+    </message>
+    <message>
+        <source>Search text:</source>
+        <translation>Otsingutekst:</translation>
+    </message>
+    <message>
+        <source>Sections</source>
+        <translation>Jaotised</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>Logi sisse</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Logi välja</translation>
+    </message>
+    <message>
+        <source>Site map</source>
+        <translation>Saidikaart</translation>
+    </message>
+    <message>
+        <source>Tag cloud</source>
+        <translation>Sildipilv</translation>
+    </message>
+    <message>
+        <source>This site</source>
+        <translation>See sait</translation>
+    </message>
 </context>
 <context>
     <name>design/ezflow/parts/website_toolbar</name>
@@ -268,6 +336,10 @@
     <message>
         <source>Add to block in frontpage</source>
         <translation>Lisa avalehe plokki</translation>
+    </message>
+    <message>
+        <source>Push to block</source>
+        <translation>Saada plokki</translation>
     </message>
 </context>
 <context>
@@ -560,6 +632,70 @@
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>eZ Page&apos;i vahetuse töövoo sündmus</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/block</name>
+    <message>
+        <source>Next</source>
+        <translation>Järgmine</translation>
+    </message>
+    <message>
+        <source>Poll results</source>
+        <translation>Küsitluse tulemused</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>Eelmine</translation>
+    </message>
+    <message>
+        <source>Read more</source>
+        <translation>Loe edasi</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Kuva kõik</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/article</name>
+    <message>
+        <source>Comments</source>
+        <translation>Kommentaarid</translation>
+    </message>
+    <message>
+        <source>New comment</source>
+        <translation>Uus kommentaar</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/event</name>
+    <message>
+        <source>Calendar</source>
+        <translation>Kalender</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>Kategooria</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Alates</translation>
+    </message>
+    <message>
+        <source>Past events</source>
+        <translation>Möödunud sündmused</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Kuni</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/feedback_form</name>
+    <message>
+        <source>Send form</source>
+        <translation>Saada vorm</translation>
     </message>
 </context>
 </TS>

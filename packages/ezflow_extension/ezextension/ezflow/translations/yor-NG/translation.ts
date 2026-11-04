@@ -258,6 +258,74 @@
         <source>Skip to main content</source>
         <translation>Fo lọ sí àkóónú pàtàkì</translation>
     </message>
+    <message>
+        <source>Automatic</source>
+        <translation>Aládàáṣiṣẹ́</translation>
+    </message>
+    <message>
+        <source>Breadcrumb</source>
+        <translation>Ipa ọ̀nà ojú ìwé</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>Ẹ̀tọ́ àdàkọ</translation>
+    </message>
+    <message>
+        <source>Dark mode</source>
+        <translation>Ipò òkùnkùn</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>Ìwé àlàyé</translation>
+    </message>
+    <message>
+        <source>Light mode</source>
+        <translation>Ìrísí ìmọ́lẹ̀</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>Pàtàkì</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>Àtòjọ àṣàyàn</translation>
+    </message>
+    <message>
+        <source>Powered by</source>
+        <translation>Agbára láti ọwọ́</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Wá</translation>
+    </message>
+    <message>
+        <source>Search text:</source>
+        <translation>Ọ̀rọ̀ ìwádìí:</translation>
+    </message>
+    <message>
+        <source>Sections</source>
+        <translation>Àwọn ìpín</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>Wọlé</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Jáde</translation>
+    </message>
+    <message>
+        <source>Site map</source>
+        <translation>Àwòrán sáìtì</translation>
+    </message>
+    <message>
+        <source>Tag cloud</source>
+        <translation>Àkójọ àmì</translation>
+    </message>
+    <message>
+        <source>This site</source>
+        <translation>Ojúlé yìí</translation>
+    </message>
 </context>
 <context>
     <name>design/ezflow/parts/website_toolbar</name>
@@ -268,6 +336,10 @@
     <message>
         <source>Add to block in frontpage</source>
         <translation>Fikún báláàkì ní ojú ìwé iwájú</translation>
+    </message>
+    <message>
+        <source>Push to block</source>
+        <translation>Fi sínú búlọ́ọ̀kù</translation>
     </message>
 </context>
 <context>
@@ -560,6 +632,70 @@
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>Ìṣẹ̀lẹ̀ ìṣàn iṣẹ́ ìpààrọ̀ eZ Page</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/block</name>
+    <message>
+        <source>Next</source>
+        <translation>Tókàn</translation>
+    </message>
+    <message>
+        <source>Poll results</source>
+        <translation>Àbájáde ìbò ero</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>Ti tẹ́lẹ̀</translation>
+    </message>
+    <message>
+        <source>Read more</source>
+        <translation>Ka siwaju sii</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Fihàn gbogbo rẹ̀</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/article</name>
+    <message>
+        <source>Comments</source>
+        <translation>Àwọn àsọyé</translation>
+    </message>
+    <message>
+        <source>New comment</source>
+        <translation>Àsọyé tuntun</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/event</name>
+    <message>
+        <source>Calendar</source>
+        <translation>Kàlẹ́ńdà</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>Ẹ̀ka</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Láti</translation>
+    </message>
+    <message>
+        <source>Past events</source>
+        <translation>Àwọn ìṣẹ̀lẹ̀ tó ti kọjá</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Sí</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/feedback_form</name>
+    <message>
+        <source>Send form</source>
+        <translation>Fi fọ́ọ̀mù ránṣẹ́</translation>
     </message>
 </context>
 </TS>

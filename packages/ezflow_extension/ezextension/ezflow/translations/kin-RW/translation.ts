@@ -258,6 +258,74 @@
         <source>Skip to main content</source>
         <translation>Simbukira ku birimo nyamukuru</translation>
     </message>
+    <message>
+        <source>Automatic</source>
+        <translation>Byikoresha</translation>
+    </message>
+    <message>
+        <source>Breadcrumb</source>
+        <translation>Inzira y'aho muri</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>Uburenganzira bw'umwanditsi</translation>
+    </message>
+    <message>
+        <source>Dark mode</source>
+        <translation>Uburyo bw'umwijima</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>Inyandiko</translation>
+    </message>
+    <message>
+        <source>Light mode</source>
+        <translation>Uburyo bw'umucyo</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>Rukuru</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>Menu</translation>
+    </message>
+    <message>
+        <source>Powered by</source>
+        <translation>Bikorwa na</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Gushakisha</translation>
+    </message>
+    <message>
+        <source>Search text:</source>
+        <translation>Umwandiko wo gushakisha:</translation>
+    </message>
+    <message>
+        <source>Sections</source>
+        <translation>Ibice</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>Kwinjira</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Gusohora</translation>
+    </message>
+    <message>
+        <source>Site map</source>
+        <translation>Ikarita y&amp;apos;urubuga</translation>
+    </message>
+    <message>
+        <source>Tag cloud</source>
+        <translation>Igicu cy'ibirango</translation>
+    </message>
+    <message>
+        <source>This site</source>
+        <translation>Uru rubuga</translation>
+    </message>
 </context>
 <context>
     <name>design/ezflow/parts/website_toolbar</name>
@@ -268,6 +336,10 @@
     <message>
         <source>Add to block in frontpage</source>
         <translation>Kongeraho ku gice mu rupapuro rw&apos;imbere</translation>
+    </message>
+    <message>
+        <source>Push to block</source>
+        <translation>Shyira mu gice</translation>
     </message>
 </context>
 <context>
@@ -560,6 +632,70 @@
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>Igikorwa cy&apos;urujya n&apos;uruza rw&apos;akazi cyo guhinduranya eZ Page</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/block</name>
+    <message>
+        <source>Next</source>
+        <translation>Ibikurikira</translation>
+    </message>
+    <message>
+        <source>Poll results</source>
+        <translation>Ibyavuye mu itora</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>Ibibanza</translation>
+    </message>
+    <message>
+        <source>Read more</source>
+        <translation>Soma byinshi</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Kwerekana byose</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/article</name>
+    <message>
+        <source>Comments</source>
+        <translation>Ibitekerezo</translation>
+    </message>
+    <message>
+        <source>New comment</source>
+        <translation>Igitekerezo gishya</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/event</name>
+    <message>
+        <source>Calendar</source>
+        <translation>Kalendari</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>Icyiciro</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Kuva</translation>
+    </message>
+    <message>
+        <source>Past events</source>
+        <translation>Ibikorwa byashize</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Kuri</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/feedback_form</name>
+    <message>
+        <source>Send form</source>
+        <translation>Kohereza imbonerahamwe</translation>
     </message>
 </context>
 </TS>

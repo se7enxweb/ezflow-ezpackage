@@ -258,6 +258,74 @@
         <source>Skip to main content</source>
         <translation>Laktawi ngadto sa panguna nga sulod</translation>
     </message>
+    <message>
+        <source>Automatic</source>
+        <translation>Awtomatiko</translation>
+    </message>
+    <message>
+        <source>Breadcrumb</source>
+        <translation>Dalan sa nabigasyon</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>Copyright</translation>
+    </message>
+    <message>
+        <source>Dark mode</source>
+        <translation>Ngitngit nga mode</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>Dokumentasyon</translation>
+    </message>
+    <message>
+        <source>Light mode</source>
+        <translation>Hayag nga mode</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>Panguna</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>Menu</translation>
+    </message>
+    <message>
+        <source>Powered by</source>
+        <translation>Gipaandar sa</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Pangitaa</translation>
+    </message>
+    <message>
+        <source>Search text:</source>
+        <translation>Teksto sa pagpangita:</translation>
+    </message>
+    <message>
+        <source>Sections</source>
+        <translation>Mga seksyon</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>Mag-login</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Mag-logout</translation>
+    </message>
+    <message>
+        <source>Site map</source>
+        <translation>Mapa sa site</translation>
+    </message>
+    <message>
+        <source>Tag cloud</source>
+        <translation>Panganod sa tag</translation>
+    </message>
+    <message>
+        <source>This site</source>
+        <translation>Kini nga site</translation>
+    </message>
 </context>
 <context>
     <name>design/ezflow/parts/website_toolbar</name>
@@ -268,6 +336,10 @@
     <message>
         <source>Add to block in frontpage</source>
         <translation>Idugang sa block sa frontpage</translation>
+    </message>
+    <message>
+        <source>Push to block</source>
+        <translation>Ibutang sa block</translation>
     </message>
 </context>
 <context>
@@ -560,6 +632,70 @@
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>Panghitabo sa dagan sa trabaho sa pag-swap sa eZ Page</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/block</name>
+    <message>
+        <source>Next</source>
+        <translation>Sunod</translation>
+    </message>
+    <message>
+        <source>Poll results</source>
+        <translation>Mga resulta sa botohan</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>Miaging</translation>
+    </message>
+    <message>
+        <source>Read more</source>
+        <translation>Basaha pa</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Ipakita tanan</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/article</name>
+    <message>
+        <source>Comments</source>
+        <translation>Mga komento</translation>
+    </message>
+    <message>
+        <source>New comment</source>
+        <translation>Bag-ong komento</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/event</name>
+    <message>
+        <source>Calendar</source>
+        <translation>Kalendaryo</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>Kategoriya</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Gikan sa</translation>
+    </message>
+    <message>
+        <source>Past events</source>
+        <translation>Miaging mga panghitabo</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Hangtod</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/feedback_form</name>
+    <message>
+        <source>Send form</source>
+        <translation>Ipadala ang porma</translation>
     </message>
 </context>
 </TS>

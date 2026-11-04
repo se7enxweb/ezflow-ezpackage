@@ -258,6 +258,74 @@
         <source>Skip to main content</source>
         <translation>Chuyển đến nội dung chính</translation>
     </message>
+    <message>
+        <source>Automatic</source>
+        <translation>Tự động</translation>
+    </message>
+    <message>
+        <source>Breadcrumb</source>
+        <translation>Đường dẫn điều hướng</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>Bản quyền</translation>
+    </message>
+    <message>
+        <source>Dark mode</source>
+        <translation>Chế độ tối</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>Tài liệu</translation>
+    </message>
+    <message>
+        <source>Light mode</source>
+        <translation>Chế độ sáng</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>Chính</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>Trình đơn</translation>
+    </message>
+    <message>
+        <source>Powered by</source>
+        <translation>Được cung cấp bởi</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Tìm kiếm</translation>
+    </message>
+    <message>
+        <source>Search text:</source>
+        <translation>Văn bản tìm kiếm:</translation>
+    </message>
+    <message>
+        <source>Sections</source>
+        <translation>Khu vực</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>Đăng nhập</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Đăng xuất</translation>
+    </message>
+    <message>
+        <source>Site map</source>
+        <translation>Sơ đồ trang web</translation>
+    </message>
+    <message>
+        <source>Tag cloud</source>
+        <translation>Đám mây thẻ</translation>
+    </message>
+    <message>
+        <source>This site</source>
+        <translation>Trang web này</translation>
+    </message>
 </context>
 <context>
     <name>design/ezflow/parts/website_toolbar</name>
@@ -268,6 +336,10 @@
     <message>
         <source>Add to block in frontpage</source>
         <translation>Thêm vào khối trong trang chủ</translation>
+    </message>
+    <message>
+        <source>Push to block</source>
+        <translation>Đưa vào khối</translation>
     </message>
 </context>
 <context>
@@ -560,6 +632,70 @@
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>Sự kiện quy trình làm việc hoán đổi eZ Page</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/block</name>
+    <message>
+        <source>Next</source>
+        <translation>Tiếp theo</translation>
+    </message>
+    <message>
+        <source>Poll results</source>
+        <translation>Kết quả bình chọn</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>Trước</translation>
+    </message>
+    <message>
+        <source>Read more</source>
+        <translation>Đọc thêm</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Hiển thị tất cả</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/article</name>
+    <message>
+        <source>Comments</source>
+        <translation>Bình luận</translation>
+    </message>
+    <message>
+        <source>New comment</source>
+        <translation>Bình luận mới</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/event</name>
+    <message>
+        <source>Calendar</source>
+        <translation>Lịch</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>Danh mục</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Từ</translation>
+    </message>
+    <message>
+        <source>Past events</source>
+        <translation>Sự kiện đã qua</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Đến</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/feedback_form</name>
+    <message>
+        <source>Send form</source>
+        <translation>Gửi biểu mẫu</translation>
     </message>
 </context>
 </TS>

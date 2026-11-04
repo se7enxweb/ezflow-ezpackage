@@ -258,6 +258,74 @@
         <source>Skip to main content</source>
         <translation>အဓိကအကြောင်းအရာသို့ ကျော်သွားရန်</translation>
     </message>
+    <message>
+        <source>Automatic</source>
+        <translation>အလိုအလျောက်</translation>
+    </message>
+    <message>
+        <source>Breadcrumb</source>
+        <translation>လမ်းကြောင်းပြ</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>မူပိုင်ခွင့်</translation>
+    </message>
+    <message>
+        <source>Dark mode</source>
+        <translation>အမှောင်မုဒ်</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>စာရွက်စာတမ်း</translation>
+    </message>
+    <message>
+        <source>Light mode</source>
+        <translation>အလင်းမုဒ်</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>အဓိက</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>မီနူး</translation>
+    </message>
+    <message>
+        <source>Powered by</source>
+        <translation>အားဖြည့်သူ</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>ရှာဖွေရန်</translation>
+    </message>
+    <message>
+        <source>Search text:</source>
+        <translation>ရှာဖွေမည့် စာသား:</translation>
+    </message>
+    <message>
+        <source>Sections</source>
+        <translation>အပိုင်းများ</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>ဝင်ရန်</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>ထွက်ရန်</translation>
+    </message>
+    <message>
+        <source>Site map</source>
+        <translation>ဆိုက်မြေပုံ</translation>
+    </message>
+    <message>
+        <source>Tag cloud</source>
+        <translation>တဂ် တိမ်တိုက်</translation>
+    </message>
+    <message>
+        <source>This site</source>
+        <translation>ဤဆိုက်</translation>
+    </message>
 </context>
 <context>
     <name>design/ezflow/parts/website_toolbar</name>
@@ -268,6 +336,10 @@
     <message>
         <source>Add to block in frontpage</source>
         <translation>ပင်မစာမျက်နှာရှိ ဘလောက်သို့ ထည့်ရန်</translation>
+    </message>
+    <message>
+        <source>Push to block</source>
+        <translation>ဘလော့ခ်သို့ ထည့်ရန်</translation>
     </message>
 </context>
 <context>
@@ -560,6 +632,70 @@
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>eZ Page လဲလှယ်မှု လုပ်ငန်းစဉ် ဖြစ်ရပ်</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/block</name>
+    <message>
+        <source>Next</source>
+        <translation>ရှေ့သို့</translation>
+    </message>
+    <message>
+        <source>Poll results</source>
+        <translation>စစ်တမ်းရလဒ်များ</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>ယခင်</translation>
+    </message>
+    <message>
+        <source>Read more</source>
+        <translation>ဆက်ဖတ်ရန်</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>အားလုံးကို ပြရန်</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/article</name>
+    <message>
+        <source>Comments</source>
+        <translation>မှတ်ချက်များ</translation>
+    </message>
+    <message>
+        <source>New comment</source>
+        <translation>မှတ်ချက် အသစ်</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/event</name>
+    <message>
+        <source>Calendar</source>
+        <translation>ပြက္ခဒိန်</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>အမျိုးအစားခွဲ</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>မှ</translation>
+    </message>
+    <message>
+        <source>Past events</source>
+        <translation>ပြီးခဲ့သော ပွဲများ</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>သို့</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/feedback_form</name>
+    <message>
+        <source>Send form</source>
+        <translation>ဖောင်ပို့ရန်</translation>
     </message>
 </context>
 </TS>

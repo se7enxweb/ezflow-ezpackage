@@ -258,6 +258,74 @@
         <source>Skip to main content</source>
         <translation>Lasa any amin&apos;ny votoaty fototra</translation>
     </message>
+    <message>
+        <source>Automatic</source>
+        <translation>Mandeha ho azy</translation>
+    </message>
+    <message>
+        <source>Breadcrumb</source>
+        <translation>Lalan-kizorana</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>Zon'ny mpamorona</translation>
+    </message>
+    <message>
+        <source>Dark mode</source>
+        <translation>Fomba maizina</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>Tahirin-kevitra</translation>
+    </message>
+    <message>
+        <source>Light mode</source>
+        <translation>Fomba mazava</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>Fototra</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>Menio</translation>
+    </message>
+    <message>
+        <source>Powered by</source>
+        <translation>Ampiasain'ny</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Fikarohana</translation>
+    </message>
+    <message>
+        <source>Search text:</source>
+        <translation>Lahatsoratra hotadiavina:</translation>
+    </message>
+    <message>
+        <source>Sections</source>
+        <translation>Fizarana</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>Hiditra</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Mivoaha</translation>
+    </message>
+    <message>
+        <source>Site map</source>
+        <translation>Sarintanin&amp;apos;ny tranonkala</translation>
+    </message>
+    <message>
+        <source>Tag cloud</source>
+        <translation>Rahona tenifototra</translation>
+    </message>
+    <message>
+        <source>This site</source>
+        <translation>Ity tranonkala ity</translation>
+    </message>
 </context>
 <context>
     <name>design/ezflow/parts/website_toolbar</name>
@@ -268,6 +336,10 @@
     <message>
         <source>Add to block in frontpage</source>
         <translation>Ampio ao amin&apos;ny bloka ao amin&apos;ny pejy voalohany</translation>
+    </message>
+    <message>
+        <source>Push to block</source>
+        <translation>Ampidiro amin'ny bloc</translation>
     </message>
 </context>
 <context>
@@ -560,6 +632,70 @@
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>Zava-mitranga fizotran&apos;asa fifanakalozan&apos;ny eZ Page</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/block</name>
+    <message>
+        <source>Next</source>
+        <translation>Manaraka</translation>
+    </message>
+    <message>
+        <source>Poll results</source>
+        <translation>Valin'ny fanadihadiana</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>Teo aloha</translation>
+    </message>
+    <message>
+        <source>Read more</source>
+        <translation>Vakio bebe kokoa</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Asehoy daholo</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/article</name>
+    <message>
+        <source>Comments</source>
+        <translation>Hevitra</translation>
+    </message>
+    <message>
+        <source>New comment</source>
+        <translation>Fanehoan-kevitra vaovao</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/event</name>
+    <message>
+        <source>Calendar</source>
+        <translation>Kalandrie</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>Sokajy</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Avy any</translation>
+    </message>
+    <message>
+        <source>Past events</source>
+        <translation>Hetsika efa lasa</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Ho an'ny</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/feedback_form</name>
+    <message>
+        <source>Send form</source>
+        <translation>Alefaso ny taratasy</translation>
     </message>
 </context>
 </TS>

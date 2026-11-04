@@ -258,6 +258,74 @@
         <source>Skip to main content</source>
         <translation>Tsvedza uende kuzvirimo zvikuru</translation>
     </message>
+    <message>
+        <source>Automatic</source>
+        <translation>Yega yega</translation>
+    </message>
+    <message>
+        <source>Breadcrumb</source>
+        <translation>Nzira yepeji</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>Kodzero dzekunyora</translation>
+    </message>
+    <message>
+        <source>Dark mode</source>
+        <translation>Mamiriro erima</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>Zvinyorwa</translation>
+    </message>
+    <message>
+        <source>Light mode</source>
+        <translation>Mamiriro echiedza</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>Mukuru</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>Menyu</translation>
+    </message>
+    <message>
+        <source>Powered by</source>
+        <translation>Inoshandiswa ne</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Tsvaga</translation>
+    </message>
+    <message>
+        <source>Search text:</source>
+        <translation>Zvekutsvaga:</translation>
+    </message>
+    <message>
+        <source>Sections</source>
+        <translation>Zvikamu</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>Pinda</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Buda</translation>
+    </message>
+    <message>
+        <source>Site map</source>
+        <translation>Mepu yesaiti</translation>
+    </message>
+    <message>
+        <source>Tag cloud</source>
+        <translation>Gore retegi</translation>
+    </message>
+    <message>
+        <source>This site</source>
+        <translation>Saiti iyi</translation>
+    </message>
 </context>
 <context>
     <name>design/ezflow/parts/website_toolbar</name>
@@ -268,6 +336,10 @@
     <message>
         <source>Add to block in frontpage</source>
         <translation>Wedzera mubhuroka repeji rekutanga</translation>
+    </message>
+    <message>
+        <source>Push to block</source>
+        <translation>Isa mubhuroko</translation>
     </message>
 </context>
 <context>
@@ -560,6 +632,70 @@
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>Chiitiko chenhanho dzebasa chekushandurana kweeZ Page</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/block</name>
+    <message>
+        <source>Next</source>
+        <translation>Inotevera</translation>
+    </message>
+    <message>
+        <source>Poll results</source>
+        <translation>Mhedzisiro yevhoti</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>Yapfuura</translation>
+    </message>
+    <message>
+        <source>Read more</source>
+        <translation>Verenga zvimwe</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Ratidza zvose</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/article</name>
+    <message>
+        <source>Comments</source>
+        <translation>Mhinduro</translation>
+    </message>
+    <message>
+        <source>New comment</source>
+        <translation>Mhinduro itsva</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/event</name>
+    <message>
+        <source>Calendar</source>
+        <translation>Karenda</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>Mhando</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Kubva</translation>
+    </message>
+    <message>
+        <source>Past events</source>
+        <translation>Zviitiko zvakapfuura</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Kuenda ku</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/feedback_form</name>
+    <message>
+        <source>Send form</source>
+        <translation>Tumira fomu</translation>
     </message>
 </context>
 </TS>

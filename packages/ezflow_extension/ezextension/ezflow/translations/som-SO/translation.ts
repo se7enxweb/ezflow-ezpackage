@@ -258,6 +258,74 @@
         <source>Skip to main content</source>
         <translation>U gudub nuxurka ugu muhiimsan</translation>
     </message>
+    <message>
+        <source>Automatic</source>
+        <translation>Si toos ah</translation>
+    </message>
+    <message>
+        <source>Breadcrumb</source>
+        <translation>Raadraac</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>Xuquuqda daabacaadda</translation>
+    </message>
+    <message>
+        <source>Dark mode</source>
+        <translation>Habka madow</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>Dukumentiyo</translation>
+    </message>
+    <message>
+        <source>Light mode</source>
+        <translation>Habka iftiinka</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>Ugu weyn</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>Menu</translation>
+    </message>
+    <message>
+        <source>Powered by</source>
+        <translation>Waxaa ku shaqeeya</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Raadi</translation>
+    </message>
+    <message>
+        <source>Search text:</source>
+        <translation>Qoraalka raadinta:</translation>
+    </message>
+    <message>
+        <source>Sections</source>
+        <translation>Qaybaha</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>Gal</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Ka bax</translation>
+    </message>
+    <message>
+        <source>Site map</source>
+        <translation>Khariidadda goobta</translation>
+    </message>
+    <message>
+        <source>Tag cloud</source>
+        <translation>Daruurta tagyada</translation>
+    </message>
+    <message>
+        <source>This site</source>
+        <translation>Goobtan</translation>
+    </message>
 </context>
 <context>
     <name>design/ezflow/parts/website_toolbar</name>
@@ -268,6 +336,10 @@
     <message>
         <source>Add to block in frontpage</source>
         <translation>Ku dar block-ga bogga hore</translation>
+    </message>
+    <message>
+        <source>Push to block</source>
+        <translation>U dir block-ga</translation>
     </message>
 </context>
 <context>
@@ -560,6 +632,70 @@
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>Dhacdada workflow-ga is-beddelka Bogga eZ</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/block</name>
+    <message>
+        <source>Next</source>
+        <translation>Xiga</translation>
+    </message>
+    <message>
+        <source>Poll results</source>
+        <translation>Natiijooyinka doorashada aragtida</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>Hore</translation>
+    </message>
+    <message>
+        <source>Read more</source>
+        <translation>Akhri wax dheeraad ah</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Muuji dhammaan</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/article</name>
+    <message>
+        <source>Comments</source>
+        <translation>Faallooyin</translation>
+    </message>
+    <message>
+        <source>New comment</source>
+        <translation>Faallo cusub</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/event</name>
+    <message>
+        <source>Calendar</source>
+        <translation>Kalandar</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>Qayb</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Laga bilaabo</translation>
+    </message>
+    <message>
+        <source>Past events</source>
+        <translation>Dhacdooyinkii hore</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Ku</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/feedback_form</name>
+    <message>
+        <source>Send form</source>
+        <translation>Dir foomka</translation>
     </message>
 </context>
 </TS>

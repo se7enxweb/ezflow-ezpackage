@@ -258,6 +258,74 @@
         <source>Skip to main content</source>
         <translation>주 콘텐츠로 건너뛰기</translation>
     </message>
+    <message>
+        <source>Automatic</source>
+        <translation>자동</translation>
+    </message>
+    <message>
+        <source>Breadcrumb</source>
+        <translation>이동 경로</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>저작권</translation>
+    </message>
+    <message>
+        <source>Dark mode</source>
+        <translation>어두운 모드</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>문서</translation>
+    </message>
+    <message>
+        <source>Light mode</source>
+        <translation>밝은 모드</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>기본</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>메뉴</translation>
+    </message>
+    <message>
+        <source>Powered by</source>
+        <translation>제공</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>검색</translation>
+    </message>
+    <message>
+        <source>Search text:</source>
+        <translation>검색 텍스트:</translation>
+    </message>
+    <message>
+        <source>Sections</source>
+        <translation>섹션</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>로그인</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>로그아웃</translation>
+    </message>
+    <message>
+        <source>Site map</source>
+        <translation>사이트 맵</translation>
+    </message>
+    <message>
+        <source>Tag cloud</source>
+        <translation>태그 클라우드</translation>
+    </message>
+    <message>
+        <source>This site</source>
+        <translation>이 사이트</translation>
+    </message>
 </context>
 <context>
     <name>design/ezflow/parts/website_toolbar</name>
@@ -268,6 +336,10 @@
     <message>
         <source>Add to block in frontpage</source>
         <translation>첫 페이지의 블록에 추가</translation>
+    </message>
+    <message>
+        <source>Push to block</source>
+        <translation>블록으로 보내기</translation>
     </message>
 </context>
 <context>
@@ -560,6 +632,70 @@
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>eZ Page 바꾸기 워크플로 이벤트</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/block</name>
+    <message>
+        <source>Next</source>
+        <translation>다음</translation>
+    </message>
+    <message>
+        <source>Poll results</source>
+        <translation>설문 결과</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>이전</translation>
+    </message>
+    <message>
+        <source>Read more</source>
+        <translation>자세히 보기</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>모두 표시</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/article</name>
+    <message>
+        <source>Comments</source>
+        <translation>댓글</translation>
+    </message>
+    <message>
+        <source>New comment</source>
+        <translation>새 댓글</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/event</name>
+    <message>
+        <source>Calendar</source>
+        <translation>달력</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>범주</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>시작</translation>
+    </message>
+    <message>
+        <source>Past events</source>
+        <translation>지난 이벤트</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>종료</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/feedback_form</name>
+    <message>
+        <source>Send form</source>
+        <translation>양식 보내기</translation>
     </message>
 </context>
 </TS>

@@ -258,6 +258,74 @@
         <source>Skip to main content</source>
         <translation>Léim go dtí an príomhábhar</translation>
     </message>
+    <message>
+        <source>Automatic</source>
+        <translation>Uathoibríoch</translation>
+    </message>
+    <message>
+        <source>Breadcrumb</source>
+        <translation>Conair nascleanúna</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>Cóipcheart</translation>
+    </message>
+    <message>
+        <source>Dark mode</source>
+        <translation>Mód dorcha</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>Doiciméadú</translation>
+    </message>
+    <message>
+        <source>Light mode</source>
+        <translation>Mód geal</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>Príomha</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>Roghchlár</translation>
+    </message>
+    <message>
+        <source>Powered by</source>
+        <translation>Faoi chumhacht</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Cuardaigh</translation>
+    </message>
+    <message>
+        <source>Search text:</source>
+        <translation>Téacs cuardaigh:</translation>
+    </message>
+    <message>
+        <source>Sections</source>
+        <translation>Rannáin</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>Sínigh isteach</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Sínigh amach</translation>
+    </message>
+    <message>
+        <source>Site map</source>
+        <translation>Léarscáil an tsuímh</translation>
+    </message>
+    <message>
+        <source>Tag cloud</source>
+        <translation>Néal clibeanna</translation>
+    </message>
+    <message>
+        <source>This site</source>
+        <translation>An suíomh seo</translation>
+    </message>
 </context>
 <context>
     <name>design/ezflow/parts/website_toolbar</name>
@@ -268,6 +336,10 @@
     <message>
         <source>Add to block in frontpage</source>
         <translation>Cuir leis an mbloc ar an leathanach tosaigh</translation>
+    </message>
+    <message>
+        <source>Push to block</source>
+        <translation>Brúigh chuig bloc</translation>
     </message>
 </context>
 <context>
@@ -560,6 +632,70 @@
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>Imeacht sreafa oibre babhtála eZ Page</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/block</name>
+    <message>
+        <source>Next</source>
+        <translation>Ar aghaidh</translation>
+    </message>
+    <message>
+        <source>Poll results</source>
+        <translation>Torthaí na pobalbhreithe</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>Roimhe seo</translation>
+    </message>
+    <message>
+        <source>Read more</source>
+        <translation>Léigh tuilleadh</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Taispeáin gach rud</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/article</name>
+    <message>
+        <source>Comments</source>
+        <translation>Tráchtanna</translation>
+    </message>
+    <message>
+        <source>New comment</source>
+        <translation>Trácht nua</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/event</name>
+    <message>
+        <source>Calendar</source>
+        <translation>Féilire</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>Catagóir</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Ó</translation>
+    </message>
+    <message>
+        <source>Past events</source>
+        <translation>Imeachtaí a bhí ann</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Go dtí</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/feedback_form</name>
+    <message>
+        <source>Send form</source>
+        <translation>Seol an fhoirm</translation>
     </message>
 </context>
 </TS>

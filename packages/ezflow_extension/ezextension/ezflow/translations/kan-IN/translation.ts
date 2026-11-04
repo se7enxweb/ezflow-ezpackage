@@ -258,6 +258,74 @@
         <source>Skip to main content</source>
         <translation>ಮುಖ್ಯ ವಿಷಯಕ್ಕೆ ಹೋಗಿ</translation>
     </message>
+    <message>
+        <source>Automatic</source>
+        <translation>ಸ್ವಯಂಚಾಲಿತ</translation>
+    </message>
+    <message>
+        <source>Breadcrumb</source>
+        <translation>ಬ್ರೆಡ್‌ಕ್ರಂಬ್</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>ಕೃತಿಸ್ವಾಮ್ಯ</translation>
+    </message>
+    <message>
+        <source>Dark mode</source>
+        <translation>ಡಾರ್ಕ್ ಮೋಡ್</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>ದಸ್ತಾವೇಜು</translation>
+    </message>
+    <message>
+        <source>Light mode</source>
+        <translation>ಲೈಟ್ ಮೋಡ್</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>ಮುಖ್ಯ</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>ಮೆನು</translation>
+    </message>
+    <message>
+        <source>Powered by</source>
+        <translation>ಇದರಿಂದ ಚಾಲಿತ</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>ಹುಡುಕು</translation>
+    </message>
+    <message>
+        <source>Search text:</source>
+        <translation>ಹುಡುಕಾಟ ಪಠ್ಯ:</translation>
+    </message>
+    <message>
+        <source>Sections</source>
+        <translation>ವಿಭಾಗಗಳು</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>ಸೈನ್ ಇನ್ ಮಾಡು</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>ಸೈನ್ ಔಟ್ ಮಾಡು</translation>
+    </message>
+    <message>
+        <source>Site map</source>
+        <translation>ಸೈಟ್ ನಕ್ಷೆ</translation>
+    </message>
+    <message>
+        <source>Tag cloud</source>
+        <translation>ಟ್ಯಾಗ್ ಕ್ಲೌಡ್</translation>
+    </message>
+    <message>
+        <source>This site</source>
+        <translation>ಈ ಸೈಟ್</translation>
+    </message>
 </context>
 <context>
     <name>design/ezflow/parts/website_toolbar</name>
@@ -268,6 +336,10 @@
     <message>
         <source>Add to block in frontpage</source>
         <translation>ಮುಖಪುಟದಲ್ಲಿನ ಬ್ಲಾಕ್‌ಗೆ ಸೇರಿಸು</translation>
+    </message>
+    <message>
+        <source>Push to block</source>
+        <translation>ಬ್ಲಾಕ್‌ಗೆ ಸೇರಿಸಿ</translation>
     </message>
 </context>
 <context>
@@ -560,6 +632,70 @@
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>eZ ಪುಟ ಅದಲುಬದಲು ವರ್ಕ್‌ಫ್ಲೋ ಈವೆಂಟ್</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/block</name>
+    <message>
+        <source>Next</source>
+        <translation>ಮುಂದೆ</translation>
+    </message>
+    <message>
+        <source>Poll results</source>
+        <translation>ಸಮೀಕ್ಷೆಯ ಫಲಿತಾಂಶಗಳು</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>ಹಿಂದಿನ</translation>
+    </message>
+    <message>
+        <source>Read more</source>
+        <translation>ಇನ್ನಷ್ಟು ಓದಿ</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>ಎಲ್ಲಾ ತೋರಿಸು</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/article</name>
+    <message>
+        <source>Comments</source>
+        <translation>ಕಾಮೆಂಟ್‌ಗಳು</translation>
+    </message>
+    <message>
+        <source>New comment</source>
+        <translation>ಹೊಸ ಕಾಮೆಂಟ್</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/event</name>
+    <message>
+        <source>Calendar</source>
+        <translation>ಕ್ಯಾಲೆಂಡರ್</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>ವರ್ಗ</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>ಇಂದ</translation>
+    </message>
+    <message>
+        <source>Past events</source>
+        <translation>ಹಿಂದಿನ ಕಾರ್ಯಕ್ರಮಗಳು</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>ಗೆ</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/feedback_form</name>
+    <message>
+        <source>Send form</source>
+        <translation>ಫಾರ್ಮ್ ಕಳುಹಿಸು</translation>
     </message>
 </context>
 </TS>

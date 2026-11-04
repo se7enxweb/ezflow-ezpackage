@@ -1,94 +1,11 @@
+{* 4_items2: the block's items as a grid of cards (container query: 1 to 4 columns by zone width). *}
 {def $valid_nodes = $block.valid_nodes}
-
-<!-- BLOCK: START -->
-<div class="block-type-4items">
-
-<div class="columns-two">
-<div class="col-1">
-<div class="col-content">
-
-
-<div class="border-box border-box-style3">
-<div class="border-tl"><div class="border-tr"><div class="border-tc"></div></div></div>
-<div class="border-content">
-
-<!-- BLOCK CONTENT: START -->
-
-{node_view_gui view='block_item' image_class='articlethumbnail' content_node=$valid_nodes[0]}
-
-<!-- BLOCK CONTENT: END -->
-
-</div>
-</div>
-
-
-</div>
-</div>
-<div class="col-2">
-<div class="col-content">
-
-<div class="border-box border-box-style3">
-<div class="border-tl"><div class="border-tr"><div class="border-tc"></div></div></div>
-<div class="border-content">
-
-<!-- BLOCK CONTENT: START -->
-
-{node_view_gui view='block_item' image_class='articlethumbnail' content_node=$valid_nodes[1]}
-
-<!-- BLOCK CONTENT: END -->
-
-</div>
-</div>
-
-</div>
-</div>
-</div>
-
-<br>
-
-<div class="columns-two">
-<div class="col-1">
-<div class="col-content">
-
-
-<div class="border-box border-box-style3">
-<div class="border-tl"><div class="border-tr"><div class="border-tc"></div></div></div>
-<div class="border-content">
-
-<!-- BLOCK CONTENT: START -->
-
-{node_view_gui view='block_item' image_class='articlethumbnail' content_node=$valid_nodes[2]}
-
-<!-- BLOCK CONTENT: END -->
-
-
-</div>
-</div>
-
-
-</div>
-</div>
-<div class="col-2">
-<div class="col-content">
-
-<div class="border-box border-box-style3">
-<div class="border-tl"><div class="border-tr"><div class="border-tc"></div></div></div>
-<div class="border-content">
-
-<!-- BLOCK CONTENT: START -->
-
-{node_view_gui view='block_item' image_class='articlethumbnail' content_node=$valid_nodes[3]}
-
-<!-- BLOCK CONTENT: END -->
-
-</div>
-</div>
-
-</div>
-</div>
-</div>
-
-</div>
-<!-- BLOCK: END -->
-
+<section class="fx-block fx-block--items fx-block--4"{if $block.name|trim} aria-labelledby="fx-b-{$block.id}"{/if}>
+    {include uri='design:parts/ezflow/block_head.tpl'}
+    <div class="fx-grid fx-grid--4">
+    {foreach $valid_nodes as $valid_node}
+        {include uri='design:parts/ezflow/card.tpl' node=$valid_node variant='card'}
+    {/foreach}
+    </div>
+</section>
 {undef $valid_nodes}

@@ -274,6 +274,74 @@
         <source>Skip to main content</source>
         <translation>Volver al contenido principal</translation>
     </message>
+    <message>
+        <source>Automatic</source>
+        <translation>Automático</translation>
+    </message>
+    <message>
+        <source>Breadcrumb</source>
+        <translation>Ruta de navegación</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>Derechos de autor</translation>
+    </message>
+    <message>
+        <source>Dark mode</source>
+        <translation>Modo oscuro</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>Documentación</translation>
+    </message>
+    <message>
+        <source>Light mode</source>
+        <translation>Modo claro</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>Principal</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>Menú</translation>
+    </message>
+    <message>
+        <source>Powered by</source>
+        <translation>Desarrollado con</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Buscar</translation>
+    </message>
+    <message>
+        <source>Search text:</source>
+        <translation>Buscar texto:</translation>
+    </message>
+    <message>
+        <source>Sections</source>
+        <translation>Secciones</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>Iniciar sesión</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Desconectar</translation>
+    </message>
+    <message>
+        <source>Site map</source>
+        <translation>Mapa del sitio</translation>
+    </message>
+    <message>
+        <source>Tag cloud</source>
+        <translation>Nube de etiquetas</translation>
+    </message>
+    <message>
+        <source>This site</source>
+        <translation>Este sitio</translation>
+    </message>
 </context>
 <context>
     <name>design/ezflow/parts/website_toolbar</name>
@@ -284,6 +352,10 @@
     <message>
         <source>Add to block in frontpage</source>
         <translation>Empujar al bloque</translation>
+    </message>
+    <message>
+        <source>Push to block</source>
+        <translation>Enviar al bloque</translation>
     </message>
 </context>
 <context>
@@ -596,6 +668,70 @@
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>Evento de flujo de trabajo de intercambio de eZ Page</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/block</name>
+    <message>
+        <source>Next</source>
+        <translation>Siguiente</translation>
+    </message>
+    <message>
+        <source>Poll results</source>
+        <translation>Resultados de la encuesta</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>Anterior</translation>
+    </message>
+    <message>
+        <source>Read more</source>
+        <translation>Leer más</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Mostrar todo</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/article</name>
+    <message>
+        <source>Comments</source>
+        <translation>Comentarios</translation>
+    </message>
+    <message>
+        <source>New comment</source>
+        <translation>Nuevo comentario</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/event</name>
+    <message>
+        <source>Calendar</source>
+        <translation>Calendario</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>Categoría</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>De</translation>
+    </message>
+    <message>
+        <source>Past events</source>
+        <translation>Eventos pasados</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Para</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/feedback_form</name>
+    <message>
+        <source>Send form</source>
+        <translation>Enviar formulario</translation>
     </message>
 </context>
 </TS>

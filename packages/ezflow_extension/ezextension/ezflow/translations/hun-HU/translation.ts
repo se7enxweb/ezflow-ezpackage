@@ -258,6 +258,74 @@
         <source>Skip to main content</source>
         <translation>Ugrás a fő tartalomra</translation>
     </message>
+    <message>
+        <source>Automatic</source>
+        <translation>Automatikus</translation>
+    </message>
+    <message>
+        <source>Breadcrumb</source>
+        <translation>Navigációs útvonal</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>Szerzői jog</translation>
+    </message>
+    <message>
+        <source>Dark mode</source>
+        <translation>Sötét mód</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>Dokumentáció</translation>
+    </message>
+    <message>
+        <source>Light mode</source>
+        <translation>Világos mód</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>Fő</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>Menü</translation>
+    </message>
+    <message>
+        <source>Powered by</source>
+        <translation>Működteti:</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Keresés</translation>
+    </message>
+    <message>
+        <source>Search text:</source>
+        <translation>Keresett szöveg:</translation>
+    </message>
+    <message>
+        <source>Sections</source>
+        <translation>Szakaszok</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>Bejelentkezés</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Kijelentkezés</translation>
+    </message>
+    <message>
+        <source>Site map</source>
+        <translation>Webhelytérkép</translation>
+    </message>
+    <message>
+        <source>Tag cloud</source>
+        <translation>Címkefelhő</translation>
+    </message>
+    <message>
+        <source>This site</source>
+        <translation>Ez a webhely</translation>
+    </message>
 </context>
 <context>
     <name>design/ezflow/parts/website_toolbar</name>
@@ -268,6 +336,10 @@
     <message>
         <source>Add to block in frontpage</source>
         <translation>Hozzáadás a címlap egy blokkjához</translation>
+    </message>
+    <message>
+        <source>Push to block</source>
+        <translation>Küldés blokkba</translation>
     </message>
 </context>
 <context>
@@ -560,6 +632,70 @@
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>eZ Page cserére szolgáló munkafolyamat-esemény</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/block</name>
+    <message>
+        <source>Next</source>
+        <translation>Következő</translation>
+    </message>
+    <message>
+        <source>Poll results</source>
+        <translation>Szavazás eredménye</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>Előző</translation>
+    </message>
+    <message>
+        <source>Read more</source>
+        <translation>Tovább</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Az összes megjelenítése</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/article</name>
+    <message>
+        <source>Comments</source>
+        <translation>Hozzászólások</translation>
+    </message>
+    <message>
+        <source>New comment</source>
+        <translation>Új hozzászólás</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/event</name>
+    <message>
+        <source>Calendar</source>
+        <translation>Naptár</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>Kategória</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Ettől</translation>
+    </message>
+    <message>
+        <source>Past events</source>
+        <translation>Korábbi események</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Eddig</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/feedback_form</name>
+    <message>
+        <source>Send form</source>
+        <translation>Űrlap elküldése</translation>
     </message>
 </context>
 </TS>

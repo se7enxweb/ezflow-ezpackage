@@ -258,6 +258,74 @@
         <source>Skip to main content</source>
         <translation>Hoppas till huvudinnehåll</translation>
     </message>
+    <message>
+        <source>Automatic</source>
+        <translation>Automatisk</translation>
+    </message>
+    <message>
+        <source>Breadcrumb</source>
+        <translation>Sökvägsmeny</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>Copyright</translation>
+    </message>
+    <message>
+        <source>Dark mode</source>
+        <translation>Mörkt läge</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>Dokumentation</translation>
+    </message>
+    <message>
+        <source>Light mode</source>
+        <translation>Ljust läge</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>Huvud</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>Meny</translation>
+    </message>
+    <message>
+        <source>Powered by</source>
+        <translation>Drivs av</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Sök</translation>
+    </message>
+    <message>
+        <source>Search text:</source>
+        <translation>Sökuttryck:</translation>
+    </message>
+    <message>
+        <source>Sections</source>
+        <translation>Sektioner</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>Logga in</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Logga ut</translation>
+    </message>
+    <message>
+        <source>Site map</source>
+        <translation>Webbplatskarta</translation>
+    </message>
+    <message>
+        <source>Tag cloud</source>
+        <translation>Taggmoln</translation>
+    </message>
+    <message>
+        <source>This site</source>
+        <translation>Den här webbplatsen</translation>
+    </message>
 </context>
 <context>
     <name>design/ezflow/parts/website_toolbar</name>
@@ -268,6 +336,10 @@
     <message>
         <source>Add to block in frontpage</source>
         <translation>Lägg till i block på framsidan</translation>
+    </message>
+    <message>
+        <source>Push to block</source>
+        <translation>Flytta till block</translation>
     </message>
 </context>
 <context>
@@ -580,6 +652,70 @@
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>Arbetsflödeshändelse för byte av eZ Page</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/block</name>
+    <message>
+        <source>Next</source>
+        <translation>Nästa</translation>
+    </message>
+    <message>
+        <source>Poll results</source>
+        <translation>Omröstningsresultat</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>Föregående</translation>
+    </message>
+    <message>
+        <source>Read more</source>
+        <translation>Läs mer</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Visa alla</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/article</name>
+    <message>
+        <source>Comments</source>
+        <translation>Kommentarer</translation>
+    </message>
+    <message>
+        <source>New comment</source>
+        <translation>Ny kommentar</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/event</name>
+    <message>
+        <source>Calendar</source>
+        <translation>Kalender</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>Kategori</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Från</translation>
+    </message>
+    <message>
+        <source>Past events</source>
+        <translation>Tidigare händelser</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Till</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/feedback_form</name>
+    <message>
+        <source>Send form</source>
+        <translation>Skicka formulär</translation>
     </message>
 </context>
 </TS>

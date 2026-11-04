@@ -274,6 +274,74 @@
         <source>Skip to main content</source>
         <translation>メインコンテンツへスキップする</translation>
     </message>
+    <message>
+        <source>Automatic</source>
+        <translation>自動</translation>
+    </message>
+    <message>
+        <source>Breadcrumb</source>
+        <translation>階層リンク</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>著作権</translation>
+    </message>
+    <message>
+        <source>Dark mode</source>
+        <translation>ダークモード</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>ドキュメンテーション</translation>
+    </message>
+    <message>
+        <source>Light mode</source>
+        <translation>ライトモード</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>メイン</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>メニュー</translation>
+    </message>
+    <message>
+        <source>Powered by</source>
+        <translation>提供</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>検索</translation>
+    </message>
+    <message>
+        <source>Search text:</source>
+        <translation>検索テキスト: </translation>
+    </message>
+    <message>
+        <source>Sections</source>
+        <translation>セクション</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>ログイン</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>ログアウト</translation>
+    </message>
+    <message>
+        <source>Site map</source>
+        <translation>サイトマップ</translation>
+    </message>
+    <message>
+        <source>Tag cloud</source>
+        <translation>タグクラウド</translation>
+    </message>
+    <message>
+        <source>This site</source>
+        <translation>このサイト</translation>
+    </message>
 </context>
 <context>
     <name>design/ezflow/parts/website_toolbar</name>
@@ -284,6 +352,10 @@
     <message>
         <source>Add to block in frontpage</source>
         <translation>フロントページのブロックに追加</translation>
+    </message>
+    <message>
+        <source>Push to block</source>
+        <translation>ブロックへ送信</translation>
     </message>
 </context>
 <context>
@@ -596,6 +668,70 @@
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>eZ Page の入れ替えワークフローイベント</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/block</name>
+    <message>
+        <source>Next</source>
+        <translation>次へ</translation>
+    </message>
+    <message>
+        <source>Poll results</source>
+        <translation>アンケートの結果</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>前へ</translation>
+    </message>
+    <message>
+        <source>Read more</source>
+        <translation>続きを読む</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>すべて表示</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/article</name>
+    <message>
+        <source>Comments</source>
+        <translation>コメント</translation>
+    </message>
+    <message>
+        <source>New comment</source>
+        <translation>新しいコメント</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/event</name>
+    <message>
+        <source>Calendar</source>
+        <translation>カレンダー</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>カテゴリー</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>開始日時</translation>
+    </message>
+    <message>
+        <source>Past events</source>
+        <translation>過去のイベント</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>まで</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/feedback_form</name>
+    <message>
+        <source>Send form</source>
+        <translation>フォームの送信</translation>
     </message>
 </context>
 </TS>

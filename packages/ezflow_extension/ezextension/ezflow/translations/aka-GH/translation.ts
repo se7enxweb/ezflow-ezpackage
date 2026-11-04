@@ -258,6 +258,74 @@
         <source>Skip to main content</source>
         <translation>Tu kɔ emu nsɛm titiriw so</translation>
     </message>
+    <message>
+        <source>Automatic</source>
+        <translation>Ankasa</translation>
+    </message>
+    <message>
+        <source>Breadcrumb</source>
+        <translation>Kwan nsɛnkyerɛnne</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>Ɔkyerɛwfoɔ kwan</translation>
+    </message>
+    <message>
+        <source>Dark mode</source>
+        <translation>Sum kwan</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>Nkrataa</translation>
+    </message>
+    <message>
+        <source>Light mode</source>
+        <translation>Hann kwan</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>Titiriw</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>Menu</translation>
+    </message>
+    <message>
+        <source>Powered by</source>
+        <translation>Deɛ ɔma ɛyɛ adwuma</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Hwehwɛ</translation>
+    </message>
+    <message>
+        <source>Search text:</source>
+        <translation>Nsɛm a wobɛhwehwɛ:</translation>
+    </message>
+    <message>
+        <source>Sections</source>
+        <translation>Ɔfa ahodoɔ</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>Hyɛ mu</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Fi mu</translation>
+    </message>
+    <message>
+        <source>Site map</source>
+        <translation>Wɛbsaet krataa</translation>
+    </message>
+    <message>
+        <source>Tag cloud</source>
+        <translation>Nsɛnkyerɛnne ampa</translation>
+    </message>
+    <message>
+        <source>This site</source>
+        <translation>Wɛbsaet yi</translation>
+    </message>
 </context>
 <context>
     <name>design/ezflow/parts/website_toolbar</name>
@@ -268,6 +336,10 @@
     <message>
         <source>Add to block in frontpage</source>
         <translation>Fa ka block a ɛwɔ krataafa titiriw no mu ho</translation>
+    </message>
+    <message>
+        <source>Push to block</source>
+        <translation>Fa hyɛ blɔk mu</translation>
     </message>
 </context>
 <context>
@@ -560,6 +632,70 @@
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>eZ Page swap adwuma kwan asɛm a esiiɛ</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/block</name>
+    <message>
+        <source>Next</source>
+        <translation>Deɛ ɛdi so</translation>
+    </message>
+    <message>
+        <source>Poll results</source>
+        <translation>Aba bɔ ho nsɛm</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>Deɛ atwam</translation>
+    </message>
+    <message>
+        <source>Read more</source>
+        <translation>Kenkan pii</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Kyerɛ nyinaa</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/article</name>
+    <message>
+        <source>Comments</source>
+        <translation>Nsɛm a wɔka</translation>
+    </message>
+    <message>
+        <source>New comment</source>
+        <translation>Adwenkyerɛ foforɔ</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/event</name>
+    <message>
+        <source>Calendar</source>
+        <translation>Bosome nhoma</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>Nkyekyɛmu</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Firi</translation>
+    </message>
+    <message>
+        <source>Past events</source>
+        <translation>Nsɛm a esii dada</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Kɔsi</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/feedback_form</name>
+    <message>
+        <source>Send form</source>
+        <translation>Soma foɔm no</translation>
     </message>
 </context>
 </TS>

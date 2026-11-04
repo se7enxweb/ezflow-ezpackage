@@ -258,6 +258,74 @@
         <source>Skip to main content</source>
         <translation>Fara beint í aðalefni</translation>
     </message>
+    <message>
+        <source>Automatic</source>
+        <translation>Sjálfvirkt</translation>
+    </message>
+    <message>
+        <source>Breadcrumb</source>
+        <translation>Brauðmolaslóð</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>Höfundarréttur</translation>
+    </message>
+    <message>
+        <source>Dark mode</source>
+        <translation>Dökk stilling</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>Skjölun</translation>
+    </message>
+    <message>
+        <source>Light mode</source>
+        <translation>Ljós stilling</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>Aðal</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>Valmynd</translation>
+    </message>
+    <message>
+        <source>Powered by</source>
+        <translation>Knúið af</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Leita</translation>
+    </message>
+    <message>
+        <source>Search text:</source>
+        <translation>Leitartexti:</translation>
+    </message>
+    <message>
+        <source>Sections</source>
+        <translation>Hlutar</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>Skrá inn</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Skrá út</translation>
+    </message>
+    <message>
+        <source>Site map</source>
+        <translation>Veftré</translation>
+    </message>
+    <message>
+        <source>Tag cloud</source>
+        <translation>Merkjaský</translation>
+    </message>
+    <message>
+        <source>This site</source>
+        <translation>Þessi vefur</translation>
+    </message>
 </context>
 <context>
     <name>design/ezflow/parts/website_toolbar</name>
@@ -268,6 +336,10 @@
     <message>
         <source>Add to block in frontpage</source>
         <translation>Bæta við bálk á forsíðu</translation>
+    </message>
+    <message>
+        <source>Push to block</source>
+        <translation>Senda í bálk</translation>
     </message>
 </context>
 <context>
@@ -560,6 +632,70 @@
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>Verkflæðisatburður eZ Page fyrir víxlun</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/block</name>
+    <message>
+        <source>Next</source>
+        <translation>Áfram</translation>
+    </message>
+    <message>
+        <source>Poll results</source>
+        <translation>Niðurstöður könnunar</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>Fyrri</translation>
+    </message>
+    <message>
+        <source>Read more</source>
+        <translation>Lesa meira</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Sýna allt</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/article</name>
+    <message>
+        <source>Comments</source>
+        <translation>Athugasemdir</translation>
+    </message>
+    <message>
+        <source>New comment</source>
+        <translation>Ný athugasemd</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/event</name>
+    <message>
+        <source>Calendar</source>
+        <translation>Dagatal</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>Flokkur</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Úr</translation>
+    </message>
+    <message>
+        <source>Past events</source>
+        <translation>Liðnir viðburðir</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Til</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/feedback_form</name>
+    <message>
+        <source>Send form</source>
+        <translation>Senda eyðublað</translation>
     </message>
 </context>
 </TS>

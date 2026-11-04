@@ -60,7 +60,7 @@
                     {undef $root_node $menu_items}
                 </div>
                 {* The menu button slides the menu open (javascript/ezflow_blocks.js; no inline code). *}
-                {ezscript( array( 'ezflow_blocks.js' ) )}
+                {include uri='design:parts/ezflow_scripts.tpl' scripts=array( 'ezflow_blocks.js' )}
             </div>
 
             {$module_result.content}

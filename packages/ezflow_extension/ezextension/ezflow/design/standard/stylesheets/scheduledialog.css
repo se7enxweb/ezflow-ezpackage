@@ -29,3 +29,8 @@ div#schedule-dialog-container .schedule-dialog-input {
 div#shedule-calendar-container {
     border: none;
 }
+/* The schedule dialog is a native <dialog> (scheduledialog.js): centered and modal by the browser */
+dialog.ezflow-dialog { width: min(34em, 94vw); padding: 0; border: 1px solid #bfbfbf; border-radius: 6px; }
+dialog.ezflow-dialog::backdrop { background: rgba(0, 0, 0, .35); }
+dialog.ezflow-dialog .hd { font-size: 1.1em; margin: 0; }
+div#schedule-dialog-container .schedule-dialog-input { width: 5em; }

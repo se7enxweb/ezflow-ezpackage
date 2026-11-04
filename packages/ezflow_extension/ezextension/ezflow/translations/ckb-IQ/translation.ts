@@ -258,6 +258,74 @@
         <source>Skip to main content</source>
         <translation>بازدان بۆ ناوەڕۆکی سەرەکی</translation>
     </message>
+    <message>
+        <source>Automatic</source>
+        <translation>خۆکار</translation>
+    </message>
+    <message>
+        <source>Breadcrumb</source>
+        <translation>ڕێڕەوی ناوبڕ</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>مافی لەبەرگرتنەوە</translation>
+    </message>
+    <message>
+        <source>Dark mode</source>
+        <translation>دۆخی تاریک</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>بەڵگەنامەکان</translation>
+    </message>
+    <message>
+        <source>Light mode</source>
+        <translation>دۆخی ڕووناک</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>سەرەکی</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>مینیو</translation>
+    </message>
+    <message>
+        <source>Powered by</source>
+        <translation>بە هێزی</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>گەڕان</translation>
+    </message>
+    <message>
+        <source>Search text:</source>
+        <translation>دەقی گەڕان:</translation>
+    </message>
+    <message>
+        <source>Sections</source>
+        <translation>بەشەکان</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>چوونەژوورەوە</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>چوونەدەرەوە</translation>
+    </message>
+    <message>
+        <source>Site map</source>
+        <translation>نەخشەی ماڵپەڕ</translation>
+    </message>
+    <message>
+        <source>Tag cloud</source>
+        <translation>هەوری تاگەکان</translation>
+    </message>
+    <message>
+        <source>This site</source>
+        <translation>ئەم ماڵپەڕە</translation>
+    </message>
 </context>
 <context>
     <name>design/ezflow/parts/website_toolbar</name>
@@ -268,6 +336,10 @@
     <message>
         <source>Add to block in frontpage</source>
         <translation>زیادکردن بۆ بلۆک لە پەڕەی سەرەکی</translation>
+    </message>
+    <message>
+        <source>Push to block</source>
+        <translation>ناردن بۆ بلۆک</translation>
     </message>
 </context>
 <context>
@@ -560,6 +632,70 @@
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>ڕووداوی ڕەوتی کاری گۆڕینەوەی پەڕەی eZ</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/block</name>
+    <message>
+        <source>Next</source>
+        <translation>دواتر</translation>
+    </message>
+    <message>
+        <source>Poll results</source>
+        <translation>ئەنجامەکانی ڕاپرسی</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>پێشوو</translation>
+    </message>
+    <message>
+        <source>Read more</source>
+        <translation>زیاتر بخوێنەوە</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>پیشاندانی هەمووی</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/article</name>
+    <message>
+        <source>Comments</source>
+        <translation>سەرنجەکان</translation>
+    </message>
+    <message>
+        <source>New comment</source>
+        <translation>لێدوانی نوێ</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/event</name>
+    <message>
+        <source>Calendar</source>
+        <translation>ڕۆژمێر</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>پۆلێن</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>لە</translation>
+    </message>
+    <message>
+        <source>Past events</source>
+        <translation>ڕووداوە ڕابردووەکان</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>بۆ</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/feedback_form</name>
+    <message>
+        <source>Send form</source>
+        <translation>ناردنی فۆرم</translation>
     </message>
 </context>
 </TS>

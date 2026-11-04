@@ -258,6 +258,74 @@
         <source>Skip to main content</source>
         <translation>মুখ্য সমললৈ যাওক</translation>
     </message>
+    <message>
+        <source>Automatic</source>
+        <translation>স্বয়ংক্ৰিয়</translation>
+    </message>
+    <message>
+        <source>Breadcrumb</source>
+        <translation>ব্ৰেডক্ৰাম্ব</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>কপিৰাইট</translation>
+    </message>
+    <message>
+        <source>Dark mode</source>
+        <translation>আন্ধাৰ মোড</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>নথিপত্ৰ</translation>
+    </message>
+    <message>
+        <source>Light mode</source>
+        <translation>পোহৰ মোড</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>মুখ্য</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>মেনু</translation>
+    </message>
+    <message>
+        <source>Powered by</source>
+        <translation>চালিত</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>সন্ধান</translation>
+    </message>
+    <message>
+        <source>Search text:</source>
+        <translation>সন্ধানৰ লিখনী:</translation>
+    </message>
+    <message>
+        <source>Sections</source>
+        <translation>শাখা</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>লগ ইন কৰক</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>লগ আউট কৰক</translation>
+    </message>
+    <message>
+        <source>Site map</source>
+        <translation>ছাইট মেপ</translation>
+    </message>
+    <message>
+        <source>Tag cloud</source>
+        <translation>টেগ ক্লাউড</translation>
+    </message>
+    <message>
+        <source>This site</source>
+        <translation>এই ছাইট</translation>
+    </message>
 </context>
 <context>
     <name>design/ezflow/parts/website_toolbar</name>
@@ -268,6 +336,10 @@
     <message>
         <source>Add to block in frontpage</source>
         <translation>মুখ্য পৃষ্ঠাৰ ব্লকত যোগ কৰক</translation>
+    </message>
+    <message>
+        <source>Push to block</source>
+        <translation>ব্লকলৈ পঠিয়াওক</translation>
     </message>
 </context>
 <context>
@@ -560,6 +632,70 @@
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>eZ Page সলনি কাৰ্যপ্ৰবাহৰ ঘটনা</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/block</name>
+    <message>
+        <source>Next</source>
+        <translation>পৰৱৰ্তী</translation>
+    </message>
+    <message>
+        <source>Poll results</source>
+        <translation>ভোটদানৰ ফলাফল</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>পূৰ্বৱৰ্তী</translation>
+    </message>
+    <message>
+        <source>Read more</source>
+        <translation>অধিক পঢ়ক</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>সকলো দেখুৱাওক</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/article</name>
+    <message>
+        <source>Comments</source>
+        <translation>মন্তব্য</translation>
+    </message>
+    <message>
+        <source>New comment</source>
+        <translation>নতুন মন্তব্য</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/event</name>
+    <message>
+        <source>Calendar</source>
+        <translation>কেলেণ্ডাৰ</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>শ্ৰেণী</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>ৰ পৰা</translation>
+    </message>
+    <message>
+        <source>Past events</source>
+        <translation>অতীতৰ অনুষ্ঠান</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>লৈ</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/feedback_form</name>
+    <message>
+        <source>Send form</source>
+        <translation>ফৰ্ম পঠিয়াওক</translation>
     </message>
 </context>
 </TS>

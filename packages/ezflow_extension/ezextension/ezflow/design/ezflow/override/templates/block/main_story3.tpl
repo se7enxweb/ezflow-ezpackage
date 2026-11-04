@@ -1,58 +1,19 @@
+{* main_story3: the main story as a hero: the item's image, its name and teaser, a link to it. *}
 {def $valid_node = $block.valid_nodes[0]}
-
-<!-- BLOCK: START -->
-<div class="block-type-mainstory">
-<div class="border-box block-style5-box-outside">
-<div class="border-tl"><div class="border-tr"><div class="border-tc"></div></div></div>
-<div class="border-ml"><div class="border-mr"><div class="border-mc">
-<div class="border-content">
-
-<div class="columns-two">
-<div class="col-1">
-<div class="col-content">
-
-<!-- BORDER BOX STYLE 1: START -->
-
-<div class="border-box border-box-style1">
-<div class="border-tl"><div class="border-tr"><div class="border-tc"></div></div></div>
-<div class="border-ml"><div class="border-mr"><div class="border-mc">
-<div class="border-content">
-
-<!-- BOX CONTENT: START -->
-
-    <div class="attribute-image">{attribute_view_gui attribute=$valid_node.data_map.image image_class='mainstory3'}</div>
-
-<!-- BOX CONTENT: END -->
-
-</div>
-</div></div></div>
-<div class="border-bl"><div class="border-br"><div class="border-bc"></div></div></div>
-</div>
-
-<!-- BORDER BOX STYLE 1: END -->
-
-</div>
-</div>
-<div class="col-2">
-<div class="col-content">
-
-    <div class="attribute-header">
-        <h2><a href="{$valid_node.url_alias|ezurl(no)}">{$valid_node.name|wash()}</a></h2>
+{if $valid_node}
+<section class="fx-block fx-block--hero">
+<article class="fx-hero" data-fx-reveal>
+    <div class="fx-hero__media">{include uri='design:parts/ezflow/teaser_image.tpl' node=$valid_node alias='fx_wide' sizes='(min-width: 1240px) 1240px, 100vw' eager=true()}</div>
+    <div class="fx-hero__body">
+        {if $block.name|trim}<p class="fx-kicker fx-hero__kicker">{$block.name|wash}</p>{/if}
+        <h2 class="fx-hero__title"><a href={$valid_node.url_alias|ezurl}>{$valid_node.name|wash}</a></h2>
+        <div class="fx-hero__text">{include uri='design:parts/ezflow/teaser_text.tpl' node=$valid_node}</div>
+        <div class="fx-hero__actions">
+            <a class="fx-btn" href={$valid_node.url_alias|ezurl}>{'Read more'|i18n( 'design/ezflow/block' )}<span class="fx-sr-only">: {$valid_node.name|wash}</span></a>
+            {if $valid_node.parent.node_id|ne( 2 )}<a class="fx-btn fx-btn--light" href={$valid_node.parent.url_alias|ezurl}>{$valid_node.parent.name|wash}</a>{/if}
+        </div>
     </div>
-
-    <div class="attribute-short">
-        {attribute_view_gui attribute=$valid_node.data_map.intro}
-    </div>
-
-</div>
-</div>
-</div>
-
-</div>
-</div></div></div>
-<div class="border-bl"><div class="border-br"><div class="border-bc"></div></div></div>
-</div>
-</div>
-<!-- BLOCK: END -->
-
+</article>
+</section>
+{/if}
 {undef $valid_node}

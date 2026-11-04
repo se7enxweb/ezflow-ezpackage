@@ -258,6 +258,74 @@
         <source>Skip to main content</source>
         <translation>முதன்மை உள்ளடக்கத்திற்குச் செல்லவும்</translation>
     </message>
+    <message>
+        <source>Automatic</source>
+        <translation>தானியங்கு</translation>
+    </message>
+    <message>
+        <source>Breadcrumb</source>
+        <translation>பாதைச்சுவடு</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>பதிப்புரிமை</translation>
+    </message>
+    <message>
+        <source>Dark mode</source>
+        <translation>இருண்ட பயன்முறை</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>ஆவணங்கள்</translation>
+    </message>
+    <message>
+        <source>Light mode</source>
+        <translation>ஒளி பயன்முறை</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>முதன்மை</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>பட்டி</translation>
+    </message>
+    <message>
+        <source>Powered by</source>
+        <translation>இயக்குவது</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>தேடு</translation>
+    </message>
+    <message>
+        <source>Search text:</source>
+        <translation>தேடல் உரை:</translation>
+    </message>
+    <message>
+        <source>Sections</source>
+        <translation>பிரிவுகள்</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>உள்நுழை</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>வெளியேறு</translation>
+    </message>
+    <message>
+        <source>Site map</source>
+        <translation>தள வரைபடம்</translation>
+    </message>
+    <message>
+        <source>Tag cloud</source>
+        <translation>குறிச்சொல் மேகம்</translation>
+    </message>
+    <message>
+        <source>This site</source>
+        <translation>இந்தத் தளம்</translation>
+    </message>
 </context>
 <context>
     <name>design/ezflow/parts/website_toolbar</name>
@@ -268,6 +336,10 @@
     <message>
         <source>Add to block in frontpage</source>
         <translation>முகப்புப் பக்கத் தொகுதியில் சேர்</translation>
+    </message>
+    <message>
+        <source>Push to block</source>
+        <translation>பிளாக்கில் சேர்</translation>
     </message>
 </context>
 <context>
@@ -560,6 +632,70 @@
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>eZ பக்க மாற்றிக்கொள்ளும் பணிப்பாய்வு நிகழ்வு</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/block</name>
+    <message>
+        <source>Next</source>
+        <translation>அடுத்து</translation>
+    </message>
+    <message>
+        <source>Poll results</source>
+        <translation>கருத்துக்கணிப்பு முடிவுகள்</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>முந்தைய</translation>
+    </message>
+    <message>
+        <source>Read more</source>
+        <translation>மேலும் படிக்க</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>அனைத்தையும் காட்டு</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/article</name>
+    <message>
+        <source>Comments</source>
+        <translation>கருத்துகள்</translation>
+    </message>
+    <message>
+        <source>New comment</source>
+        <translation>புதிய கருத்து</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/event</name>
+    <message>
+        <source>Calendar</source>
+        <translation>நாட்காட்டி</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>வகை</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>அனுப்புநர்</translation>
+    </message>
+    <message>
+        <source>Past events</source>
+        <translation>கடந்த நிகழ்வுகள்</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>பெறுநர்</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/feedback_form</name>
+    <message>
+        <source>Send form</source>
+        <translation>படிவத்தை அனுப்பு</translation>
     </message>
 </context>
 </TS>

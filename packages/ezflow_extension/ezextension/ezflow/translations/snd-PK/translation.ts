@@ -258,6 +258,74 @@
         <source>Skip to main content</source>
         <translation>مکيه مواد ڏانهن وڃو</translation>
     </message>
+    <message>
+        <source>Automatic</source>
+        <translation>پاڻمرادو</translation>
+    </message>
+    <message>
+        <source>Breadcrumb</source>
+        <translation>بريڊ ڪرمب</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>ڪاپي رائيٽ</translation>
+    </message>
+    <message>
+        <source>Dark mode</source>
+        <translation>اونداهو موڊ</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>دستاويز</translation>
+    </message>
+    <message>
+        <source>Light mode</source>
+        <translation>روشن موڊ</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>مکيه</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>مينيو</translation>
+    </message>
+    <message>
+        <source>Powered by</source>
+        <translation>هلائيندڙ</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>ڳوليو</translation>
+    </message>
+    <message>
+        <source>Search text:</source>
+        <translation>ڳولا جو متن:</translation>
+    </message>
+    <message>
+        <source>Sections</source>
+        <translation>سيڪشن</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>لاگ ان ڪريو</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>لاگ آئوٽ ڪريو</translation>
+    </message>
+    <message>
+        <source>Site map</source>
+        <translation>سائيٽ ميپ</translation>
+    </message>
+    <message>
+        <source>Tag cloud</source>
+        <translation>ٽيگ ڪلائوڊ</translation>
+    </message>
+    <message>
+        <source>This site</source>
+        <translation>هي سائيٽ</translation>
+    </message>
 </context>
 <context>
     <name>design/ezflow/parts/website_toolbar</name>
@@ -268,6 +336,10 @@
     <message>
         <source>Add to block in frontpage</source>
         <translation>فرنٽ پيج ۾ بلاڪ ۾ شامل ڪريو</translation>
+    </message>
+    <message>
+        <source>Push to block</source>
+        <translation>بلاڪ ۾ موڪليو</translation>
     </message>
 </context>
 <context>
@@ -560,6 +632,70 @@
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>eZ Page صفحو مٽائڻ جو ورڪ فلو واقعو</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/block</name>
+    <message>
+        <source>Next</source>
+        <translation>اڳيون</translation>
+    </message>
+    <message>
+        <source>Poll results</source>
+        <translation>راءِ شماري جا نتيجا</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>پويون</translation>
+    </message>
+    <message>
+        <source>Read more</source>
+        <translation>وڌيڪ پڙهو</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>سڀ ڏيکاريو</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/article</name>
+    <message>
+        <source>Comments</source>
+        <translation>راءِ</translation>
+    </message>
+    <message>
+        <source>New comment</source>
+        <translation>نئون تبصرو</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/event</name>
+    <message>
+        <source>Calendar</source>
+        <translation>ڪئلينڊر</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>زمرو</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>کان</translation>
+    </message>
+    <message>
+        <source>Past events</source>
+        <translation>گذريل واقعا</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>کي</translation>
+    </message>
+</context>
+<context>
+    <name>design/ezflow/full/feedback_form</name>
+    <message>
+        <source>Send form</source>
+        <translation>فارم موڪليو</translation>
     </message>
 </context>
 </TS>
