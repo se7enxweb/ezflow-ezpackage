@@ -1438,6 +1438,13 @@ class eZFlownInstaller extends eZSiteInstaller
         $extensionPackage = eZPackage::fetch( $packageName, false, false, false );
         if ( $extensionPackage instanceof eZPackage )
         {
+            // Oracle, MongoDB and every other engine without its own SQL file in the package: the extension's
+            // share/db_schema.dba, the kernel's engine-neutral schema, creates the tables that are missing
+            if ( !in_array( $db->databaseName(), array( 'sqlite', 'mysql', 'postgresql' ), true ) && class_exists( 'expInstallDefaultExtensions' ) )
+            {
+                eZDebug::writeNotice( expInstallDefaultExtensions::ensureExtensionTables( $extensionName, eZExtension::baseDirectory() ), __METHOD__ );
+                return true;
+            }
             switch ($db->databaseName())
             {
                 case 'sqlite':
